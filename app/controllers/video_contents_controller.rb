@@ -7,7 +7,7 @@ class VideoContentsController < ApplicationController
 
     respond_to do |format|
       format.html # index.html.erb
-      format.json  { render :json => @video_contents }
+      format.json  { render :json => @video_contents.to_json(:include => :video_posters) }
     end    
   end
 
@@ -17,10 +17,6 @@ class VideoContentsController < ApplicationController
   end
 
   def show
-  end
-
-  def edit
-    render 'video_contents/save'
   end
 
   def create

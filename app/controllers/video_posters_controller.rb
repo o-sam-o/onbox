@@ -2,6 +2,9 @@ class VideoPostersController < ApplicationController
   before_filter :find_video_content
   before_filter :find_video_poster,
       :only => [:show, :edit, :update, :destroy]
+  
+  #TODO move to some config dir
+  ROOT_POSTER_DIR = '/Volumes/Other/OnBoxPosters/'
       
   def index
     @video_posters = @video_content.video_posters
@@ -18,6 +21,12 @@ class VideoPostersController < ApplicationController
   end
 
   def show
+      if not File.exists?(ROOT_POSTER_DIR + @video_poster.location)
+        logger.error "Unable to find poster: #{ROOT_POSTER_DIR}#{@video_poster.location} for video content #{@video_content.id}"
+        render :status => 404
+        return
+      end
+      send_file ROOT_POSTER_DIR + @video_poster.location, :disposition => 'inline'
   end
 
   def edit
@@ -36,7 +45,7 @@ class VideoPostersController < ApplicationController
   end
   
   def update
-    if @video_content.update_attributes(params[:video_content])
+    if @video_poster.update_attributes(params[:video_poster])
       flash[:notice] = 'Video poster was successfully updated.'
       redirect_to(@video_content)
     else

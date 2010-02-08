@@ -5,7 +5,7 @@
     <th>Type</th>
     <th>Date Created</th>
     <th>Location</th>
-	<th colspan="2">Actions</th>
+	<th colspan="3">Actions</th>
   </tr>
 
 <% @video_posters.each do |poster| %>
@@ -13,6 +13,7 @@
     <td><%=h VideoPosterSize.display_name(poster.size) %></td>
     <td><%=h poster.created_at %></td>
     <td><%=h poster.location %></td>
+	<td><%= link_to 'Show', video_content_video_poster_path(@video_content, poster) %></td>
     <td><%= link_to 'Edit', edit_video_content_video_poster_path(@video_content, poster) %></td>
     <td><%= link_to 'Destroy', poster, :confirm => 'Are you sure?', :method => :delete %></td>
   </tr>
