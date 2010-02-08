@@ -26,7 +26,7 @@ class VideoPostersController < ApplicationController
         render :status => 404
         return
       end
-      send_file ROOT_POSTER_DIR + @video_poster.location, :disposition => 'inline'
+      send_file ROOT_POSTER_DIR + @video_poster.location, :disposition => 'inline', :type => 'image/jpeg'
   end
 
   def edit
