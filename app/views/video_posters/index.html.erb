@@ -1,0 +1,24 @@
+<h1>Video posters for <%=h @video_content.name %></h1>
+
+<table>
+  <tr>
+    <th>Type</th>
+    <th>Date Created</th>
+    <th>Location</th>
+	<th colspan="2">Actions</th>
+  </tr>
+
+<% @video_posters.each do |poster| %>
+  <tr>
+    <td><%=h VideoPosterSize.display_name(poster.size) %></td>
+    <td><%=h poster.created_at %></td>
+    <td><%=h poster.location %></td>
+    <td><%= link_to 'Edit', edit_video_content_video_poster_path(@video_content, poster) %></td>
+    <td><%= link_to 'Destroy', poster, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New poster', new_video_content_video_poster_path(@video_content) %>

@@ -1,0 +1,82 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+       "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+ 
+ <title><%= yield :title or 'What\'s on the box?' %></title>
+  
+ <%= stylesheet_link_tag 'theme-style' %>
+ <%= stylesheet_link_tag 'style' %>
+<link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/2.8.0r4/build/button/assets/skins/sam/button.css">
+ <%= yield :head %>
+</head>
+<body class="yui-skin-sam">
+	<div id="all"> 
+		<!-- BEGIN header --> 
+		<div id="header"> 
+			<div id="menu"> 
+				<ul id="nav"> 
+					<li class="current_page_item"><%= link_to "Home", :controller => 'home' %></li>
+				</ul>
+			</div>
+			<div id="hed"> 
+				<div class="logo"> 
+					<img src="/images/banner.png" alt="What's on the box?">
+				</div>
+			</div>
+			<div id="cat_navi" class="wrap"> 
+				<ul id="secnav"> 
+					<li><a href="<%= url_for :controller => 'home' %>">View All<br/><span>Show movies</span></a></li>
+					<li><a href="<%= url_for :controller => 'video_contents' %>">Video List<br/><span>Videos in table form</span></a></li>
+				</ul>
+			</div>
+			<div style="clear: both;"></div> 
+		</div> 
+		<!-- END header -->	
+		
+		<!-- BEGIN wrapper --> 
+		<div id="wrapper"> 
+		<!-- BEGIN content --> 
+		<div id="content">
+			
+
+		<!-- begin featured news --> 
+		<div class="featured"> 
+			<!--<h2>Featured</h2>--> 
+ 
+ 		<div class="featlist"> 
+			<div class="highlight"><p style="color: green"><%= flash[:notice] %></p></div> 
+			<div id="featured"> 
+				<div class="fblock">			
+					<%= yield  %>
+				</div>
+			</div>
+		</div>
+		
+		</div>
+		<!-- end featured news --> 
+		
+		</div>
+		<!-- END content -->
+		
+		</div> 
+		<!-- END wrapper -->
+		
+		<!-- BEGIN footer --> 
+
+		<div id="footer"> 
+
+		<div id="totop"> 
+		<a href="http://preview.goodtheme.org/gt-lead2/#">Jump To Top</a> 
+		</div> 
+		
+		<div class="wrapper"> 
+		    What's on the box? Developed by Sam Cavenagh | Theme Design by <a href="http://goodtheme.org" title="Really Good Theme">GoodTheme.org</a>	
+		</div> 
+		</div> 
+		<!-- END footer -->		
+	</div>
+</body>
+</html>

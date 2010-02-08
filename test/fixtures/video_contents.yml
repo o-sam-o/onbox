@@ -1,0 +1,13 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  name: MyString
+  year: 1
+  release_date: 2010-02-06
+  plot: MyString
+
+two:
+  name: MyString
+  year: 1
+  release_date: 2010-02-06
+  plot: MyString

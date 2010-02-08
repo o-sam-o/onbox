@@ -1,0 +1,27 @@
+<div style="width: 600px;">
+<% form_for [@video_content, @video_poster], :html => { :class => 'defaultForm' } do |f| %>
+  <fieldset>
+      <legend>Video Poster:</legend>
+	  <div class="defaultFormField">
+	    <%= f.label :location %>
+	    <%= f.text_field :location %>
+		<%= error_message_on @video_poster, :location, :css_class => "defaultFormError" %>
+	  </div>
+	  <div class="defaultFormField">
+	    <%= f.label :size %>
+	    <%= f.select :size, VideoPosterSize.select_values %>
+		<%= error_message_on @video_poster, :size, :css_class => "defaultFormError" %>
+	  </div>
+	  </fieldset>
+  <% if not @video_content.errors.empty? %>
+		<div class="defaultFormErrorOverview">
+  		 Save failed, please see errors above.
+		</div>
+  <% end %>
+  <div class="defaultFormButtons">
+	<span class="yui-button yui-push-button"><span class="first-child">
+    	<button type="submit">Save</button>
+	</span></span>
+  </div>
+<% end %>
+</div>

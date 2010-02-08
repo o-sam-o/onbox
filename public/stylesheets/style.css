@@ -1,0 +1,78 @@
+.defaultForm label {
+    float: left; 
+    clear: left;
+    width: 10em;
+    text-align: right;
+    padding-right: 8px;
+    height: 20px;
+    color: black;
+    padding-top: 3px;
+}
+
+.selectLabel {
+    margin-top: 4px;
+}
+
+.defaultForm legend {
+    padding: 5px;
+    font-weight: bold;
+    color: black;
+}
+
+.defaultForm fieldset {
+    margin: 0 0 0.5em 0;  
+    padding: 0;  
+    padding-bottom: 10px;
+    border: 1px solid #BFBAB0;  
+    background-color: #F2EFE9;  
+    background-image: url(/images/fieldset_gradient.jpg);  
+    background-repeat: repeat-x; 
+}
+
+.defaultForm input, select, textarea {
+    margin-right: 5px;
+}
+
+.defaultForm select {
+    height: 25px;
+}
+
+.defaultForm input {
+    height: 18px;
+    width: 220px;
+}
+
+.defaultFormError {
+    display: inline;
+    color: red;
+}
+
+.defaultFormField {
+    padding-top: 5px;
+}
+
+.defaultFormError {
+    color: red;
+    font-weight: bold;
+}
+
+.defaultFormButtons {
+    text-align: right;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.defaultFormErrorOverview {
+    float: left;
+    color: red;
+    font-weight: bold;
+    margin-top: 5px;
+}
+
+.fieldWithErrors {
+    display: inline;
+}
+
+.fieldWithErrors input {
+    background-color: #FA9898;
+}

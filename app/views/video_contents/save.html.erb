@@ -1,0 +1,47 @@
+<div style="width: 600px;">
+<% form_for @video_content, :html => { :class => 'defaultForm' } do |video_form| %>
+  <fieldset>
+      <legend>Video Content:</legend>
+	  <div class="defaultFormField">
+	    <%= video_form.label :name %>
+	    <%= video_form.text_field :name %>
+		<%= error_message_on @video_content, :name, :css_class => "defaultFormError" %>
+	  </div>
+	  <div class="defaultFormField">
+	    <%= video_form.label :year %>
+	    <%= video_form.text_field :year %>
+		<%= error_message_on @video_content, :year, :css_class => "defaultFormError" %>
+	  </div>
+	  <div class="defaultFormField">
+	    <%= video_form.label :release_date, "Release Date" %>
+	    <%= video_form.date_select :release_date %>
+		<%= error_message_on @video_content, :release_date, :css_class => "defaultFormError" %>
+	  </div>
+	  <div class="defaultFormField">
+	    <%= video_form.label :plot %>
+	    <%= video_form.text_area :plot, :size => "38x6" %>
+		<%= error_message_on @video_content, :plot, :css_class => "defaultFormError" %>
+	  </div>
+	  <div class="defaultFormField">
+	    <%= video_form.label :state %>
+	    <%= video_form.select :state, VideoContentState.select_values %>
+		<%= error_message_on @video_content, :state, :css_class => "defaultFormError" %>
+	  </div>
+	  <div class="defaultFormField">
+	    <%= video_form.label :imdb_id, "Imdb Id" %>
+	    <%= video_form.text_field :imdb_id %>
+		<%= error_message_on @video_content, :imdb_id, :css_class => "defaultFormError" %>
+	  </div>
+  </fieldset>
+  <% if not @video_content.errors.empty? %>
+		<div class="defaultFormErrorOverview">
+  		 Save failed, please see errors above.
+		</div>
+  <% end %>
+  <div class="defaultFormButtons">
+	<span class="yui-button yui-push-button"><span class="first-child">
+    	<button type="submit">Save</button>
+	</span></span>
+  </div>
+<% end %>
+</div>

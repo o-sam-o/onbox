@@ -1,0 +1,2676 @@
+
+
+Processing HomeController#index (for 127.0.0.1 at 2010-02-04 20:32:26) [GET]
+Rendering template within layouts/application
+Rendering home/index
+Completed in 73ms (View: 72, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-02-04 20:32:26) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/scaffold.css" with {:method=>:get}):
+  /opt/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /opt/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing HomeController#index (for 127.0.0.1 at 2010-02-04 20:32:43) [GET]
+Rendering template within layouts/application
+Rendering home/index
+Completed in 7ms (View: 6, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-02-04 20:32:43) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/scaffold.css" with {:method=>:get}):
+  /opt/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /opt/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing HomeController#index (for 127.0.0.1 at 2010-02-04 20:37:57) [GET]
+Rendering template within layouts/application
+Rendering home/index
+Completed in 6ms (View: 5, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-02-04 20:37:58) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/images/grey_bg.gif" with {:method=>:get}):
+  /opt/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /opt/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-02-04 20:37:58) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/images/grey_bg.gif" with {:method=>:get}):
+  /opt/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /opt/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing HomeController#index (for 127.0.0.1 at 2010-02-04 20:44:38) [GET]
+Rendering template within layouts/application
+Rendering home/index
+
+ActionView::TemplateError (undefined method `to_sym' for #<HomeController:0x101f09248>) on line #22 of app/views/layouts/application.html.erb:
+19: 			<!-- begin pages --> 
+20: 			<div id="menu"> 
+21: 				<ul id="nav"> 
+22: 					<li class="current_page_item"><%= link_to 'Home', controller=> 'home'%></li>
+23: 				</ul>
+24: 			</div>
+25: 		</div>
+
+    app/views/layouts/application.html.erb:22
+    /opt/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /opt/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (43.6ms)
+Rendered rescues/_request_and_response (1.1ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing HomeController#index (for 127.0.0.1 at 2010-02-04 20:45:10) [GET]
+Rendering template within layouts/application
+Rendering home/index
+
+ActionView::TemplateError (undefined method `to_sym' for #<HomeController:0x102041ea8>) on line #22 of app/views/layouts/application.html.erb:
+19: 			<!-- begin pages --> 
+20: 			<div id="menu"> 
+21: 				<ul id="nav"> 
+22: 					<li class="current_page_item"><%= link_to 'Home', controller=> 'Home'%></li>
+23: 				</ul>
+24: 			</div>
+25: 		</div>
+
+    app/views/layouts/application.html.erb:22
+    /opt/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /opt/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (100.0ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing HomeController#index (for 127.0.0.1 at 2010-02-04 20:45:43) [GET]
+Rendering template within layouts/application
+Rendering home/index
+Completed in 74ms (View: 73, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-02-04 20:45:43) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/images/grey_bg.gif" with {:method=>:get}):
+  /opt/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /opt/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-02-04 20:45:43) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/images/grey_bg.gif" with {:method=>:get}):
+  /opt/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /opt/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing HomeController#index (for 127.0.0.1 at 2010-02-04 20:45:46) [GET]
+Rendering template within layouts/application
+Rendering home/index
+Completed in 3ms (View: 1, DB: 0) | 200 OK [http://localhost/home]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-02-04 20:45:46) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/images/grey_bg.gif" with {:method=>:get}):
+  /opt/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /opt/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing HomeController#index (for 127.0.0.1 at 2010-02-04 20:45:48) [GET]
+Rendering template within layouts/application
+Rendering home/index
+Completed in 3ms (View: 1, DB: 0) | 200 OK [http://localhost/home]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-02-04 20:45:49) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/images/grey_bg.gif" with {:method=>:get}):
+  /opt/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /opt/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing HomeController#index (for 127.0.0.1 at 2010-02-04 20:50:40) [GET]
+Rendering template within layouts/application
+Rendering home/index
+Completed in 55ms (View: 53, DB: 0) | 200 OK [http://localhost/home]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-02-04 20:50:40) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/images/grey_bg.gif" with {:method=>:get}):
+  /opt/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /opt/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-02-04 20:50:40) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/images/grey_bg.gif" with {:method=>:get}):
+  /opt/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /opt/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing HomeController#index (for 127.0.0.1 at 2010-02-04 20:51:26) [GET]
+Rendering template within layouts/application
+Rendering home/index
+Completed in 4ms (View: 2, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-02-04 20:51:26) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/images/grey_bg.gif" with {:method=>:get}):
+  /opt/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /opt/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing HomeController#index (for 127.0.0.1 at 2010-02-04 20:51:42) [GET]
+Rendering template within layouts/application
+Rendering home/index
+Completed in 6ms (View: 5, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-02-04 20:51:42) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/images/grey_bg.gif" with {:method=>:get}):
+  /opt/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /opt/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-02-04 20:54:30) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/images/grey_bg.gif" with {:method=>:get}):
+  /opt/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /opt/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing HomeController#index (for 127.0.0.1 at 2010-02-04 20:57:27) [GET]
+Rendering template within layouts/application
+Rendering home/index
+Completed in 3ms (View: 1, DB: 0) | 200 OK [http://localhost/home]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-02-04 20:57:27) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/images/grey_bg.gif" with {:method=>:get}):
+  /opt/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /opt/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing HomeController#index (for 127.0.0.1 at 2010-02-04 20:57:29) [GET]
+Rendering template within layouts/application
+Rendering home/index
+Completed in 3ms (View: 2, DB: 0) | 200 OK [http://localhost/home]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-02-04 20:57:29) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/images/grey_bg.gif" with {:method=>:get}):
+  /opt/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /opt/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing HomeController#index (for 127.0.0.1 at 2010-02-04 20:57:29) [GET]
+Rendering template within layouts/application
+Rendering home/index
+Completed in 3ms (View: 2, DB: 0) | 200 OK [http://localhost/home]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-02-04 20:57:29) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/images/grey_bg.gif" with {:method=>:get}):
+  /opt/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /opt/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing HomeController#index (for 127.0.0.1 at 2010-02-04 20:57:30) [GET]
+Rendering template within layouts/application
+Rendering home/index
+Completed in 4ms (View: 2, DB: 0) | 200 OK [http://localhost/home]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-02-04 20:57:30) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/images/grey_bg.gif" with {:method=>:get}):
+  /opt/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /opt/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing HomeController#index (for 127.0.0.1 at 2010-02-04 20:57:41) [GET]
+Rendering template within layouts/application
+Rendering home/index
+Completed in 3ms (View: 2, DB: 0) | 200 OK [http://localhost/home]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-02-04 20:57:41) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/images/grey_bg.gif" with {:method=>:get}):
+  /opt/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /opt/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing HomeController#index (for 127.0.0.1 at 2010-02-04 20:57:47) [GET]
+Rendering template within layouts/application
+Rendering home/index
+Completed in 3ms (View: 1, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-02-04 20:57:48) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/images/grey_bg.gif" with {:method=>:get}):
+  /opt/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /opt/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-02-04 20:57:50) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/images/grey_bg.gif" with {:method=>:get}):
+  /opt/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /opt/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing HomeController#index (for 127.0.0.1 at 2010-02-04 20:58:11) [GET]
+Rendering template within layouts/application
+Rendering home/index
+Completed in 3ms (View: 2, DB: 0) | 200 OK [http://localhost/home]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-02-04 20:59:18) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/images/grey_cat_bg.gif" with {:method=>:get}):
+  /opt/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /opt/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing HomeController#index (for 127.0.0.1 at 2010-02-04 20:59:55) [GET]
+Rendering template within layouts/application
+Rendering home/index
+Completed in 3ms (View: 2, DB: 0) | 200 OK [http://localhost/home]
+
+
+Processing HomeController#index (for 127.0.0.1 at 2010-02-04 20:59:56) [GET]
+Rendering template within layouts/application
+Rendering home/index
+Completed in 3ms (View: 2, DB: 0) | 200 OK [http://localhost/home]
+
+
+Processing HomeController#index (for 127.0.0.1 at 2010-02-04 20:59:57) [GET]
+Rendering template within layouts/application
+Rendering home/index
+Completed in 3ms (View: 2, DB: 0) | 200 OK [http://localhost/home]
+
+
+Processing HomeController#index (for 127.0.0.1 at 2010-02-04 21:02:00) [GET]
+Rendering template within layouts/application
+Rendering home/index
+Completed in 3ms (View: 1, DB: 0) | 200 OK [http://localhost/home]
+
+
+Processing HomeController#index (for 127.0.0.1 at 2010-02-04 21:04:58) [GET]
+Rendering template within layouts/application
+Rendering home/index
+Completed in 6ms (View: 5, DB: 0) | 200 OK [http://localhost/home]
+
+
+Processing HomeController#index (for 127.0.0.1 at 2010-02-04 21:05:28) [GET]
+Rendering template within layouts/application
+Rendering home/index
+Completed in 7ms (View: 5, DB: 0) | 200 OK [http://localhost/home]
+
+
+Processing HomeController#index (for 127.0.0.1 at 2010-02-04 21:05:41) [GET]
+Rendering template within layouts/application
+Rendering home/index
+Completed in 8ms (View: 7, DB: 0) | 200 OK [http://localhost/home]
+
+
+Processing HomeController#index (for 127.0.0.1 at 2010-02-04 21:06:10) [GET]
+Rendering template within layouts/application
+Rendering home/index
+Completed in 7ms (View: 5, DB: 0) | 200 OK [http://localhost/home]
+
+
+Processing HomeController#index (for 127.0.0.1 at 2010-02-04 21:07:10) [GET]
+Rendering template within layouts/application
+Rendering home/index
+Completed in 2ms (View: 1, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing HomeController#index (for 127.0.0.1 at 2010-02-04 21:08:15) [GET]
+Rendering template within layouts/application
+Rendering home/index
+Completed in 7ms (View: 5, DB: 0) | 200 OK [http://localhost/home]
+
+
+Processing HomeController#index (for 127.0.0.1 at 2010-02-04 21:12:56) [GET]
+Rendering template within layouts/application
+Rendering home/index
+Completed in 6ms (View: 5, DB: 0) | 200 OK [http://localhost/home]
+
+
+Processing HomeController#index (for 127.0.0.1 at 2010-02-04 21:15:49) [GET]
+Rendering template within layouts/application
+Rendering home/index
+Completed in 7ms (View: 6, DB: 0) | 200 OK [http://localhost/home]
+
+
+Processing HomeController#index (for 127.0.0.1 at 2010-02-04 21:16:06) [GET]
+Rendering template within layouts/application
+Rendering home/index
+Completed in 7ms (View: 6, DB: 0) | 200 OK [http://localhost/home]
+
+
+Processing HomeController#index (for 127.0.0.1 at 2010-02-04 21:18:20) [GET]
+Rendering template within layouts/application
+Rendering home/index
+Completed in 7ms (View: 6, DB: 0) | 200 OK [http://localhost/home]
+
+
+Processing HomeController#index (for 127.0.0.1 at 2010-02-04 21:18:54) [GET]
+Rendering template within layouts/application
+Rendering home/index
+Completed in 7ms (View: 6, DB: 0) | 200 OK [http://localhost/home]
+
+
+Processing HomeController#index (for 127.0.0.1 at 2010-02-04 21:19:17) [GET]
+Rendering template within layouts/application
+Rendering home/index
+Completed in 8ms (View: 7, DB: 0) | 200 OK [http://localhost/home]
+
+
+Processing HomeController#index (for 127.0.0.1 at 2010-02-04 21:19:53) [GET]
+Rendering template within layouts/application
+Rendering home/index
+Completed in 3ms (View: 1, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing HomeController#index (for 127.0.0.1 at 2010-02-04 21:21:23) [GET]
+Rendering template within layouts/application
+Rendering home/index
+Completed in 2ms (View: 1, DB: 0) | 200 OK [http://localhost/home]
+
+
+Processing HomeController#index (for 127.0.0.1 at 2010-02-04 21:23:19) [GET]
+Rendering template within layouts/application
+Rendering home/index
+Completed in 6ms (View: 5, DB: 0) | 200 OK [http://localhost/home]
+
+
+Processing HomeController#index (for 127.0.0.1 at 2010-02-04 21:23:45) [GET]
+Rendering template within layouts/application
+Rendering home/index
+Completed in 2ms (View: 1, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing HomeController#index (for 127.0.0.1 at 2010-02-04 21:24:54) [GET]
+Rendering template within layouts/application
+Rendering home/index
+Completed in 3ms (View: 1, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing HomeController#index (for 127.0.0.1 at 2010-02-04 21:25:38) [GET]
+Rendering template within layouts/application
+Rendering home/index
+Completed in 3ms (View: 1, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing HomeController#index (for 127.0.0.1 at 2010-02-04 21:25:39) [GET]
+Rendering template within layouts/application
+Rendering home/index
+Completed in 3ms (View: 1, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing HomeController#index (for 127.0.0.1 at 2010-02-04 21:26:30) [GET]
+Rendering template within layouts/application
+Rendering home/index
+Completed in 7ms (View: 5, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing HomeController#index (for 127.0.0.1 at 2010-02-04 21:29:03) [GET]
+Rendering template within layouts/application
+Rendering home/index
+Completed in 2ms (View: 1, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing HomeController#index (for 127.0.0.1 at 2010-02-04 21:30:05) [GET]
+Rendering template within layouts/application
+Rendering home/index
+Completed in 6ms (View: 5, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing HomeController#index (for 127.0.0.1 at 2010-02-04 21:31:02) [GET]
+Rendering template within layouts/application
+Rendering home/index
+Completed in 3ms (View: 1, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing HomeController#index (for 127.0.0.1 at 2010-02-04 21:32:06) [GET]
+Rendering template within layouts/application
+Rendering home/index
+Completed in 6ms (View: 5, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing HomeController#index (for 127.0.0.1 at 2010-02-04 21:32:16) [GET]
+Rendering template within layouts/application
+Rendering home/index
+Completed in 3ms (View: 1, DB: 0) | 200 OK [http://localhost/home]
+
+
+Processing HomeController#index (for 127.0.0.1 at 2010-02-04 21:41:58) [GET]
+Rendering template within layouts/application
+Rendering home/index
+Completed in 6ms (View: 5, DB: 0) | 200 OK [http://localhost/home]
+
+
+Processing HomeController#index (for 127.0.0.1 at 2010-02-04 22:04:57) [GET]
+Rendering template within layouts/application
+Rendering home/index
+ERROR: compiling _run_erb_app47views47home47index46html46erb RAISED compile error
+/Users/sam/Programming/ruby/onbox/app/views/home/index.html.erb:8: syntax error, unexpected kENSURE, expecting kEND
+/Users/sam/Programming/ruby/onbox/app/views/home/index.html.erb:10: syntax error, unexpected $end, expecting kEND
+Function body:           def _run_erb_app47views47home47index46html46erb(local_assigns)
+            old_output_buffer = output_buffer;;@output_buffer = '';  __in_erb_template=true ;  content_for :title do ; @output_buffer.concat "\n  Your Movies\n"
+
+; @output_buffer.concat " end %\n\n<h1>Your Movies</h1>\n<p>Put stuff here</p>\n"
+
+
+
+; @output_buffer
+          ensure
+            self.output_buffer = old_output_buffer
+          end
+Backtrace: /Users/sam/Programming/ruby/onbox/app/views/home/index.html.erb:10:in `compile!'
+/Users/sam/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_view/renderable.rb:61:in `compile'
+/Users/sam/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_view/renderable.rb:28:in `render'
+/Users/sam/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_view/template.rb:205:in `render_template'
+/Users/sam/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_view/base.rb:265:in `render'
+/Users/sam/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_view/base.rb:348:in `_render_with_layout'
+/Users/sam/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_view/base.rb:262:in `render'
+/Users/sam/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_controller/base.rb:1250:in `render_for_file'
+/Users/sam/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_controller/base.rb:945:in `render_without_benchmark'
+/Users/sam/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_controller/benchmarking.rb:51:in `render'
+/Users/sam/.gem/ruby/1.8/gems/activesupport-2.3.5/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/opt/local/lib/ruby/1.8/benchmark.rb:308:in `realtime'
+/Users/sam/.gem/ruby/1.8/gems/activesupport-2.3.5/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/Users/sam/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_controller/benchmarking.rb:51:in `render'
+/Users/sam/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_controller/base.rb:1326:in `default_render'
+/Users/sam/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_controller/base.rb:1332:in `perform_action_without_filters'
+/Users/sam/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_controller/filters.rb:617:in `call_filters'
+/Users/sam/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_controller/filters.rb:610:in `perform_action_without_benchmark'
+/Users/sam/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+/Users/sam/.gem/ruby/1.8/gems/activesupport-2.3.5/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/opt/local/lib/ruby/1.8/benchmark.rb:308:in `realtime'
+/Users/sam/.gem/ruby/1.8/gems/activesupport-2.3.5/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/Users/sam/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+/Users/sam/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_controller/rescue.rb:160:in `perform_action_without_flash'
+/Users/sam/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_controller/flash.rb:146:in `perform_action'
+/Users/sam/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_controller/base.rb:532:in `send'
+/Users/sam/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_controller/base.rb:532:in `process_without_filters'
+/Users/sam/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_controller/filters.rb:606:in `process'
+/Users/sam/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_controller/base.rb:391:in `process'
+/Users/sam/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_controller/base.rb:386:in `call'
+/Users/sam/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_controller/routing/route_set.rb:437:in `call'
+/Users/sam/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:87:in `dispatch'
+/Users/sam/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:121:in `_call'
+/Users/sam/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:130:in `build_middleware_stack'
+/Users/sam/.gem/ruby/1.8/gems/activerecord-2.3.5/lib/active_record/query_cache.rb:29:in `call'
+/Users/sam/.gem/ruby/1.8/gems/activerecord-2.3.5/lib/active_record/query_cache.rb:29:in `call'
+/Users/sam/.gem/ruby/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/query_cache.rb:34:in `cache'
+/Users/sam/.gem/ruby/1.8/gems/activerecord-2.3.5/lib/active_record/query_cache.rb:9:in `cache'
+/Users/sam/.gem/ruby/1.8/gems/activerecord-2.3.5/lib/active_record/query_cache.rb:28:in `call'
+/Users/sam/.gem/ruby/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:361:in `call'
+/Users/sam/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_controller/string_coercion.rb:25:in `call'
+/Users/sam/.gem/ruby/1.8/gems/rack-1.0.1/lib/rack/head.rb:9:in `call'
+/Users/sam/.gem/ruby/1.8/gems/rack-1.0.1/lib/rack/methodoverride.rb:24:in `call'
+/Users/sam/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_controller/params_parser.rb:15:in `call'
+/Users/sam/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_controller/session/cookie_store.rb:93:in `call'
+/Users/sam/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_controller/failsafe.rb:26:in `call'
+/Users/sam/.gem/ruby/1.8/gems/rack-1.0.1/lib/rack/lock.rb:11:in `call'
+/Users/sam/.gem/ruby/1.8/gems/rack-1.0.1/lib/rack/lock.rb:11:in `synchronize'
+/Users/sam/.gem/ruby/1.8/gems/rack-1.0.1/lib/rack/lock.rb:11:in `call'
+/Users/sam/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:114:in `call'
+/Users/sam/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_controller/reloader.rb:34:in `run'
+/Users/sam/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:108:in `call'
+/Users/sam/.gem/ruby/1.8/gems/rails-2.3.5/lib/rails/rack/static.rb:31:in `call'
+/Users/sam/.gem/ruby/1.8/gems/rack-1.0.1/lib/rack/urlmap.rb:46:in `call'
+/Users/sam/.gem/ruby/1.8/gems/rack-1.0.1/lib/rack/urlmap.rb:40:in `each'
+/Users/sam/.gem/ruby/1.8/gems/rack-1.0.1/lib/rack/urlmap.rb:40:in `call'
+/Users/sam/.gem/ruby/1.8/gems/rails-2.3.5/lib/rails/rack/log_tailer.rb:17:in `call'
+/Users/sam/.gem/ruby/1.8/gems/rack-1.0.1/lib/rack/content_length.rb:13:in `call'
+/Users/sam/.gem/ruby/1.8/gems/rack-1.0.1/lib/rack/handler/webrick.rb:50:in `service'
+/opt/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+/opt/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+/opt/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+/opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start'
+/opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+/opt/local/lib/ruby/1.8/webrick/server.rb:95:in `start'
+/opt/local/lib/ruby/1.8/webrick/server.rb:92:in `each'
+/opt/local/lib/ruby/1.8/webrick/server.rb:92:in `start'
+/opt/local/lib/ruby/1.8/webrick/server.rb:23:in `start'
+/opt/local/lib/ruby/1.8/webrick/server.rb:82:in `start'
+/Users/sam/.gem/ruby/1.8/gems/rack-1.0.1/lib/rack/handler/webrick.rb:14:in `run'
+/Users/sam/.gem/ruby/1.8/gems/rails-2.3.5/lib/commands/server.rb:111
+/opt/local/lib/ruby/vendor_ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+/opt/local/lib/ruby/vendor_ruby/1.8/rubygems/custom_require.rb:31:in `require'
+script/server:3
+
+ActionView::TemplateError (compile error
+/Users/sam/Programming/ruby/onbox/app/views/home/index.html.erb:8: syntax error, unexpected kENSURE, expecting kEND
+/Users/sam/Programming/ruby/onbox/app/views/home/index.html.erb:10: syntax error, unexpected $end, expecting kEND) on line #8 of app/views/home/index.html.erb:
+5: <h1>Your Movies</h1>
+6: <p>Put stuff here</p>
+
+    app/views/home/index.html.erb:10:in `compile!'
+    /opt/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /opt/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (32.7ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing HomeController#index (for 127.0.0.1 at 2010-02-04 22:05:15) [GET]
+Rendering template within layouts/application
+Rendering home/index
+Completed in 7ms (View: 6, DB: 0) | 200 OK [http://localhost/home]
+
+
+Processing HomeController#index (for 127.0.0.1 at 2010-02-04 22:06:43) [GET]
+Rendering template within layouts/application
+Rendering home/index
+Completed in 9ms (View: 8, DB: 0) | 200 OK [http://localhost/home]
+
+
+Processing HomeController#index (for 127.0.0.1 at 2010-02-04 22:06:59) [GET]
+Rendering template within layouts/application
+Rendering home/index
+Completed in 7ms (View: 5, DB: 0) | 200 OK [http://localhost/home]
+
+
+Processing HomeController#index (for 127.0.0.1 at 2010-02-04 22:07:12) [GET]
+Rendering template within layouts/application
+Rendering home/index
+Completed in 6ms (View: 4, DB: 0) | 200 OK [http://localhost/home]
+
+
+Processing HomeController#index (for 127.0.0.1 at 2010-02-04 22:16:39) [GET]
+Rendering template within layouts/application
+Rendering home/index
+Completed in 3ms (View: 1, DB: 0) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.2ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mselect sqlite_version(*)[0m
+  [4;36;1mSQL (3.7ms)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;35;1mSQL (3.6ms)[0m   [0mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateVideoContents (20100205232136)
+  [4;36;1mSQL (0.5ms)[0m   [0;1mCREATE TABLE "video_contents" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "year" integer, "release_date" date, "plot" varchar(255), "state" varchar(255), "imdb_id" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.4ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100205232136')[0m
+Migrating to CreateVideoFileReferences (20100205232427)
+  [4;36;1mSQL (0.4ms)[0m   [0;1mCREATE TABLE "video_file_references" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "raw_name" varchar(255), "location" varchar(255), "on_disk" boolean, "media_folder_id" integer, "video_content_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100205232427')[0m
+Migrating to CreateMediaFolders (20100205232617)
+  [4;36;1mSQL (0.4ms)[0m   [0;1mCREATE TABLE "media_folders" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "location" varchar(255), "scan" boolean, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100205232617')[0m
+Migrating to CreateVideoPosters (20100205232757)
+  [4;36;1mSQL (0.5ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateVideoContents (20100205232136)
+Migrating to CreateVideoFileReferences (20100205232427)
+Migrating to CreateMediaFolders (20100205232617)
+Migrating to CreateVideoPosters (20100205232757)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mCREATE TABLE "video_posters" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "size" varchar(255), "location" varchar(255), "height" integer, "width" integer, "video_content_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100205232757')[0m
+  [4;35;1mSQL (0.4ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("media_folders")[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("video_contents")[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("video_file_references")[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("video_posters")[0m
+
+
+Processing HomeController#index (for 127.0.0.1 at 2010-02-06 12:18:40) [GET]
+Rendering template within layouts/application
+Rendering home/index
+Completed in 4ms (View: 2, DB: 0) | 200 OK [http://localhost/home]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-02-06 12:18:50) [GET]
+
+ActionController::RoutingError (No route matches "/videoContents" with {:method=>:get}):
+  /opt/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /opt/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-02-06 12:18:56) [GET]
+
+ActionController::RoutingError (No route matches "/videoContents/index" with {:method=>:get}):
+  /opt/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /opt/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing VideoContentsController#show (for 127.0.0.1 at 2010-02-06 12:19:03) [GET]
+  Parameters: {"id"=>"index"}
+  [4;36;1mVideoContent Load (7.3ms)[0m   [0;1mSELECT * FROM "video_contents" WHERE ("video_contents"."id" = 0) [0m
+
+ActiveRecord::RecordNotFound (Couldn't find VideoContent with ID=index):
+  app/controllers/video_contents_controller.rb:51:in `find_video_content'
+  /opt/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /opt/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (30.9ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (not_found)
+
+
+Processing VideoContentsController#show (for 127.0.0.1 at 2010-02-06 12:19:54) [GET]
+  Parameters: {"id"=>"index"}
+  [4;35;1mVideoContent Load (0.1ms)[0m   [0mSELECT * FROM "video_contents" WHERE ("video_contents"."id" = 0) [0m
+
+ActiveRecord::RecordNotFound (Couldn't find VideoContent with ID=index):
+  app/controllers/video_contents_controller.rb:51:in `find_video_content'
+  /opt/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /opt/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (31.4ms)
+Rendered rescues/_request_and_response (0.7ms)
+Rendering rescues/layout (not_found)
+
+
+Processing VideoContentsController#new (for 127.0.0.1 at 2010-02-06 12:20:07) [GET]
+Rendering template within layouts/application
+Rendering video_contents/new
+Completed in 281ms (View: 222, DB: 0) | 200 OK [http://localhost/video_contents/new]
+
+
+Processing VideoContentsController#create (for 127.0.0.1 at 2010-02-06 12:21:24) [POST]
+  Parameters: {"video_content"=>{"name"=>"Avatar", "plot"=>"A paraplegic marine dispatched to the moon Pandora on a unique mission becomes torn between following his orders and protecting the world he feels is his home.", "imdb_id"=>"499549", "release_date(1i)"=>"2009", "release_date(2i)"=>"12", "year"=>"2009", "release_date(3i)"=>"17", "state"=>"NEW"}, "commit"=>"Save", "authenticity_token"=>"TwucBhbyuftscrO8q1U1WXKP1SH8VDAhVq7De8mS9Bg="}
+  [4;36;1mVideoContent Create (4.4ms)[0m   [0;1mINSERT INTO "video_contents" ("name", "created_at", "plot", "updated_at", "imdb_id", "year", "release_date", "state") VALUES('Avatar', '2010-02-06 01:21:24', 'A paraplegic marine dispatched to the moon Pandora on a unique mission becomes torn between following his orders and protecting the world he feels is his home.', '2010-02-06 01:21:24', '499549', 2009, '2009-12-17', 'NEW')[0m
+Redirected to http://localhost:3000/video_contents/1
+Completed in 22ms (DB: 4) | 302 Found [http://localhost/video_contents]
+
+
+Processing VideoContentsController#show (for 127.0.0.1 at 2010-02-06 12:21:24) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mVideoContent Load (0.2ms)[0m   [0mSELECT * FROM "video_contents" WHERE ("video_contents"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering video_contents/show
+Completed in 11ms (View: 5, DB: 0) | 200 OK [http://localhost/video_contents/1]
+
+
+Processing VideoContentsController#index (for 127.0.0.1 at 2010-02-06 12:21:30) [GET]
+  [4;36;1mVideoContent Load (0.5ms)[0m   [0;1mSELECT * FROM "video_contents" [0m
+Rendering template within layouts/application
+Rendering video_contents/index
+Completed in 127ms (View: 121, DB: 1) | 200 OK [http://localhost/video_contents]
+
+
+Processing VideoContentsController#index (for 127.0.0.1 at 2010-02-06 12:22:30) [GET]
+  [4;35;1mVideoContent Load (0.6ms)[0m   [0mSELECT * FROM "video_contents" [0m
+Rendering template within layouts/application
+Rendering video_contents/index
+Completed in 16ms (View: 11, DB: 1) | 200 OK [http://localhost/video_contents]
+
+
+Processing VideoContentsController#index (for 127.0.0.1 at 2010-02-06 12:23:09) [GET]
+  [4;36;1mVideoContent Load (0.5ms)[0m   [0;1mSELECT * FROM "video_contents" [0m
+Rendering template within layouts/application
+Rendering video_contents/index
+Completed in 15ms (View: 10, DB: 1) | 200 OK [http://localhost/video_contents]
+
+
+Processing VideoContentsController#index (for 127.0.0.1 at 2010-02-06 12:23:21) [GET]
+  [4;35;1mVideoContent Load (0.5ms)[0m   [0mSELECT * FROM "video_contents" [0m
+Rendering template within layouts/application
+Rendering video_contents/index
+Completed in 15ms (View: 9, DB: 1) | 200 OK [http://localhost/video_contents]
+
+
+Processing VideoContentsController#index (for 127.0.0.1 at 2010-02-06 12:23:23) [GET]
+  [4;36;1mVideoContent Load (0.5ms)[0m   [0;1mSELECT * FROM "video_contents" [0m
+Rendering template within layouts/application
+Rendering video_contents/index
+Completed in 12ms (View: 7, DB: 1) | 200 OK [http://localhost/video_contents]
+
+
+Processing VideoContentsController#index (for 127.0.0.1 at 2010-02-06 12:23:48) [GET]
+  [4;35;1mVideoContent Load (0.5ms)[0m   [0mSELECT * FROM "video_contents" [0m
+Rendering template within layouts/application
+Rendering video_contents/index
+Completed in 15ms (View: 10, DB: 1) | 200 OK [http://localhost/video_contents]
+
+
+Processing VideoContentsController#new (for 127.0.0.1 at 2010-02-06 12:24:05) [GET]
+Rendering template within layouts/application
+Rendering video_contents/new
+Completed in 16ms (View: 11, DB: 0) | 200 OK [http://localhost/video_contents/new]
+
+
+Processing VideoContentsController#new (for 127.0.0.1 at 2010-02-06 12:44:05) [GET]
+Rendering template within layouts/application
+Rendering video_contents/new
+Completed in 25ms (View: 19, DB: 0) | 200 OK [http://localhost/video_contents/new]
+
+
+Processing VideoContentsController#new (for 127.0.0.1 at 2010-02-06 12:44:50) [GET]
+Rendering template within layouts/application
+Rendering video_contents/new
+Completed in 21ms (View: 16, DB: 0) | 200 OK [http://localhost/video_contents/new]
+
+
+Processing VideoContentsController#new (for 127.0.0.1 at 2010-02-06 12:45:19) [GET]
+Rendering template within layouts/application
+Rendering video_contents/new
+Completed in 20ms (View: 14, DB: 0) | 200 OK [http://localhost/video_contents/new]
+
+
+Processing VideoContentsController#new (for 127.0.0.1 at 2010-02-06 12:46:15) [GET]
+Rendering template within layouts/application
+Rendering video_contents/new
+Completed in 16ms (View: 11, DB: 0) | 200 OK [http://localhost/video_contents/new]
+
+
+Processing VideoContentsController#new (for 127.0.0.1 at 2010-02-06 12:46:23) [GET]
+Rendering template within layouts/application
+Rendering video_contents/new
+Completed in 16ms (View: 11, DB: 0) | 200 OK [http://localhost/video_contents/new]
+
+
+Processing VideoContentsController#new (for 127.0.0.1 at 2010-02-06 12:50:57) [GET]
+Rendering template within layouts/application
+Rendering video_contents/new
+Completed in 77ms (View: 14, DB: 0) | 200 OK [http://localhost/video_contents/new]
+
+
+Processing HomeController#index (for 127.0.0.1 at 2010-02-06 12:52:27) [GET]
+Rendering template within layouts/application
+Rendering home/index
+Completed in 7ms (View: 5, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing VideoContentsController#new (for 127.0.0.1 at 2010-02-06 12:52:31) [GET]
+Rendering template within layouts/application
+Rendering video_contents/new
+Completed in 16ms (View: 11, DB: 0) | 200 OK [http://localhost/video_contents/new]
+
+
+Processing VideoContentsController#new (for 127.0.0.1 at 2010-02-06 12:52:33) [GET]
+Rendering template within layouts/application
+Rendering video_contents/new
+Completed in 16ms (View: 10, DB: 0) | 200 OK [http://localhost/video_contents/new]
+
+
+Processing VideoContentsController#new (for 127.0.0.1 at 2010-02-06 12:52:33) [GET]
+Rendering template within layouts/application
+Rendering video_contents/new
+Completed in 16ms (View: 11, DB: 0) | 200 OK [http://localhost/video_contents/new]
+
+
+Processing VideoContentsController#new (for 127.0.0.1 at 2010-02-06 13:05:57) [GET]
+Rendering template within layouts/application
+Rendering video_contents/new
+Completed in 19ms (View: 14, DB: 0) | 200 OK [http://localhost/video_contents/new]
+
+
+Processing VideoContentsController#new (for 127.0.0.1 at 2010-02-06 13:06:30) [GET]
+Rendering template within layouts/application
+Rendering video_contents/new
+Completed in 20ms (View: 14, DB: 0) | 200 OK [http://localhost/video_contents/new]
+
+
+Processing VideoContentsController#new (for 127.0.0.1 at 2010-02-06 13:13:58) [GET]
+Rendering template within layouts/application
+Rendering video_contents/new
+Completed in 80ms (View: 75, DB: 0) | 200 OK [http://localhost/video_contents/new]
+
+
+Processing VideoContentsController#new (for 127.0.0.1 at 2010-02-06 13:21:52) [GET]
+Rendering template within layouts/application
+Rendering video_contents/new
+Completed in 19ms (View: 14, DB: 0) | 200 OK [http://localhost/video_contents/new]
+
+
+Processing VideoContentsController#index (for 127.0.0.1 at 2010-02-06 13:21:55) [GET]
+  [4;36;1mVideoContent Load (0.5ms)[0m   [0;1mSELECT * FROM "video_contents" [0m
+Rendering template within layouts/application
+Rendering video_contents/index
+Completed in 11ms (View: 6, DB: 1) | 200 OK [http://localhost/video_contents]
+
+
+Processing VideoContentsController#index (for 127.0.0.1 at 2010-02-06 13:22:05) [GET]
+  [4;35;1mVideoContent Load (0.5ms)[0m   [0mSELECT * FROM "video_contents" [0m
+Rendering template within layouts/application
+Rendering video_contents/index
+Completed in 11ms (View: 6, DB: 1) | 200 OK [http://localhost/video_contents]
+
+
+Processing VideoContentsController#index (for 127.0.0.1 at 2010-02-06 13:22:07) [GET]
+  [4;36;1mVideoContent Load (0.5ms)[0m   [0;1mSELECT * FROM "video_contents" [0m
+Rendering template within layouts/application
+Rendering video_contents/index
+Completed in 11ms (View: 6, DB: 1) | 200 OK [http://localhost/video_contents]
+
+
+Processing VideoContentsController#index (for 127.0.0.1 at 2010-02-06 13:22:41) [GET]
+  [4;35;1mVideoContent Load (0.5ms)[0m   [0mSELECT * FROM "video_contents" [0m
+Rendering template within layouts/application
+Rendering video_contents/index
+Completed in 15ms (View: 10, DB: 1) | 200 OK [http://localhost/video_contents]
+
+
+Processing VideoContentsController#index (for 127.0.0.1 at 2010-02-06 13:23:00) [GET]
+  [4;36;1mVideoContent Load (0.5ms)[0m   [0;1mSELECT * FROM "video_contents" [0m
+Rendering template within layouts/application
+Rendering video_contents/index
+Completed in 17ms (View: 11, DB: 1) | 200 OK [http://localhost/video_contents]
+
+
+Processing HomeController#index (for 127.0.0.1 at 2010-02-06 13:23:03) [GET]
+Rendering template within layouts/application
+Rendering home/index
+Completed in 3ms (View: 2, DB: 0) | 200 OK [http://localhost/home]
+
+
+Processing VideoContentsController#index (for 127.0.0.1 at 2010-02-06 13:23:05) [GET]
+  [4;35;1mVideoContent Load (0.5ms)[0m   [0mSELECT * FROM "video_contents" [0m
+Rendering template within layouts/application
+Rendering video_contents/index
+Completed in 11ms (View: 6, DB: 1) | 200 OK [http://localhost/video_contents]
+
+
+Processing VideoContentsController#index (for 127.0.0.1 at 2010-02-06 13:23:38) [GET]
+  [4;36;1mVideoContent Load (0.5ms)[0m   [0;1mSELECT * FROM "video_contents" [0m
+Rendering template within layouts/application
+Rendering video_contents/index
+Completed in 17ms (View: 11, DB: 1) | 200 OK [http://localhost/video_contents]
+
+
+Processing HomeController#index (for 127.0.0.1 at 2010-02-06 13:23:39) [GET]
+Rendering template within layouts/application
+Rendering home/index
+Completed in 3ms (View: 2, DB: 0) | 200 OK [http://localhost/home]
+
+
+Processing VideoContentsController#index (for 127.0.0.1 at 2010-02-06 13:23:40) [GET]
+  [4;35;1mVideoContent Load (0.5ms)[0m   [0mSELECT * FROM "video_contents" [0m
+Rendering template within layouts/application
+Rendering video_contents/index
+Completed in 15ms (View: 9, DB: 1) | 200 OK [http://localhost/video_contents]
+
+
+Processing VideoContentsController#new (for 127.0.0.1 at 2010-02-06 13:23:44) [GET]
+Rendering template within layouts/application
+Rendering video_contents/new
+Completed in 16ms (View: 10, DB: 0) | 200 OK [http://localhost/video_contents/new]
+
+
+Processing VideoContentsController#index to json (for 127.0.0.1 at 2010-02-06 13:24:05) [GET]
+  [4;36;1mVideoContent Load (0.5ms)[0m   [0;1mSELECT * FROM "video_contents" [0m
+Completed in 8ms (View: 4, DB: 1) | 200 OK [http://localhost/video_contents.json]
+
+
+Processing VideoContentsController#new (for 127.0.0.1 at 2010-02-06 13:28:19) [GET]
+Rendering template within layouts/application
+Rendering video_contents/save
+Completed in 70ms (View: 64, DB: 0) | 200 OK [http://localhost/video_contents/new]
+
+
+Processing VideoContentsController#edit (for 127.0.0.1 at 2010-02-06 13:28:22) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mVideoContent Load (0.2ms)[0m   [0mSELECT * FROM "video_contents" WHERE ("video_contents"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering video_contents/save
+Completed in 17ms (View: 11, DB: 0) | 200 OK [http://localhost/video_contents/1/edit]
+
+
+Processing VideoContentsController#new (for 127.0.0.1 at 2010-02-06 13:28:29) [GET]
+Rendering template within layouts/application
+Rendering video_contents/save
+Completed in 16ms (View: 11, DB: 0) | 200 OK [http://localhost/video_contents/new]
+
+
+Processing VideoContentsController#create (for 127.0.0.1 at 2010-02-06 13:28:30) [POST]
+  Parameters: {"video_content"=>{"name"=>"", "plot"=>"", "imdb_id"=>"", "release_date(1i)"=>"2010", "release_date(2i)"=>"2", "year"=>"", "release_date(3i)"=>"6", "state"=>""}, "authenticity_token"=>"TwucBhbyuftscrO8q1U1WXKP1SH8VDAhVq7De8mS9Bg="}
+
+ActionView::MissingTemplate (Missing template video_contents/new.erb in view path app/views):
+  app/controllers/video_contents_controller.rb:33:in `create'
+  /opt/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /opt/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (internal_server_error)
+
+
+Processing VideoContentsController#create (for 127.0.0.1 at 2010-02-06 13:29:00) [POST]
+  Parameters: {"video_content"=>{"name"=>"", "plot"=>"", "imdb_id"=>"", "release_date(1i)"=>"2010", "release_date(2i)"=>"2", "year"=>"", "release_date(3i)"=>"6", "state"=>""}, "authenticity_token"=>"TwucBhbyuftscrO8q1U1WXKP1SH8VDAhVq7De8mS9Bg="}
+Rendering template within layouts/application
+Rendering video_contents/save
+Completed in 21ms (View: 13, DB: 0) | 200 OK [http://localhost/video_contents]
+
+
+Processing HomeController#index (for 127.0.0.1 at 2010-02-06 13:35:02) [GET]
+Rendering template within layouts/application
+Rendering home/index
+Completed in 3ms (View: 2, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing VideoContentsController#index (for 127.0.0.1 at 2010-02-06 13:35:03) [GET]
+  [4;36;1mVideoContent Load (0.6ms)[0m   [0;1mSELECT * FROM "video_contents" [0m
+Rendering template within layouts/application
+Rendering video_contents/index
+Completed in 68ms (View: 6, DB: 1) | 200 OK [http://localhost/video_contents]
+
+
+Processing VideoContentsController#edit (for 127.0.0.1 at 2010-02-06 13:35:06) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mVideoContent Load (0.2ms)[0m   [0mSELECT * FROM "video_contents" WHERE ("video_contents"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering video_contents/save
+Completed in 17ms (View: 11, DB: 0) | 200 OK [http://localhost/video_contents/1/edit]
+
+
+Processing VideoContentsController#edit (for 127.0.0.1 at 2010-02-06 13:35:31) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mVideoContent Load (0.2ms)[0m   [0;1mSELECT * FROM "video_contents" WHERE ("video_contents"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering video_contents/save
+Completed in 20ms (View: 14, DB: 0) | 200 OK [http://localhost/video_contents/1/edit]
+
+
+Processing HomeController#index (for 127.0.0.1 at 2010-02-07 23:29:49) [GET]
+Rendering template within layouts/application
+Rendering home/index
+Completed in 184ms (View: 167, DB: 0) | 200 OK [http://localhost/home]
+
+
+Processing HomeController#index (for 127.0.0.1 at 2010-02-07 23:33:42) [GET]
+Rendering template within layouts/application
+Rendering home/index
+Completed in 853ms (View: 2, DB: 0) | 200 OK [http://localhost/home]
+
+
+Processing HomeController#index (for 127.0.0.1 at 2010-02-07 23:35:33) [GET]
+Rendering template within layouts/application
+Rendering home/index
+Completed in 4ms (View: 2, DB: 0) | 200 OK [http://localhost/home]
+
+
+Processing HomeController#index (for 127.0.0.1 at 2010-02-07 23:37:13) [GET]
+Rendering template within layouts/application
+Rendering home/index
+Completed in 3ms (View: 2, DB: 0) | 200 OK [http://localhost/home]
+
+
+Processing VideoContentsController#index (for 127.0.0.1 at 2010-02-08 18:55:15) [GET]
+  [4;35;1mVideoContent Load (13.2ms)[0m   [0mSELECT * FROM "video_contents" [0m
+Rendering template within layouts/application
+Rendering video_contents/index
+Completed in 42ms (View: 7, DB: 13) | 200 OK [http://localhost/video_contents]
+
+
+Processing VideoContentsController#new (for 127.0.0.1 at 2010-02-08 18:55:16) [GET]
+Rendering template within layouts/application
+Rendering video_contents/save
+Completed in 172ms (View: 166, DB: 0) | 200 OK [http://localhost/video_contents/new]
+
+
+Processing VideoContentsController#create (for 127.0.0.1 at 2010-02-08 18:55:19) [POST]
+  Parameters: {"video_content"=>{"name"=>"", "plot"=>"", "imdb_id"=>"", "release_date(1i)"=>"2010", "release_date(2i)"=>"2", "year"=>"", "release_date(3i)"=>"8", "state"=>""}, "authenticity_token"=>"TwucBhbyuftscrO8q1U1WXKP1SH8VDAhVq7De8mS9Bg="}
+Rendering template within layouts/application
+Rendering video_contents/save
+Completed in 22ms (View: 14, DB: 0) | 200 OK [http://localhost/video_contents]
+
+
+Processing VideoContentsController#create (for 127.0.0.1 at 2010-02-08 18:56:13) [POST]
+  Parameters: {"video_content"=>{"name"=>"", "plot"=>"", "imdb_id"=>"", "release_date(1i)"=>"2010", "release_date(2i)"=>"2", "year"=>"", "release_date(3i)"=>"8", "state"=>""}, "authenticity_token"=>"TwucBhbyuftscrO8q1U1WXKP1SH8VDAhVq7De8mS9Bg="}
+Rendering template within layouts/application
+Rendering video_contents/save
+Completed in 26ms (View: 18, DB: 0) | 200 OK [http://localhost/video_contents]
+
+
+Processing VideoContentsController#index (for 127.0.0.1 at 2010-02-08 18:56:56) [GET]
+  [4;36;1mVideoContent Load (0.5ms)[0m   [0;1mSELECT * FROM "video_contents" [0m
+Rendering template within layouts/application
+Rendering video_contents/index
+Completed in 12ms (View: 7, DB: 1) | 200 OK [http://localhost/video_contents]
+
+
+Processing VideoContentsController#new (for 127.0.0.1 at 2010-02-08 18:56:58) [GET]
+Rendering template within layouts/application
+Rendering video_contents/save
+Completed in 19ms (View: 15, DB: 0) | 200 OK [http://localhost/video_contents/new]
+
+
+Processing VideoContentsController#new (for 127.0.0.1 at 2010-02-08 18:57:31) [GET]
+Rendering template within layouts/application
+Rendering video_contents/save
+Completed in 16ms (View: 11, DB: 0) | 200 OK [http://localhost/video_contents/new]
+
+
+Processing VideoContentsController#new (for 127.0.0.1 at 2010-02-08 18:57:49) [GET]
+Rendering template within layouts/application
+Rendering video_contents/save
+Completed in 21ms (View: 15, DB: 0) | 200 OK [http://localhost/video_contents/new]
+
+
+Processing VideoContentsController#new (for 127.0.0.1 at 2010-02-08 18:57:57) [GET]
+Rendering template within layouts/application
+Rendering video_contents/save
+Completed in 19ms (View: 14, DB: 0) | 200 OK [http://localhost/video_contents/new]
+
+
+Processing VideoContentsController#create (for 127.0.0.1 at 2010-02-08 19:00:29) [POST]
+  Parameters: {"video_content"=>{"name"=>"", "plot"=>"", "imdb_id"=>"", "release_date(1i)"=>"2010", "release_date(2i)"=>"2", "year"=>"", "release_date(3i)"=>"8", "state"=>""}, "authenticity_token"=>"TwucBhbyuftscrO8q1U1WXKP1SH8VDAhVq7De8mS9Bg="}
+Rendering template within layouts/application
+Rendering video_contents/save
+Completed in 84ms (View: 18, DB: 0) | 200 OK [http://localhost/video_contents]
+
+
+Processing VideoContentsController#create (for 127.0.0.1 at 2010-02-08 19:01:05) [POST]
+  Parameters: {"video_content"=>{"name"=>"", "plot"=>"", "imdb_id"=>"", "release_date(1i)"=>"2010", "release_date(2i)"=>"2", "year"=>"", "release_date(3i)"=>"8", "state"=>""}, "authenticity_token"=>"TwucBhbyuftscrO8q1U1WXKP1SH8VDAhVq7De8mS9Bg="}
+Rendering template within layouts/application
+Rendering video_contents/save
+Completed in 70ms (View: 63, DB: 0) | 200 OK [http://localhost/video_contents]
+
+
+Processing VideoContentsController#index (for 127.0.0.1 at 2010-02-08 19:01:32) [GET]
+  [4;35;1mVideoContent Load (0.5ms)[0m   [0mSELECT * FROM "video_contents" [0m
+Rendering template within layouts/application
+Rendering video_contents/index
+Completed in 11ms (View: 6, DB: 1) | 200 OK [http://localhost/video_contents]
+
+
+Processing VideoContentsController#new (for 127.0.0.1 at 2010-02-08 19:01:35) [GET]
+Rendering template within layouts/application
+Rendering video_contents/save
+Completed in 16ms (View: 11, DB: 0) | 200 OK [http://localhost/video_contents/new]
+
+
+Processing VideoContentsController#create (for 127.0.0.1 at 2010-02-08 19:01:38) [POST]
+  Parameters: {"video_content"=>{"name"=>"", "plot"=>"", "imdb_id"=>"", "release_date(1i)"=>"2010", "release_date(2i)"=>"2", "year"=>"", "release_date(3i)"=>"8", "state"=>""}, "authenticity_token"=>"TMhj/znI/UX6ClmPBBkaIiYAgIjom8kqNlMdXvvo1+8="}
+Rendering template within layouts/application
+Rendering video_contents/save
+Completed in 19ms (View: 12, DB: 0) | 200 OK [http://localhost/video_contents]
+
+
+Processing VideoContentsController#index (for 127.0.0.1 at 2010-02-08 19:03:19) [GET]
+  [4;36;1mVideoContent Load (0.5ms)[0m   [0;1mSELECT * FROM "video_contents" [0m
+Rendering template within layouts/application
+Rendering video_contents/index
+Completed in 11ms (View: 6, DB: 1) | 200 OK [http://localhost/video_contents]
+
+
+Processing VideoContentsController#new (for 127.0.0.1 at 2010-02-08 19:03:20) [GET]
+Rendering template within layouts/application
+Rendering video_contents/save
+Completed in 16ms (View: 11, DB: 0) | 200 OK [http://localhost/video_contents/new]
+
+
+Processing VideoContentsController#create (for 127.0.0.1 at 2010-02-08 19:03:22) [POST]
+  Parameters: {"video_content"=>{"name"=>"", "plot"=>"", "imdb_id"=>"", "release_date(1i)"=>"2010", "release_date(2i)"=>"2", "year"=>"", "release_date(3i)"=>"8", "state"=>""}, "authenticity_token"=>"TwucBhbyuftscrO8q1U1WXKP1SH8VDAhVq7De8mS9Bg="}
+Rendering template within layouts/application
+Rendering video_contents/save
+Completed in 20ms (View: 12, DB: 0) | 200 OK [http://localhost/video_contents]
+
+
+Processing VideoContentsController#create (for 127.0.0.1 at 2010-02-08 19:04:08) [POST]
+  Parameters: {"video_content"=>{"name"=>"", "plot"=>"", "imdb_id"=>"", "release_date(1i)"=>"2010", "release_date(2i)"=>"2", "year"=>"", "release_date(3i)"=>"8", "state"=>""}, "authenticity_token"=>"TMhj/znI/UX6ClmPBBkaIiYAgIjom8kqNlMdXvvo1+8="}
+Rendering template within layouts/application
+Rendering video_contents/save
+Completed in 76ms (View: 69, DB: 0) | 200 OK [http://localhost/video_contents]
+
+
+Processing VideoContentsController#create (for 127.0.0.1 at 2010-02-08 19:05:18) [POST]
+  Parameters: {"video_content"=>{"name"=>"", "plot"=>"", "imdb_id"=>"", "release_date(1i)"=>"2010", "release_date(2i)"=>"2", "year"=>"", "release_date(3i)"=>"8", "state"=>""}, "authenticity_token"=>"TwucBhbyuftscrO8q1U1WXKP1SH8VDAhVq7De8mS9Bg="}
+Rendering template within layouts/application
+Rendering video_contents/save
+Completed in 20ms (View: 12, DB: 0) | 200 OK [http://localhost/video_contents]
+
+
+Processing VideoContentsController#create (for 127.0.0.1 at 2010-02-08 19:05:29) [POST]
+  Parameters: {"video_content"=>{"name"=>"", "plot"=>"", "imdb_id"=>"", "release_date(1i)"=>"2010", "release_date(2i)"=>"2", "year"=>"", "release_date(3i)"=>"8", "state"=>""}, "authenticity_token"=>"TwucBhbyuftscrO8q1U1WXKP1SH8VDAhVq7De8mS9Bg="}
+Rendering template within layouts/application
+Rendering video_contents/save
+Completed in 20ms (View: 12, DB: 0) | 200 OK [http://localhost/video_contents]
+
+
+Processing VideoContentsController#create (for 127.0.0.1 at 2010-02-08 19:05:35) [POST]
+  Parameters: {"video_content"=>{"name"=>"", "plot"=>"", "imdb_id"=>"", "release_date(1i)"=>"2010", "release_date(2i)"=>"2", "year"=>"ff", "release_date(3i)"=>"8", "state"=>""}, "authenticity_token"=>"TwucBhbyuftscrO8q1U1WXKP1SH8VDAhVq7De8mS9Bg="}
+Rendering template within layouts/application
+Rendering video_contents/save
+Completed in 19ms (View: 12, DB: 0) | 200 OK [http://localhost/video_contents]
+
+
+Processing VideoContentsController#create (for 127.0.0.1 at 2010-02-08 19:05:37) [POST]
+  Parameters: {"video_content"=>{"name"=>"", "plot"=>"", "imdb_id"=>"", "release_date(1i)"=>"2010", "release_date(2i)"=>"2", "year"=>"ff", "release_date(3i)"=>"8", "state"=>""}, "authenticity_token"=>"TwucBhbyuftscrO8q1U1WXKP1SH8VDAhVq7De8mS9Bg="}
+Rendering template within layouts/application
+Rendering video_contents/save
+Completed in 78ms (View: 70, DB: 0) | 200 OK [http://localhost/video_contents]
+
+
+Processing VideoContentsController#create (for 127.0.0.1 at 2010-02-08 19:11:37) [POST]
+  Parameters: {"video_content"=>{"name"=>"", "plot"=>"", "imdb_id"=>"", "release_date(1i)"=>"2010", "release_date(2i)"=>"2", "year"=>"ff", "release_date(3i)"=>"8", "state"=>""}, "authenticity_token"=>"TwucBhbyuftscrO8q1U1WXKP1SH8VDAhVq7De8mS9Bg="}
+Rendering template within layouts/application
+Rendering video_contents/save
+Completed in 21ms (View: 13, DB: 0) | 200 OK [http://localhost/video_contents]
+
+
+Processing VideoContentsController#index (for 127.0.0.1 at 2010-02-08 19:12:02) [GET]
+  [4;35;1mVideoContent Load (0.5ms)[0m   [0mSELECT * FROM "video_contents" [0m
+Rendering template within layouts/application
+Rendering video_contents/index
+Completed in 12ms (View: 7, DB: 1) | 200 OK [http://localhost/video_contents]
+
+
+Processing VideoContentsController#new (for 127.0.0.1 at 2010-02-08 19:12:03) [GET]
+Rendering template within layouts/application
+Rendering video_contents/save
+Completed in 16ms (View: 10, DB: 0) | 200 OK [http://localhost/video_contents/new]
+
+
+Processing VideoContentsController#create (for 127.0.0.1 at 2010-02-08 19:12:05) [POST]
+  Parameters: {"video_content"=>{"name"=>"", "plot"=>"", "imdb_id"=>"", "release_date(1i)"=>"2010", "release_date(2i)"=>"2", "year"=>"", "release_date(3i)"=>"8", "state"=>""}, "authenticity_token"=>"TMhj/znI/UX6ClmPBBkaIiYAgIjom8kqNlMdXvvo1+8="}
+Rendering template within layouts/application
+Rendering video_contents/save
+Completed in 20ms (View: 12, DB: 0) | 200 OK [http://localhost/video_contents]
+
+
+Processing VideoContentsController#create (for 127.0.0.1 at 2010-02-08 19:13:15) [POST]
+  Parameters: {"video_content"=>{"name"=>"", "plot"=>"", "imdb_id"=>"", "release_date(1i)"=>"2010", "release_date(2i)"=>"2", "year"=>"ff", "release_date(3i)"=>"8", "state"=>""}, "authenticity_token"=>"TwucBhbyuftscrO8q1U1WXKP1SH8VDAhVq7De8mS9Bg="}
+Rendering template within layouts/application
+Rendering video_contents/save
+Completed in 20ms (View: 12, DB: 0) | 200 OK [http://localhost/video_contents]
+
+
+Processing VideoContentsController#create (for 127.0.0.1 at 2010-02-08 19:14:54) [POST]
+  Parameters: {"video_content"=>{"name"=>"", "plot"=>"", "imdb_id"=>"", "release_date(1i)"=>"2010", "release_date(2i)"=>"2", "year"=>"ff", "release_date(3i)"=>"8", "state"=>""}, "authenticity_token"=>"TwucBhbyuftscrO8q1U1WXKP1SH8VDAhVq7De8mS9Bg="}
+Rendering template within layouts/application
+Rendering video_contents/save
+Completed in 22ms (View: 14, DB: 0) | 200 OK [http://localhost/video_contents]
+
+
+Processing VideoContentsController#create (for 127.0.0.1 at 2010-02-08 19:15:07) [POST]
+  Parameters: {"video_content"=>{"name"=>"", "plot"=>"", "imdb_id"=>"", "release_date(1i)"=>"2010", "release_date(2i)"=>"2", "year"=>"ff", "release_date(3i)"=>"8", "state"=>""}, "authenticity_token"=>"TwucBhbyuftscrO8q1U1WXKP1SH8VDAhVq7De8mS9Bg="}
+Rendering template within layouts/application
+Rendering video_contents/save
+Completed in 22ms (View: 13, DB: 0) | 200 OK [http://localhost/video_contents]
+
+
+Processing VideoContentsController#create (for 127.0.0.1 at 2010-02-08 19:15:32) [POST]
+  Parameters: {"video_content"=>{"name"=>"", "plot"=>"", "imdb_id"=>"", "release_date(1i)"=>"2010", "release_date(2i)"=>"2", "year"=>"ff", "release_date(3i)"=>"8", "state"=>""}, "authenticity_token"=>"TwucBhbyuftscrO8q1U1WXKP1SH8VDAhVq7De8mS9Bg="}
+Rendering template within layouts/application
+Rendering video_contents/save
+Completed in 81ms (View: 72, DB: 0) | 200 OK [http://localhost/video_contents]
+
+
+Processing VideoContentsController#create (for 127.0.0.1 at 2010-02-08 19:18:29) [POST]
+  Parameters: {"video_content"=>{"name"=>"", "plot"=>"", "imdb_id"=>"", "release_date(1i)"=>"2010", "release_date(2i)"=>"2", "year"=>"ff", "release_date(3i)"=>"8", "state"=>""}, "authenticity_token"=>"TwucBhbyuftscrO8q1U1WXKP1SH8VDAhVq7De8mS9Bg="}
+Rendering template within layouts/application
+Rendering video_contents/save
+Completed in 21ms (View: 13, DB: 0) | 200 OK [http://localhost/video_contents]
+
+
+Processing VideoContentsController#index (for 127.0.0.1 at 2010-02-08 19:19:54) [GET]
+  [4;36;1mVideoContent Load (0.5ms)[0m   [0;1mSELECT * FROM "video_contents" [0m
+Rendering template within layouts/application
+Rendering video_contents/index
+Completed in 11ms (View: 6, DB: 1) | 200 OK [http://localhost/video_contents]
+
+
+Processing VideoContentsController#new (for 127.0.0.1 at 2010-02-08 19:19:56) [GET]
+Rendering template within layouts/application
+Rendering video_contents/save
+Completed in 22ms (View: 17, DB: 0) | 200 OK [http://localhost/video_contents/new]
+
+
+Processing VideoContentsController#create (for 127.0.0.1 at 2010-02-08 19:19:58) [POST]
+  Parameters: {"video_content"=>{"name"=>"", "plot"=>"", "imdb_id"=>"", "release_date(1i)"=>"2010", "release_date(2i)"=>"2", "year"=>"", "release_date(3i)"=>"8", "state"=>""}, "authenticity_token"=>"TwucBhbyuftscrO8q1U1WXKP1SH8VDAhVq7De8mS9Bg="}
+Rendering template within layouts/application
+Rendering video_contents/save
+Completed in 81ms (View: 13, DB: 0) | 200 OK [http://localhost/video_contents]
+
+
+Processing VideoContentsController#create (for 127.0.0.1 at 2010-02-08 19:20:44) [POST]
+  Parameters: {"video_content"=>{"name"=>"", "plot"=>"", "imdb_id"=>"", "release_date(1i)"=>"2010", "release_date(2i)"=>"2", "year"=>"", "release_date(3i)"=>"8", "state"=>""}, "authenticity_token"=>"TwucBhbyuftscrO8q1U1WXKP1SH8VDAhVq7De8mS9Bg="}
+Rendering template within layouts/application
+Rendering video_contents/save
+Completed in 26ms (View: 17, DB: 0) | 200 OK [http://localhost/video_contents]
+
+
+Processing VideoContentsController#create (for 127.0.0.1 at 2010-02-08 19:20:46) [POST]
+  Parameters: {"video_content"=>{"name"=>"", "plot"=>"", "imdb_id"=>"", "release_date(1i)"=>"2010", "release_date(2i)"=>"2", "year"=>"", "release_date(3i)"=>"8", "state"=>""}, "authenticity_token"=>"TwucBhbyuftscrO8q1U1WXKP1SH8VDAhVq7De8mS9Bg="}
+Rendering template within layouts/application
+Rendering video_contents/save
+Completed in 20ms (View: 13, DB: 0) | 200 OK [http://localhost/video_contents]
+
+
+Processing VideoContentsController#create (for 127.0.0.1 at 2010-02-08 19:22:53) [POST]
+  Parameters: {"video_content"=>{"name"=>"", "plot"=>"", "imdb_id"=>"", "release_date(1i)"=>"2010", "release_date(2i)"=>"2", "year"=>"", "release_date(3i)"=>"8", "state"=>""}, "authenticity_token"=>"TwucBhbyuftscrO8q1U1WXKP1SH8VDAhVq7De8mS9Bg="}
+Rendering template within layouts/application
+Rendering video_contents/save
+ERROR: compiling _run_erb_app47views47video_contents47save46html46erb RAISED compile error
+/Users/sam/Programming/ruby/onbox/app/views/video_contents/save.html.erb:36: syntax error, unexpected tASSOC, expecting tCOLON2 or '[' or '.'
+...error_messages, :header_tag => :div, :message => nil ).to_s)...
+                              ^
+Function body:           def _run_erb_app47views47video_contents47save46html46erb(local_assigns)
+            old_output_buffer = output_buffer;;@output_buffer = '';  __in_erb_template=true ; @output_buffer.concat "<div style=\"width: 600px;\">\n"
+;  form_for @video_content, :html => { :class => 'defaultForm' } do |video_form| ; @output_buffer.concat "\n  <fieldset>\n      <legend>Video Content:</legend>\n\t  <div class=\"defaultFormField\">\n\t    "
+
+
+
+; @output_buffer.concat(( video_form.label :name ).to_s); @output_buffer.concat "\n\t    "
+; @output_buffer.concat(( video_form.text_field :name ).to_s); @output_buffer.concat "\n\t\t"
+; @output_buffer.concat(( error_message_on @video_content, :name, :css_class => "defaultFormError" ).to_s); @output_buffer.concat "\n\t  </div>\n\t  <div class=\"defaultFormField\">\n\t    "
+
+
+; @output_buffer.concat(( video_form.label :year ).to_s); @output_buffer.concat "\n\t    "
+; @output_buffer.concat(( video_form.text_field :year ).to_s); @output_buffer.concat "\n\t\t"
+; @output_buffer.concat(( error_message_on @video_content, :year, :css_class => "defaultFormError" ).to_s); @output_buffer.concat "\n\t  </div>\n\t  <div class=\"defaultFormField\">\n\t    "
+
+
+; @output_buffer.concat(( video_form.label :release_date, "Release Date" ).to_s); @output_buffer.concat "\n\t    "
+; @output_buffer.concat(( video_form.date_select :release_date ).to_s); @output_buffer.concat "\n\t\t"
+; @output_buffer.concat(( error_message_on @video_content, :release_date, :css_class => "defaultFormError" ).to_s); @output_buffer.concat "\n\t  </div>\n\t  <div class=\"defaultFormField\">\n\t    "
+
+
+; @output_buffer.concat(( video_form.label :plot ).to_s); @output_buffer.concat "\n\t    "
+; @output_buffer.concat(( video_form.text_area :plot, :size => "38x6" ).to_s); @output_buffer.concat "\n\t\t"
+; @output_buffer.concat(( error_message_on @video_content, :plot, :css_class => "defaultFormError" ).to_s); @output_buffer.concat "\n\t  </div>\n\t  <div class=\"defaultFormField\">\n\t    "
+
+
+; @output_buffer.concat(( video_form.label :state ).to_s); @output_buffer.concat "\n\t    "
+; @output_buffer.concat(( video_form.text_field :state ).to_s); @output_buffer.concat "\n\t\t"
+; @output_buffer.concat(( error_message_on @video_content, :state, :css_class => "defaultFormError" ).to_s); @output_buffer.concat "\n\t  </div>\n\t  <div class=\"defaultFormField\">\n\t    "
+
+
+; @output_buffer.concat(( video_form.label :imdb_id, "Imdb Id" ).to_s); @output_buffer.concat "\n\t    "
+; @output_buffer.concat(( video_form.text_field :imdb_id ).to_s); @output_buffer.concat "\n\t\t"
+; @output_buffer.concat(( error_message_on @video_content, :imdb_id, :css_class => "defaultFormError" ).to_s); @output_buffer.concat "\n\t  </div>\n  </fieldset>\n  "
+
+
+; @output_buffer.concat(( post_form.error_messages, :header_tag => :div, :message => nil ).to_s); @output_buffer.concat "\n  <div class=\"defaultFormButtons\">\n\t<span class=\"yui-button yui-push-button\"><span class=\"first-child\">\n    \t<button type=\"submit\">Save</button>\n\t</span></span>\n  </div>\n"
+
+
+
+
+
+;  end ; @output_buffer.concat "\n</div>\n"
+
+; @output_buffer
+          ensure
+            self.output_buffer = old_output_buffer
+          end
+Backtrace: /Users/sam/Programming/ruby/onbox/app/views/video_contents/save.html.erb:47:in `compile!'
+/Users/sam/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_view/renderable.rb:61:in `compile'
+/Users/sam/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_view/renderable.rb:28:in `render'
+/Users/sam/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_view/template.rb:205:in `render_template'
+/Users/sam/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_view/base.rb:265:in `render'
+/Users/sam/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_view/base.rb:348:in `_render_with_layout'
+/Users/sam/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_view/base.rb:262:in `render'
+/Users/sam/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_controller/base.rb:1250:in `render_for_file'
+/Users/sam/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_controller/base.rb:945:in `render_without_benchmark'
+/Users/sam/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_controller/benchmarking.rb:51:in `render'
+/Users/sam/.gem/ruby/1.8/gems/activesupport-2.3.5/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/opt/local/lib/ruby/1.8/benchmark.rb:308:in `realtime'
+/Users/sam/.gem/ruby/1.8/gems/activesupport-2.3.5/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/Users/sam/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_controller/benchmarking.rb:51:in `render'
+/Users/sam/Programming/ruby/onbox/app/controllers/video_contents_controller.rb:33:in `create'
+/Users/sam/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_controller/base.rb:1331:in `send'
+/Users/sam/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_controller/base.rb:1331:in `perform_action_without_filters'
+/Users/sam/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_controller/filters.rb:617:in `call_filters'
+/Users/sam/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_controller/filters.rb:610:in `perform_action_without_benchmark'
+/Users/sam/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+/Users/sam/.gem/ruby/1.8/gems/activesupport-2.3.5/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/opt/local/lib/ruby/1.8/benchmark.rb:308:in `realtime'
+/Users/sam/.gem/ruby/1.8/gems/activesupport-2.3.5/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/Users/sam/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+/Users/sam/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_controller/rescue.rb:160:in `perform_action_without_flash'
+/Users/sam/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_controller/flash.rb:146:in `perform_action'
+/Users/sam/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_controller/base.rb:532:in `send'
+/Users/sam/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_controller/base.rb:532:in `process_without_filters'
+/Users/sam/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_controller/filters.rb:606:in `process'
+/Users/sam/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_controller/base.rb:391:in `process'
+/Users/sam/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_controller/base.rb:386:in `call'
+/Users/sam/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_controller/routing/route_set.rb:437:in `call'
+/Users/sam/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:87:in `dispatch'
+/Users/sam/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:121:in `_call'
+/Users/sam/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:130:in `build_middleware_stack'
+/Users/sam/.gem/ruby/1.8/gems/activerecord-2.3.5/lib/active_record/query_cache.rb:29:in `call'
+/Users/sam/.gem/ruby/1.8/gems/activerecord-2.3.5/lib/active_record/query_cache.rb:29:in `call'
+/Users/sam/.gem/ruby/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/query_cache.rb:34:in `cache'
+/Users/sam/.gem/ruby/1.8/gems/activerecord-2.3.5/lib/active_record/query_cache.rb:9:in `cache'
+/Users/sam/.gem/ruby/1.8/gems/activerecord-2.3.5/lib/active_record/query_cache.rb:28:in `call'
+/Users/sam/.gem/ruby/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:361:in `call'
+/Users/sam/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_controller/string_coercion.rb:25:in `call'
+/Users/sam/.gem/ruby/1.8/gems/rack-1.0.1/lib/rack/head.rb:9:in `call'
+/Users/sam/.gem/ruby/1.8/gems/rack-1.0.1/lib/rack/methodoverride.rb:24:in `call'
+/Users/sam/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_controller/params_parser.rb:15:in `call'
+/Users/sam/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_controller/session/cookie_store.rb:93:in `call'
+/Users/sam/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_controller/failsafe.rb:26:in `call'
+/Users/sam/.gem/ruby/1.8/gems/rack-1.0.1/lib/rack/lock.rb:11:in `call'
+/Users/sam/.gem/ruby/1.8/gems/rack-1.0.1/lib/rack/lock.rb:11:in `synchronize'
+/Users/sam/.gem/ruby/1.8/gems/rack-1.0.1/lib/rack/lock.rb:11:in `call'
+/Users/sam/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:114:in `call'
+/Users/sam/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_controller/reloader.rb:34:in `run'
+/Users/sam/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:108:in `call'
+/Users/sam/.gem/ruby/1.8/gems/rails-2.3.5/lib/rails/rack/static.rb:31:in `call'
+/Users/sam/.gem/ruby/1.8/gems/rack-1.0.1/lib/rack/urlmap.rb:46:in `call'
+/Users/sam/.gem/ruby/1.8/gems/rack-1.0.1/lib/rack/urlmap.rb:40:in `each'
+/Users/sam/.gem/ruby/1.8/gems/rack-1.0.1/lib/rack/urlmap.rb:40:in `call'
+/Users/sam/.gem/ruby/1.8/gems/rails-2.3.5/lib/rails/rack/log_tailer.rb:17:in `call'
+/Users/sam/.gem/ruby/1.8/gems/rack-1.0.1/lib/rack/content_length.rb:13:in `call'
+/Users/sam/.gem/ruby/1.8/gems/rack-1.0.1/lib/rack/handler/webrick.rb:50:in `service'
+/opt/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+/opt/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+/opt/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+/opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start'
+/opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+/opt/local/lib/ruby/1.8/webrick/server.rb:95:in `start'
+/opt/local/lib/ruby/1.8/webrick/server.rb:92:in `each'
+/opt/local/lib/ruby/1.8/webrick/server.rb:92:in `start'
+/opt/local/lib/ruby/1.8/webrick/server.rb:23:in `start'
+/opt/local/lib/ruby/1.8/webrick/server.rb:82:in `start'
+/Users/sam/.gem/ruby/1.8/gems/rack-1.0.1/lib/rack/handler/webrick.rb:14:in `run'
+/Users/sam/.gem/ruby/1.8/gems/rails-2.3.5/lib/commands/server.rb:111
+/opt/local/lib/ruby/vendor_ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+/opt/local/lib/ruby/vendor_ruby/1.8/rubygems/custom_require.rb:31:in `require'
+script/server:3
+
+ActionView::TemplateError (compile error
+/Users/sam/Programming/ruby/onbox/app/views/video_contents/save.html.erb:36: syntax error, unexpected tASSOC, expecting tCOLON2 or '[' or '.'
+...error_messages, :header_tag => :div, :message => nil ).to_s)...
+                              ^) on line #36 of app/views/video_contents/save.html.erb:
+33: 		<%= error_message_on @video_content, :imdb_id, :css_class => "defaultFormError" %>
+34: 	  </div>
+35:   </fieldset>
+36:   <%= post_form.error_messages, :header_tag => :div, :message => nil %>
+37:   <div class="defaultFormButtons">
+38: 	<span class="yui-button yui-push-button"><span class="first-child">
+39:     	<button type="submit">Save</button>
+
+    app/views/video_contents/save.html.erb:47:in `compile!'
+    app/controllers/video_contents_controller.rb:33:in `create'
+    /opt/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /opt/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (96.2ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing VideoContentsController#create (for 127.0.0.1 at 2010-02-08 19:32:53) [POST]
+  Parameters: {"video_content"=>{"name"=>"", "plot"=>"", "imdb_id"=>"", "release_date(1i)"=>"2010", "release_date(2i)"=>"2", "year"=>"", "release_date(3i)"=>"8", "state"=>""}, "authenticity_token"=>"TwucBhbyuftscrO8q1U1WXKP1SH8VDAhVq7De8mS9Bg="}
+Rendering template within layouts/application
+Rendering video_contents/save
+Completed in 48ms (View: 40, DB: 0) | 200 OK [http://localhost/video_contents]
+
+
+Processing VideoContentsController#index (for 127.0.0.1 at 2010-02-08 19:32:56) [GET]
+  [4;35;1mVideoContent Load (0.5ms)[0m   [0mSELECT * FROM "video_contents" [0m
+Rendering template within layouts/application
+Rendering video_contents/index
+Completed in 12ms (View: 6, DB: 1) | 200 OK [http://localhost/video_contents]
+
+
+Processing VideoContentsController#new (for 127.0.0.1 at 2010-02-08 19:32:57) [GET]
+Rendering template within layouts/application
+Rendering video_contents/save
+Completed in 19ms (View: 14, DB: 0) | 200 OK [http://localhost/video_contents/new]
+
+
+Processing VideoContentsController#create (for 127.0.0.1 at 2010-02-08 19:32:58) [POST]
+  Parameters: {"video_content"=>{"name"=>"", "plot"=>"", "imdb_id"=>"", "release_date(1i)"=>"2010", "release_date(2i)"=>"2", "year"=>"", "release_date(3i)"=>"8", "state"=>""}, "authenticity_token"=>"TwucBhbyuftscrO8q1U1WXKP1SH8VDAhVq7De8mS9Bg="}
+Rendering template within layouts/application
+Rendering video_contents/save
+Completed in 81ms (View: 13, DB: 0) | 200 OK [http://localhost/video_contents]
+
+
+Processing VideoContentsController#index (for 127.0.0.1 at 2010-02-08 19:34:04) [GET]
+  [4;36;1mVideoContent Load (0.5ms)[0m   [0;1mSELECT * FROM "video_contents" [0m
+Rendering template within layouts/application
+Rendering video_contents/index
+Completed in 12ms (View: 6, DB: 1) | 200 OK [http://localhost/video_contents]
+
+
+Processing VideoContentsController#new (for 127.0.0.1 at 2010-02-08 19:34:06) [GET]
+Rendering template within layouts/application
+Rendering video_contents/save
+Completed in 21ms (View: 16, DB: 0) | 200 OK [http://localhost/video_contents/new]
+
+
+Processing VideoContentsController#create (for 127.0.0.1 at 2010-02-08 19:34:07) [POST]
+  Parameters: {"video_content"=>{"name"=>"", "plot"=>"", "imdb_id"=>"", "release_date(1i)"=>"2010", "release_date(2i)"=>"2", "year"=>"", "release_date(3i)"=>"8", "state"=>""}, "authenticity_token"=>"TwucBhbyuftscrO8q1U1WXKP1SH8VDAhVq7De8mS9Bg="}
+Rendering template within layouts/application
+Rendering video_contents/save
+Completed in 21ms (View: 13, DB: 0) | 200 OK [http://localhost/video_contents]
+
+
+Processing VideoContentsController#create (for 127.0.0.1 at 2010-02-08 19:34:39) [POST]
+  Parameters: {"video_content"=>{"name"=>"", "plot"=>"", "imdb_id"=>"", "release_date(1i)"=>"2010", "release_date(2i)"=>"2", "year"=>"", "release_date(3i)"=>"8", "state"=>""}, "authenticity_token"=>"TwucBhbyuftscrO8q1U1WXKP1SH8VDAhVq7De8mS9Bg="}
+Rendering template within layouts/application
+Rendering video_contents/save
+Completed in 79ms (View: 14, DB: 0) | 200 OK [http://localhost/video_contents]
+
+
+Processing VideoContentsController#create (for 127.0.0.1 at 2010-02-08 19:34:49) [POST]
+  Parameters: {"video_content"=>{"name"=>"", "plot"=>"", "imdb_id"=>"", "release_date(1i)"=>"2010", "release_date(2i)"=>"2", "year"=>"", "release_date(3i)"=>"8", "state"=>""}, "authenticity_token"=>"TwucBhbyuftscrO8q1U1WXKP1SH8VDAhVq7De8mS9Bg="}
+Rendering template within layouts/application
+Rendering video_contents/save
+Completed in 21ms (View: 13, DB: 0) | 200 OK [http://localhost/video_contents]
+
+
+Processing VideoContentsController#create (for 127.0.0.1 at 2010-02-08 19:34:50) [POST]
+  Parameters: {"video_content"=>{"name"=>"", "plot"=>"", "imdb_id"=>"", "release_date(1i)"=>"2010", "release_date(2i)"=>"2", "year"=>"", "release_date(3i)"=>"8", "state"=>""}, "authenticity_token"=>"TwucBhbyuftscrO8q1U1WXKP1SH8VDAhVq7De8mS9Bg="}
+Rendering template within layouts/application
+Rendering video_contents/save
+Completed in 22ms (View: 13, DB: 0) | 200 OK [http://localhost/video_contents]
+
+
+Processing VideoContentsController#create (for 127.0.0.1 at 2010-02-08 19:34:52) [POST]
+  Parameters: {"video_content"=>{"name"=>"", "plot"=>"", "imdb_id"=>"", "release_date(1i)"=>"2010", "release_date(2i)"=>"2", "year"=>"", "release_date(3i)"=>"8", "state"=>""}, "authenticity_token"=>"TwucBhbyuftscrO8q1U1WXKP1SH8VDAhVq7De8mS9Bg="}
+Rendering template within layouts/application
+Rendering video_contents/save
+Completed in 20ms (View: 13, DB: 0) | 200 OK [http://localhost/video_contents]
+
+
+Processing VideoContentsController#create (for 127.0.0.1 at 2010-02-08 19:34:53) [POST]
+  Parameters: {"video_content"=>{"name"=>"", "plot"=>"", "imdb_id"=>"", "release_date(1i)"=>"2010", "release_date(2i)"=>"2", "year"=>"", "release_date(3i)"=>"8", "state"=>""}, "authenticity_token"=>"TwucBhbyuftscrO8q1U1WXKP1SH8VDAhVq7De8mS9Bg="}
+Rendering template within layouts/application
+Rendering video_contents/save
+Completed in 81ms (View: 74, DB: 0) | 200 OK [http://localhost/video_contents]
+
+
+Processing VideoContentsController#create (for 127.0.0.1 at 2010-02-08 19:34:54) [POST]
+  Parameters: {"video_content"=>{"name"=>"", "plot"=>"", "imdb_id"=>"", "release_date(1i)"=>"2010", "release_date(2i)"=>"2", "year"=>"", "release_date(3i)"=>"8", "state"=>""}, "authenticity_token"=>"TwucBhbyuftscrO8q1U1WXKP1SH8VDAhVq7De8mS9Bg="}
+Rendering template within layouts/application
+Rendering video_contents/save
+Completed in 21ms (View: 13, DB: 0) | 200 OK [http://localhost/video_contents]
+
+
+Processing VideoContentsController#create (for 127.0.0.1 at 2010-02-08 19:34:55) [POST]
+  Parameters: {"video_content"=>{"name"=>"", "plot"=>"", "imdb_id"=>"", "release_date(1i)"=>"2010", "release_date(2i)"=>"2", "year"=>"", "release_date(3i)"=>"8", "state"=>""}, "authenticity_token"=>"TwucBhbyuftscrO8q1U1WXKP1SH8VDAhVq7De8mS9Bg="}
+Rendering template within layouts/application
+Rendering video_contents/save
+Completed in 21ms (View: 13, DB: 0) | 200 OK [http://localhost/video_contents]
+
+
+Processing VideoContentsController#create (for 127.0.0.1 at 2010-02-08 19:34:56) [POST]
+  Parameters: {"video_content"=>{"name"=>"", "plot"=>"", "imdb_id"=>"", "release_date(1i)"=>"2010", "release_date(2i)"=>"2", "year"=>"", "release_date(3i)"=>"8", "state"=>""}, "authenticity_token"=>"TwucBhbyuftscrO8q1U1WXKP1SH8VDAhVq7De8mS9Bg="}
+Rendering template within layouts/application
+Rendering video_contents/save
+Completed in 20ms (View: 13, DB: 0) | 200 OK [http://localhost/video_contents]
+
+
+Processing VideoContentsController#create (for 127.0.0.1 at 2010-02-08 19:35:01) [POST]
+  Parameters: {"video_content"=>{"name"=>"", "plot"=>"", "imdb_id"=>"", "release_date(1i)"=>"2010", "release_date(2i)"=>"2", "year"=>"", "release_date(3i)"=>"8", "state"=>""}, "authenticity_token"=>"TMhj/znI/UX6ClmPBBkaIiYAgIjom8kqNlMdXvvo1+8="}
+Rendering template within layouts/application
+Rendering video_contents/save
+Completed in 80ms (View: 72, DB: 0) | 200 OK [http://localhost/video_contents]
+
+
+Processing VideoContentsController#create (for 127.0.0.1 at 2010-02-08 19:35:19) [POST]
+  Parameters: {"video_content"=>{"name"=>"", "plot"=>"", "imdb_id"=>"", "release_date(1i)"=>"2010", "release_date(2i)"=>"2", "year"=>"", "release_date(3i)"=>"8", "state"=>""}, "authenticity_token"=>"TMhj/znI/UX6ClmPBBkaIiYAgIjom8kqNlMdXvvo1+8="}
+Rendering template within layouts/application
+Rendering video_contents/save
+Completed in 20ms (View: 12, DB: 0) | 200 OK [http://localhost/video_contents]
+
+
+Processing VideoContentsController#create (for 127.0.0.1 at 2010-02-08 19:41:14) [POST]
+  Parameters: {"video_content"=>{"name"=>"", "plot"=>"", "imdb_id"=>"", "release_date(1i)"=>"2010", "release_date(2i)"=>"2", "year"=>"", "release_date(3i)"=>"8", "state"=>""}, "authenticity_token"=>"TwucBhbyuftscrO8q1U1WXKP1SH8VDAhVq7De8mS9Bg="}
+Rendering template within layouts/application
+Rendering video_contents/save
+Completed in 22ms (View: 13, DB: 0) | 200 OK [http://localhost/video_contents]
+
+
+Processing VideoContentsController#create (for 127.0.0.1 at 2010-02-08 19:44:16) [POST]
+  Parameters: {"video_content"=>{"name"=>"", "plot"=>"", "imdb_id"=>"", "release_date(1i)"=>"2010", "release_date(2i)"=>"2", "year"=>"", "release_date(3i)"=>"8", "state"=>""}, "authenticity_token"=>"TwucBhbyuftscrO8q1U1WXKP1SH8VDAhVq7De8mS9Bg="}
+Rendering template within layouts/application
+Rendering video_contents/save
+
+ActionView::TemplateError (wrong number of arguments (2 for 4)) on line #27 of app/views/video_contents/save.html.erb:
+24: 	  </div>
+25: 	  <div class="defaultFormField">
+26: 	    <%= video_form.label :state %>
+27: 	    <%= video_form.collection_select :state, VideoContentState::VALUES %>
+28: 		<%= error_message_on @video_content, :state, :css_class => "defaultFormError" %>
+29: 	  </div>
+30: 	  <div class="defaultFormField">
+
+    app/views/video_contents/save.html.erb:27:in `collection_select'
+    app/views/video_contents/save.html.erb:27
+    app/views/video_contents/save.html.erb:2
+    app/controllers/video_contents_controller.rb:33:in `create'
+    /opt/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /opt/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (36.1ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing VideoContentsController#index (for 127.0.0.1 at 2010-02-08 19:45:34) [GET]
+  [4;35;1mVideoContent Load (0.5ms)[0m   [0mSELECT * FROM "video_contents" [0m
+Rendering template within layouts/application
+Rendering video_contents/index
+Completed in 12ms (View: 7, DB: 1) | 200 OK [http://localhost/video_contents]
+
+
+Processing VideoContentsController#new (for 127.0.0.1 at 2010-02-08 19:45:35) [GET]
+Rendering template within layouts/application
+Rendering video_contents/save
+Completed in 20ms (View: 15, DB: 0) | 200 OK [http://localhost/video_contents/new]
+
+
+Processing VideoContentsController#index (for 127.0.0.1 at 2010-02-08 19:46:33) [GET]
+  [4;36;1mVideoContent Load (0.5ms)[0m   [0;1mSELECT * FROM "video_contents" [0m
+Rendering template within layouts/application
+Rendering video_contents/index
+Completed in 12ms (View: 7, DB: 1) | 200 OK [http://localhost/video_contents]
+
+
+Processing VideoContentsController#edit (for 127.0.0.1 at 2010-02-08 19:46:35) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mVideoContent Load (0.3ms)[0m   [0mSELECT * FROM "video_contents" WHERE ("video_contents"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering video_contents/save
+Completed in 18ms (View: 11, DB: 0) | 200 OK [http://localhost/video_contents/1/edit]
+
+
+Processing VideoContentsController#update (for 127.0.0.1 at 2010-02-08 19:46:39) [PUT]
+  Parameters: {"video_content"=>{"name"=>"Avatar", "plot"=>"A paraplegic marine dispatched to the moon Pandora on a unique mission becomes torn between following his orders and protecting the world he feels is his home.", "imdb_id"=>"499549", "release_date(1i)"=>"2009", "release_date(2i)"=>"12", "year"=>"2009", "release_date(3i)"=>"17", "state"=>"pending"}, "authenticity_token"=>"TwucBhbyuftscrO8q1U1WXKP1SH8VDAhVq7De8mS9Bg=", "id"=>"1"}
+  [4;36;1mVideoContent Load (0.2ms)[0m   [0;1mSELECT * FROM "video_contents" WHERE ("video_contents"."id" = 1) [0m
+  [4;35;1mVideoContent Update (29.9ms)[0m   [0mUPDATE "video_contents" SET "updated_at" = '2010-02-08 08:46:39', "state" = 'pending' WHERE "id" = 1[0m
+Redirected to http://localhost:3000/video_contents/1
+Completed in 47ms (DB: 30) | 302 Found [http://localhost/video_contents/1]
+
+
+Processing VideoContentsController#show (for 127.0.0.1 at 2010-02-08 19:46:39) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mVideoContent Load (0.2ms)[0m   [0;1mSELECT * FROM "video_contents" WHERE ("video_contents"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering video_contents/show
+Completed in 7ms (View: 2, DB: 0) | 200 OK [http://localhost/video_contents/1]
+
+
+Processing VideoContentsController#index (for 127.0.0.1 at 2010-02-08 19:46:58) [GET]
+  [4;35;1mVideoContent Load (0.5ms)[0m   [0mSELECT * FROM "video_contents" [0m
+Rendering template within layouts/application
+Rendering video_contents/index
+Completed in 11ms (View: 6, DB: 1) | 200 OK [http://localhost/video_contents]
+
+
+Processing VideoContentsController#index (for 127.0.0.1 at 2010-02-08 19:47:13) [GET]
+  [4;36;1mVideoContent Load (0.5ms)[0m   [0;1mSELECT * FROM "video_contents" [0m
+Rendering template within layouts/application
+Rendering video_contents/index
+Completed in 11ms (View: 6, DB: 1) | 200 OK [http://localhost/video_contents]
+
+
+Processing VideoContentsController#new (for 127.0.0.1 at 2010-02-08 19:47:14) [GET]
+Rendering template within layouts/application
+Rendering video_contents/save
+Completed in 73ms (View: 11, DB: 0) | 200 OK [http://localhost/video_contents/new]
+
+
+Processing VideoContentsController#index (for 127.0.0.1 at 2010-02-08 19:48:14) [GET]
+  [4;35;1mVideoContent Load (0.5ms)[0m   [0mSELECT * FROM "video_contents" [0m
+Rendering template within layouts/application
+Rendering video_contents/index
+Completed in 12ms (View: 6, DB: 1) | 200 OK [http://localhost/video_contents]
+
+
+Processing VideoContentsController#edit (for 127.0.0.1 at 2010-02-08 19:48:16) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mVideoContent Load (0.2ms)[0m   [0;1mSELECT * FROM "video_contents" WHERE ("video_contents"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering video_contents/save
+Completed in 17ms (View: 11, DB: 0) | 200 OK [http://localhost/video_contents/1/edit]
+
+
+Processing VideoContentsController#update (for 127.0.0.1 at 2010-02-08 19:48:20) [PUT]
+  Parameters: {"video_content"=>{"name"=>"Avatar", "plot"=>"A paraplegic marine dispatched to the moon Pandora on a unique mission becomes torn between following his orders and protecting the world he feels is his home.", "imdb_id"=>"499549", "release_date(1i)"=>"2009", "release_date(2i)"=>"12", "year"=>"2009", "release_date(3i)"=>"17", "state"=>"no_imdb_id"}, "authenticity_token"=>"TMhj/znI/UX6ClmPBBkaIiYAgIjom8kqNlMdXvvo1+8=", "id"=>"1"}
+  [4;35;1mVideoContent Load (0.2ms)[0m   [0mSELECT * FROM "video_contents" WHERE ("video_contents"."id" = 1) [0m
+  [4;36;1mVideoContent Update (0.3ms)[0m   [0;1mUPDATE "video_contents" SET "updated_at" = '2010-02-08 08:48:20', "state" = 'no_imdb_id' WHERE "id" = 1[0m
+Redirected to http://localhost:3000/video_contents/1
+Completed in 49ms (DB: 1) | 302 Found [http://localhost/video_contents/1]
+
+
+Processing VideoContentsController#show (for 127.0.0.1 at 2010-02-08 19:48:20) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mVideoContent Load (0.2ms)[0m   [0mSELECT * FROM "video_contents" WHERE ("video_contents"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering video_contents/show
+Completed in 8ms (View: 2, DB: 0) | 200 OK [http://localhost/video_contents/1]
+
+
+Processing VideoContentsController#index (for 127.0.0.1 at 2010-02-08 19:48:21) [GET]
+  [4;36;1mVideoContent Load (0.5ms)[0m   [0;1mSELECT * FROM "video_contents" [0m
+Rendering template within layouts/application
+Rendering video_contents/index
+Completed in 68ms (View: 63, DB: 1) | 200 OK [http://localhost/video_contents]
+
+
+Processing VideoContentsController#edit (for 127.0.0.1 at 2010-02-08 19:48:24) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mVideoContent Load (0.2ms)[0m   [0mSELECT * FROM "video_contents" WHERE ("video_contents"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering video_contents/save
+Completed in 17ms (View: 12, DB: 0) | 200 OK [http://localhost/video_contents/1/edit]
+
+
+Processing VideoContentsController#index (for 127.0.0.1 at 2010-02-08 19:48:57) [GET]
+  [4;36;1mVideoContent Load (0.5ms)[0m   [0;1mSELECT * FROM "video_contents" [0m
+Rendering template within layouts/application
+Rendering video_contents/index
+Completed in 12ms (View: 6, DB: 1) | 200 OK [http://localhost/video_contents]
+
+
+Processing VideoContentsController#edit (for 127.0.0.1 at 2010-02-08 19:48:58) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mVideoContent Load (0.2ms)[0m   [0mSELECT * FROM "video_contents" WHERE ("video_contents"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering video_contents/save
+Completed in 17ms (View: 11, DB: 0) | 200 OK [http://localhost/video_contents/1/edit]
+
+
+Processing VideoContentsController#index (for 127.0.0.1 at 2010-02-08 19:50:05) [GET]
+  [4;36;1mVideoContent Load (0.6ms)[0m   [0;1mSELECT * FROM "video_contents" [0m
+Rendering template within layouts/application
+Rendering video_contents/index
+Completed in 11ms (View: 6, DB: 1) | 200 OK [http://localhost/video_contents]
+
+
+Processing VideoContentsController#edit (for 127.0.0.1 at 2010-02-08 19:50:07) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mVideoContent Load (0.2ms)[0m   [0mSELECT * FROM "video_contents" WHERE ("video_contents"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering video_contents/save
+Completed in 77ms (View: 72, DB: 0) | 200 OK [http://localhost/video_contents/1/edit]
+
+
+Processing VideoContentsController#update (for 127.0.0.1 at 2010-02-08 19:50:10) [PUT]
+  Parameters: {"video_content"=>{"name"=>"Avatar", "plot"=>"A paraplegic marine dispatched to the moon Pandora on a unique mission becomes torn between following his orders and protecting the world he feels is his home.", "imdb_id"=>"499549", "release_date(1i)"=>"2009", "release_date(2i)"=>"12", "year"=>"2009", "release_date(3i)"=>"17", "state"=>"Processed"}, "authenticity_token"=>"TwucBhbyuftscrO8q1U1WXKP1SH8VDAhVq7De8mS9Bg=", "id"=>"1"}
+  [4;36;1mVideoContent Load (0.2ms)[0m   [0;1mSELECT * FROM "video_contents" WHERE ("video_contents"."id" = 1) [0m
+  [4;35;1mVideoContent Update (0.3ms)[0m   [0mUPDATE "video_contents" SET "updated_at" = '2010-02-08 08:50:10', "state" = 'Processed' WHERE "id" = 1[0m
+Redirected to http://localhost:3000/video_contents/1
+Completed in 27ms (DB: 1) | 302 Found [http://localhost/video_contents/1]
+
+
+Processing VideoContentsController#show (for 127.0.0.1 at 2010-02-08 19:50:10) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mVideoContent Load (0.6ms)[0m   [0;1mSELECT * FROM "video_contents" WHERE ("video_contents"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering video_contents/show
+Completed in 8ms (View: 2, DB: 1) | 200 OK [http://localhost/video_contents/1]
+
+
+Processing VideoContentsController#index (for 127.0.0.1 at 2010-02-08 19:50:12) [GET]
+  [4;35;1mVideoContent Load (0.5ms)[0m   [0mSELECT * FROM "video_contents" [0m
+Rendering template within layouts/application
+Rendering video_contents/index
+Completed in 12ms (View: 7, DB: 1) | 200 OK [http://localhost/video_contents]
+
+
+Processing VideoContentsController#edit (for 127.0.0.1 at 2010-02-08 19:50:13) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mVideoContent Load (0.2ms)[0m   [0;1mSELECT * FROM "video_contents" WHERE ("video_contents"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering video_contents/save
+Completed in 18ms (View: 12, DB: 0) | 200 OK [http://localhost/video_contents/1/edit]
+
+
+Processing VideoContentsController#index (for 127.0.0.1 at 2010-02-08 19:50:15) [GET]
+  [4;35;1mVideoContent Load (0.5ms)[0m   [0mSELECT * FROM "video_contents" [0m
+Rendering template within layouts/application
+Rendering video_contents/index
+Completed in 12ms (View: 6, DB: 1) | 200 OK [http://localhost/video_contents]
+
+
+Processing VideoContentsController#index (for 127.0.0.1 at 2010-02-08 19:56:49) [GET]
+
+SyntaxError (/Users/sam/Programming/ruby/onbox/app/models/video_content.rb:12: syntax error, unexpected ',', expecting tASSOC
+...d => "Processed", :no_imdb_id, "Unknown Imdb Id"}
+                              ^
+/Users/sam/Programming/ruby/onbox/app/models/video_content.rb:12: syntax error, unexpected '}', expecting kEND):
+  app/controllers/video_contents_controller.rb:6:in `index'
+  /opt/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /opt/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (30.6ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing VideoContentsController#index (for 127.0.0.1 at 2010-02-08 19:57:20) [GET]
+  [4;36;1mVideoContent Load (0.5ms)[0m   [0;1mSELECT * FROM "video_contents" [0m
+Rendering template within layouts/application
+Rendering video_contents/index
+Completed in 12ms (View: 7, DB: 1) | 200 OK [http://localhost/video_contents]
+
+
+Processing VideoContentsController#edit (for 127.0.0.1 at 2010-02-08 19:57:22) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mVideoContent Load (0.3ms)[0m   [0mSELECT * FROM "video_contents" WHERE ("video_contents"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering video_contents/save
+Completed in 22ms (View: 16, DB: 0) | 200 OK [http://localhost/video_contents/1/edit]
+
+
+Processing VideoContentsController#update (for 127.0.0.1 at 2010-02-08 19:57:31) [PUT]
+  Parameters: {"video_content"=>{"name"=>"Avatar", "plot"=>"A paraplegic marine dispatched to the moon Pandora on a unique mission becomes torn between following his orders and protecting the world he feels is his home.", "imdb_id"=>"499549", "release_date(1i)"=>"2009", "release_date(2i)"=>"12", "year"=>"2009", "release_date(3i)"=>"17", "state"=>"Pending"}, "authenticity_token"=>"TwucBhbyuftscrO8q1U1WXKP1SH8VDAhVq7De8mS9Bg=", "id"=>"1"}
+  [4;36;1mVideoContent Load (0.2ms)[0m   [0;1mSELECT * FROM "video_contents" WHERE ("video_contents"."id" = 1) [0m
+  [4;35;1mVideoContent Update (0.3ms)[0m   [0mUPDATE "video_contents" SET "updated_at" = '2010-02-08 08:57:31', "state" = 'Pending' WHERE "id" = 1[0m
+Redirected to http://localhost:3000/video_contents/1
+Completed in 32ms (DB: 1) | 302 Found [http://localhost/video_contents/1]
+
+
+Processing VideoContentsController#show (for 127.0.0.1 at 2010-02-08 19:57:31) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mVideoContent Load (0.2ms)[0m   [0;1mSELECT * FROM "video_contents" WHERE ("video_contents"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering video_contents/show
+Completed in 7ms (View: 2, DB: 0) | 200 OK [http://localhost/video_contents/1]
+
+
+Processing VideoContentsController#index (for 127.0.0.1 at 2010-02-08 19:57:33) [GET]
+  [4;35;1mVideoContent Load (0.5ms)[0m   [0mSELECT * FROM "video_contents" [0m
+Rendering template within layouts/application
+Rendering video_contents/index
+Completed in 11ms (View: 6, DB: 1) | 200 OK [http://localhost/video_contents]
+
+
+Processing VideoContentsController#index (for 127.0.0.1 at 2010-02-08 19:59:53) [GET]
+  [4;36;1mVideoContent Load (0.5ms)[0m   [0;1mSELECT * FROM "video_contents" [0m
+Rendering template within layouts/application
+Rendering video_contents/index
+Completed in 12ms (View: 7, DB: 1) | 200 OK [http://localhost/video_contents]
+
+
+Processing VideoContentsController#new (for 127.0.0.1 at 2010-02-08 19:59:54) [GET]
+Rendering template within layouts/application
+Rendering video_contents/save
+Completed in 16ms (View: 11, DB: 0) | 200 OK [http://localhost/video_contents/new]
+
+
+Processing VideoContentsController#create (for 127.0.0.1 at 2010-02-08 20:00:00) [POST]
+  Parameters: {"video_content"=>{"name"=>"", "plot"=>"", "imdb_id"=>"", "release_date(1i)"=>"2010", "release_date(2i)"=>"2", "year"=>"", "release_date(3i)"=>"8", "state"=>"Processed"}, "authenticity_token"=>"TwucBhbyuftscrO8q1U1WXKP1SH8VDAhVq7De8mS9Bg="}
+Rendering template within layouts/application
+Rendering video_contents/save
+Completed in 20ms (View: 12, DB: 0) | 200 OK [http://localhost/video_contents]
+
+
+Processing VideoContentsController#create (for 127.0.0.1 at 2010-02-08 20:00:32) [POST]
+  Parameters: {"video_content"=>{"name"=>"", "plot"=>"", "imdb_id"=>"", "release_date(1i)"=>"2010", "release_date(2i)"=>"2", "year"=>"", "release_date(3i)"=>"8", "state"=>"Processed"}, "authenticity_token"=>"TwucBhbyuftscrO8q1U1WXKP1SH8VDAhVq7De8mS9Bg="}
+Rendering template within layouts/application
+Rendering video_contents/save
+Completed in 19ms (View: 11, DB: 0) | 200 OK [http://localhost/video_contents]
+
+
+Processing VideoContentsController#create (for 127.0.0.1 at 2010-02-08 20:01:11) [POST]
+  Parameters: {"video_content"=>{"name"=>"", "plot"=>"", "imdb_id"=>"", "release_date(1i)"=>"2010", "release_date(2i)"=>"2", "year"=>"", "release_date(3i)"=>"8", "state"=>"two"}, "authenticity_token"=>"TwucBhbyuftscrO8q1U1WXKP1SH8VDAhVq7De8mS9Bg="}
+Rendering template within layouts/application
+Rendering video_contents/save
+Completed in 20ms (View: 11, DB: 0) | 200 OK [http://localhost/video_contents]
+
+
+Processing VideoContentsController#update (for 127.0.0.1 at 2010-02-08 20:01:20) [PUT]
+  Parameters: {"video_content"=>{"name"=>"Avatar", "plot"=>"A paraplegic marine dispatched to the moon Pandora on a unique mission becomes torn between following his orders and protecting the world he feels is his home.", "imdb_id"=>"499549", "release_date(1i)"=>"2009", "release_date(2i)"=>"12", "year"=>"2009", "release_date(3i)"=>"17", "state"=>"pending"}, "authenticity_token"=>"TMhj/znI/UX6ClmPBBkaIiYAgIjom8kqNlMdXvvo1+8=", "id"=>"1"}
+  [4;35;1mVideoContent Load (0.2ms)[0m   [0mSELECT * FROM "video_contents" WHERE ("video_contents"."id" = 1) [0m
+  [4;36;1mVideoContent Update (0.6ms)[0m   [0;1mUPDATE "video_contents" SET "updated_at" = '2010-02-08 09:01:20', "state" = 'pending' WHERE "id" = 1[0m
+Redirected to http://localhost:3000/video_contents/1
+Completed in 50ms (DB: 1) | 302 Found [http://localhost/video_contents/1]
+
+
+Processing VideoContentsController#show (for 127.0.0.1 at 2010-02-08 20:01:20) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mVideoContent Load (0.3ms)[0m   [0mSELECT * FROM "video_contents" WHERE ("video_contents"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering video_contents/show
+Completed in 8ms (View: 2, DB: 0) | 200 OK [http://localhost/video_contents/1]
+
+
+Processing VideoContentsController#index (for 127.0.0.1 at 2010-02-08 20:01:21) [GET]
+  [4;36;1mVideoContent Load (0.5ms)[0m   [0;1mSELECT * FROM "video_contents" [0m
+Rendering template within layouts/application
+Rendering video_contents/index
+Completed in 12ms (View: 6, DB: 1) | 200 OK [http://localhost/video_contents]
+
+
+Processing VideoContentsController#edit (for 127.0.0.1 at 2010-02-08 20:01:23) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mVideoContent Load (0.2ms)[0m   [0mSELECT * FROM "video_contents" WHERE ("video_contents"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering video_contents/save
+Completed in 17ms (View: 11, DB: 0) | 200 OK [http://localhost/video_contents/1/edit]
+
+
+Processing VideoContentsController#index (for 127.0.0.1 at 2010-02-08 20:01:55) [GET]
+  [4;36;1mVideoContent Load (0.5ms)[0m   [0;1mSELECT * FROM "video_contents" [0m
+Rendering template within layouts/application
+Rendering video_contents/index
+Completed in 12ms (View: 7, DB: 1) | 200 OK [http://localhost/video_contents]
+
+
+Processing VideoContentsController#edit (for 127.0.0.1 at 2010-02-08 20:01:57) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mVideoContent Load (0.2ms)[0m   [0mSELECT * FROM "video_contents" WHERE ("video_contents"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering video_contents/save
+Completed in 17ms (View: 11, DB: 0) | 200 OK [http://localhost/video_contents/1/edit]
+
+
+Processing VideoContentsController#update (for 127.0.0.1 at 2010-02-08 20:02:00) [PUT]
+  Parameters: {"video_content"=>{"name"=>"Avatar", "plot"=>"A paraplegic marine dispatched to the moon Pandora on a unique mission becomes torn between following his orders and protecting the world he feels is his home.", "imdb_id"=>"499549", "release_date(1i)"=>"2009", "release_date(2i)"=>"12", "year"=>"2009", "release_date(3i)"=>"17", "state"=>"processed"}, "authenticity_token"=>"TwucBhbyuftscrO8q1U1WXKP1SH8VDAhVq7De8mS9Bg=", "id"=>"1"}
+  [4;36;1mVideoContent Load (0.2ms)[0m   [0;1mSELECT * FROM "video_contents" WHERE ("video_contents"."id" = 1) [0m
+  [4;35;1mVideoContent Update (0.3ms)[0m   [0mUPDATE "video_contents" SET "updated_at" = '2010-02-08 09:02:00', "state" = 'processed' WHERE "id" = 1[0m
+Redirected to http://localhost:3000/video_contents/1
+Completed in 29ms (DB: 1) | 302 Found [http://localhost/video_contents/1]
+
+
+Processing VideoContentsController#show (for 127.0.0.1 at 2010-02-08 20:02:00) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mVideoContent Load (0.2ms)[0m   [0;1mSELECT * FROM "video_contents" WHERE ("video_contents"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering video_contents/show
+Completed in 8ms (View: 2, DB: 0) | 200 OK [http://localhost/video_contents/1]
+
+
+Processing VideoContentsController#index (for 127.0.0.1 at 2010-02-08 20:02:02) [GET]
+  [4;35;1mVideoContent Load (0.5ms)[0m   [0mSELECT * FROM "video_contents" [0m
+Rendering template within layouts/application
+Rendering video_contents/index
+Completed in 69ms (View: 6, DB: 1) | 200 OK [http://localhost/video_contents]
+
+
+Processing VideoContentsController#edit (for 127.0.0.1 at 2010-02-08 20:02:04) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mVideoContent Load (0.2ms)[0m   [0;1mSELECT * FROM "video_contents" WHERE ("video_contents"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering video_contents/save
+Completed in 18ms (View: 12, DB: 0) | 200 OK [http://localhost/video_contents/1/edit]
+
+
+Processing VideoContentsController#index (for 127.0.0.1 at 2010-02-08 20:02:28) [GET]
+  [4;35;1mVideoContent Load (0.5ms)[0m   [0mSELECT * FROM "video_contents" [0m
+Rendering template within layouts/application
+Rendering video_contents/index
+Completed in 15ms (View: 10, DB: 1) | 200 OK [http://localhost/video_contents]
+
+
+Processing VideoContentsController#edit (for 127.0.0.1 at 2010-02-08 20:02:32) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mVideoContent Load (0.2ms)[0m   [0;1mSELECT * FROM "video_contents" WHERE ("video_contents"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering video_contents/save
+Completed in 17ms (View: 12, DB: 0) | 200 OK [http://localhost/video_contents/1/edit]
+
+
+Processing VideoContentsController#index (for 127.0.0.1 at 2010-02-08 20:07:22) [GET]
+  [4;35;1mVideoContent Load (0.5ms)[0m   [0mSELECT * FROM "video_contents" [0m
+Rendering template within layouts/application
+Rendering video_contents/index
+Completed in 24ms (View: 18, DB: 1) | 200 OK [http://localhost/video_contents]
+
+
+Processing VideoContentsController#edit (for 127.0.0.1 at 2010-02-08 20:07:24) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mVideoContent Load (0.2ms)[0m   [0;1mSELECT * FROM "video_contents" WHERE ("video_contents"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering video_contents/save
+
+ActionView::TemplateError (undefined method `intern' for :pending:Symbol) on line #27 of app/views/video_contents/save.html.erb:
+24: 	  </div>
+25: 	  <div class="defaultFormField">
+26: 	    <%= video_form.label :state %>
+27: 	    <%= video_form.select :state, VideoContentState.select_values %>
+28: 		<%= error_message_on @video_content, :state, :css_class => "defaultFormError" %>
+29: 	  </div>
+30: 	  <div class="defaultFormField">
+
+    app/models/video_content.rb:15:in `display_name'
+    app/models/video_content.rb:19:in `select_values'
+    app/models/video_content.rb:19:in `map'
+    app/models/video_content.rb:19:in `select_values'
+    app/views/video_contents/save.html.erb:27
+    app/views/video_contents/save.html.erb:2
+    app/controllers/video_contents_controller.rb:23:in `edit'
+    /opt/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /opt/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (37.1ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing VideoContentsController#edit (for 127.0.0.1 at 2010-02-08 20:09:54) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mVideoContent Load (13.1ms)[0m   [0mSELECT * FROM "video_contents" WHERE ("video_contents"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering video_contents/save
+Completed in 110ms (View: 91, DB: 13) | 200 OK [http://localhost/video_contents/1/edit]
+
+
+Processing VideoContentsController#index (for 127.0.0.1 at 2010-02-08 20:09:57) [GET]
+  [4;36;1mVideoContent Load (0.5ms)[0m   [0;1mSELECT * FROM "video_contents" [0m
+Rendering template within layouts/application
+Rendering video_contents/index
+Completed in 12ms (View: 7, DB: 1) | 200 OK [http://localhost/video_contents]
+
+
+Processing VideoContentsController#edit (for 127.0.0.1 at 2010-02-08 20:09:59) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mVideoContent Load (0.2ms)[0m   [0mSELECT * FROM "video_contents" WHERE ("video_contents"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering video_contents/save
+Completed in 17ms (View: 11, DB: 0) | 200 OK [http://localhost/video_contents/1/edit]
+
+
+Processing VideoContentsController#update (for 127.0.0.1 at 2010-02-08 20:10:02) [PUT]
+  Parameters: {"video_content"=>{"name"=>"Avatar", "plot"=>"A paraplegic marine dispatched to the moon Pandora on a unique mission becomes torn between following his orders and protecting the world he feels is his home.", "imdb_id"=>"499549", "release_date(1i)"=>"2009", "release_date(2i)"=>"12", "year"=>"2009", "release_date(3i)"=>"17", "state"=>"no_imdb_id"}, "authenticity_token"=>"TwucBhbyuftscrO8q1U1WXKP1SH8VDAhVq7De8mS9Bg=", "id"=>"1"}
+  [4;36;1mVideoContent Load (0.3ms)[0m   [0;1mSELECT * FROM "video_contents" WHERE ("video_contents"."id" = 1) [0m
+  [4;35;1mVideoContent Update (15.5ms)[0m   [0mUPDATE "video_contents" SET "updated_at" = '2010-02-08 09:10:02', "state" = 'no_imdb_id' WHERE "id" = 1[0m
+Redirected to http://localhost:3000/video_contents/1
+Completed in 31ms (DB: 16) | 302 Found [http://localhost/video_contents/1]
+
+
+Processing VideoContentsController#show (for 127.0.0.1 at 2010-02-08 20:10:02) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mVideoContent Load (0.2ms)[0m   [0;1mSELECT * FROM "video_contents" WHERE ("video_contents"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering video_contents/show
+Completed in 7ms (View: 2, DB: 0) | 200 OK [http://localhost/video_contents/1]
+
+
+Processing VideoContentsController#index (for 127.0.0.1 at 2010-02-08 20:10:03) [GET]
+  [4;35;1mVideoContent Load (0.5ms)[0m   [0mSELECT * FROM "video_contents" [0m
+Rendering template within layouts/application
+Rendering video_contents/index
+Completed in 12ms (View: 6, DB: 1) | 200 OK [http://localhost/video_contents]
+
+
+Processing VideoContentsController#index (for 127.0.0.1 at 2010-02-08 20:17:16) [GET]
+  [4;36;1mVideoContent Load (0.5ms)[0m   [0;1mSELECT * FROM "video_contents" [0m
+Rendering template within layouts/application
+Rendering video_contents/index
+Completed in 12ms (View: 7, DB: 1) | 200 OK [http://localhost/video_contents]
+
+
+Processing VideoContentsController#index (for 127.0.0.1 at 2010-02-08 20:41:47) [GET]
+  [4;35;1mVideoContent Load (0.5ms)[0m   [0mSELECT * FROM "video_contents" [0m
+Rendering template within layouts/application
+Rendering video_contents/index
+Completed in 18ms (View: 12, DB: 1) | 200 OK [http://localhost/video_contents]
+
+
+Processing VideoPostersController#index (for 127.0.0.1 at 2010-02-08 20:41:50) [GET]
+  Parameters: {"video_content_id"=>"1"}
+  [4;36;1mVideoContent Load (0.2ms)[0m   [0;1mSELECT * FROM "video_contents" WHERE ("video_contents"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering video_posters/index
+  [4;35;1mVideoPoster Load (0.2ms)[0m   [0mSELECT * FROM "video_posters" WHERE ("video_posters".video_content_id = 1) [0m
+Completed in 72ms (View: 10, DB: 0) | 200 OK [http://localhost/video_contents/1/video_posters]
+
+
+Processing VideoPostersController#new to #<videocontent:0x1043cd778> (for 127.0.0.1 at 2010-02-08 20:47:10) [GET]
+
+ActiveRecord::RecordNotFound (Couldn't find VideoContent without an ID):
+  app/controllers/video_posters_controller.rb:54:in `find_video_content'
+  /opt/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /opt/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (87.4ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (not_found)
+
+
+Processing VideoContentsController#index (for 127.0.0.1 at 2010-02-08 20:49:38) [GET]
+  [4;36;1mVideoContent Load (0.5ms)[0m   [0;1mSELECT * FROM "video_contents" [0m
+Rendering template within layouts/application
+Rendering video_contents/index
+Completed in 12ms (View: 7, DB: 1) | 200 OK [http://localhost/video_contents]
+
+
+Processing VideoPostersController#index (for 127.0.0.1 at 2010-02-08 20:49:40) [GET]
+  Parameters: {"video_content_id"=>"1"}
+  [4;35;1mVideoContent Load (0.2ms)[0m   [0mSELECT * FROM "video_contents" WHERE ("video_contents"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering video_posters/index
+  [4;36;1mVideoPoster Load (0.2ms)[0m   [0;1mSELECT * FROM "video_posters" WHERE ("video_posters".video_content_id = 1) [0m
+Completed in 16ms (View: 8, DB: 0) | 200 OK [http://localhost/video_contents/1/video_posters]
+
+
+Processing VideoPostersController#new (for 127.0.0.1 at 2010-02-08 20:49:43) [GET]
+  Parameters: {"video_content_id"=>"1"}
+  [4;35;1mVideoContent Load (0.2ms)[0m   [0mSELECT * FROM "video_contents" WHERE ("video_contents"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering video_posters/save
+
+ActionView::TemplateError (undefined local variable or method `video_form' for #<ActionView::Base:0x1043958c8>) on line #11 of app/views/video_posters/save.html.erb:
+8: 		<%= error_message_on @video_poster, :location, :css_class => "defaultFormError" %>
+9: 	  </div>
+10: 	  <div class="defaultFormField">
+11: 	    <%= video_form.label :size %>
+12: 	    <%= video_form.select :size, VideoPosterSize.select_values %>
+13: 		<%= error_message_on @video_poster, :size, :css_class => "defaultFormError" %>
+14: 	  </div>
+
+    app/views/video_posters/save.html.erb:11
+    app/views/video_posters/save.html.erb:2
+    app/controllers/video_posters_controller.rb:17:in `new'
+    /opt/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /opt/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (96.9ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing VideoPostersController#new (for 127.0.0.1 at 2010-02-08 20:50:02) [GET]
+  Parameters: {"video_content_id"=>"1"}
+  [4;36;1mVideoContent Load (0.2ms)[0m   [0;1mSELECT * FROM "video_contents" WHERE ("video_contents"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering video_posters/save
+Completed in 18ms (View: 9, DB: 0) | 200 OK [http://localhost/video_contents/1/video_posters/new]
+
+
+Processing VideoPostersController#create (for 127.0.0.1 at 2010-02-08 20:50:38) [POST]
+  Parameters: {"authenticity_token"=>"TwucBhbyuftscrO8q1U1WXKP1SH8VDAhVq7De8mS9Bg=", "video_content_id"=>"1", "video_poster"=>{"size"=>"small", "location"=>"/Volumes/Other/OnBoxPosters/avatar.small.jpg"}}
+  [4;35;1mVideoContent Load (0.2ms)[0m   [0mSELECT * FROM "video_contents" WHERE ("video_contents"."id" = 1) [0m
+  [4;36;1mVideoPoster Create (47.2ms)[0m   [0;1mINSERT INTO "video_posters" ("size", "location", "created_at", "updated_at", "video_content_id", "height", "width") VALUES('small', '/Volumes/Other/OnBoxPosters/avatar.small.jpg', '2010-02-08 09:50:38', '2010-02-08 09:50:38', NULL, NULL, NULL)[0m
+Redirected to http://localhost:3000/video_contents/1
+Completed in 264ms (DB: 47) | 302 Found [http://localhost/video_contents/1/video_posters]
+
+
+Processing VideoContentsController#show (for 127.0.0.1 at 2010-02-08 20:50:38) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mVideoContent Load (0.2ms)[0m   [0mSELECT * FROM "video_contents" WHERE ("video_contents"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering video_contents/show
+Completed in 10ms (View: 3, DB: 0) | 200 OK [http://localhost/video_contents/1]
+
+
+Processing VideoContentsController#index (for 127.0.0.1 at 2010-02-08 20:50:45) [GET]
+  [4;36;1mVideoContent Load (0.5ms)[0m   [0;1mSELECT * FROM "video_contents" [0m
+Rendering template within layouts/application
+Rendering video_contents/index
+Completed in 72ms (View: 7, DB: 1) | 200 OK [http://localhost/video_contents]
+
+
+Processing VideoPostersController#index (for 127.0.0.1 at 2010-02-08 20:50:46) [GET]
+  Parameters: {"video_content_id"=>"1"}
+  [4;35;1mVideoContent Load (0.2ms)[0m   [0mSELECT * FROM "video_contents" WHERE ("video_contents"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering video_posters/index
+  [4;36;1mVideoPoster Load (0.2ms)[0m   [0;1mSELECT * FROM "video_posters" WHERE ("video_posters".video_content_id = 1) [0m
+Completed in 13ms (View: 4, DB: 0) | 200 OK [http://localhost/video_contents/1/video_posters]
+
+
+Processing VideoPostersController#new (for 127.0.0.1 at 2010-02-08 20:57:40) [GET]
+  Parameters: {"video_content_id"=>"1"}
+  [4;35;1mVideoContent Load (0.2ms)[0m   [0mSELECT * FROM "video_contents" WHERE ("video_contents"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering video_posters/save
+Completed in 15ms (View: 4, DB: 0) | 200 OK [http://localhost/video_contents/1/video_posters/new]
+
+
+Processing VideoPostersController#create (for 127.0.0.1 at 2010-02-08 20:57:44) [POST]
+  Parameters: {"authenticity_token"=>"TwucBhbyuftscrO8q1U1WXKP1SH8VDAhVq7De8mS9Bg=", "video_content_id"=>"1", "video_poster"=>{"size"=>"small", "location"=>"/Volumes/Other/OnBoxPosters/avatar.small.jpg"}}
+  [4;36;1mVideoContent Load (0.2ms)[0m   [0;1mSELECT * FROM "video_contents" WHERE ("video_contents"."id" = 1) [0m
+  [4;35;1mVideoPoster Create (1.0ms)[0m   [0mINSERT INTO "video_posters" ("size", "location", "created_at", "updated_at", "video_content_id", "height", "width") VALUES('small', '/Volumes/Other/OnBoxPosters/avatar.small.jpg', '2010-02-08 09:57:44', '2010-02-08 09:57:44', 1, NULL, NULL)[0m
+Redirected to http://localhost:3000/video_contents/1
+Completed in 29ms (DB: 1) | 302 Found [http://localhost/video_contents/1/video_posters]
+
+
+Processing VideoContentsController#show (for 127.0.0.1 at 2010-02-08 20:57:44) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mVideoContent Load (0.2ms)[0m   [0;1mSELECT * FROM "video_contents" WHERE ("video_contents"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering video_contents/show
+Completed in 32ms (View: 26, DB: 0) | 200 OK [http://localhost/video_contents/1]
+
+
+Processing VideoContentsController#index (for 127.0.0.1 at 2010-02-08 20:57:46) [GET]
+  [4;35;1mVideoContent Load (0.5ms)[0m   [0mSELECT * FROM "video_contents" [0m
+Rendering template within layouts/application
+Rendering video_contents/index
+Completed in 72ms (View: 7, DB: 1) | 200 OK [http://localhost/video_contents]
+
+
+Processing VideoPostersController#index (for 127.0.0.1 at 2010-02-08 20:57:47) [GET]
+  Parameters: {"video_content_id"=>"1"}
+  [4;36;1mVideoContent Load (0.2ms)[0m   [0;1mSELECT * FROM "video_contents" WHERE ("video_contents"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering video_posters/index
+  [4;35;1mVideoPoster Load (0.3ms)[0m   [0mSELECT * FROM "video_posters" WHERE ("video_posters".video_content_id = 1) [0m
+
+ActionView::TemplateError (undefined method `video_content_video_poster' for #<ActionView::Base:0x104549b88>) on line #16 of app/views/video_posters/index.html.erb:
+13:     <td><%=h VideoPosterSize.display_name(poster.size) %></td>
+14:     <td><%=h poster.created_at %></td>
+15:     <td><%=h poster.location %></td>
+16:     <td><%= link_to 'Show', video_content_video_poster(@video_content) %></td>
+17:     <td><%= link_to 'Edit', edit_video_content_video_poster_path(poster) %></td>
+18:     <td><%= link_to 'Destroy', video_poster, :confirm => 'Are you sure?', :method => :delete %></td>
+19:   </tr>
+
+    app/views/video_posters/index.html.erb:16
+    app/views/video_posters/index.html.erb:11
+    app/controllers/video_posters_controller.rb:9:in `index'
+    /opt/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /opt/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (40.5ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing VideoPostersController#index (for 127.0.0.1 at 2010-02-08 21:02:34) [GET]
+  Parameters: {"video_content_id"=>"1"}
+  [4;36;1mVideoContent Load (0.2ms)[0m   [0;1mSELECT * FROM "video_contents" WHERE ("video_contents"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering video_posters/index
+  [4;35;1mVideoPoster Load (0.3ms)[0m   [0mSELECT * FROM "video_posters" WHERE ("video_posters".video_content_id = 1) [0m
+
+ActionView::TemplateError (edit_video_content_video_poster_url failed to generate from {:action=>"edit", :video_content_id=>#<VideoPoster id: 2, size: "small", location: "/Volumes/Other/OnBoxPosters/avatar.small.jpg", height: nil, width: nil, video_content_id: 1, created_at: "2010-02-08 09:57:44", updated_at: "2010-02-08 09:57:44">, :controller=>"video_posters"}, expected: {:action=>"edit", :controller=>"video_posters"}, diff: {:video_content_id=>#<VideoPoster id: 2, size: "small", location: "/Volumes/Other/OnBoxPosters/avatar.small.jpg", height: nil, width: nil, video_content_id: 1, created_at: "2010-02-08 09:57:44", updated_at: "2010-02-08 09:57:44">}) on line #16 of app/views/video_posters/index.html.erb:
+13:     <td><%=h VideoPosterSize.display_name(poster.size) %></td>
+14:     <td><%=h poster.created_at %></td>
+15:     <td><%=h poster.location %></td>
+16:     <td><%= link_to 'Edit', edit_video_content_video_poster_path(poster) %></td>
+17:     <td><%= link_to 'Destroy', video_poster, :confirm => 'Are you sure?', :method => :delete %></td>
+18:   </tr>
+19: <% end %>
+
+    (eval):16:in `edit_video_content_video_poster_path'
+    app/views/video_posters/index.html.erb:16
+    app/views/video_posters/index.html.erb:11
+    app/controllers/video_posters_controller.rb:9:in `index'
+    /opt/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /opt/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (44.7ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing VideoPostersController#index (for 127.0.0.1 at 2010-02-08 21:03:35) [GET]
+  Parameters: {"video_content_id"=>"1"}
+  [4;36;1mVideoContent Load (0.2ms)[0m   [0;1mSELECT * FROM "video_contents" WHERE ("video_contents"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering video_posters/index
+  [4;35;1mVideoPoster Load (0.4ms)[0m   [0mSELECT * FROM "video_posters" WHERE ("video_posters".video_content_id = 1) [0m
+
+ActionView::TemplateError (undefined local variable or method `video_poster' for #<ActionView::Base:0x104251d68>) on line #17 of app/views/video_posters/index.html.erb:
+14:     <td><%=h poster.created_at %></td>
+15:     <td><%=h poster.location %></td>
+16:     <td><%= link_to 'Edit', edit_video_content_video_poster_path(@video_content, poster) %></td>
+17:     <td><%= link_to 'Destroy', video_poster, :confirm => 'Are you sure?', :method => :delete %></td>
+18:   </tr>
+19: <% end %>
+20: </table>
+
+    app/views/video_posters/index.html.erb:17
+    app/views/video_posters/index.html.erb:11
+    app/controllers/video_posters_controller.rb:9:in `index'
+    /opt/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /opt/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (107.1ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing VideoPostersController#index (for 127.0.0.1 at 2010-02-08 21:03:49) [GET]
+  Parameters: {"video_content_id"=>"1"}
+  [4;36;1mVideoContent Load (0.2ms)[0m   [0;1mSELECT * FROM "video_contents" WHERE ("video_contents"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering video_posters/index
+  [4;35;1mVideoPoster Load (0.5ms)[0m   [0mSELECT * FROM "video_posters" WHERE ("video_posters".video_content_id = 1) [0m
+Completed in 21ms (View: 11, DB: 1) | 200 OK [http://localhost/video_contents/1/video_posters]
+
+
+Processing VideoPostersController#new (for 127.0.0.1 at 2010-02-08 21:03:58) [GET]
+  Parameters: {"video_content_id"=>"1"}
+  [4;36;1mVideoContent Load (0.2ms)[0m   [0;1mSELECT * FROM "video_contents" WHERE ("video_contents"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering video_posters/save
+Completed in 16ms (View: 5, DB: 0) | 200 OK [http://localhost/video_contents/1/video_posters/new]
+
+
+Processing VideoContentsController#index (for 127.0.0.1 at 2010-02-08 21:04:01) [GET]
+  [4;35;1mVideoContent Load (0.5ms)[0m   [0mSELECT * FROM "video_contents" [0m
+Rendering template within layouts/application
+Rendering video_contents/index
+Completed in 78ms (View: 8, DB: 1) | 200 OK [http://localhost/video_contents]
+
+
+Processing VideoPostersController#index (for 127.0.0.1 at 2010-02-08 21:04:03) [GET]
+  Parameters: {"video_content_id"=>"1"}
+  [4;36;1mVideoContent Load (0.2ms)[0m   [0;1mSELECT * FROM "video_contents" WHERE ("video_contents"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering video_posters/index
+  [4;35;1mVideoPoster Load (0.3ms)[0m   [0mSELECT * FROM "video_posters" WHERE ("video_posters".video_content_id = 1) [0m
+Completed in 18ms (View: 9, DB: 1) | 200 OK [http://localhost/video_contents/1/video_posters]
+
+
+Processing VideoContentsController#index (for 127.0.0.1 at 2010-02-08 21:04:05) [GET]
+  [4;36;1mVideoContent Load (0.5ms)[0m   [0;1mSELECT * FROM "video_contents" [0m
+Rendering template within layouts/application
+Rendering video_contents/index
+Completed in 12ms (View: 7, DB: 1) | 200 OK [http://localhost/video_contents]
+
+
+Processing VideoContentsController#show (for 127.0.0.1 at 2010-02-08 21:04:10) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mVideoContent Load (0.2ms)[0m   [0mSELECT * FROM "video_contents" WHERE ("video_contents"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering video_contents/show
+Completed in 8ms (View: 2, DB: 0) | 200 OK [http://localhost/video_contents/1]
+
+
+Processing VideoContentsController#show to json (for 127.0.0.1 at 2010-02-08 21:04:15) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mVideoContent Load (0.2ms)[0m   [0;1mSELECT * FROM "video_contents" WHERE ("video_contents"."id" = 1) [0m
+
+ActionView::MissingTemplate (Missing template video_contents/show.erb in view path app/views):
+  /opt/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /opt/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (internal_server_error)
+
+
+Processing VideoContentsController#index (for 127.0.0.1 at 2010-02-08 21:04:34) [GET]
+  [4;35;1mVideoContent Load (0.6ms)[0m   [0mSELECT * FROM "video_contents" [0m
+Rendering template within layouts/application
+Rendering video_contents/index
+Completed in 12ms (View: 7, DB: 1) | 200 OK [http://localhost/video_contents/]
+
+
+Processing VideoContentsController#show (for 127.0.0.1 at 2010-02-08 21:04:37) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mVideoContent Load (0.2ms)[0m   [0;1mSELECT * FROM "video_contents" WHERE ("video_contents"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering video_contents/show
+Completed in 8ms (View: 2, DB: 0) | 200 OK [http://localhost/video_contents/1]
+
+
+Processing VideoContentsController#index to json (for 127.0.0.1 at 2010-02-08 21:04:43) [GET]
+  [4;35;1mVideoContent Load (0.6ms)[0m   [0mSELECT * FROM "video_contents" [0m
+Completed in 9ms (View: 4, DB: 1) | 200 OK [http://localhost/video_contents.json]

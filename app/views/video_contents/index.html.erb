@@ -1,0 +1,26 @@
+<h1>Listing videos</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Year</th>
+    <th>State</th>
+	<th colspan="4">Actions</th>
+  </tr>
+
+<% @video_contents.each do |video_content| %>
+  <tr>
+    <td><%=h video_content.name %></td>
+    <td><%=h video_content.year %></td>
+    <td><%=h VideoContentState.display_name(video_content.state) %></td>
+    <td><%= link_to 'Show', video_content %></td>
+    <td><%= link_to 'Edit', edit_video_content_path(video_content) %></td>
+	<td><%= link_to 'Posters', video_content_video_posters_path(video_content) %></td>
+    <td><%= link_to 'Destroy', video_content, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New video', new_video_content_path %>

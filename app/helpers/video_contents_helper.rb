@@ -1,0 +1,2 @@
+module VideoContentsHelper
+end

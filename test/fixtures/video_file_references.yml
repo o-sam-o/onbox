@@ -1,0 +1,11 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  raw_name: MyString
+  location: MyString
+  on_disk: false
+
+two:
+  raw_name: MyString
+  location: MyString
+  on_disk: false
