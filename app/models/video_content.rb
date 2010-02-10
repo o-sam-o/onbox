@@ -2,6 +2,14 @@ class VideoContent < ActiveRecord::Base
   validates_presence_of :name, :state
   has_many :video_file_references
   has_many :video_posters
+  
+  def poster(size)
+    return nil if not video_posters
+    for poster in video_posters
+      return poster if size.to_s == poster.size
+    end
+    return nil
+  end
 end
 
 class VideoContentState

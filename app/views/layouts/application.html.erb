@@ -6,10 +6,16 @@
   <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
  
  <title><%= yield :title or 'What\'s on the box?' %></title>
-  
+
+ <%= stylesheet_link_tag 'style' %>  
  <%= stylesheet_link_tag 'theme-style' %>
- <%= stylesheet_link_tag 'style' %>
-<link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/2.8.0r4/build/button/assets/skins/sam/button.css">
+
+ <!-- Common YUI resources -->
+ <link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/2.8.0r4/build/button/assets/skins/sam/button.css">
+ <script src="http://yui.yahooapis.com/2.8.0r4/build/yahoo/yahoo-min.js"></script>
+ <script src="http://yui.yahooapis.com/2.8.0r4/build/logger/logger-min.js"></script>
+
+
  <%= yield :head %>
 </head>
 <body class="yui-skin-sam">

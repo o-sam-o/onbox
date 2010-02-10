@@ -76,3 +76,38 @@
 .fieldWithErrors input {
     background-color: #FA9898;
 }
+
+.contentCarouselItem {
+    width: 150px;
+    height: 195px;    
+    padding: 5px; 
+    position : relative;    
+}
+
+.contentCarouselImageDiv {
+    position: absolute;
+    top: 26px;
+    left: 25px;
+}
+
+.contentCarouselImage {
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+
+.contentCarouselName {
+    font-weight: bold;
+}
+
+.contentCarouselYear {
+    position: absolute;
+    bottom: 5px;    
+    left: 10px;    
+}
+
+.contentCarouselRuntime {
+    position: absolute;
+    bottom: 5px;    
+    right: 10px;    
+}

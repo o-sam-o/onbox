@@ -1,6 +1,55 @@
+<% content_for :head do %>
+  <link type="text/css" rel="stylesheet" href="http://yui.yahooapis.com/2.8.0r4/build/carousel/assets/skins/sam/carousel.css">
+ 
+  <script type="text/javascript" src="http://yui.yahooapis.com/2.8.0r4/build/yahoo-dom-event/yahoo-dom-event.js"></script> 
+  <script src="http://yui.yahooapis.com/2.8.0r4/build/element/element-min.js"></script>
+  <script src="http://yui.yahooapis.com/2.8.0r4/build/carousel/carousel-min.js"></script>
+<% end %>
+
 <% content_for :title do %>
   Your Movies
 <% end %>
 
+<style type="text/css">
+	.yui-skin-sam .yui-carousel-item-loading {
+		text-indent: 0px;
+	}
+
+	/* Always be sure to give your carousel items a width and a height */
+	.yui-carousel-element li {
+	    width: 160px;
+	    height: 205px;
+		margin: 5px;
+	}
+
+	.yui-carousel-element .yui-carousel-item-selected {
+	    border:1px solid #CCCCCC;
+	    width: 160px;
+	    height: 205px;
+		margin: 5px;	
+	}
+
+	.yui-carousel-content {
+		background-color: white;
+	}
+</style>
+
 <h1>Your Movies</h1>
-<p>Put stuff here</p>
+
+<div id="contentContainer">
+	<ol>
+	<%= render :partial => "carousel_item", :collection => @video_contents %>
+	</ol>
+</div>
+
+
+<script>
+	YAHOO.util.Event.onDOMReady(function (ev) {
+	    var carousel = new YAHOO.widget.Carousel("contentContainer", {
+	        //{animation: { speed: 0.5, effect: YAHOO.util.Easing.easeOut },
+	        numVisible: [5,2]
+	    });
+	    carousel.render();
+	    carousel.show();
+	});
+</script>

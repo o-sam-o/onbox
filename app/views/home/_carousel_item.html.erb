@@ -1,0 +1,17 @@
+<li>
+<div class="contentCarouselItem">
+	<div class="contentCarouselName"><%=h carousel_item.name %></div>				
+	<div class="contentCarouselImageDiv">
+		<a href="<%= url_for carousel_item %>">
+			<% if carousel_item.poster(:small) %>
+				<img src="<%= url_for video_content_video_poster_path(carousel_item, carousel_item.poster(:small)) %>"
+				 	class="contentCarouselImage" width="100" height="140"/>
+			<% else %>
+				<img src="/images/no_preview.jpg" class="contentCarouselImage" width="100" height="140"/>
+			<% end %>
+		</a>
+	</div>
+	<div class="contentCarouselYear"><%=h carousel_item.year %></div>
+	<div class="contentCarouselRuntime">1h 32m</div>
+</div>
+</li>
