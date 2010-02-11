@@ -9,10 +9,12 @@
 
  <%= stylesheet_link_tag 'style' %>  
  <%= stylesheet_link_tag 'theme-style' %>
+ <%= javascript_include_tag 'prototype' %>
 
  <!-- Common YUI resources -->
  <link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/2.8.0r4/build/button/assets/skins/sam/button.css">
  <script src="http://yui.yahooapis.com/2.8.0r4/build/yahoo/yahoo-min.js"></script>
+ <script src="http://yui.yahooapis.com/2.8.0r4/build/yahoo-dom-event/yahoo-dom-event.js"></script> 
  <script src="http://yui.yahooapis.com/2.8.0r4/build/logger/logger-min.js"></script>
 
 
@@ -84,5 +86,10 @@
 		</div> 
 		<!-- END footer -->		
 	</div>
+	
+	<script>
+       //Enable debug to console
+       YAHOO.widget.Logger.enableBrowserConsole();
+	</script>
 </body>
 </html>
