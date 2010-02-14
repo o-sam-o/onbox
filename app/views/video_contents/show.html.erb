@@ -1,2 +1,71 @@
-<h1>VideoContents#show</h1>
-<p>Find me in app/views/video_contents/show.html.erb</p>
+<% content_for :head do %>
+<link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/2.8.0r4/build/container/assets/skins/sam/container.css" /> 
+<link rel="stylesheet" type="text/css" href="http://js.bubbling-library.com/2.1/build/accordion/assets/accordion.css" />
+<script type="text/javascript" src="http://yui.yahooapis.com/2.8.0r4/build/utilities/utilities.js"></script> 
+<script type="text/javascript" src="http://js.bubbling-library.com/2.1/build/bubbling/bubbling.js"></script> 
+<script type="text/javascript" src="http://js.bubbling-library.com/2.1/build/accordion/accordion.js"></script>
+<% end %>
+
+<% content_for :title do %>
+  <%=h @video_content.name %> (<%=h @video_content.year %>)
+<% end %>
+
+<div class="viewWrapper overclear">
+	<div class="viewCoreMetadata">
+		<h1 class="viewTitle"><%=h @video_content.name %> (<%=h @video_content.year %>)</h1>
+		<div class="viewPlotSummary"><%=h @video_content.plot %></div>
+		<div class="viewCoreDetailsWrapper overclear">
+			<div class="viewCoreDetailsLeft">
+				<div class="viewDetailsWrapper">
+					<div class="viewDetailsLabel">Release Date:</div>
+					<div class="viewDetailsValue"><%=h @video_content.release_date %></div>
+				</div>
+			</div>
+			<div class="viewCoreDetailsRight">
+				<div>
+					<div class="viewDetailsLabel">Imdb Id:</div>
+					<div class="viewDetailsValue">
+						<a href="http://www.imdb.com/title/tt<%=h @video_content.imdb_id %>"><%=h @video_content.imdb_id %></a>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<div class="viewAccordionWrapper">
+			<div class="viewAccordion">
+				<div class="yui-cms-accordion multiple fade fixIE"> 
+				    <div class="yui-cms-item yui-panel"> 
+			            <div class="hd">Files</div> 
+			            <div class="bd"> 
+			             Files will be listed here
+						</div>
+						<div class="actions"> 
+							<a href="#" class="accordionToggleItem">&nbsp;</a> 
+						</div>
+					</div>
+				    <div class="yui-cms-item yui-panel"> 
+			            <div class="hd">Video</div> 
+			            <div class="bd"> 
+			             Most stuff here
+						</div>
+						<div class="actions"> 
+							<a href="#" class="accordionToggleItem">&nbsp;</a> 
+						</div>
+					</div>				
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<div class="viewPosterWrapper">
+		<% if @video_content.poster(:large) %>
+			<img src="<%= url_for video_content_video_poster_path(@video_content, @video_content.poster(:large)) %>"
+			 	class="viewPosterLargeImg"/>
+		<% elsif @video_content.poster(:small) %>
+			<img src="<%= url_for video_content_video_poster_path(@video_content, @video_content.poster(:small)) %>"
+			 	class="viewPosterSmallImg" width="100" height="140"/>
+		<% else %>
+			<img src="/images/no_preview.jpg" class="viewPosterSmallImg" width="100" height="140"/>
+		<% end %>
+	</div>
+</div>
