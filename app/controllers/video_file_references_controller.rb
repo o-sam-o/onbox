@@ -22,8 +22,9 @@ class VideoFileReferencesController < ApplicationController
 
   def create
     @reference = VideoFileReference.new(params[:video_file_reference])
-
-    if @reference.save
+    @reference.valid?
+    set_video_content
+    if @reference.errors.empty? and @reference.save
       flash[:notice] = "'#{@reference.location}' was successfully created."
       redirect_to(video_file_references_url)
     else
@@ -32,7 +33,10 @@ class VideoFileReferencesController < ApplicationController
   end
   
   def update
-    if @reference.update_attributes(params[:video_file_reference])
+    @reference.attributes = params[:video_file_reference]
+    @reference.valid?
+    set_video_content
+    if @reference.errors.empty? and @reference.save()
       flash[:notice] = "'#{@reference.location}' was successfully updated."
       redirect_to(video_file_references_url)
     else
@@ -49,5 +53,21 @@ class VideoFileReferencesController < ApplicationController
   private
     def find_reference
       @reference = VideoFileReference.find(params[:id])
+    end
+    
+    def set_video_content
+      name = params[:video_content][:name]
+      if name.blank?
+        @reference.video_content = nil
+      else
+        video = VideoContent.find_by_name(name)
+        if video
+          @reference.video_content = video
+        else
+          @reference.errors.add :video_content_name, "Unable to find video #{name}"
+          return false
+        end  
+      end  
+      return true
     end
 end
