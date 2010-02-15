@@ -1,0 +1,38 @@
+<div style="width: 600px;">
+<% form_for @reference, :html => { :class => 'defaultForm' } do |f| %>
+  <fieldset>
+      <legend>Video File Reference:</legend>
+	  <div class="defaultFormField">
+	    <%= f.label :raw_name %>
+	    <%= f.text_field :raw_name %>
+		<%= error_message_on @reference, :raw_name, :css_class => "defaultFormError" %>
+	  </div>
+	  <div class="defaultFormField">
+	    <%= f.label :media_folder_id %>
+	    <%= f.collection_select :media_folder_id, MediaFolder.all, :id, :location %>
+		<%= error_message_on @reference, :media_folder_id, :css_class => "defaultFormError" %>
+	  </div>	
+	  <div class="defaultFormField">
+	    <%= f.label :location %>
+	    <%= f.text_field :location %>
+		<%= error_message_on @reference, :location, :css_class => "defaultFormError" %>
+	  </div>
+	  <div class="defaultFormField">
+	    <%= f.label :on_disk %>
+	    <%= f.check_box :on_disk %>
+		<%= error_message_on @reference, :on_disk, :css_class => "defaultFormError" %>
+	  </div>
+  </fieldset>
+  <% if not @reference.errors.empty? %>
+		<div class="defaultFormErrorOverview">
+  		 Save failed, please see errors above.
+		</div>
+  <% end %>
+  <div class="defaultFormButtons">
+	<span class="yui-button yui-push-button"><span class="first-child">
+    	<button type="submit">Save</button>
+	</span></span>
+  </div>
+<% end %>
+</div>
+

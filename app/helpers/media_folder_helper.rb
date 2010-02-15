@@ -1,0 +1,2 @@
+module MediaFolderHelper
+end

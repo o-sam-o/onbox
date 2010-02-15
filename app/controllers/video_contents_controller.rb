@@ -16,6 +16,10 @@ class VideoContentsController < ApplicationController
     render 'video_contents/save'
   end
 
+  def edit
+    render 'video_contents/save'
+  end
+
   def show
   end
 
@@ -23,7 +27,7 @@ class VideoContentsController < ApplicationController
     @video_content = VideoContent.new(params[:video_content])
 
     if @video_content.save
-      flash[:notice] = 'Video content was successfully created.'
+      flash[:notice] = "#{@video_content.name} was successfully created."
       redirect_to(@video_content)
     else
       render 'video_contents/save'
@@ -32,7 +36,7 @@ class VideoContentsController < ApplicationController
   
   def update
     if @video_content.update_attributes(params[:video_content])
-      flash[:notice] = 'Video content was successfully updated.'
+      flash[:notice] = "#{@video_content.name} was successfully updated."
       redirect_to(@video_content)
     else
       render 'video_contents/save'
@@ -40,6 +44,7 @@ class VideoContentsController < ApplicationController
   end
 
   def destroy
+    flash[:notice] = "#{@video_content.name} was removed."
     @video_content.destroy
     redirect_to(video_contents_url)
   end    

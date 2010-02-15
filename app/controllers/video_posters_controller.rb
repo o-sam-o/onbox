@@ -23,8 +23,7 @@ class VideoPostersController < ApplicationController
   def show
       if not File.exists?(ROOT_POSTER_DIR + @video_poster.location)
         logger.error "Unable to find poster: #{ROOT_POSTER_DIR}#{@video_poster.location} for video content #{@video_content.id}"
-        render :status => 404
-        return
+        render :status => 404 and return
       end
       send_file ROOT_POSTER_DIR + @video_poster.location, :disposition => 'inline', :type => 'image/jpeg'
   end

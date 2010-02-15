@@ -1,0 +1,24 @@
+<h1>Media Folders</h1>
+
+<table>
+  <tr>
+    <th>Location</th>
+    <th>Scan</th>
+    <th>Date Created</th>
+	<th colspan="2">Actions</th>
+  </tr>
+
+<% @media_folders.each do |media_folder| %>
+  <tr>
+    <td><%=h media_folder.location %></td>
+    <td><%=h media_folder.scan %></td>
+    <td><%=h media_folder.created_at %></td>
+    <td><%= link_to 'Edit', edit_media_folder_path(media_folder) %></td>
+    <td><%= link_to 'Destroy', media_folder, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New media folder', new_media_folder_path %>

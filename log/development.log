@@ -4502,3 +4502,1159 @@ Processing VideoContentsController#index (for 127.0.0.1 at 2010-02-14 22:10:25) 
 Rendering template within layouts/application
 Rendering video_contents/index
 Completed in 25ms (View: 19, DB: 1) | 200 OK [http://localhost/video_contents]
+
+
+Processing VideoContentsController#show (for 127.0.0.1 at 2010-02-14 22:15:46) [GET]
+  Parameters: {"id"=>"3"}
+  [4;36;1mVideoContent Load (0.2ms)[0m   [0;1mSELECT * FROM "video_contents" WHERE ("video_contents"."id" = 3) [0m
+Rendering template within layouts/application
+Rendering video_contents/show
+  [4;35;1mVideoPoster Load (0.2ms)[0m   [0mSELECT * FROM "video_posters" WHERE ("video_posters".video_content_id = 3) [0m
+Completed in 12ms (View: 6, DB: 0) | 200 OK [http://localhost/video_contents/3]
+
+
+Processing VideoContentsController#index (for 127.0.0.1 at 2010-02-14 22:15:49) [GET]
+  [4;36;1mVideoContent Load (0.9ms)[0m   [0;1mSELECT * FROM "video_contents" [0m
+Rendering template within layouts/application
+Rendering video_contents/index
+Completed in 25ms (View: 20, DB: 1) | 200 OK [http://localhost/video_contents]
+
+
+Processing VideoContentsController#show (for 127.0.0.1 at 2010-02-14 22:15:51) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mVideoContent Load (0.3ms)[0m   [0mSELECT * FROM "video_contents" WHERE ("video_contents"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering video_contents/show
+  [4;36;1mVideoPoster Load (0.4ms)[0m   [0;1mSELECT * FROM "video_posters" WHERE ("video_posters".video_content_id = 1) [0m
+Completed in 73ms (View: 66, DB: 1) | 200 OK [http://localhost/video_contents/1]
+
+
+Processing VideoPostersController#show (for 127.0.0.1 at 2010-02-14 22:15:51) [GET]
+  Parameters: {"video_content_id"=>"1", "id"=>"3"}
+  [4;35;1mVideoContent Load (0.2ms)[0m   [0mSELECT * FROM "video_contents" WHERE ("video_contents"."id" = 1) [0m
+  [4;36;1mVideoPoster Load (0.3ms)[0m   [0;1mSELECT * FROM "video_posters" WHERE ("video_posters"."id" = 3) [0m
+Completed in 19ms (View: 1, DB: 1) | 200 OK [http://localhost/video_contents/1/video_posters/3]
+Streaming file /Volumes/Other/OnBoxPosters/avatar.large.jpg
+
+
+Processing VideoContentsController#show (for 127.0.0.1 at 2010-02-14 22:21:33) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mVideoContent Load (0.3ms)[0m   [0mSELECT * FROM "video_contents" WHERE ("video_contents"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering video_contents/show
+  [4;36;1mVideoPoster Load (0.4ms)[0m   [0;1mSELECT * FROM "video_posters" WHERE ("video_posters".video_content_id = 1) [0m
+Completed in 20ms (View: 14, DB: 1) | 200 OK [http://localhost/video_contents/1]
+
+
+Processing VideoPostersController#show (for 127.0.0.1 at 2010-02-14 22:21:34) [GET]
+  Parameters: {"video_content_id"=>"1", "id"=>"3"}
+  [4;35;1mVideoContent Load (0.2ms)[0m   [0mSELECT * FROM "video_contents" WHERE ("video_contents"."id" = 1) [0m
+  [4;36;1mVideoPoster Load (0.3ms)[0m   [0;1mSELECT * FROM "video_posters" WHERE ("video_posters"."id" = 3) [0m
+Completed in 16ms (View: 1, DB: 1) | 200 OK [http://localhost/video_contents/1/video_posters/3]
+Streaming file /Volumes/Other/OnBoxPosters/avatar.large.jpg
+
+
+Processing VideoContentsController#index (for 127.0.0.1 at 2010-02-14 22:25:28) [GET]
+  [4;36;1mVideoContent Load (1.2ms)[0m   [0;1mSELECT * FROM "video_contents" [0m
+Rendering template within layouts/application
+Rendering video_contents/index
+Completed in 92ms (View: 60, DB: 1) | 200 OK [http://localhost/video_contents]
+
+
+Processing VideoContentsController#show (for 127.0.0.1 at 2010-02-14 22:25:31) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mVideoContent Load (0.3ms)[0m   [0mSELECT * FROM "video_contents" WHERE ("video_contents"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering video_contents/show
+  [4;36;1mVideoPoster Load (0.4ms)[0m   [0;1mSELECT * FROM "video_posters" WHERE ("video_posters".video_content_id = 1) [0m
+Completed in 21ms (View: 14, DB: 1) | 200 OK [http://localhost/video_contents/1]
+
+
+Processing VideoPostersController#show (for 127.0.0.1 at 2010-02-14 22:25:32) [GET]
+  Parameters: {"video_content_id"=>"1", "id"=>"3"}
+  [4;35;1mVideoContent Load (0.2ms)[0m   [0mSELECT * FROM "video_contents" WHERE ("video_contents"."id" = 1) [0m
+  [4;36;1mVideoPoster Load (0.6ms)[0m   [0;1mSELECT * FROM "video_posters" WHERE ("video_posters"."id" = 3) [0m
+Completed in 17ms (View: 3, DB: 1) | 200 OK [http://localhost/video_contents/1/video_posters/3]
+Streaming file /Volumes/Other/OnBoxPosters/avatar.large.jpg
+
+
+Processing VideoContentsController#index (for 127.0.0.1 at 2010-02-14 22:25:36) [GET]
+  [4;35;1mVideoContent Load (0.9ms)[0m   [0mSELECT * FROM "video_contents" [0m
+Rendering template within layouts/application
+Rendering video_contents/index
+Completed in 26ms (View: 20, DB: 1) | 200 OK [http://localhost/video_contents]
+
+
+Processing VideoPostersController#index (for 127.0.0.1 at 2010-02-14 22:25:39) [GET]
+  Parameters: {"video_content_id"=>"1"}
+  [4;36;1mVideoContent Load (0.2ms)[0m   [0;1mSELECT * FROM "video_contents" WHERE ("video_contents"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering video_posters/index
+  [4;35;1mVideoPoster Load (0.4ms)[0m   [0mSELECT * FROM "video_posters" WHERE ("video_posters".video_content_id = 1) [0m
+Completed in 201ms (View: 192, DB: 1) | 200 OK [http://localhost/video_contents/1/video_posters]
+
+
+Processing VideoContentsController#index (for 127.0.0.1 at 2010-02-14 22:27:39) [GET]
+  [4;36;1mVideoContent Load (1.2ms)[0m   [0;1mSELECT * FROM "video_contents" [0m
+Rendering template within layouts/application
+Rendering video_contents/index
+Completed in 51ms (View: 40, DB: 1) | 200 OK [http://localhost/video_contents]
+
+
+Processing VideoContentsController#show (for 127.0.0.1 at 2010-02-14 22:27:41) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mVideoContent Load (0.3ms)[0m   [0mSELECT * FROM "video_contents" WHERE ("video_contents"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering video_contents/show
+  [4;36;1mVideoPoster Load (0.4ms)[0m   [0;1mSELECT * FROM "video_posters" WHERE ("video_posters".video_content_id = 1) [0m
+Completed in 21ms (View: 14, DB: 1) | 200 OK [http://localhost/video_contents/1]
+
+
+Processing VideoPostersController#show (for 127.0.0.1 at 2010-02-14 22:27:42) [GET]
+  Parameters: {"video_content_id"=>"1", "id"=>"3"}
+  [4;35;1mVideoContent Load (0.3ms)[0m   [0mSELECT * FROM "video_contents" WHERE ("video_contents"."id" = 1) [0m
+  [4;36;1mVideoPoster Load (0.3ms)[0m   [0;1mSELECT * FROM "video_posters" WHERE ("video_posters"."id" = 3) [0m
+Completed in 19ms (View: 3, DB: 1) | 200 OK [http://localhost/video_contents/1/video_posters/3]
+Streaming file /Volumes/Other/OnBoxPosters/avatar.large.jpg
+
+
+Processing VideoContentsController#index (for 127.0.0.1 at 2010-02-14 22:27:45) [GET]
+  [4;35;1mVideoContent Load (0.9ms)[0m   [0mSELECT * FROM "video_contents" [0m
+Rendering template within layouts/application
+Rendering video_contents/index
+Completed in 26ms (View: 20, DB: 1) | 200 OK [http://localhost/video_contents]
+
+
+Processing VideoPostersController#index (for 127.0.0.1 at 2010-02-14 22:27:47) [GET]
+  Parameters: {"video_content_id"=>"1"}
+  [4;36;1mVideoContent Load (0.3ms)[0m   [0;1mSELECT * FROM "video_contents" WHERE ("video_contents"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering video_posters/index
+  [4;35;1mVideoPoster Load (0.4ms)[0m   [0mSELECT * FROM "video_posters" WHERE ("video_posters".video_content_id = 1) [0m
+Completed in 119ms (View: 110, DB: 1) | 200 OK [http://localhost/video_contents/1/video_posters]
+
+
+Processing VideoContentsController#index (for 127.0.0.1 at 2010-02-14 22:28:18) [GET]
+  [4;36;1mVideoContent Load (1.2ms)[0m   [0;1mSELECT * FROM "video_contents" [0m
+Rendering template within layouts/application
+Rendering video_contents/index
+Completed in 53ms (View: 41, DB: 1) | 200 OK [http://localhost/video_contents]
+
+
+Processing VideoContentsController#show (for 127.0.0.1 at 2010-02-14 22:28:20) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mVideoContent Load (0.2ms)[0m   [0mSELECT * FROM "video_contents" WHERE ("video_contents"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering video_contents/show
+  [4;36;1mVideoPoster Load (0.4ms)[0m   [0;1mSELECT * FROM "video_posters" WHERE ("video_posters".video_content_id = 1) [0m
+Completed in 21ms (View: 14, DB: 1) | 200 OK [http://localhost/video_contents/1]
+
+
+Processing VideoPostersController#show (for 127.0.0.1 at 2010-02-14 22:28:20) [GET]
+  Parameters: {"video_content_id"=>"1", "id"=>"3"}
+  [4;35;1mVideoContent Load (0.3ms)[0m   [0mSELECT * FROM "video_contents" WHERE ("video_contents"."id" = 1) [0m
+  [4;36;1mVideoPoster Load (0.3ms)[0m   [0;1mSELECT * FROM "video_posters" WHERE ("video_posters"."id" = 3) [0m
+Completed in 16ms (View: 3, DB: 1) | 200 OK [http://localhost/video_contents/1/video_posters/3]
+Streaming file /Volumes/Other/OnBoxPosters/avatar.large.jpg
+
+
+Processing HomeController#index (for 127.0.0.1 at 2010-02-14 22:29:03) [GET]
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "video_contents" [0m
+  [4;36;1mVideoContent Load (0.5ms)[0m   [0;1mSELECT * FROM "video_contents" LIMIT 5[0m
+Rendering template within layouts/application
+Rendering home/index
+  [4;35;1mVideoPoster Load (0.4ms)[0m   [0mSELECT * FROM "video_posters" WHERE ("video_posters".video_content_id = 1) [0m
+Rendered home/_carousel_item (8.5ms)
+  [4;36;1mVideoPoster Load (0.2ms)[0m   [0;1mSELECT * FROM "video_posters" WHERE ("video_posters".video_content_id = 2) [0m
+Rendered home/_carousel_item (1.0ms)
+  [4;35;1mVideoPoster Load (0.1ms)[0m   [0mSELECT * FROM "video_posters" WHERE ("video_posters".video_content_id = 3) [0m
+Rendered home/_carousel_item (0.8ms)
+  [4;36;1mVideoPoster Load (0.1ms)[0m   [0;1mSELECT * FROM "video_posters" WHERE ("video_posters".video_content_id = 4) [0m
+Rendered home/_carousel_item (0.9ms)
+  [4;35;1mVideoPoster Load (0.1ms)[0m   [0mSELECT * FROM "video_posters" WHERE ("video_posters".video_content_id = 5) [0m
+Rendered home/_carousel_item (1.0ms)
+Completed in 33ms (View: 25, DB: 2) | 200 OK [http://localhost/home]
+
+
+Processing VideoPostersController#show (for 127.0.0.1 at 2010-02-14 22:29:04) [GET]
+  Parameters: {"video_content_id"=>"1", "id"=>"2"}
+  [4;36;1mVideoContent Load (0.3ms)[0m   [0;1mSELECT * FROM "video_contents" WHERE ("video_contents"."id" = 1) [0m
+  [4;35;1mVideoPoster Load (0.3ms)[0m   [0mSELECT * FROM "video_posters" WHERE ("video_posters"."id" = 2) [0m
+Completed in 20ms (View: 1, DB: 1) | 200 OK [http://localhost/video_contents/1/video_posters/2]
+Streaming file /Volumes/Other/OnBoxPosters/avatar.small.jpg
+
+
+Processing VideoContentsController#index (for 127.0.0.1 at 2010-02-14 22:29:06) [GET]
+  [4;36;1mVideoContent Load (0.9ms)[0m   [0;1mSELECT * FROM "video_contents" [0m
+Rendering template within layouts/application
+Rendering video_contents/index
+Completed in 27ms (View: 21, DB: 1) | 200 OK [http://localhost/video_contents]
+
+
+Processing VideoContentsController#show (for 127.0.0.1 at 2010-02-15 17:21:07) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mVideoContent Load (0.2ms)[0m   [0mSELECT * FROM "video_contents" WHERE ("video_contents"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering video_contents/show
+  [4;36;1mVideoPoster Load (0.4ms)[0m   [0;1mSELECT * FROM "video_posters" WHERE ("video_posters".video_content_id = 1) [0m
+Completed in 16ms (View: 9, DB: 1) | 200 OK [http://localhost/video_contents/1]
+
+
+Processing VideoPostersController#show (for 127.0.0.1 at 2010-02-15 17:21:07) [GET]
+  Parameters: {"video_content_id"=>"1", "id"=>"3"}
+  [4;35;1mVideoContent Load (0.4ms)[0m   [0mSELECT * FROM "video_contents" WHERE ("video_contents"."id" = 1) [0m
+  [4;36;1mVideoPoster Load (0.5ms)[0m   [0;1mSELECT * FROM "video_posters" WHERE ("video_posters"."id" = 3) [0m
+Completed in 20ms (View: 1, DB: 1) | 200 OK [http://localhost/video_contents/1/video_posters/3]
+Streaming file /Volumes/Other/OnBoxPosters/avatar.large.jpg
+
+
+Processing VideoContentsController#index (for 127.0.0.1 at 2010-02-15 17:21:15) [GET]
+  [4;35;1mVideoContent Load (59.0ms)[0m   [0mSELECT * FROM "video_contents" [0m
+Rendering template within layouts/application
+Rendering video_contents/index
+Completed in 84ms (View: 20, DB: 59) | 200 OK [http://localhost/video_contents]
+
+
+Processing VideoPostersController#index (for 127.0.0.1 at 2010-02-15 17:21:16) [GET]
+  Parameters: {"video_content_id"=>"1"}
+  [4;36;1mVideoContent Load (0.2ms)[0m   [0;1mSELECT * FROM "video_contents" WHERE ("video_contents"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering video_posters/index
+  [4;35;1mVideoPoster Load (0.4ms)[0m   [0mSELECT * FROM "video_posters" WHERE ("video_posters".video_content_id = 1) [0m
+Completed in 59ms (View: 50, DB: 1) | 200 OK [http://localhost/video_contents/1/video_posters]
+
+
+Processing VideoContentsController#index (for 127.0.0.1 at 2010-02-15 17:21:25) [GET]
+  [4;36;1mVideoContent Load (0.9ms)[0m   [0;1mSELECT * FROM "video_contents" [0m
+Rendering template within layouts/application
+Rendering video_contents/index
+Completed in 25ms (View: 19, DB: 1) | 200 OK [http://localhost/video_contents]
+
+
+Processing HomeController#index (for 127.0.0.1 at 2010-02-15 17:21:27) [GET]
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT count(*) AS count_all FROM "video_contents" [0m
+  [4;36;1mVideoContent Load (0.5ms)[0m   [0;1mSELECT * FROM "video_contents" LIMIT 5[0m
+Rendering template within layouts/application
+Rendering home/index
+  [4;35;1mVideoPoster Load (0.4ms)[0m   [0mSELECT * FROM "video_posters" WHERE ("video_posters".video_content_id = 1) [0m
+Rendered home/_carousel_item (7.7ms)
+  [4;36;1mVideoPoster Load (0.2ms)[0m   [0;1mSELECT * FROM "video_posters" WHERE ("video_posters".video_content_id = 2) [0m
+Rendered home/_carousel_item (1.0ms)
+  [4;35;1mVideoPoster Load (0.1ms)[0m   [0mSELECT * FROM "video_posters" WHERE ("video_posters".video_content_id = 3) [0m
+Rendered home/_carousel_item (0.9ms)
+  [4;36;1mVideoPoster Load (0.1ms)[0m   [0;1mSELECT * FROM "video_posters" WHERE ("video_posters".video_content_id = 4) [0m
+Rendered home/_carousel_item (0.9ms)
+  [4;35;1mVideoPoster Load (0.1ms)[0m   [0mSELECT * FROM "video_posters" WHERE ("video_posters".video_content_id = 5) [0m
+Rendered home/_carousel_item (0.9ms)
+Completed in 80ms (View: 14, DB: 2) | 200 OK [http://localhost/home]
+
+
+Processing VideoPostersController#show (for 127.0.0.1 at 2010-02-15 17:21:27) [GET]
+  Parameters: {"video_content_id"=>"1", "id"=>"2"}
+  [4;36;1mVideoContent Load (0.3ms)[0m   [0;1mSELECT * FROM "video_contents" WHERE ("video_contents"."id" = 1) [0m
+  [4;35;1mVideoPoster Load (0.3ms)[0m   [0mSELECT * FROM "video_posters" WHERE ("video_posters"."id" = 2) [0m
+Completed in 17ms (View: 1, DB: 1) | 200 OK [http://localhost/video_contents/1/video_posters/2]
+Streaming file /Volumes/Other/OnBoxPosters/avatar.small.jpg
+
+
+Processing HomeController#video_content_items (for 127.0.0.1 at 2010-02-15 17:21:29) [GET]
+  Parameters: {"page_size"=>"1", "offset"=>"5"}
+  [4;36;1mVideoContent Load (0.5ms)[0m   [0;1mSELECT * FROM "video_contents" LIMIT 1 OFFSET 5[0m
+Rendering home/video_content_items
+  [4;35;1mVideoPoster Load (0.2ms)[0m   [0mSELECT * FROM "video_posters" WHERE ("video_posters".video_content_id = 6) [0m
+Rendered home/_carousel_item (6.8ms)
+Completed in 17ms (View: 12, DB: 1) | 200 OK [http://localhost/home/video_content_items?offset=5&page_size=1]
+
+
+Processing VideoContentsController#index (for 127.0.0.1 at 2010-02-15 17:30:03) [GET]
+  [4;36;1mVideoContent Load (0.9ms)[0m   [0;1mSELECT * FROM "video_contents" [0m
+Rendering template within layouts/application
+Rendering video_contents/index
+Completed in 24ms (View: 19, DB: 1) | 200 OK [http://localhost/video_contents]
+
+
+Processing VideoContentsController#edit (for 127.0.0.1 at 2010-02-15 17:30:08) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mVideoContent Load (0.2ms)[0m   [0mSELECT * FROM "video_contents" WHERE ("video_contents"."id" = 1) [0m
+
+ActionController::UnknownAction (No action responded to edit. Actions: create, destroy, index, new, show, and update):
+  /opt/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /opt/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing VideoContentsController#index (for 127.0.0.1 at 2010-02-15 17:30:46) [GET]
+  [4;36;1mVideoContent Load (0.9ms)[0m   [0;1mSELECT * FROM "video_contents" [0m
+Rendering template within layouts/application
+Rendering video_contents/index
+Completed in 25ms (View: 20, DB: 1) | 200 OK [http://localhost/video_contents]
+
+
+Processing VideoContentsController#edit (for 127.0.0.1 at 2010-02-15 17:30:48) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mVideoContent Load (0.3ms)[0m   [0mSELECT * FROM "video_contents" WHERE ("video_contents"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering video_contents/save
+Completed in 21ms (View: 15, DB: 0) | 200 OK [http://localhost/video_contents/1/edit]
+
+
+Processing VideoContentsController#update (for 127.0.0.1 at 2010-02-15 17:30:53) [PUT]
+  Parameters: {"video_content"=>{"name"=>"Avatar", "plot"=>"A paraplegic marine dispatched to the moon Pandora on a unique mission becomes torn between following his orders and protecting the world he feels is his home.", "imdb_id"=>"499549", "release_date(1i)"=>"2009", "release_date(2i)"=>"12", "year"=>"2009", "release_date(3i)"=>"16", "state"=>"no_imdb_id"}, "authenticity_token"=>"3v4WlvXqWreAFbfKmOyrGnj8p7mdjk5LUp0QC6VkmD0=", "id"=>"1"}
+  [4;36;1mVideoContent Load (0.3ms)[0m   [0;1mSELECT * FROM "video_contents" WHERE ("video_contents"."id" = 1) [0m
+  [4;35;1mVideoContent Update (0.4ms)[0m   [0mUPDATE "video_contents" SET "updated_at" = '2010-02-15 06:30:53', "release_date" = '2009-12-16' WHERE "id" = 1[0m
+Redirected to http://localhost:3000/video_contents/1
+Completed in 30ms (DB: 1) | 302 Found [http://localhost/video_contents/1]
+
+
+Processing VideoContentsController#show (for 127.0.0.1 at 2010-02-15 17:30:53) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mVideoContent Load (0.2ms)[0m   [0;1mSELECT * FROM "video_contents" WHERE ("video_contents"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering video_contents/show
+  [4;35;1mVideoPoster Load (0.4ms)[0m   [0mSELECT * FROM "video_posters" WHERE ("video_posters".video_content_id = 1) [0m
+Completed in 15ms (View: 8, DB: 1) | 200 OK [http://localhost/video_contents/1]
+
+
+Processing VideoPostersController#show (for 127.0.0.1 at 2010-02-15 17:30:54) [GET]
+  Parameters: {"video_content_id"=>"1", "id"=>"3"}
+  [4;36;1mVideoContent Load (0.2ms)[0m   [0;1mSELECT * FROM "video_contents" WHERE ("video_contents"."id" = 1) [0m
+  [4;35;1mVideoPoster Load (0.3ms)[0m   [0mSELECT * FROM "video_posters" WHERE ("video_posters"."id" = 3) [0m
+Completed in 14ms (View: 1, DB: 0) | 200 OK [http://localhost/video_contents/1/video_posters/3]
+Streaming file /Volumes/Other/OnBoxPosters/avatar.large.jpg
+
+
+Processing VideoContentsController#edit (for 127.0.0.1 at 2010-02-15 17:31:55) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mVideoContent Load (0.2ms)[0m   [0;1mSELECT * FROM "video_contents" WHERE ("video_contents"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering video_contents/save
+Completed in 17ms (View: 11, DB: 0) | 200 OK [http://localhost/video_contents/1/edit]
+
+
+Processing VideoContentsController#update (for 127.0.0.1 at 2010-02-15 17:32:00) [PUT]
+  Parameters: {"video_content"=>{"name"=>"Avatar", "plot"=>"A paraplegic marine dispatched to the moon Pandora on a unique mission becomes torn between following his orders and protecting the world he feels is his home.", "imdb_id"=>"499549", "release_date(1i)"=>"2009", "release_date(2i)"=>"12", "year"=>"2009", "release_date(3i)"=>"17", "state"=>"no_imdb_id"}, "authenticity_token"=>"TMhj/znI/UX6ClmPBBkaIiYAgIjom8kqNlMdXvvo1+8=", "id"=>"1"}
+  [4;35;1mVideoContent Load (0.2ms)[0m   [0mSELECT * FROM "video_contents" WHERE ("video_contents"."id" = 1) [0m
+  [4;36;1mVideoContent Update (0.3ms)[0m   [0;1mUPDATE "video_contents" SET "updated_at" = '2010-02-15 06:32:00', "release_date" = '2009-12-17' WHERE "id" = 1[0m
+Redirected to http://localhost:3000/video_contents/1
+Completed in 14ms (DB: 1) | 302 Found [http://localhost/video_contents/1]
+
+
+Processing VideoContentsController#show (for 127.0.0.1 at 2010-02-15 17:32:00) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mVideoContent Load (0.2ms)[0m   [0mSELECT * FROM "video_contents" WHERE ("video_contents"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering video_contents/show
+  [4;36;1mVideoPoster Load (0.4ms)[0m   [0;1mSELECT * FROM "video_posters" WHERE ("video_posters".video_content_id = 1) [0m
+Completed in 16ms (View: 9, DB: 1) | 200 OK [http://localhost/video_contents/1]
+
+
+Processing VideoPostersController#show (for 127.0.0.1 at 2010-02-15 17:32:01) [GET]
+  Parameters: {"video_content_id"=>"1", "id"=>"3"}
+  [4;35;1mVideoContent Load (0.3ms)[0m   [0mSELECT * FROM "video_contents" WHERE ("video_contents"."id" = 1) [0m
+  [4;36;1mVideoPoster Load (0.3ms)[0m   [0;1mSELECT * FROM "video_posters" WHERE ("video_posters"."id" = 3) [0m
+Completed in 12ms (View: 1, DB: 1) | 200 OK [http://localhost/video_contents/1/video_posters/3]
+Streaming file /Volumes/Other/OnBoxPosters/avatar.large.jpg
+
+
+Processing HomeController#index (for 127.0.0.1 at 2010-02-15 17:34:45) [GET]
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT count(*) AS count_all FROM "video_contents" [0m
+  [4;36;1mVideoContent Load (0.5ms)[0m   [0;1mSELECT * FROM "video_contents" LIMIT 5[0m
+Rendering template within layouts/application
+Rendering home/index
+  [4;35;1mVideoPoster Load (0.4ms)[0m   [0mSELECT * FROM "video_posters" WHERE ("video_posters".video_content_id = 1) [0m
+Rendered home/_carousel_item (7.6ms)
+  [4;36;1mVideoPoster Load (0.2ms)[0m   [0;1mSELECT * FROM "video_posters" WHERE ("video_posters".video_content_id = 2) [0m
+Rendered home/_carousel_item (0.9ms)
+  [4;35;1mVideoPoster Load (0.1ms)[0m   [0mSELECT * FROM "video_posters" WHERE ("video_posters".video_content_id = 3) [0m
+Rendered home/_carousel_item (0.8ms)
+  [4;36;1mVideoPoster Load (0.3ms)[0m   [0;1mSELECT * FROM "video_posters" WHERE ("video_posters".video_content_id = 4) [0m
+Rendered home/_carousel_item (53.3ms)
+  [4;35;1mVideoPoster Load (0.1ms)[0m   [0mSELECT * FROM "video_posters" WHERE ("video_posters".video_content_id = 5) [0m
+Rendered home/_carousel_item (1.2ms)
+Completed in 73ms (View: 66, DB: 2) | 200 OK [http://localhost/home]
+
+
+Processing VideoPostersController#show (for 127.0.0.1 at 2010-02-15 17:34:46) [GET]
+  Parameters: {"video_content_id"=>"1", "id"=>"2"}
+  [4;36;1mVideoContent Load (0.3ms)[0m   [0;1mSELECT * FROM "video_contents" WHERE ("video_contents"."id" = 1) [0m
+  [4;35;1mVideoPoster Load (0.3ms)[0m   [0mSELECT * FROM "video_posters" WHERE ("video_posters"."id" = 2) [0m
+Completed in 12ms (View: 1, DB: 1) | 200 OK [http://localhost/video_contents/1/video_posters/2]
+Streaming file /Volumes/Other/OnBoxPosters/avatar.small.jpg
+
+
+Processing VideoContentsController#show (for 127.0.0.1 at 2010-02-15 17:34:48) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mVideoContent Load (0.3ms)[0m   [0;1mSELECT * FROM "video_contents" WHERE ("video_contents"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering video_contents/show
+  [4;35;1mVideoPoster Load (0.4ms)[0m   [0mSELECT * FROM "video_posters" WHERE ("video_posters".video_content_id = 1) [0m
+Completed in 16ms (View: 9, DB: 1) | 200 OK [http://localhost/video_contents/1]
+
+
+Processing VideoPostersController#show (for 127.0.0.1 at 2010-02-15 17:34:48) [GET]
+  Parameters: {"video_content_id"=>"1", "id"=>"3"}
+  [4;36;1mVideoContent Load (0.3ms)[0m   [0;1mSELECT * FROM "video_contents" WHERE ("video_contents"."id" = 1) [0m
+  [4;35;1mVideoPoster Load (0.2ms)[0m   [0mSELECT * FROM "video_posters" WHERE ("video_posters"."id" = 3) [0m
+Completed in 12ms (View: 1, DB: 1) | 200 OK [http://localhost/video_contents/1/video_posters/3]
+Streaming file /Volumes/Other/OnBoxPosters/avatar.large.jpg
+
+
+Processing VideoContentsController#index (for 127.0.0.1 at 2010-02-15 17:34:49) [GET]
+  [4;36;1mVideoContent Load (0.9ms)[0m   [0;1mSELECT * FROM "video_contents" [0m
+Rendering template within layouts/application
+Rendering video_contents/index
+Completed in 79ms (View: 19, DB: 1) | 200 OK [http://localhost/video_contents]
+
+
+Processing VideoContentsController#edit (for 127.0.0.1 at 2010-02-15 17:34:52) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mVideoContent Load (0.2ms)[0m   [0mSELECT * FROM "video_contents" WHERE ("video_contents"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering video_contents/save
+Completed in 17ms (View: 11, DB: 0) | 200 OK [http://localhost/video_contents/1/edit]
+
+
+Processing VideoContentsController#update (for 127.0.0.1 at 2010-02-15 17:34:57) [PUT]
+  Parameters: {"video_content"=>{"name"=>"Avatar", "plot"=>"A paraplegic marine dispatched to the moon Pandora on a unique mission becomes torn between following his orders and protecting the world he feels is his home.", "imdb_id"=>"499549", "release_date(1i)"=>"2009", "release_date(2i)"=>"12", "year"=>"2009", "release_date(3i)"=>"18", "state"=>"no_imdb_id"}, "authenticity_token"=>"TMhj/znI/UX6ClmPBBkaIiYAgIjom8kqNlMdXvvo1+8=", "id"=>"1"}
+  [4;36;1mVideoContent Load (0.2ms)[0m   [0;1mSELECT * FROM "video_contents" WHERE ("video_contents"."id" = 1) [0m
+  [4;35;1mVideoContent Update (0.3ms)[0m   [0mUPDATE "video_contents" SET "updated_at" = '2010-02-15 06:34:57', "release_date" = '2009-12-18' WHERE "id" = 1[0m
+Redirected to http://localhost:3000/video_contents/1
+Completed in 54ms (DB: 1) | 302 Found [http://localhost/video_contents/1]
+
+
+Processing VideoContentsController#show (for 127.0.0.1 at 2010-02-15 17:34:57) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mVideoContent Load (0.2ms)[0m   [0;1mSELECT * FROM "video_contents" WHERE ("video_contents"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering video_contents/show
+  [4;35;1mVideoPoster Load (0.4ms)[0m   [0mSELECT * FROM "video_posters" WHERE ("video_posters".video_content_id = 1) [0m
+Completed in 70ms (View: 63, DB: 1) | 200 OK [http://localhost/video_contents/1]
+
+
+Processing VideoPostersController#show (for 127.0.0.1 at 2010-02-15 17:34:57) [GET]
+  Parameters: {"video_content_id"=>"1", "id"=>"3"}
+  [4;36;1mVideoContent Load (0.2ms)[0m   [0;1mSELECT * FROM "video_contents" WHERE ("video_contents"."id" = 1) [0m
+  [4;35;1mVideoPoster Load (0.3ms)[0m   [0mSELECT * FROM "video_posters" WHERE ("video_posters"."id" = 3) [0m
+Completed in 12ms (View: 1, DB: 1) | 200 OK [http://localhost/video_contents/1/video_posters/3]
+Streaming file /Volumes/Other/OnBoxPosters/avatar.large.jpg
+
+
+Processing HomeController#index (for 127.0.0.1 at 2010-02-15 17:35:19) [GET]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT count(*) AS count_all FROM "video_contents" [0m
+  [4;35;1mVideoContent Load (0.5ms)[0m   [0mSELECT * FROM "video_contents" LIMIT 5[0m
+Rendering template within layouts/application
+Rendering home/index
+  [4;36;1mVideoPoster Load (0.4ms)[0m   [0;1mSELECT * FROM "video_posters" WHERE ("video_posters".video_content_id = 1) [0m
+Rendered home/_carousel_item (7.1ms)
+  [4;35;1mVideoPoster Load (0.1ms)[0m   [0mSELECT * FROM "video_posters" WHERE ("video_posters".video_content_id = 2) [0m
+Rendered home/_carousel_item (0.9ms)
+  [4;36;1mVideoPoster Load (0.1ms)[0m   [0;1mSELECT * FROM "video_posters" WHERE ("video_posters".video_content_id = 3) [0m
+Rendered home/_carousel_item (1.0ms)
+  [4;35;1mVideoPoster Load (0.1ms)[0m   [0mSELECT * FROM "video_posters" WHERE ("video_posters".video_content_id = 4) [0m
+Rendered home/_carousel_item (0.8ms)
+  [4;36;1mVideoPoster Load (0.1ms)[0m   [0;1mSELECT * FROM "video_posters" WHERE ("video_posters".video_content_id = 5) [0m
+Rendered home/_carousel_item (0.7ms)
+Completed in 20ms (View: 13, DB: 1) | 200 OK [http://localhost/home]
+
+
+Processing VideoPostersController#show (for 127.0.0.1 at 2010-02-15 17:35:20) [GET]
+  Parameters: {"video_content_id"=>"1", "id"=>"2"}
+  [4;35;1mVideoContent Load (0.3ms)[0m   [0mSELECT * FROM "video_contents" WHERE ("video_contents"."id" = 1) [0m
+  [4;36;1mVideoPoster Load (0.3ms)[0m   [0;1mSELECT * FROM "video_posters" WHERE ("video_posters"."id" = 2) [0m
+Completed in 13ms (View: 1, DB: 1) | 200 OK [http://localhost/video_contents/1/video_posters/2]
+Streaming file /Volumes/Other/OnBoxPosters/avatar.small.jpg
+
+
+Processing VideoContentsController#index (for 127.0.0.1 at 2010-02-15 18:47:57) [GET]
+  [4;35;1mVideoContent Load (0.9ms)[0m   [0mSELECT * FROM "video_contents" [0m
+Rendering template within layouts/application
+Rendering video_contents/index
+Completed in 26ms (View: 20, DB: 1) | 200 OK [http://localhost/video_contents]
+
+
+Processing HomeController#index (for 127.0.0.1 at 2010-02-15 18:48:00) [GET]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT count(*) AS count_all FROM "video_contents" [0m
+  [4;35;1mVideoContent Load (0.5ms)[0m   [0mSELECT * FROM "video_contents" LIMIT 5[0m
+Rendering template within layouts/application
+Rendering home/index
+  [4;36;1mVideoPoster Load (0.4ms)[0m   [0;1mSELECT * FROM "video_posters" WHERE ("video_posters".video_content_id = 1) [0m
+Rendered home/_carousel_item (7.3ms)
+  [4;35;1mVideoPoster Load (0.2ms)[0m   [0mSELECT * FROM "video_posters" WHERE ("video_posters".video_content_id = 2) [0m
+Rendered home/_carousel_item (1.0ms)
+  [4;36;1mVideoPoster Load (0.1ms)[0m   [0;1mSELECT * FROM "video_posters" WHERE ("video_posters".video_content_id = 3) [0m
+Rendered home/_carousel_item (1.0ms)
+  [4;35;1mVideoPoster Load (0.1ms)[0m   [0mSELECT * FROM "video_posters" WHERE ("video_posters".video_content_id = 4) [0m
+Rendered home/_carousel_item (0.8ms)
+  [4;36;1mVideoPoster Load (0.1ms)[0m   [0;1mSELECT * FROM "video_posters" WHERE ("video_posters".video_content_id = 5) [0m
+Rendered home/_carousel_item (0.8ms)
+Completed in 20ms (View: 13, DB: 2) | 200 OK [http://localhost/home]
+
+
+Processing VideoPostersController#show (for 127.0.0.1 at 2010-02-15 18:48:00) [GET]
+  Parameters: {"video_content_id"=>"1", "id"=>"2"}
+  [4;35;1mVideoContent Load (0.3ms)[0m   [0mSELECT * FROM "video_contents" WHERE ("video_contents"."id" = 1) [0m
+  [4;36;1mVideoPoster Load (0.4ms)[0m   [0;1mSELECT * FROM "video_posters" WHERE ("video_posters"."id" = 2) [0m
+Completed in 13ms (View: 1, DB: 1) | 200 OK [http://localhost/video_contents/1/video_posters/2]
+Streaming file /Volumes/Other/OnBoxPosters/avatar.small.jpg
+
+
+Processing HomeController#index (for 127.0.0.1 at 2010-02-15 18:48:03) [GET]
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT count(*) AS count_all FROM "video_contents" [0m
+  [4;36;1mVideoContent Load (0.5ms)[0m   [0;1mSELECT * FROM "video_contents" LIMIT 5[0m
+Rendering template within layouts/application
+Rendering home/index
+  [4;35;1mVideoPoster Load (0.4ms)[0m   [0mSELECT * FROM "video_posters" WHERE ("video_posters".video_content_id = 1) [0m
+Rendered home/_carousel_item (7.9ms)
+  [4;36;1mVideoPoster Load (0.2ms)[0m   [0;1mSELECT * FROM "video_posters" WHERE ("video_posters".video_content_id = 2) [0m
+Rendered home/_carousel_item (1.0ms)
+  [4;35;1mVideoPoster Load (0.1ms)[0m   [0mSELECT * FROM "video_posters" WHERE ("video_posters".video_content_id = 3) [0m
+Rendered home/_carousel_item (0.8ms)
+  [4;36;1mVideoPoster Load (0.1ms)[0m   [0;1mSELECT * FROM "video_posters" WHERE ("video_posters".video_content_id = 4) [0m
+Rendered home/_carousel_item (0.8ms)
+  [4;35;1mVideoPoster Load (0.1ms)[0m   [0mSELECT * FROM "video_posters" WHERE ("video_posters".video_content_id = 5) [0m
+Rendered home/_carousel_item (0.8ms)
+Completed in 21ms (View: 13, DB: 2) | 200 OK [http://localhost/home]
+
+
+Processing VideoPostersController#show (for 127.0.0.1 at 2010-02-15 18:48:04) [GET]
+  Parameters: {"video_content_id"=>"1", "id"=>"2"}
+  [4;36;1mVideoContent Load (0.3ms)[0m   [0;1mSELECT * FROM "video_contents" WHERE ("video_contents"."id" = 1) [0m
+  [4;35;1mVideoPoster Load (0.6ms)[0m   [0mSELECT * FROM "video_posters" WHERE ("video_posters"."id" = 2) [0m
+Completed in 18ms (View: 1, DB: 1) | 200 OK [http://localhost/video_contents/1/video_posters/2]
+Streaming file /Volumes/Other/OnBoxPosters/avatar.small.jpg
+
+
+Processing HomeController#index (for 127.0.0.1 at 2010-02-15 19:00:20) [GET]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT count(*) AS count_all FROM "video_contents" [0m
+  [4;35;1mVideoContent Load (0.5ms)[0m   [0mSELECT * FROM "video_contents" LIMIT 5[0m
+Rendering template within layouts/application
+Rendering home/index
+  [4;36;1mVideoPoster Load (0.4ms)[0m   [0;1mSELECT * FROM "video_posters" WHERE ("video_posters".video_content_id = 1) [0m
+Rendered home/_carousel_item (7.6ms)
+  [4;35;1mVideoPoster Load (0.2ms)[0m   [0mSELECT * FROM "video_posters" WHERE ("video_posters".video_content_id = 2) [0m
+Rendered home/_carousel_item (1.0ms)
+  [4;36;1mVideoPoster Load (0.1ms)[0m   [0;1mSELECT * FROM "video_posters" WHERE ("video_posters".video_content_id = 3) [0m
+Rendered home/_carousel_item (0.8ms)
+  [4;35;1mVideoPoster Load (0.1ms)[0m   [0mSELECT * FROM "video_posters" WHERE ("video_posters".video_content_id = 4) [0m
+Rendered home/_carousel_item (0.8ms)
+  [4;36;1mVideoPoster Load (0.1ms)[0m   [0;1mSELECT * FROM "video_posters" WHERE ("video_posters".video_content_id = 5) [0m
+Rendered home/_carousel_item (0.8ms)
+Completed in 25ms (View: 18, DB: 2) | 200 OK [http://localhost/home]
+
+
+Processing VideoPostersController#show (for 127.0.0.1 at 2010-02-15 19:00:20) [GET]
+  Parameters: {"video_content_id"=>"1", "id"=>"2"}
+  [4;35;1mVideoContent Load (0.2ms)[0m   [0mSELECT * FROM "video_contents" WHERE ("video_contents"."id" = 1) [0m
+  [4;36;1mVideoPoster Load (0.8ms)[0m   [0;1mSELECT * FROM "video_posters" WHERE ("video_posters"."id" = 2) [0m
+Completed in 13ms (View: 1, DB: 1) | 200 OK [http://localhost/video_contents/1/video_posters/2]
+Streaming file /Volumes/Other/OnBoxPosters/avatar.small.jpg
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-02-15 19:00:22) [GET]
+
+NameError (uninitialized constant MediaFoldersController):
+  /opt/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /opt/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (81.7ms)
+Rendered rescues/_request_and_response (1.1ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing MediaFoldersController#index (for 127.0.0.1 at 2010-02-15 19:03:33) [GET]
+Rendering template within layouts/application
+Rendering media_folders/index
+
+ActionView::TemplateError (You have a nil object when you didn't expect it!
+You might have expected an instance of Array.
+The error occurred while evaluating nil.each) on line #11 of app/views/media_folders/index.html.erb:
+8: 	<th colspan="2">Actions</th>
+9:   </tr>
+10: 
+11: <% @media_folders.each do |media_folder| %>
+12:   <tr>
+13:     <td><%=h media_folder.location %></td>
+14:     <td><%=h media_folder.scan %></td>
+
+    app/views/media_folders/index.html.erb:11
+    /opt/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /opt/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (34.8ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing MediaFoldersController#index (for 127.0.0.1 at 2010-02-15 19:04:02) [GET]
+
+SyntaxError (/Users/sam/Programming/ruby/onbox/app/models/media_folder.rb:3: syntax error, unexpected ':', expecting kEND
+  has_many: :video_file_references
+           ^):
+  app/controllers/media_folders_controller.rb:3:in `index'
+  /opt/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /opt/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (96.1ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing MediaFoldersController#index (for 127.0.0.1 at 2010-02-15 19:04:21) [GET]
+  [4;35;1mMediaFolder Load (0.4ms)[0m   [0mSELECT * FROM "media_folders" [0m
+Rendering template within layouts/application
+Rendering media_folders/index
+Completed in 7ms (View: 2, DB: 0) | 200 OK [http://localhost/media_folders]
+
+
+Processing MediaFoldersController#new (for 127.0.0.1 at 2010-02-15 19:14:46) [GET]
+Rendering template within layouts/application
+Rendering media_folders/save
+Completed in 13ms (View: 9, DB: 0) | 200 OK [http://localhost/media_folders/new]
+
+
+Processing MediaFoldersController#create (for 127.0.0.1 at 2010-02-15 19:15:16) [POST]
+  Parameters: {"media_folder"=>{"location"=>"/Volumes/Other/ViewMoviesTest", "scan"=>"1"}, "authenticity_token"=>"3v4WlvXqWreAFbfKmOyrGnj8p7mdjk5LUp0QC6VkmD0="}
+  [4;36;1mMediaFolder Create (0.3ms)[0m   [0;1mINSERT INTO "media_folders" ("location", "created_at", "updated_at", "scan") VALUES('/Volumes/Other/ViewMoviesTest', '2010-02-15 08:15:16', '2010-02-15 08:15:16', 't')[0m
+Redirected to http://localhost:3000/media_folders
+Completed in 42ms (DB: 0) | 302 Found [http://localhost/media_folders]
+
+
+Processing MediaFoldersController#index (for 127.0.0.1 at 2010-02-15 19:15:16) [GET]
+  [4;35;1mMediaFolder Load (0.5ms)[0m   [0mSELECT * FROM "media_folders" [0m
+Rendering template within layouts/application
+Rendering media_folders/index
+Completed in 12ms (View: 8, DB: 1) | 200 OK [http://localhost/media_folders]
+
+
+Processing MediaFoldersController#new (for 127.0.0.1 at 2010-02-15 19:16:04) [GET]
+Rendering template within layouts/application
+Rendering media_folders/save
+Completed in 10ms (View: 5, DB: 0) | 200 OK [http://localhost/media_folders/new]
+
+
+Processing MediaFoldersController#create (for 127.0.0.1 at 2010-02-15 19:16:08) [POST]
+  Parameters: {"media_folder"=>{"location"=>"test", "scan"=>"0"}, "authenticity_token"=>"3v4WlvXqWreAFbfKmOyrGnj8p7mdjk5LUp0QC6VkmD0="}
+Rendering template within layouts/application
+Rendering media_folders/save
+Completed in 14ms (View: 8, DB: 0) | 200 OK [http://localhost/media_folders]
+
+
+Processing MediaFoldersController#create (for 127.0.0.1 at 2010-02-15 19:16:19) [POST]
+  Parameters: {"media_folder"=>{"location"=>"test", "scan"=>"0"}, "authenticity_token"=>"3v4WlvXqWreAFbfKmOyrGnj8p7mdjk5LUp0QC6VkmD0="}
+Rendering template within layouts/application
+Rendering media_folders/save
+Completed in 15ms (View: 8, DB: 0) | 200 OK [http://localhost/media_folders]
+
+
+Processing MediaFoldersController#create (for 127.0.0.1 at 2010-02-15 19:16:20) [POST]
+  Parameters: {"media_folder"=>{"location"=>"test", "scan"=>"0"}, "authenticity_token"=>"3v4WlvXqWreAFbfKmOyrGnj8p7mdjk5LUp0QC6VkmD0="}
+Rendering template within layouts/application
+Rendering media_folders/save
+Completed in 14ms (View: 8, DB: 0) | 200 OK [http://localhost/media_folders]
+
+
+Processing MediaFoldersController#create (for 127.0.0.1 at 2010-02-15 19:16:41) [POST]
+  Parameters: {"media_folder"=>{"location"=>"test", "scan"=>"1"}, "authenticity_token"=>"3v4WlvXqWreAFbfKmOyrGnj8p7mdjk5LUp0QC6VkmD0="}
+  [4;36;1mMediaFolder Create (0.3ms)[0m   [0;1mINSERT INTO "media_folders" ("location", "created_at", "updated_at", "scan") VALUES('test', '2010-02-15 08:16:41', '2010-02-15 08:16:41', 't')[0m
+Redirected to http://localhost:3000/media_folders
+Completed in 68ms (DB: 0) | 302 Found [http://localhost/media_folders]
+
+
+Processing MediaFoldersController#index (for 127.0.0.1 at 2010-02-15 19:16:41) [GET]
+  [4;35;1mMediaFolder Load (0.5ms)[0m   [0mSELECT * FROM "media_folders" [0m
+Rendering template within layouts/application
+Rendering media_folders/index
+Completed in 16ms (View: 12, DB: 1) | 200 OK [http://localhost/media_folders]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-02-15 19:16:44) [POST]
+  Parameters: {"authenticity_token"=>"3v4WlvXqWreAFbfKmOyrGnj8p7mdjk5LUp0QC6VkmD0="}
+
+ActionController::MethodNotAllowed (Only get, put, and delete requests are allowed.):
+  /opt/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /opt/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (19.8ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (method_not_allowed)
+
+
+Processing HomeController#index (for 127.0.0.1 at 2010-02-15 19:18:13) [GET]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT count(*) AS count_all FROM "video_contents" [0m
+  [4;35;1mVideoContent Load (0.5ms)[0m   [0mSELECT * FROM "video_contents" LIMIT 5[0m
+Rendering template within layouts/application
+Rendering home/index
+  [4;36;1mVideoPoster Load (0.4ms)[0m   [0;1mSELECT * FROM "video_posters" WHERE ("video_posters".video_content_id = 1) [0m
+Rendered home/_carousel_item (7.8ms)
+  [4;35;1mVideoPoster Load (0.2ms)[0m   [0mSELECT * FROM "video_posters" WHERE ("video_posters".video_content_id = 2) [0m
+Rendered home/_carousel_item (1.0ms)
+  [4;36;1mVideoPoster Load (0.1ms)[0m   [0;1mSELECT * FROM "video_posters" WHERE ("video_posters".video_content_id = 3) [0m
+Rendered home/_carousel_item (0.8ms)
+  [4;35;1mVideoPoster Load (0.1ms)[0m   [0mSELECT * FROM "video_posters" WHERE ("video_posters".video_content_id = 4) [0m
+Rendered home/_carousel_item (0.8ms)
+  [4;36;1mVideoPoster Load (0.1ms)[0m   [0;1mSELECT * FROM "video_posters" WHERE ("video_posters".video_content_id = 5) [0m
+Rendered home/_carousel_item (0.8ms)
+Completed in 23ms (View: 14, DB: 2) | 200 OK [http://localhost/home]
+
+
+Processing VideoPostersController#show (for 127.0.0.1 at 2010-02-15 19:18:14) [GET]
+  Parameters: {"video_content_id"=>"1", "id"=>"2"}
+  [4;35;1mVideoContent Load (0.3ms)[0m   [0mSELECT * FROM "video_contents" WHERE ("video_contents"."id" = 1) [0m
+  [4;36;1mVideoPoster Load (0.3ms)[0m   [0;1mSELECT * FROM "video_posters" WHERE ("video_posters"."id" = 2) [0m
+Completed in 13ms (View: 1, DB: 1) | 200 OK [http://localhost/video_contents/1/video_posters/2]
+Streaming file /Volumes/Other/OnBoxPosters/avatar.small.jpg
+
+
+Processing HomeController#index (for 127.0.0.1 at 2010-02-15 19:18:14) [GET]
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT count(*) AS count_all FROM "video_contents" [0m
+  [4;36;1mVideoContent Load (0.5ms)[0m   [0;1mSELECT * FROM "video_contents" LIMIT 5[0m
+Rendering template within layouts/application
+Rendering home/index
+  [4;35;1mVideoPoster Load (0.4ms)[0m   [0mSELECT * FROM "video_posters" WHERE ("video_posters".video_content_id = 1) [0m
+Rendered home/_carousel_item (7.8ms)
+  [4;36;1mVideoPoster Load (0.2ms)[0m   [0;1mSELECT * FROM "video_posters" WHERE ("video_posters".video_content_id = 2) [0m
+Rendered home/_carousel_item (1.1ms)
+  [4;35;1mVideoPoster Load (0.1ms)[0m   [0mSELECT * FROM "video_posters" WHERE ("video_posters".video_content_id = 3) [0m
+Rendered home/_carousel_item (0.8ms)
+  [4;36;1mVideoPoster Load (0.1ms)[0m   [0;1mSELECT * FROM "video_posters" WHERE ("video_posters".video_content_id = 4) [0m
+Rendered home/_carousel_item (0.8ms)
+  [4;35;1mVideoPoster Load (0.1ms)[0m   [0mSELECT * FROM "video_posters" WHERE ("video_posters".video_content_id = 5) [0m
+Rendered home/_carousel_item (0.7ms)
+Completed in 21ms (View: 13, DB: 2) | 200 OK [http://localhost/]
+
+
+Processing VideoPostersController#show (for 127.0.0.1 at 2010-02-15 19:18:15) [GET]
+  Parameters: {"video_content_id"=>"1", "id"=>"2"}
+  [4;36;1mVideoContent Load (0.2ms)[0m   [0;1mSELECT * FROM "video_contents" WHERE ("video_contents"."id" = 1) [0m
+  [4;35;1mVideoPoster Load (0.2ms)[0m   [0mSELECT * FROM "video_posters" WHERE ("video_posters"."id" = 2) [0m
+Completed in 95ms (View: 1, DB: 0) | 200 OK [http://localhost/video_contents/1/video_posters/2]
+Streaming file /Volumes/Other/OnBoxPosters/avatar.small.jpg
+
+
+Processing HomeController#index (for 127.0.0.1 at 2010-02-15 19:18:15) [GET]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT count(*) AS count_all FROM "video_contents" [0m
+  [4;35;1mVideoContent Load (0.5ms)[0m   [0mSELECT * FROM "video_contents" LIMIT 5[0m
+Rendering template within layouts/application
+Rendering home/index
+  [4;36;1mVideoPoster Load (0.4ms)[0m   [0;1mSELECT * FROM "video_posters" WHERE ("video_posters".video_content_id = 1) [0m
+Rendered home/_carousel_item (8.5ms)
+  [4;35;1mVideoPoster Load (0.2ms)[0m   [0mSELECT * FROM "video_posters" WHERE ("video_posters".video_content_id = 2) [0m
+Rendered home/_carousel_item (1.2ms)
+  [4;36;1mVideoPoster Load (0.1ms)[0m   [0;1mSELECT * FROM "video_posters" WHERE ("video_posters".video_content_id = 3) [0m
+Rendered home/_carousel_item (0.9ms)
+  [4;35;1mVideoPoster Load (0.1ms)[0m   [0mSELECT * FROM "video_posters" WHERE ("video_posters".video_content_id = 4) [0m
+Rendered home/_carousel_item (0.8ms)
+  [4;36;1mVideoPoster Load (0.1ms)[0m   [0;1mSELECT * FROM "video_posters" WHERE ("video_posters".video_content_id = 5) [0m
+Rendered home/_carousel_item (0.8ms)
+Completed in 22ms (View: 14, DB: 2) | 200 OK [http://localhost/]
+
+
+Processing VideoPostersController#show (for 127.0.0.1 at 2010-02-15 19:18:15) [GET]
+  Parameters: {"video_content_id"=>"1", "id"=>"2"}
+  [4;35;1mVideoContent Load (0.3ms)[0m   [0mSELECT * FROM "video_contents" WHERE ("video_contents"."id" = 1) [0m
+  [4;36;1mVideoPoster Load (0.3ms)[0m   [0;1mSELECT * FROM "video_posters" WHERE ("video_posters"."id" = 2) [0m
+Completed in 14ms (View: 1, DB: 1) | 200 OK [http://localhost/video_contents/1/video_posters/2]
+Streaming file /Volumes/Other/OnBoxPosters/avatar.small.jpg
+
+
+Processing HomeController#index (for 127.0.0.1 at 2010-02-15 19:18:17) [GET]
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT count(*) AS count_all FROM "video_contents" [0m
+  [4;36;1mVideoContent Load (0.5ms)[0m   [0;1mSELECT * FROM "video_contents" LIMIT 5[0m
+Rendering template within layouts/application
+Rendering home/index
+  [4;35;1mVideoPoster Load (0.5ms)[0m   [0mSELECT * FROM "video_posters" WHERE ("video_posters".video_content_id = 1) [0m
+Rendered home/_carousel_item (8.2ms)
+  [4;36;1mVideoPoster Load (0.2ms)[0m   [0;1mSELECT * FROM "video_posters" WHERE ("video_posters".video_content_id = 2) [0m
+Rendered home/_carousel_item (1.0ms)
+  [4;35;1mVideoPoster Load (0.1ms)[0m   [0mSELECT * FROM "video_posters" WHERE ("video_posters".video_content_id = 3) [0m
+Rendered home/_carousel_item (0.8ms)
+  [4;36;1mVideoPoster Load (0.1ms)[0m   [0;1mSELECT * FROM "video_posters" WHERE ("video_posters".video_content_id = 4) [0m
+Rendered home/_carousel_item (0.8ms)
+  [4;35;1mVideoPoster Load (0.1ms)[0m   [0mSELECT * FROM "video_posters" WHERE ("video_posters".video_content_id = 5) [0m
+Rendered home/_carousel_item (0.8ms)
+Completed in 22ms (View: 14, DB: 2) | 200 OK [http://localhost/]
+
+
+Processing VideoPostersController#show (for 127.0.0.1 at 2010-02-15 19:18:17) [GET]
+  Parameters: {"video_content_id"=>"1", "id"=>"2"}
+  [4;36;1mVideoContent Load (0.2ms)[0m   [0;1mSELECT * FROM "video_contents" WHERE ("video_contents"."id" = 1) [0m
+  [4;35;1mVideoPoster Load (0.3ms)[0m   [0mSELECT * FROM "video_posters" WHERE ("video_posters"."id" = 2) [0m
+Completed in 97ms (View: 1, DB: 1) | 200 OK [http://localhost/video_contents/1/video_posters/2]
+Streaming file /Volumes/Other/OnBoxPosters/avatar.small.jpg
+
+
+Processing VideoContentsController#index (for 127.0.0.1 at 2010-02-15 19:18:18) [GET]
+  [4;36;1mVideoContent Load (0.9ms)[0m   [0;1mSELECT * FROM "video_contents" [0m
+Rendering template within layouts/application
+Rendering video_contents/index
+Completed in 26ms (View: 20, DB: 1) | 200 OK [http://localhost/video_contents]
+
+
+Processing HomeController#index (for 127.0.0.1 at 2010-02-15 19:18:19) [GET]
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT count(*) AS count_all FROM "video_contents" [0m
+  [4;36;1mVideoContent Load (0.7ms)[0m   [0;1mSELECT * FROM "video_contents" LIMIT 5[0m
+Rendering template within layouts/application
+Rendering home/index
+  [4;35;1mVideoPoster Load (0.4ms)[0m   [0mSELECT * FROM "video_posters" WHERE ("video_posters".video_content_id = 1) [0m
+Rendered home/_carousel_item (7.2ms)
+  [4;36;1mVideoPoster Load (0.2ms)[0m   [0;1mSELECT * FROM "video_posters" WHERE ("video_posters".video_content_id = 2) [0m
+Rendered home/_carousel_item (1.4ms)
+  [4;35;1mVideoPoster Load (0.2ms)[0m   [0mSELECT * FROM "video_posters" WHERE ("video_posters".video_content_id = 3) [0m
+Rendered home/_carousel_item (1.0ms)
+  [4;36;1mVideoPoster Load (0.1ms)[0m   [0;1mSELECT * FROM "video_posters" WHERE ("video_posters".video_content_id = 4) [0m
+Rendered home/_carousel_item (0.9ms)
+  [4;35;1mVideoPoster Load (0.1ms)[0m   [0mSELECT * FROM "video_posters" WHERE ("video_posters".video_content_id = 5) [0m
+Rendered home/_carousel_item (0.8ms)
+Completed in 21ms (View: 13, DB: 2) | 200 OK [http://localhost/]
+
+
+Processing VideoPostersController#show (for 127.0.0.1 at 2010-02-15 19:18:19) [GET]
+  Parameters: {"video_content_id"=>"1", "id"=>"2"}
+  [4;36;1mVideoContent Load (0.3ms)[0m   [0;1mSELECT * FROM "video_contents" WHERE ("video_contents"."id" = 1) [0m
+  [4;35;1mVideoPoster Load (2.2ms)[0m   [0mSELECT * FROM "video_posters" WHERE ("video_posters"."id" = 2) [0m
+Completed in 16ms (View: 1, DB: 2) | 200 OK [http://localhost/video_contents/1/video_posters/2]
+Streaming file /Volumes/Other/OnBoxPosters/avatar.small.jpg
+
+
+Processing MediaFoldersController#index (for 127.0.0.1 at 2010-02-15 19:18:24) [GET]
+  [4;36;1mMediaFolder Load (0.5ms)[0m   [0;1mSELECT * FROM "media_folders" [0m
+Rendering template within layouts/application
+Rendering media_folders/index
+Completed in 74ms (View: 70, DB: 1) | 200 OK [http://localhost/media_folders]
+
+
+Processing MediaFoldersController#2 (for 127.0.0.1 at 2010-02-15 19:18:27) [POST]
+  Parameters: {"authenticity_token"=>"3v4WlvXqWreAFbfKmOyrGnj8p7mdjk5LUp0QC6VkmD0="}
+
+ActionController::UnknownAction (No action responded to 2. Actions: create, destroy, edit, index, new, show, and update):
+  /opt/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /opt/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing MediaFoldersController#index (for 127.0.0.1 at 2010-02-15 19:23:31) [GET]
+  [4;35;1mMediaFolder Load (0.5ms)[0m   [0mSELECT * FROM "media_folders" [0m
+Rendering template within layouts/application
+Rendering media_folders/index
+
+ActionView::TemplateError (undefined method `stringify_keys' for "/media_folders/1/edit":String) on line #16 of app/views/media_folders/index.html.erb:
+13:     <td><%=h media_folder.location %></td>
+14:     <td><%=h media_folder.scan %></td>
+15:     <td><%=h media_folder.created_at %></td>
+16:     <td><%= link_to 'Edit', media_folder, edit_media_folder_path(media_folder) %></td>
+17:     <td><%= link_to 'Destroy', media_folder, :confirm => 'Are you sure?', :method => :delete %></td>
+18:   </tr>
+19: <% end %>
+
+    app/views/media_folders/index.html.erb:16
+    app/views/media_folders/index.html.erb:11:in `each'
+    app/views/media_folders/index.html.erb:11
+    /opt/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /opt/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (35.0ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing MediaFoldersController#index (for 127.0.0.1 at 2010-02-15 19:23:47) [GET]
+  [4;36;1mMediaFolder Load (0.5ms)[0m   [0;1mSELECT * FROM "media_folders" [0m
+Rendering template within layouts/application
+Rendering media_folders/index
+
+ActionView::TemplateError (undefined method `edit_media_folders_path' for #<ActionView::Base:0x103fe0e30>) on line #16 of app/views/media_folders/index.html.erb:
+13:     <td><%=h media_folder.location %></td>
+14:     <td><%=h media_folder.scan %></td>
+15:     <td><%=h media_folder.created_at %></td>
+16:     <td><%= link_to 'Edit', media_folder, edit_media_folders_path(media_folder) %></td>
+17:     <td><%= link_to 'Destroy', media_folder, :confirm => 'Are you sure?', :method => :delete %></td>
+18:   </tr>
+19: <% end %>
+
+    app/views/media_folders/index.html.erb:16
+    app/views/media_folders/index.html.erb:11:in `each'
+    app/views/media_folders/index.html.erb:11
+    /opt/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /opt/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (33.7ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing MediaFoldersController#index (for 127.0.0.1 at 2010-02-15 19:24:11) [GET]
+  [4;35;1mMediaFolder Load (0.5ms)[0m   [0mSELECT * FROM "media_folders" [0m
+Rendering template within layouts/application
+Rendering media_folders/index
+
+ActionView::TemplateError (undefined method `edit_media_folders_path' for #<ActionView::Base:0x10421e7b0>) on line #16 of app/views/media_folders/index.html.erb:
+13:     <td><%=h media_folder.location %></td>
+14:     <td><%=h media_folder.scan %></td>
+15:     <td><%=h media_folder.created_at %></td>
+16:     <td><%= link_to 'Edit', edit_media_folders_path(media_folder) %></td>
+17:     <td><%= link_to 'Destroy', media_folder, :confirm => 'Are you sure?', :method => :delete %></td>
+18:   </tr>
+19: <% end %>
+
+    app/views/media_folders/index.html.erb:16
+    app/views/media_folders/index.html.erb:11:in `each'
+    app/views/media_folders/index.html.erb:11
+    /opt/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /opt/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (99.2ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing MediaFoldersController#index (for 127.0.0.1 at 2010-02-15 19:24:38) [GET]
+  [4;36;1mMediaFolder Load (0.5ms)[0m   [0;1mSELECT * FROM "media_folders" [0m
+Rendering template within layouts/application
+Rendering media_folders/index
+Completed in 19ms (View: 14, DB: 1) | 200 OK [http://localhost/media_folders]
+
+
+Processing MediaFoldersController#edit (for 127.0.0.1 at 2010-02-15 19:24:40) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mMediaFolder Load (0.2ms)[0m   [0mSELECT * FROM "media_folders" WHERE ("media_folders"."id" = 2) [0m
+Rendering template within layouts/application
+Rendering media_folders/save
+Completed in 10ms (View: 5, DB: 0) | 200 OK [http://localhost/media_folders/2/edit]
+
+
+Processing MediaFoldersController#update (for 127.0.0.1 at 2010-02-15 19:24:44) [PUT]
+  Parameters: {"media_folder"=>{"location"=>"test2", "scan"=>"1"}, "authenticity_token"=>"3v4WlvXqWreAFbfKmOyrGnj8p7mdjk5LUp0QC6VkmD0=", "id"=>"2"}
+  [4;36;1mMediaFolder Load (0.2ms)[0m   [0;1mSELECT * FROM "media_folders" WHERE ("media_folders"."id" = 2) [0m
+  [4;35;1mMediaFolder Update (0.3ms)[0m   [0mUPDATE "media_folders" SET "updated_at" = '2010-02-15 08:24:44', "location" = 'test2' WHERE "id" = 2[0m
+Redirected to http://localhost:3000/media_folders
+Completed in 28ms (DB: 0) | 302 Found [http://localhost/media_folders/2]
+
+
+Processing MediaFoldersController#index (for 127.0.0.1 at 2010-02-15 19:24:44) [GET]
+  [4;36;1mMediaFolder Load (0.5ms)[0m   [0;1mSELECT * FROM "media_folders" [0m
+Rendering template within layouts/application
+Rendering media_folders/index
+Completed in 13ms (View: 9, DB: 1) | 200 OK [http://localhost/media_folders]
+
+
+Processing MediaFoldersController#destroy (for 127.0.0.1 at 2010-02-15 19:24:47) [DELETE]
+  Parameters: {"authenticity_token"=>"3v4WlvXqWreAFbfKmOyrGnj8p7mdjk5LUp0QC6VkmD0=", "id"=>"2"}
+  [4;35;1mMediaFolder Load (0.2ms)[0m   [0mSELECT * FROM "media_folders" WHERE ("media_folders"."id" = 2) [0m
+  [4;36;1mMediaFolder Destroy (0.4ms)[0m   [0;1mDELETE FROM "media_folders" WHERE "id" = 2[0m
+Redirected to http://localhost:3000/media_folders
+Completed in 48ms (DB: 1) | 302 Found [http://localhost/media_folders/2]
+
+
+Processing MediaFoldersController#index (for 127.0.0.1 at 2010-02-15 19:24:47) [GET]
+  [4;35;1mMediaFolder Load (0.5ms)[0m   [0mSELECT * FROM "media_folders" [0m
+Rendering template within layouts/application
+Rendering media_folders/index
+Completed in 11ms (View: 7, DB: 0) | 200 OK [http://localhost/media_folders]
+
+
+Processing MediaFoldersController#edit (for 127.0.0.1 at 2010-02-15 19:24:54) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mMediaFolder Load (0.2ms)[0m   [0;1mSELECT * FROM "media_folders" WHERE ("media_folders"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering media_folders/save
+Completed in 10ms (View: 5, DB: 0) | 200 OK [http://localhost/media_folders/1/edit]
+
+
+Processing MediaFoldersController#update (for 127.0.0.1 at 2010-02-15 19:24:57) [PUT]
+  Parameters: {"media_folder"=>{"location"=>"/Volumes/Other/ViewMoviesTest", "scan"=>"0"}, "authenticity_token"=>"3v4WlvXqWreAFbfKmOyrGnj8p7mdjk5LUp0QC6VkmD0=", "id"=>"1"}
+  [4;35;1mMediaFolder Load (0.2ms)[0m   [0mSELECT * FROM "media_folders" WHERE ("media_folders"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering media_folders/save
+Completed in 71ms (View: 65, DB: 0) | 200 OK [http://localhost/media_folders/1]
+
+
+Processing MediaFoldersController#update (for 127.0.0.1 at 2010-02-15 19:25:03) [PUT]
+  Parameters: {"media_folder"=>{"location"=>"/Volumes/Other/ViewMoviesTest", "scan"=>"1"}, "authenticity_token"=>"3v4WlvXqWreAFbfKmOyrGnj8p7mdjk5LUp0QC6VkmD0=", "id"=>"1"}
+  [4;36;1mMediaFolder Load (0.2ms)[0m   [0;1mSELECT * FROM "media_folders" WHERE ("media_folders"."id" = 1) [0m
+Redirected to http://localhost:3000/media_folders
+Completed in 7ms (DB: 0) | 302 Found [http://localhost/media_folders/1]
+
+
+Processing MediaFoldersController#index (for 127.0.0.1 at 2010-02-15 19:25:03) [GET]
+  [4;35;1mMediaFolder Load (0.5ms)[0m   [0mSELECT * FROM "media_folders" [0m
+Rendering template within layouts/application
+Rendering media_folders/index
+Completed in 11ms (View: 6, DB: 0) | 200 OK [http://localhost/media_folders]
+
+
+Processing VideoFileReferencesController#index (for 127.0.0.1 at 2010-02-15 19:40:23) [GET]
+  [4;36;1mVideoFileReference Load (0.4ms)[0m   [0;1mSELECT * FROM "video_file_references" [0m
+Rendering template within layouts/application
+Rendering video_file_references/index
+Completed in 91ms (View: 59, DB: 0) | 200 OK [http://localhost/video_file_references]
+
+
+Processing VideoFileReferencesController#new (for 127.0.0.1 at 2010-02-15 19:40:26) [GET]
+Rendering template within layouts/application
+Rendering video_file_references/save
+  [4;35;1mMediaFolder Load (0.3ms)[0m   [0mSELECT * FROM "media_folders" [0m
+Completed in 21ms (View: 16, DB: 0) | 200 OK [http://localhost/video_file_references/new]
+
+
+Processing VideoFileReferencesController#create (for 127.0.0.1 at 2010-02-15 19:41:02) [POST]
+  Parameters: {"video_file_reference"=>{"on_disk"=>"0", "location"=>"/Volumes/Other/ViewMoviesTest/Test.Movie.Divx.avi", "raw_name"=>"Test Movie DivX", "media_folder_id"=>"1"}, "authenticity_token"=>"3v4WlvXqWreAFbfKmOyrGnj8p7mdjk5LUp0QC6VkmD0="}
+Rendering template within layouts/application
+Rendering video_file_references/save
+  [4;36;1mMediaFolder Load (0.3ms)[0m   [0;1mSELECT * FROM "media_folders" [0m
+Completed in 22ms (View: 16, DB: 0) | 200 OK [http://localhost/video_file_references]
+
+
+Processing VideoFileReferencesController#create (for 127.0.0.1 at 2010-02-15 19:41:44) [POST]
+  Parameters: {"video_file_reference"=>{"on_disk"=>"1", "location"=>"x", "raw_name"=>"x", "media_folder_id"=>"1"}, "authenticity_token"=>"3v4WlvXqWreAFbfKmOyrGnj8p7mdjk5LUp0QC6VkmD0="}
+Rendering template within layouts/application
+Rendering video_file_references/save
+  [4;35;1mMediaFolder Load (0.3ms)[0m   [0mSELECT * FROM "media_folders" [0m
+Completed in 23ms (View: 16, DB: 0) | 200 OK [http://localhost/video_file_references]
+
+
+Processing VideoFileReferencesController#create (for 127.0.0.1 at 2010-02-15 19:42:21) [POST]
+  Parameters: {"video_file_reference"=>{"on_disk"=>"1", "location"=>"f", "raw_name"=>"f", "media_folder_id"=>"1"}, "authenticity_token"=>"3v4WlvXqWreAFbfKmOyrGnj8p7mdjk5LUp0QC6VkmD0="}
+  [4;36;1mVideoFileReference Create (21.3ms)[0m   [0;1mINSERT INTO "video_file_references" ("on_disk", "location", "created_at", "updated_at", "raw_name", "video_content_id", "media_folder_id") VALUES('t', 'f', '2010-02-15 08:42:21', '2010-02-15 08:42:21', 'f', NULL, 1)[0m
+Redirected to http://localhost:3000/video_file_references
+Completed in 38ms (DB: 21) | 302 Found [http://localhost/video_file_references]
+
+
+Processing VideoFileReferencesController#index (for 127.0.0.1 at 2010-02-15 19:42:21) [GET]
+  [4;35;1mVideoFileReference Load (0.5ms)[0m   [0mSELECT * FROM "video_file_references" [0m
+Rendering template within layouts/application
+Rendering video_file_references/index
+  [4;36;1mMediaFolder Load (0.5ms)[0m   [0;1mSELECT * FROM "media_folders" WHERE ("media_folders"."id" = 1) [0m
+Completed in 17ms (View: 12, DB: 1) | 200 OK [http://localhost/video_file_references]
+
+
+Processing VideoFileReferencesController#edit (for 127.0.0.1 at 2010-02-15 19:47:04) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mVideoFileReference Load (0.2ms)[0m   [0mSELECT * FROM "video_file_references" WHERE ("video_file_references"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering video_file_references/save
+  [4;36;1mMediaFolder Load (0.3ms)[0m   [0;1mSELECT * FROM "media_folders" [0m
+Completed in 19ms (View: 12, DB: 1) | 200 OK [http://localhost/video_file_references/1/edit]
+
+
+Processing VideoFileReferencesController#update (for 127.0.0.1 at 2010-02-15 19:47:07) [PUT]
+  Parameters: {"video_file_reference"=>{"on_disk"=>"0", "location"=>"f", "raw_name"=>"f", "media_folder_id"=>"1"}, "authenticity_token"=>"3v4WlvXqWreAFbfKmOyrGnj8p7mdjk5LUp0QC6VkmD0=", "id"=>"1"}
+  [4;35;1mVideoFileReference Load (0.2ms)[0m   [0mSELECT * FROM "video_file_references" WHERE ("video_file_references"."id" = 1) [0m
+  [4;36;1mVideoFileReference Update (0.3ms)[0m   [0;1mUPDATE "video_file_references" SET "updated_at" = '2010-02-15 08:47:07', "on_disk" = 'f' WHERE "id" = 1[0m
+Redirected to http://localhost:3000/video_file_references
+Completed in 24ms (DB: 1) | 302 Found [http://localhost/video_file_references/1]
+
+
+Processing VideoFileReferencesController#index (for 127.0.0.1 at 2010-02-15 19:47:07) [GET]
+  [4;35;1mVideoFileReference Load (0.5ms)[0m   [0mSELECT * FROM "video_file_references" [0m
+Rendering template within layouts/application
+Rendering video_file_references/index
+  [4;36;1mMediaFolder Load (0.2ms)[0m   [0;1mSELECT * FROM "media_folders" WHERE ("media_folders"."id" = 1) [0m
+Completed in 15ms (View: 11, DB: 1) | 200 OK [http://localhost/video_file_references]
+
+
+Processing VideoFileReferencesController#edit (for 127.0.0.1 at 2010-02-15 19:47:09) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mVideoFileReference Load (0.2ms)[0m   [0mSELECT * FROM "video_file_references" WHERE ("video_file_references"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering video_file_references/save
+  [4;36;1mMediaFolder Load (0.3ms)[0m   [0;1mSELECT * FROM "media_folders" [0m
+Completed in 18ms (View: 12, DB: 1) | 200 OK [http://localhost/video_file_references/1/edit]
+
+
+Processing VideoFileReferencesController#update (for 127.0.0.1 at 2010-02-15 19:47:11) [PUT]
+  Parameters: {"video_file_reference"=>{"on_disk"=>"1", "location"=>"f", "raw_name"=>"f", "media_folder_id"=>"1"}, "authenticity_token"=>"3v4WlvXqWreAFbfKmOyrGnj8p7mdjk5LUp0QC6VkmD0=", "id"=>"1"}
+  [4;35;1mVideoFileReference Load (0.2ms)[0m   [0mSELECT * FROM "video_file_references" WHERE ("video_file_references"."id" = 1) [0m
+  [4;36;1mVideoFileReference Update (0.3ms)[0m   [0;1mUPDATE "video_file_references" SET "updated_at" = '2010-02-15 08:47:11', "on_disk" = 't' WHERE "id" = 1[0m
+Redirected to http://localhost:3000/video_file_references
+Completed in 24ms (DB: 0) | 302 Found [http://localhost/video_file_references/1]
+
+
+Processing VideoFileReferencesController#index (for 127.0.0.1 at 2010-02-15 19:47:11) [GET]
+  [4;35;1mVideoFileReference Load (0.5ms)[0m   [0mSELECT * FROM "video_file_references" [0m
+Rendering template within layouts/application
+Rendering video_file_references/index
+  [4;36;1mMediaFolder Load (0.3ms)[0m   [0;1mSELECT * FROM "media_folders" WHERE ("media_folders"."id" = 1) [0m
+Completed in 16ms (View: 11, DB: 1) | 200 OK [http://localhost/video_file_references]
+
+
+Processing VideoFileReferencesController#edit (for 127.0.0.1 at 2010-02-15 19:47:24) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mVideoFileReference Load (0.4ms)[0m   [0mSELECT * FROM "video_file_references" WHERE ("video_file_references"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering video_file_references/save
+  [4;36;1mMediaFolder Load (0.3ms)[0m   [0;1mSELECT * FROM "media_folders" [0m
+Completed in 17ms (View: 12, DB: 1) | 200 OK [http://localhost/video_file_references/1/edit]

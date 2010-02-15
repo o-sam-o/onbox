@@ -1,0 +1,27 @@
+<div style="width: 600px;">
+<% form_for @media_folder, :html => { :class => 'defaultForm' } do |f| %>
+  <fieldset>
+      <legend>Media Folder:</legend>
+	  <div class="defaultFormField">
+	    <%= f.label :location %>
+	    <%= f.text_field :location %>
+		<%= error_message_on @media_folder, :location, :css_class => "defaultFormError" %>
+	  </div>
+	  <div class="defaultFormField">
+	    <%= f.label :scan %>
+	    <%= f.check_box :scan %>
+		<%= error_message_on @media_folder, :scan, :css_class => "defaultFormError" %>
+	  </div>
+  </fieldset>
+  <% if not @media_folder.errors.empty? %>
+		<div class="defaultFormErrorOverview">
+  		 Save failed, please see errors above.
+		</div>
+  <% end %>
+  <div class="defaultFormButtons">
+	<span class="yui-button yui-push-button"><span class="first-child">
+    	<button type="submit">Save</button>
+	</span></span>
+  </div>
+<% end %>
+</div>

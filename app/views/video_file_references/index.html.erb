@@ -1,0 +1,34 @@
+<h1>Video files</h1>
+
+<table>
+  <tr>
+    <th>Raw Name</th>
+    <th>Folder</th>
+    <th>Location</th>
+	<th>On Disk</th>
+	<th>Date Added</th>	
+	<th colspan="3">Actions</th>
+  </tr>
+
+<% @references.each do |reference| %>
+  <tr>
+    <td><%=h reference.raw_name %></td>
+	<td><%=h reference.media_folder.location %></td>
+    <td><%=h reference.location %></td>
+	<td><%=h reference.on_disk %></td>
+    <td><%=h reference.created_at %></td>
+
+	<td>
+		<% if reference.video_content %>
+			<%= link_to 'Show Video', video_content_path(reference.video_content) %>
+		<% end %>
+	</td>
+    <td><%= link_to 'Edit', edit_video_file_reference_path(reference) %></td>
+    <td><%= link_to 'Destroy', reference, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New video file reference', new_video_file_reference_path %>

@@ -1,4 +1,6 @@
 ActionController::Routing::Routes.draw do |map|
+  map.root :controller => "home"
+    
   map.resources :media_folders, :video_contents, :video_file_references, :video_posters
   map.resources :video_contents, :has_many => :video_posters
 
@@ -7,6 +9,4 @@ ActionController::Routing::Routes.draw do |map|
   # consider removing or commenting them out if you're using named routes and resources.
   map.connect ':controller/:action/:id'
   map.connect ':controller/:action/:id.:format'
-  
-  map.root :controller => "home"
 end
