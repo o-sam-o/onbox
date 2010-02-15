@@ -4,7 +4,7 @@
       <legend>Video Poster:</legend>
 	  <div class="defaultFormField">
 	    <%= f.label :location %>
-	    <%= f.text_field :location %>
+	    <%= f.text_field :location, :class => "defaultFormTextField" %>
 		<%= error_message_on @video_poster, :location, :css_class => "defaultFormError" %>
 	  </div>
 	  <div class="defaultFormField">

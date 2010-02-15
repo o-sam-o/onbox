@@ -44,7 +44,10 @@
 
 .defaultForm input {
     height: 18px;
-    width: 220px;
+}
+
+.defaultFormTextField {
+    width: 220px;    
 }
 
 .defaultFormError {
@@ -165,4 +168,8 @@
 
 .viewAccordion .yui-cms-accordion .yui-cms-item {
 
+}
+
+.accordionContent {
+    padding: 10px;
 }

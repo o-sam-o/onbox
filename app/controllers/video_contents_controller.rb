@@ -11,6 +11,10 @@ class VideoContentsController < ApplicationController
     end    
   end
 
+  def auto_complete
+    @video_contents = VideoContent.find(:all, :conditions => ['name LIKE ?', "%#{params[:search]}%"])
+  end
+
   def new
     @video_content = VideoContent.new
     render 'video_contents/save'

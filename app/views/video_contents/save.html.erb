@@ -4,12 +4,12 @@
       <legend>Video Content:</legend>
 	  <div class="defaultFormField">
 	    <%= video_form.label :name %>
-	    <%= video_form.text_field :name %>
+	    <%= video_form.text_field :name, :class => "defaultFormTextField" %>
 		<%= error_message_on @video_content, :name, :css_class => "defaultFormError" %>
 	  </div>
 	  <div class="defaultFormField">
 	    <%= video_form.label :year %>
-	    <%= video_form.text_field :year %>
+	    <%= video_form.text_field :year, :class => "defaultFormTextField" %>
 		<%= error_message_on @video_content, :year, :css_class => "defaultFormError" %>
 	  </div>
 	  <div class="defaultFormField">
@@ -29,7 +29,7 @@
 	  </div>
 	  <div class="defaultFormField">
 	    <%= video_form.label :imdb_id, "Imdb Id" %>
-	    <%= video_form.text_field :imdb_id %>
+	    <%= video_form.text_field :imdb_id, :class => "defaultFormTextField" %>
 		<%= error_message_on @video_content, :imdb_id, :css_class => "defaultFormError" %>
 	  </div>
   </fieldset>

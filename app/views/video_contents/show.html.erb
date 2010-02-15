@@ -37,7 +37,24 @@
 				    <div class="yui-cms-item yui-panel"> 
 			            <div class="hd">Files</div> 
 			            <div class="bd"> 
-			             Files will be listed here
+							<div class="accordionContent">
+								<% if @video_content.video_file_references.empty? %>
+									No files for this video.
+								<% else %>
+					             	<table style="width: 400px;">
+										<tr>
+											<th>Location</th>
+											<th>On Disk</th>
+										</tr>
+										<% @video_content.video_file_references.each do |file| %>
+											<tr>
+												<td><%=h file.location %></td>
+												<td><%=h file.on_disk %></td>
+											</tr>
+										<% end %>
+									</table>
+								<% end %>
+							</div>
 						</div>
 						<div class="actions"> 
 							<a href="#" class="accordionToggleItem">&nbsp;</a> 
@@ -46,7 +63,9 @@
 				    <div class="yui-cms-item yui-panel"> 
 			            <div class="hd">Video</div> 
 			            <div class="bd"> 
-			             Most stuff here
+							<div class="accordionContent">
+			             		Most stuff here
+							</div>
 						</div>
 						<div class="actions"> 
 							<a href="#" class="accordionToggleItem">&nbsp;</a> 

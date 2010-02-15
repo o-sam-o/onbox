@@ -4,7 +4,7 @@
       <legend>Media Folder:</legend>
 	  <div class="defaultFormField">
 	    <%= f.label :location %>
-	    <%= f.text_field :location %>
+	    <%= f.text_field :location, :class => "defaultFormTextField" %>
 		<%= error_message_on @media_folder, :location, :css_class => "defaultFormError" %>
 	  </div>
 	  <div class="defaultFormField">

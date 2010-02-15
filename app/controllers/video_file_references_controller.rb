@@ -2,6 +2,8 @@ class VideoFileReferencesController < ApplicationController
   before_filter :find_reference,
       :only => [:show, :edit, :update, :destroy]
   
+  auto_complete_for :video_content, :name
+  
   def index
     @references = VideoFileReference.all
   end
@@ -48,5 +50,4 @@ class VideoFileReferencesController < ApplicationController
     def find_reference
       @reference = VideoFileReference.find(params[:id])
     end
-
 end
