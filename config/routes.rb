@@ -1,6 +1,8 @@
 ActionController::Routing::Routes.draw do |map|
   map.root :controller => "home"
-    
+  
+  map.admin 'admin/:action', :controller => 'admin'
+  
   map.connect 'video_contents/auto_complete', :controller => 'video_contents', :action => 'auto_complete'
   
   map.resources :media_folders, :video_contents, :video_file_references, :video_posters

@@ -1,0 +1,14 @@
+<h1>On Box Admin</h1>
+
+Models:
+<ul>
+	<li><%= link_to "Media Folders", :controller => 'media_folders' %></li>
+	<li><%= link_to "Video Files", :controller => 'video_file_references' %></li>
+	<li><%= link_to "Video Contents", :controller => 'video_contents' %></li>
+</ul>
+<br/>
+Background Actions:
+<ul>
+	<li><%= link_to "Scan All Folders Now", :controller => 'admin', :action => 'scan_all_folders' %></li>
+	<li><%= link_to "Scrap Pending Video Contents", :controller => 'admin', :action => 'scrap_pending' %></li>
+</ul>

@@ -1,6 +1,6 @@
 class HomeController < ApplicationController
   CAROUSEL_WIDTH = 5
-  CAROUSEL_HEIGHT = 1
+  CAROUSEL_HEIGHT = 2
   
   verify :params => ['offset', 'page_size'], :only => :video_content_items
   

@@ -28,7 +28,7 @@
 			<div id="menu"> 
 				<ul id="nav"> 
 					<li class="current_page_item"><%= link_to "Home", :controller => 'home' %></li>
-					<li class="current_page_item"><%= link_to "Admin", :controller => 'media_folders' %></li>
+					<li class="current_page_item"><%= link_to "Admin", :controller => 'admin' %></li>
 				</ul>
 			</div>
 			<div id="hed"> 
@@ -39,7 +39,6 @@
 			<div id="cat_navi" class="wrap"> 
 				<ul id="secnav"> 
 					<li><a href="<%= url_for :controller => 'home' %>">View All<br/><span>Show movies</span></a></li>
-					<li><a href="<%= url_for :controller => 'video_contents' %>">Video List<br/><span>Videos in table form</span></a></li>
 				</ul>
 			</div>
 			<div style="clear: both;"></div> 
@@ -57,7 +56,10 @@
 			<!--<h2>Featured</h2>--> 
  
  		<div class="featlist"> 
-			<div class="highlight"><p style="color: green"><%= flash[:notice] %></p></div> 
+			<div class="highlight">
+				<p style="color: green"><%= flash[:notice] %></p>
+				<p style="color: red"><%= flash[:error] %></p>
+			</div> 
 			<div id="featured"> 
 				<div class="fblock">			
 					<%= yield  %>
@@ -79,7 +81,7 @@
 		<div id="footer"> 
 
 		<div id="totop"> 
-		<a href="http://preview.goodtheme.org/gt-lead2/#">Jump To Top</a> 
+		<a href="#">Jump To Top</a> 
 		</div> 
 		
 		<div class="wrapper"> 

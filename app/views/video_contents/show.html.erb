@@ -7,12 +7,12 @@
 <% end %>
 
 <% content_for :title do %>
-  On Box: <%=h @video_content.name %> (<%=h @video_content.year %>)
+  On Box: <%=h @video_content.display_name %>
 <% end %>
 
 <div class="viewWrapper overclear">
 	<div class="viewCoreMetadata">
-		<h1 class="viewTitle"><%=h @video_content.name %> (<%=h @video_content.year %>)</h1>
+		<h1 class="viewTitle"><%=h @video_content.display_name %></h1>
 		<div class="viewPlotSummary"><%=h @video_content.plot %></div>
 		<div class="viewCoreDetailsWrapper overclear">
 			<div class="viewCoreDetailsLeft">
