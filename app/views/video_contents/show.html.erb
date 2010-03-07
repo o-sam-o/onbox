@@ -1,9 +1,22 @@
 <% content_for :head do %>
-<link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/2.8.0r4/build/container/assets/skins/sam/container.css" /> 
-<link rel="stylesheet" type="text/css" href="http://js.bubbling-library.com/2.1/build/accordion/assets/accordion.css" />
-<script type="text/javascript" src="http://yui.yahooapis.com/2.8.0r4/build/utilities/utilities.js"></script> 
-<script type="text/javascript" src="http://js.bubbling-library.com/2.1/build/bubbling/bubbling.js"></script> 
-<script type="text/javascript" src="http://js.bubbling-library.com/2.1/build/accordion/accordion.js"></script>
+
+<script type="text/javascript" src="/accordionview/utilities.js"></script>
+<link rel="stylesheet" type="text/css" href="/accordionview/assets/skins/sam/accordionview.css">
+<script type="text/javascript" src="/accordionview/accordionview.js"></script>
+
+<%= render :partial => 'shared/yui_table_header' %>
+
+<link rel="stylesheet" type="text/css" href="<%= ONBOX_CONFIG[:yui_path] %>/tabview/assets/skins/sam/tabview.css">
+<script type="text/javascript" src="/accordionview/tabview-min.js"></script>
+
+<style>
+
+.yui-dt table
+{
+    width: 100%;
+}
+
+</style>
 <% end %>
 
 <% content_for :title do %>
@@ -16,75 +29,99 @@
 		<div class="viewPlotSummary"><%=h @video_content.plot %></div>
 		<div class="viewCoreDetailsWrapper overclear">
 			<div class="viewCoreDetailsLeft">
-				<div class="viewDetailsWrapper">
-					<div class="viewDetailsLabel">Release Date:</div>
-					<div class="viewDetailsValue"><%=h @video_content.release_date %></div>
-				</div>
-			</div>
-			<div class="viewCoreDetailsRight">
 				<div>
 					<div class="viewDetailsLabel">Imdb Id:</div>
 					<div class="viewDetailsValue">
-						<a href="http://www.imdb.com/title/tt<%=h @video_content.imdb_id %>"><%=h @video_content.imdb_id %></a>
+						<% if @video_content.imdb_id %>
+							<a href="http://www.imdb.com/title/tt<%=h @video_content.imdb_id %>"><%=h @video_content.imdb_id %></a>
+						<% else %>
+							IMDB Id Unknown
+						<% end %>
 					</div>
-				</div>
+				</div>				
+				<%= view_content_details "Director", @video_content.director %>	
+				<%= view_content_details "Runtime", @video_content.runtime %>				
+			</div>
+			<div class="viewCoreDetailsRight">
+				<%= view_content_details "Release Date", @video_content.release_date %>	
+				<%= view_content_details "Language", @video_content.language %>		
+				<%= view_content_details "Tagline", @video_content.tag_line %>				
 			</div>
 		</div>
+		<% unless @video_content.genres.empty? %>
+			<div class="viewCoreGenres">
+				<span class="viewGenreLabel">Genres:</span> 
+				<% for genre in @video_content.genres %>
+					<%= genre.name %>,
+				<% end %>
+			</div>
+		<% end %>
 		
-		<div class="viewAccordionWrapper">
+		<div id="viewAccordionWrapper" class="hiddenDiv">
 			<div class="viewAccordion">
-				<div class="yui-cms-accordion multiple fade fixIE"> 
-				    <div class="yui-cms-item yui-panel"> 
-			            <div class="hd">Files</div> 
-			            <div class="bd"> 
+				<ul id="topAccordion"> 
+				    <li> 
+			            <div>Files</div> 
+			            <div> 
 							<div class="accordionContent">
-								<% if @video_content.video_file_references.empty? %>
-									No files for this video.
-								<% else %>
-					             	<table style="width: 400px;">
-										<tr>
-											<th>Location</th>
-											<th>On Disk</th>
-										</tr>
-										<% @video_content.video_file_references.each do |file| %>
-											<tr>
-												<td><%=h file.location %></td>
-												<td><%=h file.on_disk %></td>
-											</tr>
-										<% end %>
-									</table>
-								<% end %>
+								<%= render :partial => 'video_files', :object => @video_content.video_file_references %>
 							</div>
 						</div>
-						<div class="actions"> 
-							<a href="#" class="accordionToggleItem">&nbsp;</a> 
-						</div>
-					</div>
-				    <div class="yui-cms-item yui-panel"> 
-			            <div class="hd">Video</div> 
-			            <div class="bd"> 
+					</li>
+				    <li> 
+			            <div>Video</div> 
+			            <div> 
 							<div class="accordionContent">
-			             		Most stuff here
+								<!--
+								<object classid="clsid:02BF25D5-8C17-4B23-BC80-D3488ABDDC6B" 
+									codebase="http://www.apple.com/qtactivex/qtplugin.cab">
+								 	<param name="src" value="<%= video_file_reference_path(@video_content.video_file_references.first) %>" />
+								 	<param name="controller" value="true" />
+								</object>
+			             		-->
 							</div>
 						</div>
-						<div class="actions"> 
-							<a href="#" class="accordionToggleItem">&nbsp;</a> 
-						</div>
-					</div>				
-				</div>
+					</li>				
+				</ul>
 			</div>
 		</div>
 	</div>
 	
+	<script type="text/javascript">
+		YAHOO.util.Event.addListener(window, "load", function() {
+
+			var topMenu = new YAHOO.widget.AccordionView('topAccordion', {width: '550px', animationSpeed: '0.6', animate: true,  
+															expandable: true, collapsible: true, effect: YAHOO.util.Easing.easeNone});
+			<% unless @video_content.video_file_references.empty? %>
+				var fileMenu = new YAHOO.widget.AccordionView('filesAccordion', {width: '520px', animationSpeed: '0.5', animate: true, 
+														expandable: true, collapsible: true, effect: YAHOO.util.Easing.easeNone});
+			
+				<% # Id like this to be in video_files partial but it needs to be init after the AccordionViews 
+				   # as otherwise tab selection doesnt work %>	
+				<% @video_content.video_file_references.each do |file| %>
+					var fileTabView<%= file.id %> = new YAHOO.widget.TabView('filePropertyTab<%= file.id %>');
+					fileTabView<%= file.id %>.set('activeIndex', 0);
+				<% end %>
+				
+			<% end %>
+			YAHOO.util.Dom.removeClass('viewAccordionWrapper', 'hiddenDiv'); 												
+		});
+	</script>	
+	
 	<div class="viewPosterWrapper">
-		<% if @video_content.poster(:large) %>
-			<img src="<%= url_for video_content_video_poster_path(@video_content, @video_content.poster(:large)) %>"
-			 	class="viewPosterLargeImg"/>
-		<% elsif @video_content.poster(:small) %>
-			<img src="<%= url_for video_content_video_poster_path(@video_content, @video_content.poster(:small)) %>"
-			 	class="viewPosterSmallImg" width="100" height="140"/>
-		<% else %>
-			<img src="/images/no_preview.jpg" class="viewPosterSmallImg" width="100" height="140"/>
-		<% end %>
+		<div class="overclear">
+			<% if @video_content.poster(:large) %>
+				<img src="<%= url_for video_content_video_poster_path(@video_content, @video_content.poster(:large)) %>"
+				 	class="viewPosterLargeImg"/>
+			<% elsif @video_content.poster(:small) %>
+				<img src="<%= url_for video_content_video_poster_path(@video_content, @video_content.poster(:small)) %>"
+				 	class="viewPosterSmallImg" width="100" height="140"/>
+			<% else %>
+				<img src="/images/no_preview.jpg" class="viewPosterSmallImg" width="100" height="140"/>
+			<% end %>
+		</div>
+		<div class="viewActionsWrapper">
+			<%= yui_button_link :text => 'Edit Details', :link => edit_video_content_path(@video_content) %>
+		</div>
 	</div>
 </div>

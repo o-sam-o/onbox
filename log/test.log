@@ -1,0 +1,239 @@
+  [4;36;1mVideoContent Create (0.4ms)[0m   [0;1mINSERT INTO "video_contents" ("name", "created_at", "plot", "updated_at", "director", "language", "imdb_id", "runtime", "year", "tag_line", "release_date", "state") VALUES('Avatar', '2010-02-25 10:12:58', 'A paraplegic marine dispatched to the moon Pandora on a unique mission becomes torn between following his orders and protecting the world he feels is his home.', '2010-02-25 10:12:58', NULL, NULL, '0499549', NULL, 2009, NULL, '2009-12-17', 'processed')[0m
+  [4;36;1mVideoContent Create (0.4ms)[0m   [0;1mINSERT INTO "video_contents" ("name", "created_at", "plot", "updated_at", "director", "language", "imdb_id", "runtime", "year", "tag_line", "release_date", "state") VALUES('Avatar', '2010-02-25 10:13:50', 'A paraplegic marine dispatched to the moon Pandora on a unique mission becomes torn between following his orders and protecting the world he feels is his home.', '2010-02-25 10:13:50', NULL, NULL, '0499549', NULL, 2009, NULL, '2009-12-17', 'processed')[0m
+  [4;36;1mVideoContent Create (0.4ms)[0m   [0;1mINSERT INTO "video_contents" ("name", "created_at", "plot", "updated_at", "director", "language", "imdb_id", "runtime", "year", "tag_line", "release_date", "state") VALUES('Avatar', '2010-02-25 10:14:37', 'A paraplegic marine dispatched to the moon Pandora on a unique mission becomes torn between following his orders and protecting the world he feels is his home.', '2010-02-25 10:14:37', NULL, NULL, '0499549', NULL, 2009, NULL, '2009-12-17', 'processed')[0m
+  [4;36;1mVideoContent Create (0.4ms)[0m   [0;1mINSERT INTO "video_contents" ("name", "created_at", "plot", "updated_at", "director", "language", "imdb_id", "runtime", "year", "tag_line", "release_date", "state") VALUES('Avatar', '2010-02-25 10:15:11', 'A paraplegic marine dispatched to the moon Pandora on a unique mission becomes torn between following his orders and protecting the world he feels is his home.', '2010-02-25 10:15:11', NULL, NULL, '0499549', NULL, 2009, NULL, '2009-12-17', 'processed')[0m
+  [4;36;1mVideoContent Create (0.4ms)[0m   [0;1mINSERT INTO "video_contents" ("name", "created_at", "plot", "updated_at", "director", "language", "imdb_id", "runtime", "year", "tag_line", "release_date", "state") VALUES('Avatar', '2010-02-25 10:16:54', 'A paraplegic marine dispatched to the moon Pandora on a unique mission becomes torn between following his orders and protecting the world he feels is his home.', '2010-02-25 10:16:54', NULL, NULL, '0499549', NULL, 2009, NULL, '2009-12-17', 'processed')[0m
+  [4;36;1mVideoContent Create (0.4ms)[0m   [0;1mINSERT INTO "video_contents" ("name", "created_at", "plot", "updated_at", "director", "language", "imdb_id", "runtime", "year", "tag_line", "release_date", "state") VALUES('Avatar', '2010-02-25 10:17:51', 'A paraplegic marine dispatched to the moon Pandora on a unique mission becomes torn between following his orders and protecting the world he feels is his home.', '2010-02-25 10:17:51', NULL, NULL, '0499549', NULL, 2009, NULL, '2009-12-17', 'processed')[0m
+  [4;36;1mVideoContent Create (0.4ms)[0m   [0;1mINSERT INTO "video_contents" ("name", "created_at", "plot", "updated_at", "director", "language", "imdb_id", "runtime", "year", "tag_line", "release_date", "state") VALUES('Avatar', '2010-02-25 10:23:18', 'A paraplegic marine dispatched to the moon Pandora on a unique mission becomes torn between following his orders and protecting the world he feels is his home.', '2010-02-25 10:23:18', NULL, NULL, '0499549', NULL, 2009, NULL, '2009-12-17', 'processed')[0m
+  [4;36;1mVideoContent Create (0.4ms)[0m   [0;1mINSERT INTO "video_contents" ("name", "created_at", "plot", "updated_at", "director", "language", "imdb_id", "runtime", "year", "tag_line", "release_date", "state") VALUES('Avatar', '2010-02-25 10:24:08', 'A paraplegic marine dispatched to the moon Pandora on a unique mission becomes torn between following his orders and protecting the world he feels is his home.', '2010-02-25 10:24:08', '', NULL, '0499549', NULL, 2009, NULL, '2009-12-17', 'processed')[0m
+  [4;36;1mVideoContent Create (0.4ms)[0m   [0;1mINSERT INTO "video_contents" ("name", "created_at", "plot", "updated_at", "director", "language", "imdb_id", "runtime", "year", "tag_line", "release_date", "state") VALUES('Avatar', '2010-02-25 10:24:37', 'A paraplegic marine dispatched to the moon Pandora on a unique mission becomes torn between following his orders and protecting the world he feels is his home.', '2010-02-25 10:24:37', '', NULL, '0499549', NULL, 2009, NULL, '2009-12-17', 'processed')[0m
+  [4;36;1mVideoContent Create (0.4ms)[0m   [0;1mINSERT INTO "video_contents" ("name", "created_at", "plot", "updated_at", "director", "language", "imdb_id", "runtime", "year", "tag_line", "release_date", "state") VALUES('Avatar', '2010-02-25 10:27:00', NULL, '2010-02-25 10:27:00', NULL, NULL, '0499549', NULL, 2009, NULL, '2009-12-17', 'processed')[0m
+  [4;36;1mVideoContent Create (1.0ms)[0m   [0;1mINSERT INTO "video_contents" ("name", "created_at", "plot", "updated_at", "director", "language", "imdb_id", "runtime", "year", "tag_line", "release_date", "state") VALUES('Avatar', '2010-02-25 10:27:47', 'A paraplegic marine dispatched to the moon Pandora on a unique mission becomes torn between following his orders and protecting the world he feels is his home.', '2010-02-25 10:27:47', '
+ 
+ 
+ 
+ 
+ James Cameron
+ 
+ 
+ ', NULL, '0499549', NULL, 2009, NULL, '2009-12-17', 'processed')[0m
+  [4;36;1mVideoContent Create (0.4ms)[0m   [0;1mINSERT INTO "video_contents" ("name", "created_at", "plot", "updated_at", "director", "language", "imdb_id", "runtime", "year", "tag_line", "release_date", "state") VALUES('Avatar', '2010-02-25 10:29:17', 'A paraplegic marine dispatched to the moon Pandora on a unique mission becomes torn between following his orders and protecting the world he feels is his home.', '2010-02-25 10:29:17', 'James Cameron', NULL, '0499549', NULL, 2009, NULL, '2009-12-17', 'processed')[0m
+  [4;36;1mVideoContent Create (0.5ms)[0m   [0;1mINSERT INTO "video_contents" ("name", "created_at", "plot", "updated_at", "director", "language", "imdb_id", "runtime", "year", "tag_line", "release_date", "state") VALUES('Avatar', '2010-02-25 10:29:47', 'A paraplegic marine dispatched to the moon Pandora on a unique mission becomes torn between following his orders and protecting the world he feels is his home.', '2010-02-25 10:29:47', 'James Cameron', NULL, '0499549', NULL, 2009, NULL, '2009-12-17', 'processed')[0m
+  [4;36;1mVideoContent Create (0.4ms)[0m   [0;1mINSERT INTO "video_contents" ("name", "created_at", "plot", "updated_at", "director", "language", "imdb_id", "runtime", "year", "tag_line", "release_date", "state") VALUES('Avatar', '2010-02-25 10:30:22', 'A paraplegic marine dispatched to the moon Pandora on a unique mission becomes torn between following his orders and protecting the world he feels is his home.', '2010-02-25 10:30:22', 'James Cameron', NULL, '0499549', NULL, 2009, 'Enter the World', '2009-12-17', 'processed')[0m
+  [4;36;1mVideoContent Create (0.4ms)[0m   [0;1mINSERT INTO "video_contents" ("name", "created_at", "plot", "updated_at", "director", "language", "imdb_id", "runtime", "year", "tag_line", "release_date", "state") VALUES('Avatar', '2010-02-25 10:31:05', 'A paraplegic marine dispatched to the moon Pandora on a unique mission becomes torn between following his orders and protecting the world he feels is his home.', '2010-02-25 10:31:05', 'James Cameron', 'English', '0499549', NULL, 2009, 'Enter the World', '2009-12-17', 'processed')[0m
+  [4;36;1mVideoContent Create (0.4ms)[0m   [0;1mINSERT INTO "video_contents" ("name", "created_at", "plot", "updated_at", "director", "language", "imdb_id", "runtime", "year", "tag_line", "release_date", "state") VALUES('Avatar', '2010-02-25 10:33:29', 'A paraplegic marine dispatched to the moon Pandora on a unique mission becomes torn between following his orders and protecting the world he feels is his home.', '2010-02-25 10:33:29', 'James Cameron', 'English', '0499549', NULL, 2009, 'Enter the World', '2009-12-17', 'processed')[0m
+  [4;36;1mVideoContent Create (0.4ms)[0m   [0;1mINSERT INTO "video_contents" ("name", "created_at", "plot", "updated_at", "director", "language", "imdb_id", "runtime", "year", "tag_line", "release_date", "state") VALUES('Avatar', '2010-02-25 10:34:11', 'A paraplegic marine dispatched to the moon Pandora on a unique mission becomes torn between following his orders and protecting the world he feels is his home.', '2010-02-25 10:34:11', 'James Cameron', 'English', '0499549', 162, 2009, 'Enter the World', '2009-12-17', 'processed')[0m
+  [4;36;1mVideoContent Create (0.4ms)[0m   [0;1mINSERT INTO "video_contents" ("name", "created_at", "plot", "updated_at", "director", "language", "imdb_id", "runtime", "year", "tag_line", "release_date", "state") VALUES('Avatar', '2010-02-25 10:43:36', 'A paraplegic marine dispatched to the moon Pandora on a unique mission becomes torn between following his orders and protecting the world he feels is his home.', '2010-02-25 10:43:36', 'James Cameron', 'English', '0499549', 162, 2009, 'Enter the World', '2009-12-17', 'processed')[0m
+  [4;36;1mVideoContent Create (0.4ms)[0m   [0;1mINSERT INTO "video_contents" ("name", "created_at", "plot", "updated_at", "director", "language", "imdb_id", "runtime", "year", "tag_line", "release_date", "state") VALUES('Avatar', '2010-02-26 05:05:51', 'A paraplegic marine dispatched to the moon Pandora on a unique mission becomes torn between following his orders and protecting the world he feels is his home.', '2010-02-26 05:05:51', 'James Cameron', 'English', '0499549', 162, 2009, 'Enter the World', '2009-12-17', 'processed')[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.4ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mVideoContent Create (0.4ms)[0m   [0;1mINSERT INTO "video_contents" ("name", "created_at", "plot", "updated_at", "director", "language", "imdb_id", "runtime", "year", "tag_line", "release_date", "state") VALUES('Avatar', '2010-02-28 10:05:53', 'A paraplegic marine dispatched to the moon Pandora on a unique mission becomes torn between following his orders and protecting the world he feels is his home.', '2010-02-28 10:05:53', 'James Cameron', 'English', '0499549', 162, 2009, 'Enter the World', '2009-12-17', 'processed')[0m
+  [4;35;1mGenre Load (0.2ms)[0m   [0mSELECT * FROM "genres" INNER JOIN "genres_video_contents" ON "genres".id = "genres_video_contents".genre_id WHERE ("genres_video_contents".video_content_id = 980190963 ) [0m
+  [4;36;1mVideoContent Create (0.4ms)[0m   [0;1mINSERT INTO "video_contents" ("name", "created_at", "plot", "updated_at", "director", "language", "imdb_id", "runtime", "year", "tag_line", "release_date", "state") VALUES('Avatar', '2010-02-28 10:07:26', 'A paraplegic marine dispatched to the moon Pandora on a unique mission becomes torn between following his orders and protecting the world he feels is his home.', '2010-02-28 10:07:26', 'James Cameron', 'English', '0499549', 162, 2009, 'Enter the World', '2009-12-17', 'processed')[0m
+  [4;35;1mGenre Load (0.2ms)[0m   [0mSELECT * FROM "genres" INNER JOIN "genres_video_contents" ON "genres".id = "genres_video_contents".genre_id WHERE ("genres_video_contents".video_content_id = 980190963 ) [0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mVideoContent Create (0.4ms)[0m   [0;1mINSERT INTO "video_contents" ("name", "created_at", "plot", "updated_at", "director", "language", "imdb_id", "runtime", "year", "tag_line", "release_date", "state") VALUES('Avatar', '2010-02-28 10:21:39', 'A paraplegic marine dispatched to the moon Pandora on a unique mission becomes torn between following his orders and protecting the world he feels is his home.', '2010-02-28 10:21:39', 'James Cameron', 'English', '0499549', 162, 2009, 'Enter the World', '2009-12-17', 'processed')[0m
+  [4;36;1mVideoContent Create (0.4ms)[0m   [0;1mINSERT INTO "video_contents" ("name", "created_at", "plot", "updated_at", "director", "language", "imdb_id", "runtime", "year", "tag_line", "release_date", "state") VALUES('Avatar', '2010-02-28 10:23:15', 'A paraplegic marine dispatched to the moon Pandora on a unique mission becomes torn between following his orders and protecting the world he feels is his home.', '2010-02-28 10:23:15', 'James Cameron', 'English', '0499549', 162, 2009, 'Enter the World', '2009-12-17', 'processed')[0m
+  [4;36;1mVideoContent Create (0.4ms)[0m   [0;1mINSERT INTO "video_contents" ("name", "created_at", "plot", "updated_at", "director", "language", "imdb_id", "runtime", "year", "tag_line", "release_date", "state") VALUES('Avatar', '2010-02-28 10:27:01', 'A paraplegic marine dispatched to the moon Pandora on a unique mission becomes torn between following his orders and protecting the world he feels is his home.', '2010-02-28 10:27:01', 'James Cameron', 'English', '0499549', 162, 2009, 'Enter the World', '2009-12-17', 'processed')[0m
+  [4;36;1mVideoContent Create (0.4ms)[0m   [0;1mINSERT INTO "video_contents" ("name", "created_at", "plot", "updated_at", "director", "language", "imdb_id", "runtime", "year", "tag_line", "release_date", "state") VALUES('Avatar', '2010-02-28 10:30:27', 'A paraplegic marine dispatched to the moon Pandora on a unique mission becomes torn between following his orders and protecting the world he feels is his home.', '2010-02-28 10:30:27', 'James Cameron', 'English', '0499549', 162, 2009, 'Enter the World', '2009-12-17', 'processed')[0m
+  [4;36;1mGenre Load (0.2ms)[0m   [0;1mSELECT * FROM "genres" WHERE ("genres"."name" = 'Action') LIMIT 1[0m
+  [4;35;1mGenre Load (0.1ms)[0m   [0mSELECT * FROM "genres" WHERE ("genres"."name" = 'Adventure') LIMIT 1[0m
+  [4;36;1mGenre Load (0.1ms)[0m   [0;1mSELECT * FROM "genres" WHERE ("genres"."name" = 'Sci-Fi') LIMIT 1[0m
+  [4;35;1mVideoContent Create (0.3ms)[0m   [0mINSERT INTO "video_contents" ("name", "created_at", "plot", "updated_at", "director", "language", "imdb_id", "runtime", "year", "tag_line", "release_date", "state") VALUES('Avatar', '2010-02-28 10:32:06', 'A paraplegic marine dispatched to the moon Pandora on a unique mission becomes torn between following his orders and protecting the world he feels is his home.', '2010-02-28 10:32:06', 'James Cameron', 'English', '0499549', 162, 2009, 'Enter the World', '2009-12-17', 'processed')[0m
+Mediainfo called failed ... is it installed?
+Mediainfo called failed ... is it installed? Message: sh: mediainfo2: command not found
+WARNING: Can't mass-assign these protected attributes: id
+WARNING: Can't mass-assign these protected attributes: id
+WARNING: Can't mass-assign these protected attributes: id
+WARNING: Can't mass-assign these protected attributes: id
+WARNING: Can't mass-assign these protected attributes: id
+WARNING: Can't mass-assign these protected attributes: id

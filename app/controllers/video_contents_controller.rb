@@ -3,8 +3,10 @@ class VideoContentsController < ApplicationController
       :only => [:show, :edit, :update, :destroy]
       
   def index
-    @video_contents = VideoContent.all
-
+    @page, offset = page_and_offset
+    @video_contents = VideoContent.all(:limit => ONBOX_CONFIG[:default_table_size], :offset => offset, :order => "name")
+    @video_content_count = VideoContent.count
+    
     respond_to do |format|
       format.html # index.html.erb
       format.json  { render :json => @video_contents.to_json(:include => :video_posters) }

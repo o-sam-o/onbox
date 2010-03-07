@@ -1,6 +1,3 @@
-require 'rubygems'
-require 'rio'
-require 'image_size'
 require 'lib/util/imdb_metadata_scraper'
 
 class ScrapImdbWorker < BackgrounDRb::MetaWorker
@@ -24,7 +21,7 @@ class ScrapImdbWorker < BackgrounDRb::MetaWorker
   private
     def get_imdb_id(video_content)
       imdb_id = video_content.imdb_id
-      if not imdb_id or imdb_id.blank?
+      if not imdb_id || imdb_id.blank?
         imdb_id = ImdbMetadataScraper.search_for_imdb_id(video_content.name, video_content.year)
       end
       return imdb_id
@@ -36,14 +33,18 @@ class ScrapImdbWorker < BackgrounDRb::MetaWorker
       if not imdb_id
         logger.error("Failed to find imdb id for video: #{video_content.display_name}")
         video_content.state = VideoContentState::NO_IMDB_ID
-        video_content.save! and return
+        video_content.save! && return
       end
       
       logger.debug "Found imdb_id #{imdb_id} for #{video_content.display_name}"
       movie_info = ImdbMetadataScraper.scrap_movie_info(imdb_id)
+      genres = movie_info['genre'].strip.split.collect { |name| Genre.find_or_create_by_name(name) }
+      
       video_content.update_attributes!({:name => movie_info['title'], :year => movie_info['year'],
                                         :imdb_id => imdb_id, :plot => movie_info['plot'], 
-                                        :release_date => movie_info['release date'],
+                                        :release_date => movie_info['release date'], :genre_ids => genres.collect { |g| g.id },
+                                        :director => movie_info['director'], :tag_line => movie_info['tagline'],
+                                        :language => movie_info['language'], :runtime => movie_info['runtime'],
                                         :state => VideoContentState::PROCESSED})
       logger.debug "About to download posters"
       get_movie_posters(movie_info, video_content)
@@ -60,7 +61,7 @@ class ScrapImdbWorker < BackgrounDRb::MetaWorker
         return
       end
       img_name = poster_file_name(video_content.name, video_content.year, size, File.extname(url))
-      img_complete_path = File.join(VideoPostersController::ROOT_POSTER_DIR, img_name)
+      img_complete_path = File.join(ONBOX_CONFIG[:poster_storage], img_name)
       rio(img_complete_path) < rio(url)
       logger.debug "Downloaded poster #{url} to #{img_complete_path}"
       width, height = ImageSize.new(File.new(img_complete_path, "r")).get_size
@@ -71,7 +72,8 @@ class ScrapImdbWorker < BackgrounDRb::MetaWorker
     
     # Generates a filename based on name, year and size.  Ensures name is unique by adding numbers on the end
     def poster_file_name(name, year, size, ext, attempt = 1)
-      file_name = name.gsub(/\s/, '.').downcase
+      #Clean movie name, it may contain invalid chars
+      file_name = name.gsub(/\s/, '.').gsub(/[^a-zA-Z_0-9\.]/, '').downcase
       file_name += ".#{year}" if year      
       file_name += ".#{size}"
       file_name += ".#{attempt}" if attempt > 1

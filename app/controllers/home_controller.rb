@@ -12,7 +12,7 @@ class HomeController < ApplicationController
   end
   
   def video_content_items
-    @video_contents = VideoContent.all(:limit=> params['page_size'].to_i, :offset => params['offset'].to_i)
+    @video_contents = VideoContent.all(:limit=> params['page_size'], :offset => params['offset'])
   end
 
 end

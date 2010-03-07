@@ -1,32 +1,58 @@
+<% content_for :head do %>
+	<%= render :partial => 'shared/yui_table_header' %>
+	<style>
+
+	.yui-dt table
+	{
+	    width: 100%;
+	}
+
+	</style>	
+<% end %>
+
 <h1>Video files</h1>
 
-<table>
-  <tr>
-    <th>Raw Name</th>
-    <th>Folder</th>
-	<th>On Disk</th>
-	<th>Date Added</th>	
-	<th colspan="3">Actions</th>
-  </tr>
+<div id="referenceTableDiv">
+	<table id="referenceTable">
+	<thead>
+	  <tr>
+	    <th>Raw Name</th>
+	    <th>Folder</th>
+		<th>Format</th>
+		<th>Date Added</th>	
+		<th>Actions</th>
+	  </tr>
+	</thead>
+	<tbody>
+	<% @references.each do |reference| %>
+	  <tr>
+	    <td><%= truncate_and_tooltip :text => reference.raw_name, :max_length => 35 %></td>
+		<td><%= truncate_from_start reference.media_folder.location, 20 %></td>
+		<td><%=h reference.format %></td>
+	    <td><%=h reference.created_at %></td>
 
-<% @references.each do |reference| %>
-  <tr>
-    <td><%=h reference.raw_name %></td>
-	<td><%=h reference.media_folder.location %></td>
-	<td><%=h reference.on_disk %></td>
-    <td><%=h reference.created_at %></td>
+		<td>
+			<% if reference.video_content %>
+				<%= link_to 'Show Video', video_content_path(reference.video_content) %> |
+			<% end %>
+			<%= link_to 'Download', video_file_reference_path(reference) %> |
+	    	<%= link_to 'Edit', edit_video_file_reference_path(reference) %> |
+	    	<%= link_to 'Destroy', reference, :confirm => 'Are you sure?', :method => :delete %></td>
+	  </tr>
+	<% end %>
+	</tbody>
+	</table>
+</div>
 
-	<td>
-		<% if reference.video_content %>
-			<%= link_to 'Show Video', video_content_path(reference.video_content) %>
-		<% end %>
-	</td>
-    <td><%= link_to 'Edit', edit_video_file_reference_path(reference) %></td>
-    <td><%= link_to 'Destroy', reference, :confirm => 'Are you sure?', :method => :delete %></td>
-  </tr>
-<% end %>
-</table>
+<div style="float: right">
+	<div id="tablePaginator"></div>
+</div>
 
-<br />
+<div style="padding-top: 5px;">
+<%= yui_button_link :text => 'New video file reference', :link => new_video_file_reference_path %>
+</div>
 
-<%= link_to 'New video file reference', new_video_file_reference_path %>
+<%= render :partial => 'shared/yui_table', 
+	:object => {:columns => ['Raw Name', 'Folder', 'On Disk', 'Date Added', 'Actions'], 
+				:tableId => 'referenceTable', :divId => 'referenceTableDiv',
+				:item_count => @reference_count, :paginator_div => 'tablePaginator', :page => @page } %>

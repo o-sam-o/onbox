@@ -15,7 +15,7 @@ class FileNameInfo
     if @name
       s += @name
       s += " [#{@year}]" if @year
-      s += " S: #{@session} E: #{@episode}" if @session or @episode
+      s += " S: #{@session} E: #{@episode}" if @session || @episode
     elsif @raw_name
       s += @raw_name
     else
@@ -55,7 +55,7 @@ class FileNameCleaner
     name = $` if name =~ CONTENT_SOURCE_REGEX
 
     #Extract year if it's in the filename
-    if name =~ YEAR_REGEX and name.index(YEAR_REGEX) > 0
+    if name =~ YEAR_REGEX && name.index(YEAR_REGEX) > 0
       name = $`
       #Strip any surronding brackets and convert to int
       year = $&.gsub(/\(|\)|\[|\]/, '').to_i

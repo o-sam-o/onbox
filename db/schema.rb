@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100216083451) do
+ActiveRecord::Schema.define(:version => 20100301084706) do
 
   create_table "bdrb_job_queues", :force => true do |t|
     t.text     "args"
@@ -31,6 +31,20 @@ ActiveRecord::Schema.define(:version => 20100216083451) do
     t.datetime "scheduled_at"
   end
 
+  create_table "genres", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "genres_video_contents", :id => false, :force => true do |t|
+    t.integer "video_content_id"
+    t.integer "genre_id"
+  end
+
+  add_index "genres_video_contents", ["genre_id"], :name => "index_genres_video_contents_on_genre_id"
+  add_index "genres_video_contents", ["video_content_id"], :name => "index_genres_video_contents_on_video_content_id"
+
   create_table "media_folders", :force => true do |t|
     t.string   "location"
     t.boolean  "scan"
@@ -47,6 +61,20 @@ ActiveRecord::Schema.define(:version => 20100216083451) do
     t.string   "imdb_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "runtime"
+    t.string   "director"
+    t.string   "language"
+    t.string   "tag_line"
+  end
+
+  create_table "video_file_properties", :force => true do |t|
+    t.string   "name"
+    t.string   "value"
+    t.integer  "order"
+    t.integer  "video_file_reference_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "group"
   end
 
   create_table "video_file_references", :force => true do |t|
@@ -57,6 +85,8 @@ ActiveRecord::Schema.define(:version => 20100216083451) do
     t.integer  "video_content_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "size"
+    t.string   "format"
   end
 
   create_table "video_posters", :force => true do |t|

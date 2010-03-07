@@ -21,6 +21,7 @@ class VideoContent < ActiveRecord::Base
   validates_presence_of :name, :state
   has_many :video_file_references
   has_many :video_posters
+  has_and_belongs_to_many :genres
   validates_inclusion_of :state, :in => VideoContentState::VALUES
   
   def poster(size)
@@ -35,5 +36,10 @@ class VideoContent < ActiveRecord::Base
     display_name = self.name
     display_name += " (#{self.year})" if self.year
     return display_name
+  end
+  
+  def runtime_formatted
+    return '' if not runtime
+    return "#{runtime} min"
   end
 end

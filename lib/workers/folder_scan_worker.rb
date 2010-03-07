@@ -1,5 +1,6 @@
 require "lib/util/folder_scanner"
 require "lib/util/file_name_cleaner"
+require "lib/util/media_info_util"
 
 class FolderScanWorker < BackgrounDRb::MetaWorker
   set_worker_name :folder_scan_worker
@@ -7,12 +8,14 @@ class FolderScanWorker < BackgrounDRb::MetaWorker
   def scan_all_folders
     logger.info "About to scan all folders"
     
-    #TODO skip folders without the scan flag set
-    for folder in MediaFolder.all
+    for folder in MediaFolder.find_all_by_scan(true)
       logger.info "Scanning folder #{folder.location}"
       FolderScanner.find_content_in_folder(folder.location) do |file| 
         logger.debug "Found media file: #{file}"
         reference = get_file_reference(file, folder)
+        
+        update_file_properties(reference) if reference.updated_at < File.mtime(file)
+          
         if reference.video_content
           logger.debug "File already associated with #{reference.video_content.display_name} skipping"
           next
@@ -45,7 +48,7 @@ class FolderScanWorker < BackgrounDRb::MetaWorker
   private
     def get_file_reference(location, folder)
       reference = VideoFileReference.find_by_location(location)
-      return reference unless not reference
+      return reference if reference
       logger.debug "New file references found, creating new mode"
       reference = VideoFileReference.new({:location => location, :media_folder => folder, :on_disk => true,
                                           :raw_name => FileNameCleaner.get_file_name(location)})
@@ -54,8 +57,28 @@ class FolderScanWorker < BackgrounDRb::MetaWorker
     end
     
     def find_video_content(name, year)
-      return VideoContent.find_by_name_and_year(name, year) unless not year
+      return VideoContent.find_by_name_and_year(name, year) if year
       return VideoContent.find_by_name(name)
+    end
+    
+    def update_file_properties(reference)
+      logger.debug "Updating file properties for #{reference.location}"
+      existing_values = {}
+      format = reference.format
+      reference.video_file_properties.each { |i| existing_values[i.group + '-' + i.name] = i }
+      MediaInfoUtil.get_media_info(reference.location).each_with_index do |info,index|
+        info_params = {:group => info.group, :order => index, :name => info.key, :value => info.value}
+        current = existing_values[info.group + '-' + info.key]
+        if not current
+          current = reference.video_file_properties.build(info_params)
+          current.save!
+        else
+          current.update_attributes!(info_params)
+        end
+        #Pull out the most important property and set on the reference entity
+        format = info.value if info.group == 'General' and info.key == 'Format'
+      end
+      reference.update_attribute(:format, format)
     end
 
 end

@@ -1,4 +1,4 @@
-<div style="width: 600px;">
+<div class="formWrapper">
 <% form_for @video_content, :html => { :class => 'defaultForm' } do |video_form| %>
   <fieldset>
       <legend>Video Content:</legend>
@@ -45,3 +45,8 @@
   </div>
 <% end %>
 </div>
+<% if not @video_content.new_record? %>
+	<div class="formSideBar">
+		  <%= link_to 'Edit Posters', video_content_video_posters_path(@video_content) %>
+	</div>
+<% end %>

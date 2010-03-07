@@ -12,12 +12,13 @@
  <%= javascript_include_tag :defaults %>
 
  <!-- Common YUI resources -->
- <!--link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/2.8.0r4/build/fonts/fonts-min.css"-->
- <link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/2.8.0r4/build/button/assets/skins/sam/button.css">
- <script src="http://yui.yahooapis.com/2.8.0r4/build/yahoo/yahoo-min.js"></script>
- <script src="http://yui.yahooapis.com/2.8.0r4/build/yahoo-dom-event/yahoo-dom-event.js"></script> 
- <script src="http://yui.yahooapis.com/2.8.0r4/build/logger/logger-min.js"></script>
-
+ <!--link rel="stylesheet" type="text/css" href="<%= ONBOX_CONFIG[:yui_path] %>/fonts/fonts-min.css"-->
+ <link rel="stylesheet" type="text/css" href="<%= ONBOX_CONFIG[:yui_path] %>/button/assets/skins/sam/button.css">
+ <script src="<%= ONBOX_CONFIG[:yui_path] %>/yahoo/yahoo-min.js"></script>
+ <script src="<%= ONBOX_CONFIG[:yui_path] %>/yahoo-dom-event/yahoo-dom-event.js"></script> 
+ <script src="<%= ONBOX_CONFIG[:yui_path] %>/logger/logger-min.js"></script>
+ <link rel="stylesheet" type="text/css" href="<%= ONBOX_CONFIG[:yui_path] %>/container/assets/skins/sam/container.css" /> 
+ <script type="text/javascript" src="<%= ONBOX_CONFIG[:yui_path] %>/container/container-min.js"></script> 
 
  <%= yield :head %>
 </head>

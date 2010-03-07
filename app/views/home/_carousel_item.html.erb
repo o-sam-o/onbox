@@ -1,5 +1,5 @@
 <div class="contentCarouselItem">
-	<div class="contentCarouselName"><%=h carousel_item.name %></div>				
+	<div class="contentCarouselName"><%= truncate_and_tooltip :text => carousel_item.name, :max_length => 21 %></div>				
 	<div class="contentCarouselImageDiv">
 		<a href="<%= url_for carousel_item %>">
 			<% if carousel_item.poster(:small) %>
@@ -11,5 +11,5 @@
 		</a>
 	</div>
 	<div class="contentCarouselYear"><%=h carousel_item.year %></div>
-	<div class="contentCarouselRuntime">1h 32m</div>
+	<div class="contentCarouselRuntime"><%=h carousel_item.runtime_formatted %></div>
 </div>

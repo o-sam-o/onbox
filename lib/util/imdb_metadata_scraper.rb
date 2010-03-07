@@ -1,12 +1,9 @@
-require 'rubygems'
-require "hpricot"
-require "open-uri"
-require 'uri'
-
 class ImdbMetadataScraper 
   IMDB_BASE_URL = 'http://www.imdb.com/'
   IMDB_SEARCH_URL = IMDB_BASE_URL + 'find?s=tt&q='
   IMDB_MOVIE_URL = IMDB_BASE_URL + 'title/tt'
+
+  STRIP_WHITESPACE = /(\s{2,}|\n|\|)/
 
   def self.search_for_imdb_id(name, year)
     doc = Hpricot(open(IMDB_SEARCH_URL + URI.escape(name)))
@@ -14,11 +11,11 @@ class ImdbMetadataScraper
       td.search("//a") do |link|  
         href = link.attributes['href']
         current_name = link.inner_text
-        if href =~ /^\/title\/tt(\d+)/ and not link.inner_text.empty?
+        if href =~ /^\/title\/tt(\d+)/ && link.inner_text.present?
           imdb_id = $1
-          current_year = $1.gsub(/\(\)/, '').to_i if td.inner_text =~ /\((\d{4})\)/
+          current_year = $1.gsub(/\(\)/, '').to_i if td.inner_text =~ /\((\d{4}\/?\w*)\)/
 
-          return imdb_id if not year or current_year == year
+          return imdb_id if not year || current_year == year
         end
       end
     end
@@ -28,9 +25,10 @@ class ImdbMetadataScraper
   def self.scrap_movie_info(imdb_id)
     info_hash = {}
     
-    doc = Hpricot(open(IMDB_MOVIE_URL + imdb_id))
+    doc = ImdbMetadataScraper.get_movie_page(imdb_id)
     title_text = doc.search("//meta[@name='title']").first.attributes['content']
-    if title_text =~ /(.*) \((\d{4}).*\)/
+    # Matches 'Movie Name (2010)' or 'Movie Name (2010/I)'
+    if title_text =~ /(.*) \((\d{4})\/?\w*\)/
       info_hash['title'] = $1
       info_hash['year'] = $2
     else
@@ -42,8 +40,23 @@ class ImdbMetadataScraper
     doc.search("//div[@class='info']") do |div|
       next if div.search("//h5").empty?
       found_info_divs = true
-      key = div.search("//h5").first.inner_text.sub(':', '')
-      value = div.search("//div[@class = 'info-content']").first.inner_text.gsub(/(\s{2,}|\n|more$)/, '')
+      key = div.search("//h5").first.inner_text.sub(':', '').downcase
+      value_search = "//div[@class = 'info-content']"
+      value = div.search(value_search).first.children.select{|e| e.text?}.join.gsub(STRIP_WHITESPACE, '')
+      if value.empty?
+        value = div.search(value_search).first.inner_text.gsub(STRIP_WHITESPACE, '')
+      end
+      if key == 'release date'
+        value = Date.strptime(value, '%d %B %Y')
+      elsif key == 'runtime'
+        if value =~ /(\d+)\smin/
+          value = $1.to_i
+        else
+          logger.error "Unexpected runtime format #{value} for movie #{imdb_id}"
+        end
+      elsif key == 'genre'
+        value = value.sub(/more$/, '')
+      end
       info_hash[key.downcase] = value
     end
     
@@ -70,5 +83,12 @@ class ImdbMetadataScraper
     
     return info_hash 
   end
+
+  private
+    def self.get_movie_page(imdb_id)
+      require 'open-uri'
+      require 'hpricot'
+      return Hpricot(open(IMDB_MOVIE_URL + imdb_id))
+    end
 
 end

@@ -1,25 +1,48 @@
+<% content_for :head do %>
+	<%= render :partial => 'shared/yui_table_header' %>
+	<style>
+
+	.yui-dt table
+	{
+	    width: 100%;
+	}
+
+	</style>	
+<% end %>
+
 <h1>Video posters for <%=h @video_content.name %></h1>
 
-<table>
+<div id="tableWrapper">
+<table id="posterTable">
+  <thead>
   <tr>
     <th>Type</th>
-    <th>Date Created</th>
     <th>Location</th>
-	<th colspan="3">Actions</th>
+    <th>Date Created</th>
+	<th>Actions</th>
   </tr>
+  </thead>
 
+<tbody>
 <% @video_posters.each do |poster| %>
   <tr>
     <td><%=h VideoPosterSize.display_name(poster.size) %></td>
-    <td><%=h poster.created_at %></td>
     <td><%=h poster.location %></td>
-	<td><%= link_to 'Show', video_content_video_poster_path(@video_content, poster) %></td>
-    <td><%= link_to 'Edit', edit_video_content_video_poster_path(@video_content, poster) %></td>
-    <td><%= link_to 'Destroy', video_content_video_poster_path(@video_content, poster), :confirm => 'Are you sure?', :method => :delete %></td>
+    <td><%=h poster.created_at %></td>
+	<td>
+	    <%= link_to 'Show', video_content_video_poster_path(@video_content, poster) %> |
+        <%= link_to 'Edit', edit_video_content_video_poster_path(@video_content, poster) %> |
+        <%= link_to 'Destroy', video_content_video_poster_path(@video_content, poster), :confirm => 'Are you sure?', :method => :delete %>
+    </td>
   </tr>
 <% end %>
+</tbody>
 </table>
+</div>
+<br/>
 
-<br />
+<%= yui_button_link :text => 'New Poster', :link => new_video_content_video_poster_path(@video_content) %>
 
-<%= link_to 'New poster', new_video_content_video_poster_path(@video_content) %>
+<%= render :partial => 'shared/yui_table', 
+	:object => {:columns => ['Type', 'Location', 'Date Created', 'Actions'], 
+				:tableId => 'posterTable', :divId => 'tableWrapper' } %>

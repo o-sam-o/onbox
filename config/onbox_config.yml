@@ -1,0 +1,12 @@
+development:
+  domain: localhost:3000
+  yui_path: /yui
+  poster_storage: /Volumes/Other/OnBoxPosters/
+  default_table_size: 10
+
+test:
+  domain: test.host
+  yui_path: http://yui.yahooapis.com/2.8.0r4/build
+
+production:
+  domain: example.com

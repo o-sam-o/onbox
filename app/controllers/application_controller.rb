@@ -7,4 +7,15 @@ class ApplicationController < ActionController::Base
 
   # Scrub sensitive parameters from your log
   # filter_parameter_logging :password
+  
+  private
+    def page_and_offset
+      offset = 0
+      page = 1
+      if params[:page]
+        page = params[:page].to_i
+        offset = (page - 1) * ONBOX_CONFIG[:default_table_size]
+      end
+      return page, offset
+    end
 end

@@ -1,13 +1,29 @@
+<% content_for :head do %>
+	<%= render :partial => 'shared/yui_table_header' %>
+	<style>
+
+	.yui-dt table
+	{
+	    width: 100%;
+	}
+
+	</style>	
+<% end %>
+
 <h1>Media Folders</h1>
 
-<table>
+<div id="tableDiv">
+<table id="foldersTable">
+  <thead>
   <tr>
     <th>Location</th>
     <th>Scan</th>
     <th>Date Created</th>
 	<th colspan="2">Actions</th>
   </tr>
+  </thead>
 
+<tbody>
 <% @media_folders.each do |media_folder| %>
   <tr>
     <td><%=h media_folder.location %></td>
@@ -17,8 +33,13 @@
     <td><%= link_to 'Destroy', media_folder, :confirm => 'Are you sure?', :method => :delete %></td>
   </tr>
 <% end %>
+</tbody>
 </table>
-
+</div>
 <br />
 
-<%= link_to 'New media folder', new_media_folder_path %>
+<%= yui_button_link :text => 'New media folder', :link => new_media_folder_path %>
+
+<%= render :partial => 'shared/yui_table', 
+	:object => {:columns => ['Location', 'Scan', 'Date Created', 'Actions'], 
+				:tableId => 'foldersTable', :divId => 'tableDiv' } %>

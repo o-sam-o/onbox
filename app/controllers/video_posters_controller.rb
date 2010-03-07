@@ -2,9 +2,6 @@ class VideoPostersController < ApplicationController
   before_filter :find_video_content
   before_filter :find_video_poster,
       :only => [:show, :edit, :update, :destroy]
-  
-  #TODO move to some config dir
-  ROOT_POSTER_DIR = '/Volumes/Other/OnBoxPosters/'
       
   def index
     @video_posters = @video_content.video_posters
@@ -21,11 +18,11 @@ class VideoPostersController < ApplicationController
   end
 
   def show
-      if not File.exists?(ROOT_POSTER_DIR + @video_poster.location)
-        logger.error "Unable to find poster: #{ROOT_POSTER_DIR}#{@video_poster.location} for video content #{@video_content.id}"
+      if not File.exists?(ONBOX_CONFIG[:poster_storage] + @video_poster.location)
+        logger.error "Unable to find poster: #{ONBOX_CONFIG[:poster_storage]}#{@video_poster.location} for video content #{@video_content.id}"
         render :status => 404 and return
       end
-      send_file ROOT_POSTER_DIR + @video_poster.location, :disposition => 'inline', :type => 'image/jpeg'
+      send_file ONBOX_CONFIG[:poster_storage] + @video_poster.location, :disposition => 'inline', :type => 'image/jpeg'
   end
 
   def edit
@@ -36,8 +33,8 @@ class VideoPostersController < ApplicationController
     @video_poster = @video_content.video_posters.build(params[:video_poster])
 
     if @video_poster.save
-      flash[:notice] = 'Video poster was successfully created.'
-      redirect_to(@video_content)
+      flash[:notice] = "Video poster '#{@video_poster.location}' was successfully created."
+      redirect_to(video_content_video_posters_path(@video_content))
     else
       render 'video_posters/save'
     end
@@ -45,16 +42,17 @@ class VideoPostersController < ApplicationController
   
   def update
     if @video_poster.update_attributes(params[:video_poster])
-      flash[:notice] = 'Video poster was successfully updated.'
-      redirect_to(@video_content)
+      flash[:notice] = "Video poster '#{@video_poster.location}' was successfully updated."
+      redirect_to(video_content_video_posters_path(@video_content))
     else
       render 'video_posters/save'
     end    
   end
 
   def destroy
+    flash[:notice] = "Video poster '#{@video_poster.location}' was removed."
     @video_poster.destroy
-    redirect_to(video_contents_url)
+    redirect_to(video_content_video_posters_path(@video_content))
   end    
 
   private

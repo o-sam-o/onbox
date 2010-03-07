@@ -5,7 +5,9 @@ class VideoFileReferencesController < ApplicationController
   auto_complete_for :video_content, :name
   
   def index
-    @references = VideoFileReference.all
+    @page, offset = page_and_offset
+    @references = VideoFileReference.all(:limit => ONBOX_CONFIG[:default_table_size], :offset => offset, :order => "raw_name")
+    @reference_count = VideoFileReference.count
   end
 
   def new
@@ -18,13 +20,18 @@ class VideoFileReferencesController < ApplicationController
   end
 
   def show
+    if not File.exists?(@reference.location)
+      logger.error "Unable to find file: #{@reference.location} for reference #{@reference.id}"
+      render :status => 404 and return
+    end
+    send_file @reference.location, :type => 'video'     
   end
 
   def create
     @reference = VideoFileReference.new(params[:video_file_reference])
     @reference.valid?
     set_video_content
-    if @reference.errors.empty? and @reference.save
+    if @reference.errors.empty? && @reference.save
       flash[:notice] = "'#{@reference.location}' was successfully created."
       redirect_to(video_file_references_url)
     else
@@ -36,7 +43,7 @@ class VideoFileReferencesController < ApplicationController
     @reference.attributes = params[:video_file_reference]
     @reference.valid?
     set_video_content
-    if @reference.errors.empty? and @reference.save()
+    if @reference.errors.empty? && @reference.save()
       flash[:notice] = "'#{@reference.location}' was successfully updated."
       redirect_to(video_file_references_url)
     else

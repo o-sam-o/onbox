@@ -21,7 +21,7 @@ class FolderScanner
           subfile_path = "#{file}/#{subfile}"
           if subfile =~ /.*\.nfo$/
             nfo = subfile_path
-          elsif subfile =~ MEDIA_REGEX and subfile !~ /.*sample.*/
+          elsif subfile =~ MEDIA_REGEX && subfile !~ /.*sample.*/
             yield subfile_path
             found_media = true
           end

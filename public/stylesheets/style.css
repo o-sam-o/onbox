@@ -126,12 +126,17 @@
 
 .viewCoreMetadata {
     float: left;
-    width: 560px;
+    width: 550px;
     margin-right: 20px; 
 }
 
 .viewPosterWrapper {
     float: left;
+    max-width: 290px;
+}
+
+.viewPosterLargeImg {
+    max-width: 290px;    
 }
 
 .viewCoreDetailsWrapper {
@@ -140,7 +145,7 @@
 
 .viewCoreDetailsLeft {
     float: left;
-    width: 280px;
+    width: 275px;
     margin-right: 10px;
 }
 
@@ -161,7 +166,7 @@
     margin-left: 5px;
 }
 
-.viewAccordionWrapper {
+#viewAccordionWrapper {
     padding-top: 10px;
     padding-left: 2px;
 }
@@ -172,4 +177,27 @@
 
 .accordionContent {
     padding: 10px;
+}
+
+.formWrapper {
+    float: left;
+    width: 600px;
+}
+
+.formSideBar{
+    float: left;
+    margin-top: 10px;
+    margin-left: 20px;
+}
+
+.viewActionsWrapper {
+    margin-top: 5px;
+}
+
+.filePropertyName {
+    font-weight: bold;
+}
+
+.hiddenDiv {
+    visibility:hidden;
 }

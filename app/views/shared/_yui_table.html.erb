@@ -1,0 +1,51 @@
+<script>
+YAHOO.util.Event.addListener(window, "load", function() {
+	var tableColumnDefs = [
+		<% for column in yui_table[:columns] %>
+			{key: '<%= column %>' }<% if column != yui_table[:columns].last %>,<% end %>
+		<% end %>
+	];
+
+	this.htmlDataSource = new YAHOO.util.DataSource(YAHOO.util.Dom.get("<%= yui_table[:tableId] %>"));
+	this.htmlDataSource.responseType = YAHOO.util.DataSource.TYPE_HTMLTABLE;
+	this.htmlDataSource.responseSchema = {
+	   fields: [
+		<% for column in yui_table[:columns] %>
+			{key: '<%= column %>' }<% if column != yui_table[:columns].last %>,<% end %>
+		<% end %>
+	   ]
+	};
+
+	this.htmlDataTable = new YAHOO.widget.DataTable("<%= yui_table[:divId] %>", tableColumnDefs, this.htmlDataSource);
+	
+    // Subscribe to events for row selection
+    htmlDataTable.subscribe("rowMouseoverEvent", htmlDataTable.onEventHighlightRow);
+    htmlDataTable.subscribe("rowMouseoutEvent", htmlDataTable.onEventUnhighlightRow);
+	
+	<% if yui_table[:paginator_div] %>
+		var paginator = new YAHOO.widget.Paginator({
+		    rowsPerPage : <%= ONBOX_CONFIG[:default_table_size] %>,
+		    totalRecords: <%= yui_table[:item_count] %>,
+		    containers  : '<%= yui_table[:paginator_div] %>'
+		});
+		<% if yui_table[:page] %>
+			paginator.setState({ page : <%= yui_table[:page] %>});
+		<% end %>
+		paginator.subscribe('changeRequest', function(e){  
+	        var attrRegex = new RegExp('page=[0-9]*');
+	        var reloadUrl = document.location.href;
+	        if(reloadUrl.match(attrRegex)){
+	            reloadUrl = reloadUrl.replace(attrRegex, 'page=' + e.page);
+	        }else{
+	            if(reloadUrl.indexOf('?') > -1){
+	                reloadUrl = reloadUrl + '&page=' + e.page;
+	            }else{
+	                reloadUrl = reloadUrl + '?page=' + e.page;
+	            }        
+	        }		
+			window.location = reloadUrl;
+		});
+		paginator.render();
+	<% end %>
+});
+</script>
