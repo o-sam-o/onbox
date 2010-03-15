@@ -37,50 +37,56 @@
 
 <h1>Your Movies</h1>
 
-<div id="contentContainer">
-	<ol>
-		<% @video_contents.each do |video_content| %>
-			<li>
-				<%= render :partial => "carousel_item", :object => video_content %>
-			</li>
-		<% end %>
-	</ol>
-</div>
+<% unless @video_contents.empty? %>
+	<div id="contentContainer">
+		<ol>
+			<% @video_contents.each do |video_content| %>
+				<li>
+					<%= render :partial => "carousel_item", :object => video_content %>
+				</li>
+			<% end %>
+		</ol>
+	</div>
 
 
-<script>
-	var carWidth = <%= HomeController::CAROUSEL_WIDTH %>;
-	var carHeight = <%= HomeController::CAROUSEL_HEIGHT %>;
-	var carousel = null;
+	<script>
+		var carWidth = <%= HomeController::CAROUSEL_WIDTH %>;
+		var carHeight = <%= HomeController::CAROUSEL_HEIGHT %>;
+		var carousel = null;
 	
-	YAHOO.util.Event.onDOMReady(function (ev) {
-	    carousel = new YAHOO.widget.Carousel("contentContainer", {
-	        animation: { speed: 0.5, effect: YAHOO.util.Easing.easeOut },
-	        numVisible: [carWidth,carHeight],
-			numItems: <%= @video_content_count %>
-	    });
-		carousel.on("loadItems", loadCarouselItems);
-	    carousel.render();
-	    carousel.show();
-	});
+		YAHOO.util.Event.onDOMReady(function (ev) {
+		    carousel = new YAHOO.widget.Carousel("contentContainer", {
+		        animation: { speed: 0.5, effect: YAHOO.util.Easing.easeOut },
+		        numVisible: [carWidth,carHeight],
+				numItems: <%= @video_content_count %>
+		    });
+			carousel.on("loadItems", loadCarouselItems);
+		    carousel.render();
+		    carousel.show();
+		});
 	
-	function loadCarouselItems(o) {
-		var offset = 0;
-		var pageSize = carWidth*carHeight;
-        if(o){
-            YAHOO.log('Num: ' + o.num + " First: " + o.first + " Last: " + o.last);   
-            offset = o.first;
-			pageSize = o.num;
-        }
+		function loadCarouselItems(o) {
+			var offset = 0;
+			var pageSize = carWidth*carHeight;
+	        if(o){
+	            YAHOO.log('Num: ' + o.num + " First: " + o.first + " Last: " + o.last);   
+	            offset = o.first;
+				pageSize = o.num;
+	        }
 
-		new Ajax.Request("<%= url_for :controller => 'home', :action => 'video_content_items' %>", { 
-			method:'get', 
-			parameters: {'offset': offset, 'page_size': pageSize},
-			evalJS:'force' 
-		});		
-	}
+			new Ajax.Request("<%= url_for :controller => 'home', :action => 'video_content_items' %>", { 
+				method:'get', 
+				parameters: {'offset': offset, 'page_size': pageSize},
+				evalJS:'force' 
+			});		
+		}
 	
-	function addCarouselItem(item){
-		carousel.addItem(item);
-	}
-</script>
+		function addCarouselItem(item){
+			carousel.addItem(item);
+		}
+	</script>
+<% else %>
+	<div>
+		No movies .... Try <%= link_to "Admin", :controller => 'admin' %>
+	</div>
+<% end %>
