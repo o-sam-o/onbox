@@ -18,6 +18,16 @@
 		<%= error_message_on @reference, :location, :css_class => "defaultFormError" %>
 	  </div>
 	  <div class="defaultFormField">
+	    <%= f.label :format %>
+	    <%= f.text_field :format, :class => "defaultFormTextField" %>
+		<%= error_message_on @reference, :format, :css_class => "defaultFormError" %>
+	  </div>	
+	  <div class="defaultFormField">
+	    <%= f.label :size %>
+	    <%= f.text_field :size, :class => "defaultFormTextField" %>
+		<%= error_message_on @reference, :size, :css_class => "defaultFormError" %>
+	  </div>	
+	  <div class="defaultFormField">
 	    <%= f.label :on_disk %>
 	    <%= f.check_box :on_disk %>
 		<%= error_message_on @reference, :on_disk, :css_class => "defaultFormError" %>

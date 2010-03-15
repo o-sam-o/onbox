@@ -18,6 +18,26 @@
 		<%= error_message_on @video_content, :release_date, :css_class => "defaultFormError" %>
 	  </div>
 	  <div class="defaultFormField">
+	    <%= video_form.label :rumtime %>
+	    <%= video_form.text_field :runtime, :class => "defaultFormTextField" %>
+		<%= error_message_on @video_content, :runtime, :css_class => "defaultFormError" %>
+	  </div>
+	  <div class="defaultFormField">
+	    <%= video_form.label :director %>
+	    <%= video_form.text_field :director, :class => "defaultFormTextField" %>
+		<%= error_message_on @video_content, :director, :css_class => "defaultFormError" %>
+	  </div>
+	  <div class="defaultFormField">
+	    <%= video_form.label :language %>
+	    <%= video_form.text_field :language, :class => "defaultFormTextField" %>
+		<%= error_message_on @video_content, :language, :css_class => "defaultFormError" %>
+	  </div>
+	  <div class="defaultFormField">
+	    <%= video_form.label :tag_line %>
+	    <%= video_form.text_field :tag_line, :class => "defaultFormTextField" %>
+		<%= error_message_on @video_content, :tag_line, :css_class => "defaultFormError" %>
+	  </div>				
+	  <div class="defaultFormField">
 	    <%= video_form.label :plot %>
 	    <%= video_form.text_area :plot, :size => "38x6" %>
 		<%= error_message_on @video_content, :plot, :css_class => "defaultFormError" %>
