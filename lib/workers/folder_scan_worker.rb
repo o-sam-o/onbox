@@ -53,6 +53,7 @@ class FolderScanWorker < BackgrounDRb::MetaWorker
       reference = VideoFileReference.new({:location => location, :media_folder => folder, :on_disk => true,
                                           :raw_name => FileNameCleaner.get_file_name(location)})
       reference.save!
+      update_file_properties(reference)
       return reference
     end
     

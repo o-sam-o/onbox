@@ -3,3 +3,5 @@ app/.DS_Store
 app/views/.DS_Store
 db/*.sqlite3
 log/*
+tmp/pids/backgroundrb_11006_worker_folder_scan_worker.pid
+tmp/pids/backgroundrb_11006_worker_scrap_imdb_worker.pid

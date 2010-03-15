@@ -1,3 +1,6 @@
+require 'open-uri'
+require 'hpricot'
+
 class ImdbMetadataScraper 
   IMDB_BASE_URL = 'http://www.imdb.com/'
   IMDB_SEARCH_URL = IMDB_BASE_URL + 'find?s=tt&q='
@@ -111,14 +114,10 @@ class ImdbMetadataScraper
 
   private
     def self.get_movie_page(imdb_id)
-      require 'open-uri'
-      require 'hpricot'
       return Hpricot(open(IMDB_MOVIE_URL + imdb_id))
     end
 
     def self.get_episodes_page(imdb_id)
-      require 'open-uri'
-      require 'hpricot'
       return Hpricot(open(IMDB_MOVIE_URL + imdb_id + '/episodes'))
     end
 

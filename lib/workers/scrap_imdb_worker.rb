@@ -21,7 +21,7 @@ class ScrapImdbWorker < BackgrounDRb::MetaWorker
   private
     def get_imdb_id(video_content)
       imdb_id = video_content.imdb_id
-      if not imdb_id || imdb_id.blank?
+      if imdb_id.blank?
         imdb_id = ImdbMetadataScraper.search_for_imdb_id(video_content.name, video_content.year)
       end
       return imdb_id
@@ -30,10 +30,10 @@ class ScrapImdbWorker < BackgrounDRb::MetaWorker
     def scrap_imdb(video_content)
       logger.info "Scraping imdb for video content: #{video_content.id}"
       imdb_id = get_imdb_id(video_content)
-      if not imdb_id
+      if imdb_id.blank?
         logger.error("Failed to find imdb id for video: #{video_content.display_name}")
         video_content.state = VideoContentState::NO_IMDB_ID
-        video_content.save! && return
+        video_content.save! and return
       end
       
       logger.debug "Found imdb_id #{imdb_id} for #{video_content.display_name}"
