@@ -1,6 +1,10 @@
 #!/usr/bin/env ruby
 
+require 'rubygems'
+require 'hpricot'
 require 'test/unit'
+require 'active_support'
+require 'htmlentities'
 require "lib/util/imdb_metadata_scraper"
 
 class ImdbMetadataScraperTest < Test::Unit::TestCase

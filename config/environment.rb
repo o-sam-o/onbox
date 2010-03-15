@@ -21,7 +21,7 @@ Rails::Initializer.run do |config|
   config.gem 'imagesize', :lib => 'image_size'
   config.gem "rio"
   config.gem "uuidtools"
-  #config.gem "mediainfo"
+  config.gem "htmlentities"
   
   # config.gem "sqlite3-ruby", :lib => "sqlite3"
   # config.gem "aws-s3", :lib => "aws/s3"
