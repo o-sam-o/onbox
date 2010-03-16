@@ -42,4 +42,12 @@ class VideoContent < ActiveRecord::Base
     return '' if not runtime
     return "#{runtime} min"
   end
+  
+  def movie?
+    false
+  end
+  
+  def tv_show?
+    false
+  end
 end

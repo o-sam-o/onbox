@@ -1,0 +1,17 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  title: MyString
+  plot: MyString
+  serie: 1
+  episode: 1
+  date: 2010-03-16
+  video_file_reference: 
+
+two:
+  title: MyString
+  plot: MyString
+  serie: 1
+  episode: 1
+  date: 2010-03-16
+  video_file_reference: 

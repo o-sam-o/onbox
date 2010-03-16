@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100301084706) do
+ActiveRecord::Schema.define(:version => 20100316092511) do
 
   create_table "bdrb_job_queues", :force => true do |t|
     t.text     "args"
@@ -52,19 +52,32 @@ ActiveRecord::Schema.define(:version => 20100301084706) do
     t.datetime "updated_at"
   end
 
+  create_table "tv_episodes", :force => true do |t|
+    t.string   "title"
+    t.string   "plot"
+    t.integer  "serie"
+    t.integer  "episode"
+    t.date     "date"
+    t.integer  "video_file_reference_id"
+    t.integer  "tv_episode_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "video_contents", :force => true do |t|
     t.string   "name"
     t.integer  "year"
-    t.date     "release_date"
     t.string   "plot"
     t.string   "state"
     t.string   "imdb_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.integer  "runtime"
-    t.string   "director"
     t.string   "language"
     t.string   "tag_line"
+    t.integer  "runtime"
+    t.date     "release_date"
+    t.string   "director"
+    t.string   "type"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "video_file_properties", :force => true do |t|
