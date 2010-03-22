@@ -51,13 +51,19 @@ class ImdbMetadataScraper
       found_info_divs = true
       key = div.search("//h5").first.inner_text.sub(':', '').downcase
       value_search = "//div[@class = 'info-content']"
+      # Try to only get text values and ignore links as some info blocks have a "click for more info" type link at the end
       value = div.search(value_search).first.children.select{|e| e.text?}.join.gsub(STRIP_WHITESPACE, '').strip
       if value.empty?
         value = div.search(value_search).first.inner_text.gsub(STRIP_WHITESPACE, '')
       end
       value = coder.decode(value)
       if key == 'release date'
-        value = Date.strptime(value, '%d %B %Y')
+        begin
+          value = Date.strptime(value, '%d %B %Y')
+        rescue 
+          RAILS_DEFAULT_LOGGER.error "Invalid date '#{value}' for imdb id: #{imdb_id}"
+          value = nil
+        end
       elsif key == 'runtime'
         if value =~ /(\d+)\smin/
           value = $1.to_i
@@ -65,7 +71,15 @@ class ImdbMetadataScraper
           logger.error "Unexpected runtime format #{value} for movie #{imdb_id}"
         end
       elsif key == 'genre'
-        value = value.sub(/more$/, '')
+        value = value.sub(/(See more$)|(more$)/, '')
+      elsif key == 'language'
+        # This is a bit of a hack, I dont really want to deal with multiple langauges, so if there is more than one
+        # just use english or the first one found
+        value = nil
+        div.search(value_search).first.inner_text.split(/\|/).collect {|l| l.strip}.each do |language|
+          value = language if value.nil?
+          value = language if language.downcase == 'english'
+        end
       end
       info_hash[key.downcase] = value
     end
@@ -119,6 +133,10 @@ class ImdbMetadataScraper
 
     def self.get_episodes_page(imdb_id)
       return Hpricot(open(IMDB_MOVIE_URL + imdb_id + '/episodes'))
+    end
+    
+    def logger
+      RAILS_DEFAULT_LOGGER
     end
 
 end

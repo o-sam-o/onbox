@@ -28,7 +28,6 @@ class ImdbMetadataScraperTvSeriesTest < Test::Unit::TestCase
     assert_equal('"Lost"', movie_info['title'])
     assert_equal('2004', movie_info['year'])
     assert_equal("The survivors of a plane crash are forced to live with each other on a remote island, a dangerous new world that poses unique threats of its own.", movie_info['plot'])
-    
     assert_not_nil(movie_info['small_image'])
     assert_not_nil(movie_info['large_image'])
     
@@ -43,6 +42,7 @@ class ImdbMetadataScraperTvSeriesTest < Test::Unit::TestCase
       
       series_2_ep_5 = episode if episode['series'] == 2 && episode['episode'] == 5
     end
+    puts "Ep Count: #{movie_info['episodes'].length}"
     
     assert_not_nil(series_2_ep_5)
     assert_equal('...And Found', series_2_ep_5['title'])

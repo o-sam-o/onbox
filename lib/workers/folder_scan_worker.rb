@@ -11,34 +11,12 @@ class FolderScanWorker < BackgrounDRb::MetaWorker
     for folder in MediaFolder.find_all_by_scan(true)
       logger.info "Scanning folder #{folder.location}"
       FolderScanner.find_content_in_folder(folder.location) do |file| 
-        logger.debug "Found media file: #{file}"
-        reference = get_file_reference(file, folder)
-        
-        update_file_properties(reference) if reference.updated_at < File.mtime(file)
-          
-        if reference.video_content
-          logger.debug "File already associated with #{reference.video_content.display_name} skipping"
-          next
-        end
-        
-        name_info = FileNameCleaner.get_name_info(file)
-        logger.debug "Cleaned name: #{name_info}"
-        #Check to see if we already have a matching video content
-        video_content = find_video_content(name_info.name, name_info.year)
-        if video_content
-          logger.debug "Found match on existing video content #{video_content.display_name}"
-          reference.video_content = video_content
-          reference.save! and next
-        end
-        
-        # Found new file for new content!
-        video_content = VideoContent.new({:name => name_info.name, :year => name_info.year, :state => VideoContentState::PENDING})
-        video_content.save!
-        reference.video_content = video_content and reference.save!
-        logger.info "Added new video content: #{video_content.id}"
-        
-        # Fire request to scrap imdb for new movie
-        MiddleMan.worker(:scrap_imdb_worker).async_scrap_for_video_content(:arg => video_content.id)
+        begin
+          process_media_file(file, folder)
+        rescue Exception => exception 
+          logger.error("Error processing file #{file}:\n #{exception.class} (#{exception.message}):\n    " +
+             exception.backtrace.join("\n    ") + "\n\n")
+        end  
       end
     end
     
@@ -46,12 +24,51 @@ class FolderScanWorker < BackgrounDRb::MetaWorker
   end
 
   private
+    def process_media_file(file, folder)
+      logger.debug "Found media file: #{file}"
+      reference = get_file_reference(file, folder)
+      
+      update_file_properties(reference) if reference.updated_at < File.mtime(file)
+        
+      if reference.video_content
+        logger.debug "File already associated with #{reference.video_content.display_name} skipping"
+        return
+      end
+      
+      name_info = FileNameCleaner.get_name_info(file)
+      logger.debug "Cleaned name: #{name_info}"
+      #Check to see if we already have a matching video content
+      video_content = find_video_content(name_info.name, name_info.year)
+      if video_content
+        logger.debug "Found match on existing video content #{video_content.display_name}"
+        reference.video_content = video_content
+        # TODO if tv show may have to associated this file with an episode
+        reference.save! and return
+      end
+      
+      # Found new file for new content!
+      if name_info.series || name_info.episode
+        # If file name contains series and episode (e.g. E02S04) assume tv show 
+        video_content = TvShow.new(:name => name_info.name, :year => name_info.year, 
+                                   :state => VideoContentState::PENDING)
+      else  
+        video_content = Movie.new(:name => name_info.name, :year => name_info.year, 
+                                  :state => VideoContentState::PENDING)
+      end
+      video_content.save!
+      reference.video_content = video_content and reference.save!
+      logger.info "Added new video content: #{video_content.id}"
+      
+      # Fire request to scrap imdb for new movie
+      MiddleMan.worker(:scrap_imdb_worker).async_scrap_for_video_content(:arg => video_content.id)
+    end
+  
     def get_file_reference(location, folder)
       reference = VideoFileReference.find_by_location(location)
       return reference if reference
       logger.debug "New file references found, creating new mode"
-      reference = VideoFileReference.new({:location => location, :media_folder => folder, :on_disk => true,
-                                          :raw_name => FileNameCleaner.get_file_name(location)})
+      reference = VideoFileReference.new(:location => location, :media_folder => folder, :on_disk => true,
+                                         :raw_name => FileNameCleaner.get_file_name(location))
       reference.save!
       update_file_properties(reference)
       return reference

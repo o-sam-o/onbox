@@ -1,12 +1,12 @@
 class FileNameInfo
-  attr_accessor :raw_name, :location, :name, :year, :session, :episode
+  attr_accessor :raw_name, :location, :name, :year, :series, :episode
   
   def initialize(params = {})
     @name = params[:name]
     @year = params[:year]
     @raw_name = params[:raw_name]
     @location = params[:location]
-    @session = params[:session]
+    @series = params[:series]
     @episode = params[:episode]
   end
 
@@ -15,7 +15,7 @@ class FileNameInfo
     if @name
       s += @name
       s += " [#{@year}]" if @year
-      s += " S: #{@session} E: #{@episode}" if @session || @episode
+      s += " S: #{@series} E: #{@episode}" if @series || @episode
     elsif @raw_name
       s += @raw_name
     else
@@ -78,7 +78,7 @@ class FileNameCleaner
     name.strip!
 
     return FileNameInfo.new(:raw_name => raw_name, :name => name, :year => year, 
-                            :session => session, :episode => episode, :location => location)  
+                            :series => session, :episode => episode, :location => location)  
   end
 
 end

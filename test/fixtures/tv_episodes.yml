@@ -3,7 +3,7 @@
 one:
   title: MyString
   plot: MyString
-  serie: 1
+  series: 1
   episode: 1
   date: 2010-03-16
   video_file_reference: 
@@ -11,7 +11,7 @@ one:
 two:
   title: MyString
   plot: MyString
-  serie: 1
+  series: 1
   episode: 1
   date: 2010-03-16
   video_file_reference: 

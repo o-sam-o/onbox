@@ -60,14 +60,14 @@ class FileNameCleanerTest < Test::Unit::TestCase
                                               
 	end 
 	
-	def content_test_helper(location, raw_name, name, year, session, episode)
+	def content_test_helper(location, raw_name, name, year, series, episode)
 	  c = FileNameCleaner.get_name_info(location)
 	  assert_not_nil(c)
 		assert_equal(location, c.location)
 		assert_equal(raw_name, c.raw_name)
 		assert_equal(name, c.name)
 		assert_equal(year, c.year)
-		assert_equal(session, c.session)
+		assert_equal(series, c.series)
 		assert_equal(episode, c.episode)	  
 	end
 end
