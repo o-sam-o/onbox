@@ -1,8 +1,8 @@
 require 'test_helper'
 
 class MediaFolderTest < ActiveSupport::TestCase
-  # Replace this with your real tests.
-  test "the truth" do
-    assert true
-  end
+
+  should_have_many :video_file_references
+  should_validate_presence_of :location
+
 end

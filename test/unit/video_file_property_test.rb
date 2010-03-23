@@ -1,8 +1,6 @@
 require 'test_helper'
 
 class VideoFilePropertyTest < ActiveSupport::TestCase
-  # Replace this with your real tests.
-  test "the truth" do
-    assert true
-  end
+  should_validate_presence_of :name, :value
+  should_belong_to :video_file_reference
 end

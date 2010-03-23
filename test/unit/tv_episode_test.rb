@@ -1,8 +1,8 @@
 require 'test_helper'
 
 class TvEpisodeTest < ActiveSupport::TestCase
-  # Replace this with your real tests.
-  test "the truth" do
-    assert true
-  end
+
+  should_belong_to :tv_show
+  should_belong_to :video_file_reference
+
 end
