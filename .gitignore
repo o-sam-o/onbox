@@ -35,3 +35,5 @@ coverage/lib-workers-scrap_imdb_worker_rb.html
 coverage/print.css
 coverage/rcov.js
 coverage/screen.css
+coverage/lib-util-folder_scanner_rb.html
+coverage/lib-workers-folder_scan_worker_rb.html

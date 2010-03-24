@@ -13,7 +13,7 @@ class MediaInfoUtil
 
   def self.get_media_info(file_name)
     # We only want to run media info on media files
-    return {} if file_name =~ /nfo$/
+    return [] if file_name =~ /nfo$/
     
     out = `mediainfo "#{file_name}" 2>&1`
     if $?.to_i != 0

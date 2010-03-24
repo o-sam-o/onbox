@@ -40,7 +40,9 @@ class VideoContent < ActiveRecord::Base
   
   def runtime_formatted
     return '' if not runtime
-    return "#{runtime} min"
+    return "#{runtime}m" if runtime < 60
+    return "#{runtime/60}h" if runtime % 60 == 0
+    return "#{runtime/60}h #{runtime % 60}m"
   end
   
   def movie?

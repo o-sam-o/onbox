@@ -1,7 +1,8 @@
 require 'lib/util/media_info_util'
 
 class WalkerTest < Test::Unit::TestCase
-  def test_get_media_info
+  
+  should 'extract media file info' do
     info = MediaInfoUtil.get_media_info(File.join(File.dirname(__FILE__), 'test.mov'))
     info_map = {}
     info.each { |i| info_map[i.group + '-' + i.key] = i.value }
@@ -19,8 +20,14 @@ class WalkerTest < Test::Unit::TestCase
     assert_equal('44.1 KHz', info_map['Audio-Sampling rate'])
   end
   
-  def test_nfo_file
+  should 'not get media info from nfo files' do
     info = MediaInfoUtil.get_media_info(File.join(File.dirname(__FILE__), 'test.nfo'))
-    assert_equal({}, info)
+    assert_equal([], info)
+  end
+  
+  should 'handle missing file gracefully' do
+    RAILS_DEFAULT_LOGGER.expects(:error)
+    info = MediaInfoUtil.get_media_info('doesnt.exist.mpg')
+    assert_equal([], info)
   end
 end

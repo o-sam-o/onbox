@@ -9,7 +9,7 @@ class ImdbMetadataScraper
   STRIP_WHITESPACE = /(\s{2,}|\n|\||\302\240\302\273)/
 
   def self.search_for_imdb_id(name, year, tv_series=false)
-    doc = Hpricot(open(IMDB_SEARCH_URL + URI.escape(name)))
+    doc = ImdbMetadataScraper.get_search_page(name)
     doc.search("//td").each do |td| 
       td.search("//a") do |link|  
         href = link.attributes['href']
@@ -127,6 +127,10 @@ class ImdbMetadataScraper
   end
 
   private
+    def self.get_search_page(name)
+      return Hpricot(open(IMDB_SEARCH_URL + URI.escape(name)))
+    end
+  
     def self.get_movie_page(imdb_id)
       return Hpricot(open(IMDB_MOVIE_URL + imdb_id))
     end
