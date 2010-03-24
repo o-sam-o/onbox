@@ -56,8 +56,11 @@ class FileNameCleanerTest < Test::Unit::TestCase
     content_test_helper('/test/Cypher [2002, Jeremy Northam, Lucy Liu, David Hewlett, Vincenzo Natali].avi  ', 
                         'Cypher [2002, Jeremy Northam, Lucy Liu, David Hewlett, Vincenzo Natali]', 
                         'Cypher', 2002, nil, nil)                                              
-                                     
-                                              
+    
+    # get 100% coverage                                 
+    assert_equal 'Inglourious Basterds', FileNameCleaner.get_name_info('/test/Inglourious Basterds PPV XViD-IMAGiNE.nfo').to_s
+    assert_equal 'raw name', FileNameCleaner::FileNameInfo.new(:raw_name => 'raw name').to_s
+    assert_equal 'location', FileNameCleaner::FileNameInfo.new(:location => 'location').to_s
 	end 
 	
 	def content_test_helper(location, raw_name, name, year, series, episode)

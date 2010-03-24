@@ -1,5 +1,5 @@
 class FolderScanner
-  MEDIA_REGEX = /.*\.(avi|mp4|mkv|m4v|mpg)$/ 
+  MEDIA_REGEX = /.*\.(avi|mp4|mkv|m4v|mpg|mov)$/ 
 
   def self.find_content_in_folder(root_folder)
     Dir.foreach(root_folder) do |file|
@@ -24,8 +24,13 @@ class FolderScanner
           elsif subfile =~ MEDIA_REGEX && subfile !~ /.*sample.*/
             yield subfile_path
             found_media = true
+          elsif !%w[ . .. ].include?(subfile) && File.directory?(subfile_path)
+            # Handle deeply nested media
+            self.find_content(subfile_path) do |sub_folder_file|
+              found_media = true
+              yield sub_folder_file
+            end
           end
-          #TODO handle sub sub folders, e.g. CD1 and CD2
         end
         # We only yield the nfo file if no media file was found,
         # in this scenario most likely the media is rar'ed
