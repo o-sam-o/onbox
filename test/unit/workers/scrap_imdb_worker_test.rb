@@ -2,6 +2,7 @@ require File.join(File.dirname(__FILE__), "/../../bdrb_test_helper")
 require "lib/workers/scrap_imdb_worker" 
 require "hpricot"
 require 'mocha'
+require 'fakefs/safe'
 
 class ScrapImdbWorkerTest < Test::Unit::TestCase
 
@@ -14,7 +15,11 @@ class ScrapImdbWorkerTest < Test::Unit::TestCase
     assert_equal('movie.name3.2000.size.mp4', worker.send(:poster_file_name, 'movie name!3%\\/', 2000, 'size', '.mp4'))
     assert_equal('movie.name.10.size.mp4', worker.send(:poster_file_name, 'movie name', 10, 'size', '.mp4'))
     assert_equal('movie.name.2000.small.mp4', worker.send(:poster_file_name, 'movie name', 2000, 'small', '.mp4'))
-    assert_equal('movie.name.2000.size.2.mp4', worker.send(:poster_file_name, 'movie name', 2000, 'size', '.mp4', 2))
+    
+    FakeFS do
+      FileUtils.touch("movie.name.2000.size.mp4")
+      assert_equal('movie.name.2000.size.2.mp4', worker.send(:poster_file_name, 'movie name', 2000, 'size', '.mp4'))
+    end
     assert_equal('movie.name.2000.size.mp4', worker.send(:poster_file_name, 'Movie Name', 2000, 'size', '.mp4'))
   end
   
@@ -75,5 +80,70 @@ class ScrapImdbWorkerTest < Test::Unit::TestCase
     assert_equal('English', video_content.language)
     assert_equal(42, video_content.runtime)
   end
+  
+  should 'not search imdb if imdb id already in video content' do
+    ImdbMetadataScraper.expects(:search_for_imdb_id).never
+    
+    worker = ScrapImdbWorker.new
+    imdb_id = worker.send(:get_imdb_id, Movie.new(:imdb_id => 'fake id'))
+    
+    assert_equal('fake id', imdb_id)
+  end
+  
+  should 'search imdb if no imdb id in video content' do
+    ImdbMetadataScraper.expects(:search_for_imdb_id).with('name', 2000).returns('fake id')
+    
+    worker = ScrapImdbWorker.new
+    imdb_id = worker.send(:get_imdb_id, Movie.new(:name => 'name', :year => 2000))
+    
+    assert_equal('fake id', imdb_id)
+  end  
+  
+  should 'scrap all pending video contents' do
+    movie = Movie.new
+    tv_show = TvShow.new
+    VideoContent.expects(:find_all_by_state).with('pending').returns([movie, tv_show])
+    worker = ScrapImdbWorker.new
+    worker.expects(:scrap_imdb).with(movie)
+    worker.expects(:scrap_imdb).with(tv_show)
+    worker.scrap_all_pending
+  end  
+  
+  should 'continue scraping pending even if an exception is raised' do
+    movie = Movie.new
+    tv_show = TvShow.new
+    VideoContent.expects(:find_all_by_state).with('pending').returns([movie, tv_show])
+    worker = ScrapImdbWorker.new
+    worker.expects(:scrap_imdb).raises
+    worker.expects(:scrap_imdb).with(tv_show)
+    worker.scrap_all_pending
+  end
+  
+  should 'scrap a single video content' do
+    movie = Movie.new
+    VideoContent.expects(:find).with(1).returns(movie)
+    worker = ScrapImdbWorker.new
+    worker.expects(:scrap_imdb).with(movie)
+    
+    worker.scrap_for_video_content(1)
+  end  
+  
+  should 'gracefully handle exceptions when scrap a single video content' do
+    movie = Movie.new
+    VideoContent.expects(:find).with(1).returns(movie)
+    worker = ScrapImdbWorker.new
+    worker.expects(:scrap_imdb).raises
+    worker.scrap_for_video_content(1)
+  end
+  
+  should 'set state to no imdb id if imdb seach fails' do
+    movie = Movie.new
+    VideoContent.expects(:find_all_by_state).with('pending').returns([movie])
+    ImdbMetadataScraper.expects(:search_for_imdb_id).returns(nil)
+    
+    worker = ScrapImdbWorker.new        
+    worker.scrap_all_pending
+    assert_equal movie.state, VideoContentState::NO_IMDB_ID
+  end  
   
 end

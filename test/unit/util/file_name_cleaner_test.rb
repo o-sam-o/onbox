@@ -59,8 +59,8 @@ class FileNameCleanerTest < Test::Unit::TestCase
     
     # get 100% coverage                                 
     assert_equal 'Inglourious Basterds', FileNameCleaner.get_name_info('/test/Inglourious Basterds PPV XViD-IMAGiNE.nfo').to_s
-    assert_equal 'raw name', FileNameCleaner::FileNameInfo.new(:raw_name => 'raw name').to_s
-    assert_equal 'location', FileNameCleaner::FileNameInfo.new(:location => 'location').to_s
+    assert_equal 'raw name', FileNameInfo.new(:raw_name => 'raw name').to_s
+    assert_equal 'location', FileNameInfo.new(:location => 'location').to_s
 	end 
 	
 	def content_test_helper(location, raw_name, name, year, series, episode)

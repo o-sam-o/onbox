@@ -117,7 +117,7 @@ class ScrapImdbWorker < BackgrounDRb::MetaWorker
       file_name += ".#{attempt}" if attempt > 1
       file_name += ext if ext
       if File.exists?(file_name)
-        file_name = poster_file_name(name, year, ext, attempt + 1)
+        file_name = poster_file_name(name, year, size, ext, attempt + 1)
       end
       return file_name
     end
