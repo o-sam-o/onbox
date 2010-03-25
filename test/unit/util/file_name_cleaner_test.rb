@@ -3,6 +3,7 @@ require "lib/util/file_name_cleaner"
 
 class FileNameCleanerTest < Test::Unit::TestCase
 	def test_get_name_info		
+	  content_test_helper('My Movie.avi', 'My Movie', 'My Movie', nil, nil, nil)
 		content_test_helper('/test/My Movie.avi', 'My Movie', 'My Movie', nil, nil, nil)
 		content_test_helper('/test/My Movie.2010.avi', 'My Movie 2010', 'My Movie', 2010, nil, nil)
 		content_test_helper('/test/My-Movie.2010.avi', 'My Movie 2010', 'My Movie', 2010, nil, nil)

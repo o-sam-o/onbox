@@ -23,6 +23,7 @@ config.action_controller.allow_forgery_protection    = false
 config.action_mailer.delivery_method = :test
 
 config.gem "mocha"
+config.gem "rcov"
 config.gem "fakefs", :lib => false
 
 # Use SQL instead of Active Record's schema dumper when creating the test database.

@@ -41,6 +41,8 @@ class FileNameCleaner
     file_name = location.dup
     #Change to just the filename
     file_name = file_name[file_name.rindex(FILE_SEP_REGEX) + 1, file_name.length] if file_name =~ FILE_SEP_REGEX  
+    
+    return file_name
   end
 
   def self.get_name_info(location)

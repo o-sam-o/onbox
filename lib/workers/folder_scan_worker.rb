@@ -43,7 +43,8 @@ class FolderScanWorker < BackgrounDRb::MetaWorker
         logger.debug "Found match on existing video content #{video_content.display_name}"
         reference.video_content = video_content
         # TODO if tv show may have to associated this file with an episode
-        reference.save! and return
+        reference.save!
+        return
       end
       
       # Found new file for new content!
