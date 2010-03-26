@@ -48,7 +48,7 @@ class ScrapImdbWorker < BackgrounDRb::MetaWorker
       
       logger.debug "Found imdb_id #{imdb_id} for #{video_content.display_name}"
       movie_info = ImdbMetadataScraper.scrap_movie_info(imdb_id)
-      genres = movie_info['genre'].strip.split.collect { |name| Genre.find_or_create_by_name(name) }
+      genres = movie_info['genre'] ? movie_info['genre'].strip.split.collect { |name| Genre.find_or_create_by_name(name) } : []
       
       if video_content.movie?
         video_content.update_attributes!(:name => movie_info['title'], :year => movie_info['year'],

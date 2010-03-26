@@ -19,6 +19,8 @@ class ScrapImdbWorkerTest < Test::Unit::TestCase
     assert_equal('movie.name.10.size.mp4', worker.send(:poster_file_name, 'movie name', 10, 'size', '.mp4'))
     assert_equal('movie.name.2000.small.mp4', worker.send(:poster_file_name, 'movie name', 2000, 'small', '.mp4'))
     assert_equal('movie.name.2000.size.mp4', worker.send(:poster_file_name, 'Movie Name', 2000, 'size', '.mp4'))
+    
+    # Test case of file name already taken
     FakeFS do
       FileUtils.mkdir_p(storage_location)
       FileUtils.touch("#{storage_location}/movie.name.2000.size.mp4")

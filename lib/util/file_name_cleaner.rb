@@ -29,6 +29,7 @@ class FileNameCleaner
 
   FILE_SEP_REGEX = /\//
   FILE_EXT_SEP_REGEX = /\./
+  CD_FOLDER_REGEX = /\/CD(\d)\//
   #Chars used in file names as a subsitude for spaces
   SPACE_SUB_REGEX = /(\.|_|\-)/
   CONTENT_SOURCE_REGEX = /(\(|\[|\s)+(DVDRIP|1080p|720p|R5|DVDSCR|BDRip|CAM|TS|PPV|Xvid|divx)(\)|\]|\s|$)+/i
@@ -36,6 +37,7 @@ class FileNameCleaner
   SESSION_ESP_REGEX_1 = /S(\d{2})\s?E(\d{2})/i
   SESSION_ESP_REGEX_2 = /\s+(\d+)x(\d+)(\s|$)+/i
   SESSION_ESP_REGEX_OF = /(\d+)\s?of\s?(\d+)/i
+  
 
   def self.get_file_name(location)
     file_name = location.dup
@@ -77,8 +79,18 @@ class FileNameCleaner
       session = 1
       episode = $1.to_i  
     end
-    name.strip!
 
+    # Sometimes there can be multiple media files for a single movie, we want to remove the version number if this is the case
+    if location =~ CD_FOLDER_REGEX
+      cd_number = $1.to_i
+      if name =~ /#{cd_number}$/
+        name = $`
+      elsif name =~ /part\s?#{cd_number}/i
+        name = $`
+      end  
+    end  
+
+    name.strip!
     return FileNameInfo.new(:raw_name => raw_name, :name => name, :year => year, 
                             :series => session, :episode => episode, :location => location)  
   end

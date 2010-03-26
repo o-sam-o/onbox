@@ -2,7 +2,8 @@ require 'test/unit'
 require "lib/util/file_name_cleaner"
 
 class FileNameCleanerTest < Test::Unit::TestCase
-	def test_get_name_info		
+  
+	should 'correctly extract movie name and other info from the file name' do
 	  content_test_helper('My Movie.avi', 'My Movie', 'My Movie', nil, nil, nil)
 		content_test_helper('/test/My Movie.avi', 'My Movie', 'My Movie', nil, nil, nil)
 		content_test_helper('/test/My Movie.2010.avi', 'My Movie 2010', 'My Movie', 2010, nil, nil)
@@ -57,12 +58,29 @@ class FileNameCleanerTest < Test::Unit::TestCase
     content_test_helper('/test/Cypher [2002, Jeremy Northam, Lucy Liu, David Hewlett, Vincenzo Natali].avi  ', 
                         'Cypher [2002, Jeremy Northam, Lucy Liu, David Hewlett, Vincenzo Natali]', 
                         'Cypher', 2002, nil, nil)                                              
-    
+  end
+  
+  should 'correctly convert FileNameInfo to a string' do
     # get 100% coverage                                 
     assert_equal 'Inglourious Basterds', FileNameCleaner.get_name_info('/test/Inglourious Basterds PPV XViD-IMAGiNE.nfo').to_s
     assert_equal 'raw name', FileNameInfo.new(:raw_name => 'raw name').to_s
     assert_equal 'location', FileNameInfo.new(:location => 'location').to_s
 	end 
+	
+	should 'remove number from movie name if there is more than one file for the same movie' do
+	  #Valid case for number at end of name
+	  content_test_helper('/test/District 9.avi', 'District 9', 'District 9', nil, nil, nil)
+	  
+	  content_test_helper('/test/xscr-invictus_part1[dupedb.com].avi', 'xscr invictus part1[dupedb com]', 'xscr invictus part1[dupedb com]', nil, nil, nil)
+	  content_test_helper('/test/CD1/xscr-invictus_part1[dupedb.com].avi', 'xscr invictus part1[dupedb com]', 'xscr invictus', nil, nil, nil)
+	  content_test_helper('/test/CD1/xscr-invictus_Part1[dupedb.com].avi', 'xscr invictus Part1[dupedb com]', 'xscr invictus', nil, nil, nil)
+	  content_test_helper('/test/CD1/xscr-invictus_part 1[dupedb.com].avi', 'xscr invictus part 1[dupedb com]', 'xscr invictus', nil, nil, nil)
+	  
+	  content_test_helper('/test/CD1/District 9-1.avi', 'District 9 1', 'District 9', nil, nil, nil)
+	  content_test_helper('/test/CD2/District 9-2.avi', 'District 9 2', 'District 9', nil, nil, nil)
+	  
+	  content_test_helper('/test/CD1/dmt-intheloop1.avi', 'dmt intheloop1', 'dmt intheloop', nil, nil, nil)
+	end
 	
 	def content_test_helper(location, raw_name, name, year, series, episode)
 	  c = FileNameCleaner.get_name_info(location)
