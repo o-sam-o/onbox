@@ -8,6 +8,9 @@ class ScrapImdbWorkerTest < Test::Unit::TestCase
 
   should 'create meaningful and valid poster names' do
     worker = ScrapImdbWorker.new
+    storage_location = '/test/dir'
+    worker.stubs(:storage_dir).returns(storage_location)
+    
     assert_equal('movie.name.2000.size.mp4', worker.send(:poster_file_name, 'movie name', 2000, 'size', '.mp4'))
     assert_equal('movie.name.2000.size', worker.send(:poster_file_name, 'movie name', 2000, 'size', nil))
     assert_equal('movie.name.size.mp4', worker.send(:poster_file_name, 'movie name', nil, 'size', '.mp4'))
@@ -15,12 +18,12 @@ class ScrapImdbWorkerTest < Test::Unit::TestCase
     assert_equal('movie.name3.2000.size.mp4', worker.send(:poster_file_name, 'movie name!3%\\/', 2000, 'size', '.mp4'))
     assert_equal('movie.name.10.size.mp4', worker.send(:poster_file_name, 'movie name', 10, 'size', '.mp4'))
     assert_equal('movie.name.2000.small.mp4', worker.send(:poster_file_name, 'movie name', 2000, 'small', '.mp4'))
-    
-    FakeFS do
-      FileUtils.touch("movie.name.2000.size.mp4")
-      assert_equal('movie.name.2000.size.2.mp4', worker.send(:poster_file_name, 'movie name', 2000, 'size', '.mp4'))
-    end
     assert_equal('movie.name.2000.size.mp4', worker.send(:poster_file_name, 'Movie Name', 2000, 'size', '.mp4'))
+    FakeFS do
+      FileUtils.mkdir_p(storage_location)
+      FileUtils.touch("#{storage_location}/movie.name.2000.size.mp4")
+      assert_equal("movie.name.2000.size.2.mp4", worker.send(:poster_file_name, 'movie name', 2000, 'size', '.mp4'))
+    end
   end
   
   should 'scrap movie details' do

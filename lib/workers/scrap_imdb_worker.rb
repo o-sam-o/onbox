@@ -99,7 +99,7 @@ class ScrapImdbWorker < BackgrounDRb::MetaWorker
         return
       end
       img_name = poster_file_name(video_content.name, video_content.year, size, File.extname(url))
-      img_complete_path = File.join(ONBOX_CONFIG[:poster_storage], img_name)
+      img_complete_path = File.join(storage_dir, img_name)
       rio(img_complete_path) < rio(url)
       logger.debug "Downloaded poster #{url} to #{img_complete_path}"
       width, height = ImageSize.new(File.new(img_complete_path, "r")).get_size
@@ -116,10 +116,14 @@ class ScrapImdbWorker < BackgrounDRb::MetaWorker
       file_name += ".#{size}"
       file_name += ".#{attempt}" if attempt > 1
       file_name += ext if ext
-      if File.exists?(file_name)
+      if File.exists?(File.join(storage_dir, file_name))
         file_name = poster_file_name(name, year, size, ext, attempt + 1)
       end
       return file_name
+    end
+    
+    def storage_dir
+      return ONBOX_CONFIG[:poster_storage]
     end
 end
 
