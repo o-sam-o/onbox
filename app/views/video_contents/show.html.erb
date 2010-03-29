@@ -73,11 +73,14 @@
 			            <div> 
 							<div class="accordionContent">
 								<!--
-								<object classid="clsid:02BF25D5-8C17-4B23-BC80-D3488ABDDC6B" 
-									codebase="http://www.apple.com/qtactivex/qtplugin.cab">
-								 	<param name="src" value="<%= video_file_reference_path(@video_content.video_file_references.first) %>" />
-								 	<param name="controller" value="true" />
-								</object>
+								<% unless @video_content.video_file_references.empty? %>
+									<object classid="clsid:02BF25D5-8C17-4B23-BC80-D3488ABDDC6B" 
+										codebase="http://www.apple.com/qtactivex/qtplugin.cab">
+									 	<param name="src" 
+											value="<%= video_file_reference_path(@video_content.video_file_references.first) %>" />
+									 	<param name="controller" value="true" />
+									</object>
+								<% end %>
 			             		-->
 							</div>
 						</div>

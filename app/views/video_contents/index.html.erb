@@ -18,6 +18,7 @@
 	  <tr>
 	    <th>Name</th>
 	    <th>Year</th>
+		<th>Type</th>
 	    <th>State</th>
 		<th>Actions</th>
 	  </tr>
@@ -28,6 +29,7 @@
 	  <tr>
 	    <td><%=h video_content.name %></td>
 	    <td><%=h video_content.year %></td>
+		<td><%=h video_content.type %></td>
 	    <td><%=h VideoContentState.display_name(video_content.state) %></td>
 	    <td>
 			<%= link_to 'Show', video_content %> |
@@ -53,5 +55,5 @@
 
 
 <%= render :partial => 'shared/yui_table', 
-	:object => {:columns => ['Name', 'Year', 'State', 'Actions'], :tableId => 'modelTable', :divId => 'tableWrapper',
+	:object => {:columns => ['Name', 'Year', 'Type', 'State', 'Actions'], :tableId => 'modelTable', :divId => 'tableWrapper',
 				:item_count => @video_content_count, :paginator_div => 'tablePaginator', :page => @page } %>

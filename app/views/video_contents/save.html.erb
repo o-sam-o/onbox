@@ -9,16 +9,22 @@
 	  </div>
 	  <div class="defaultFormField">
 	    <%= video_form.label :year %>
-	    <%= video_form.text_field :year, :class => "defaultFormTextField" %>
+		<%= video_form.text_field :year, :class => "defaultFormTextField" %>
 		<%= error_message_on @video_content, :year, :css_class => "defaultFormError" %>
 	  </div>
+	  <div class="defaultFormField">
+	    <%= video_form.label :type %>
+		<% type_html_hash = @video_content.new_record? ? {} : {:disabled => 'disabled'} %>
+		<%= video_form.select :type, [["Movie", "Movie"], ["Tv Show", "TvShow"]], {}, type_html_hash %>
+		<%= error_message_on @video_content, :type, :css_class => "defaultFormError" %>
+	  </div>	
 	  <div class="defaultFormField">
 	    <%= video_form.label :release_date, "Release Date" %>
 	    <%= video_form.date_select :release_date %>
 		<%= error_message_on @video_content, :release_date, :css_class => "defaultFormError" %>
 	  </div>
 	  <div class="defaultFormField">
-	    <%= video_form.label :rumtime %>
+	    <%= video_form.label :runtime %>
 	    <%= video_form.text_field :runtime, :class => "defaultFormTextField" %>
 		<%= error_message_on @video_content, :runtime, :css_class => "defaultFormError" %>
 	  </div>

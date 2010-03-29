@@ -30,7 +30,13 @@ class VideoContentsController < ApplicationController
   end
 
   def create
-    @video_content = VideoContent.new(params[:video_content])
+    if params[:video_content][:type] == 'Movie'
+      @video_content = Movie.new(params[:video_content])
+    elsif params[:video_content][:type]  == 'TvShow'
+      @video_content = TvShow.new(params[:video_content])
+    else
+      raise "Unknown video content type #{params[:video_content][:type] }"
+    end  
 
     if @video_content.save
       flash[:notice] = "#{@video_content.name} was successfully created."
