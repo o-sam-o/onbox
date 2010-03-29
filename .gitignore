@@ -38,3 +38,9 @@ coverage/screen.css
 coverage/lib-util-folder_scanner_rb.html
 coverage/lib-workers-folder_scan_worker_rb.html
 rerun.txt
+coverage/features-step_definitions-media_folder_steps_rb.html
+coverage/features-step_definitions-video_content_steps_rb.html
+coverage/features-step_definitions-video_file_reference_steps_rb.html
+coverage/features-step_definitions-web_steps_rb.html
+coverage/features-support-env_rb.html
+coverage/features-support-paths_rb.html

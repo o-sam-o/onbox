@@ -1,7 +1,7 @@
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
 
 one:
-  title: MyString
+  title: Title 1
   plot: MyString
   series: 1
   episode: 1
@@ -9,9 +9,9 @@ one:
   video_file_reference: 
 
 two:
-  title: MyString
+  title: Title 2
   plot: MyString
   series: 1
-  episode: 1
+  episode: 2
   date: 2010-03-16
   video_file_reference: 

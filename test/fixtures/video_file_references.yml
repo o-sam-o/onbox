@@ -1,11 +1,11 @@
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
 
 one:
-  raw_name: MyString
-  location: MyString
+  raw_name: fixture movie
+  location: /fixture/1
   on_disk: false
 
 two:
-  raw_name: MyString
-  location: MyString
+  raw_name: fixture 2
+  location: /fixture/2
   on_disk: false
