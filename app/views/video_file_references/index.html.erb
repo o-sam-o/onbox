@@ -53,6 +53,6 @@
 </div>
 
 <%= render :partial => 'shared/yui_table', 
-	:object => {:columns => ['Raw Name', 'Folder', 'On Disk', 'Date Added', 'Actions'], 
+	:object => {:columns => ['Raw Name', 'Folder', 'Format', 'Date Added', 'Actions'], 
 				:tableId => 'referenceTable', :divId => 'referenceTableDiv',
 				:item_count => @reference_count, :paginator_div => 'tablePaginator', :page => @page } %>

@@ -1,5 +1,5 @@
 class VideoFileReference < ActiveRecord::Base
-  validates_presence_of :location
+  validates_presence_of :location, :media_folder_id
   validates_uniqueness_of :location
   belongs_to :media_folder
   belongs_to :video_content
