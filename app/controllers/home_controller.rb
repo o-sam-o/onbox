@@ -8,11 +8,11 @@ class HomeController < ApplicationController
   
   def index
     @video_content_count = VideoContent.count
-    @video_contents = VideoContent.all(:limit=>(CAROUSEL_WIDTH * CAROUSEL_HEIGHT))
+    @video_contents = VideoContent.all(:limit=>(CAROUSEL_WIDTH * CAROUSEL_HEIGHT), :order => "name")
   end
   
   def video_content_items
-    @video_contents = VideoContent.all(:limit=> params['page_size'], :offset => params['offset'])
+    @video_contents = VideoContent.all(:limit=> params['page_size'], :offset => params['offset'], :order => "name")
   end
 
 end

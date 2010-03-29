@@ -20,3 +20,13 @@ Feature: Manage media_folders
       |location 4|true|
     When I delete the 3rd media_folder
     Then I should not see "location 3" within "#foldersTable"
+
+  Scenario: Edit media_folder
+    Given the following media_folders:
+      |location|scan|
+      |location 1|true|
+    And I am on the media_folders page
+	When I edit the 1st media_folder
+	And I fill in "Location" with "updated location"
+	And I press "Save"
+	Then I should see "updated location"

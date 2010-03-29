@@ -16,9 +16,14 @@ module NavigationHelpers
     when /the new video_file_reference page/
       new_video_file_reference_path
 
+    when /the video_file_references page/
+      video_file_references_path
+
     when /the new media_folder page/
       new_media_folder_path
 
+    when /the media_folders page/
+      media_folders_path
     
     # Add more mappings here.
     # Here is an example that pulls values out of the Regexp:

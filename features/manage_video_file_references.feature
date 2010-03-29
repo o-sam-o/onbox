@@ -25,3 +25,13 @@ Feature: Manage video_file_references
       |raw_name 4|location 4|true|media_folder 4|
     When I delete the 3rd video_file_reference
     Then I should not see "raw_name 3" within "#referenceTable"
+
+  Scenario: Update video_file_reference
+    Given the following video_file_references:
+      |raw_name|location|on_disk|media_folder|
+      |raw_name 1|location 1|false|media_folder 1|
+    And I am on the video_file_references page
+	When I edit the 1st video_file_reference
+	And I fill in "Location" with "updated location"
+	And I press "Save"
+	Then I should see "updated location"
