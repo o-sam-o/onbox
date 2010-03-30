@@ -89,35 +89,37 @@
 				            <div> 
 								<div class="accordionContent">
 									<ul id="episodesAccordion"> 
-										<li>
-								            <div>TODO Series</div> 
-								            <div>
-												<div class="accordionContent">
-													<table id="episodesTable">
-														<thead>
-															<tr>
-																<th>Series</th>
-																<th>Episode</th>
-																<th>Title</th>
-																<th>Date</th>
-																<th>Plot</th>
-															</tr>
-														</thead>
-														<tbody>
-															<% @video_content.tv_episodes.each do |episode| %>
+										<% @video_content.tv_episodes.group_by_series.each do |series, episodes| %>
+											<li>
+									            <div>Series <%=series %></div> 
+									            <div>
+													<div class="accordionContent">
+														<table id="<%=series %>episodesTable">
+															<thead>
 																<tr>
-																	<td><%= episode.series %></td>
-																	<td><%= episode.episode %></td>
-																	<td><%= episode.title %></td>
-																	<td><%= episode.date %></td>
-																	<td><%= episode.plot %></td>
+																	<th>Series</th>
+																	<th>Episode</th>
+																	<th>Title</th>
+																	<th>Date</th>
+																	<th>Plot</th>
 																</tr>
-															<% end %>
-														</tbody>
-													</table>
+															</thead>
+															<tbody>
+																<% episodes.each do |episode| %>
+																	<tr>
+																		<td><%= episode.series %></td>
+																		<td><%= episode.episode %></td>
+																		<td><%= episode.title %></td>
+																		<td><%= episode.date %></td>
+																		<td><%= episode.plot %></td>
+																	</tr>
+																<% end %>
+															</tbody>
+														</table>
+													</div>
 												</div>
-											</div>
-										</li>						
+											</li>	
+										<% end %>					
 									</ul>	
 								</div>
 							</div>
