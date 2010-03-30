@@ -201,3 +201,8 @@
 .hiddenDiv {
     visibility:hidden;
 }
+
+.viewGenreLabel {
+    font-weight: bold;
+    padding-right: 10px;
+}

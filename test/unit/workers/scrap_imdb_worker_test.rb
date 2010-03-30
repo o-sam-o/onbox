@@ -75,7 +75,7 @@ class ScrapImdbWorkerTest < Test::Unit::TestCase
     worker = ScrapImdbWorker.new
     worker.send(:scrap_imdb, video_content)
     
-    assert_equal('"Lost"', video_content.name)
+    assert_equal('Lost', video_content.name)
     assert_equal(imdb_id, video_content.imdb_id)
     assert_equal(2004, video_content.year)
     assert_equal(nil, video_content.release_date)  

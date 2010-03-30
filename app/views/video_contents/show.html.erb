@@ -51,9 +51,7 @@
 		<% unless @video_content.genres.empty? %>
 			<div class="viewCoreGenres">
 				<span class="viewGenreLabel">Genres:</span> 
-				<% for genre in @video_content.genres %>
-					<%= genre.name %>,
-				<% end %>
+				<%= @video_content.genres.collect(&:name).join(', ') %>
 			</div>
 		<% end %>
 		
@@ -68,23 +66,63 @@
 							</div>
 						</div>
 					</li>
-				    <li> 
-			            <div>Video</div> 
-			            <div> 
-							<div class="accordionContent">
-								<!--
-								<% unless @video_content.video_file_references.empty? %>
-									<object classid="clsid:02BF25D5-8C17-4B23-BC80-D3488ABDDC6B" 
-										codebase="http://www.apple.com/qtactivex/qtplugin.cab">
-									 	<param name="src" 
-											value="<%= video_file_reference_path(@video_content.video_file_references.first) %>" />
-									 	<param name="controller" value="true" />
-									</object>
-								<% end %>
-			             		-->
+					<!--  Doesnt seem to work in dev, server hangs
+					    <li> 
+				            <div>Video</div> 
+				            <div> 
+								<div class="accordionContent">
+									<% unless @video_content.video_file_references.empty? %>
+										<object classid="clsid:02BF25D5-8C17-4B23-BC80-D3488ABDDC6B" 
+											codebase="http://www.apple.com/qtactivex/qtplugin.cab">
+										 	<param name="src" 
+												value="<%= video_file_reference_path(@video_content.video_file_references.first) %>" />
+										 	<param name="controller" value="true" />
+										</object>
+									<% end %>
+								</div>
 							</div>
-						</div>
-					</li>				
+						</li>				
+					-->
+					<% if @video_content.tv_show? && @video_content.tv_episodes.present? %>
+						<li> 
+				            <div>Episodes</div> 
+				            <div> 
+								<div class="accordionContent">
+									<ul id="episodesAccordion"> 
+										<li>
+								            <div>TODO Series</div> 
+								            <div>
+												<div class="accordionContent">
+													<table id="episodesTable">
+														<thead>
+															<tr>
+																<th>Series</th>
+																<th>Episode</th>
+																<th>Title</th>
+																<th>Date</th>
+																<th>Plot</th>
+															</tr>
+														</thead>
+														<tbody>
+															<% @video_content.tv_episodes.each do |episode| %>
+																<tr>
+																	<td><%= episode.series %></td>
+																	<td><%= episode.episode %></td>
+																	<td><%= episode.title %></td>
+																	<td><%= episode.date %></td>
+																	<td><%= episode.plot %></td>
+																</tr>
+															<% end %>
+														</tbody>
+													</table>
+												</div>
+											</div>
+										</li>						
+									</ul>	
+								</div>
+							</div>
+						</li>
+					<% end %>
 				</ul>
 			</div>
 		</div>
@@ -106,6 +144,10 @@
 					fileTabView<%= file.id %>.set('activeIndex', 0);
 				<% end %>
 				
+			<% end %>
+			<% if @video_content.tv_show? && @video_content.tv_episodes.present? %>
+				var episodeMenu = new YAHOO.widget.AccordionView('episodesAccordion', {width: '520px', animationSpeed: '0.5', animate: true, 
+													expandable: true, collapsible: true, effect: YAHOO.util.Easing.easeNone});
 			<% end %>
 			YAHOO.util.Dom.removeClass('viewAccordionWrapper', 'hiddenDiv'); 												
 		});

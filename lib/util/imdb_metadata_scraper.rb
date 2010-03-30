@@ -40,6 +40,8 @@ class ImdbMetadataScraper
     if title_text =~ /(.*) \((\d{4})\/?\w*\)/
       info_hash['title'] = coder.decode($1)
       info_hash['year'] = $2
+      # Remove surrounding double quotes that seems to appear on tv show name
+      info_hash['title'] = $1 if info_hash['title'] =~ /^"(.*)"$/
     else
       #If we cant get title and year something is wrong
       raise "Unable to find title or year for imdb id #{imdb_id}"

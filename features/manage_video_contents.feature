@@ -36,3 +36,20 @@ Feature: Manage video_contents
       |name 4|2004|processed|imdb_id 4|
     When I delete the 3rd video_content
     Then I should not see "name 3" within "#modelTable"
+
+  Scenario: Episode info displayed
+    Given the following TvShows:
+      |name|year|state|
+      |Lost|2004|processed|
+      |AnotherShow|2005|processed|
+	And the following episodes:
+	  |series|episode|title|tv_show|
+	  |1|1|Pilot|Lost|
+	  |1|2|Episode 2|Lost|
+	  |2|1|S02 E01|Lost|
+	  |1|1|ForAnotherShow|AnotherShow|
+	And I am on the "Lost" video_content page
+	Then I should see "Pilot"
+	And I should see "Episode 2"
+	And I should see "S02 E01"
+	And I should not see "ForAnotherShow"

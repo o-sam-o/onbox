@@ -25,7 +25,7 @@ class ImdbMetadataScraperTvSeriesTest < Test::Unit::TestCase
   def test_scrap_movie_info_lost
     puts "Scraping info"
     movie_info = ImdbMetadataScraper.scrap_movie_info('0411008')
-    assert_equal('"Lost"', movie_info['title'])
+    assert_equal('Lost', movie_info['title'])
     assert_equal('2004', movie_info['year'])
     assert_equal("The survivors of a plane crash are forced to live with each other on a remote island, a dangerous new world that poses unique threats of its own.", movie_info['plot'])
     assert_not_nil(movie_info['small_image'])

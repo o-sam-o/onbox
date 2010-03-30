@@ -10,8 +10,12 @@ module NavigationHelpers
     
     when /the home\s?page/
       '/'
+      
     when /the new video_content page/
       new_video_content_path
+
+    when /the "([^\"]*)" video_content page/
+      video_content_path(VideoContent.find_by_name($1))
 
     when /the new video_file_reference page/
       new_video_file_reference_path
