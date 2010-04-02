@@ -1,6 +1,6 @@
 class VideoContentsController < ApplicationController
   before_filter :find_video_content,
-      :only => [:show, :edit, :update, :destroy]
+      :only => [:show, :edit, :update, :destroy, :reload]
       
   def index
     @page, offset = page_and_offset
@@ -27,6 +27,25 @@ class VideoContentsController < ApplicationController
   end
 
   def show
+  end
+
+  def reload
+    if params[:imdb_id].present? && params[:imdb_id] != @video_content.imdb_id
+      @video_content.imdb_id = params[:imdb_id]
+      # If the imdb id changes any existing poster are invalid
+      @video_content.video_posters.clear
+    end  
+    
+    @video_content.state = VideoContentState::PENDING
+    @video_content.save!
+    
+    MiddleMan.worker(:scrap_imdb_worker).async_scrap_for_video_content(:arg => @video_content.id)
+    
+    flash[:notice] = "#{@video_content.name} refreshing from IMDB.  Please wait a little while and then refresh the page"
+    redirect_to(@video_content)    
+  rescue
+    flash[:error] = "Error refreshing video: #{$!}"
+    redirect_to(@video_content)
   end
 
   def create

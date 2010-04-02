@@ -53,3 +53,14 @@ Feature: Manage video_contents
 	And I should see "Episode 2"
 	And I should see "S02 E01"
 	And I should not see "ForAnotherShow"
+
+  @culerity	
+  Scenario: Change imdb id
+    Given the following TvShows:
+      |name|year|imdb_id|state|
+      |Lost|2004|000001|processed|	
+	And I am on the "Lost" video_content page
+    When I fill in "Imdb Id" with "999999"
+	And I press "Change"
+	Then I should see "Pending"
+	And I should see "999999"

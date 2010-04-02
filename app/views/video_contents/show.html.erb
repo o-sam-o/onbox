@@ -9,6 +9,13 @@
 <link rel="stylesheet" type="text/css" href="<%= ONBOX_CONFIG[:yui_path] %>/tabview/assets/skins/sam/tabview.css">
 <script type="text/javascript" src="/accordionview/tabview-min.js"></script>
 
+<!-- YUI Dialog -->
+<link rel="stylesheet" type="text/css" href="<%= ONBOX_CONFIG[:yui_path] %>/container/assets/skins/sam/container.css">
+<script src="<%= ONBOX_CONFIG[:yui_path] %>/animation/animation-min.js"></script>
+<script src="<%= ONBOX_CONFIG[:yui_path] %>/dragdrop/dragdrop-min.js"></script>
+<script src="<%= ONBOX_CONFIG[:yui_path] %>/container/container-min.js"></script>
+<script type="text/javascript" src="<%= ONBOX_CONFIG[:yui_path] %>/button/button-min.js"></script> 
+
 <style>
 
 .yui-dt table
@@ -43,6 +50,7 @@
 				<%= view_content_details "Runtime", @video_content.runtime_formatted %>				
 			</div>
 			<div class="viewCoreDetailsRight">
+				<%= view_content_details "Status", VideoContentState.display_name(@video_content.state) %>	
 				<%= view_content_details "Release Date", @video_content.release_date %>	
 				<%= view_content_details "Language", @video_content.language %>		
 				<%= view_content_details "Tagline", @video_content.tag_line %>				
@@ -88,39 +96,7 @@
 				            <div>Episodes</div> 
 				            <div> 
 								<div class="accordionContent">
-									<ul id="episodesAccordion"> 
-										<% @video_content.tv_episodes.group_by_series.each do |series, episodes| %>
-											<li>
-									            <div>Series <%=series %></div> 
-									            <div>
-													<div class="accordionContent">
-														<table id="<%=series %>episodesTable">
-															<thead>
-																<tr>
-																	<th>Series</th>
-																	<th>Episode</th>
-																	<th>Title</th>
-																	<th>Date</th>
-																	<th>Plot</th>
-																</tr>
-															</thead>
-															<tbody>
-																<% episodes.each do |episode| %>
-																	<tr>
-																		<td><%= episode.series %></td>
-																		<td><%= episode.episode %></td>
-																		<td><%= episode.title %></td>
-																		<td><%= episode.date %></td>
-																		<td><%= episode.plot %></td>
-																	</tr>
-																<% end %>
-															</tbody>
-														</table>
-													</div>
-												</div>
-											</li>	
-										<% end %>					
-									</ul>	
+									<%= render :partial => 'episodes' %>
 								</div>
 							</div>
 						</li>
@@ -173,4 +149,70 @@
 			<%= yui_button_link :text => 'Refresh', :link => edit_video_content_path(@video_content) %>
 		</div>
 	</div>
+	
+	<div id="changeImdbDialog" class="yui-pe-content hiddenDiv"> 
+		<div class="hd">Change Imdb Id</div> 
+		<div class="bd"> 
+			<% form_tag reload_video_content_path(@video_content), :method => :post, :class => 'defaultForm' do %>
+			  <fieldset>
+			      <legend>Change Imdb Id:</legend>
+				  <div class="defaultFormField">
+				    <%= label_tag "imdb_id", "Imdb Id" %>
+				    <%= text_field_tag 'imdb_id', @video_content.imdb_id, :class => "defaultFormTextField" %>
+				  </div>
+			  </fieldset>
+			<% end %>
+		</div> 
+	</div>
+	
+	<script>
+		YAHOO.namespace("onbox.video.imdb");
+		YAHOO.util.Event.addListener(window, "load", function() {
+
+			// Define various event handlers for Dialog
+			var handleSubmit = function() {
+				this.submit();
+			};
+			var handleCancel = function() {
+				this.cancel();
+			};
+
+			// Instantiate the Dialog
+			YAHOO.onbox.video.imdb.dialog = new YAHOO.widget.Dialog("changeImdbDialog", 
+									{ width : "400px",
+									  fixedcenter : true,
+									  visible : false,
+									  postmethod : 'form',
+									  constraintoviewport : true,
+									  buttons : [ { text:"Change", handler:handleSubmit, isDefault:true },
+										      { text:"Cancel", handler:handleCancel } ]
+									});
+
+			// Validate the entries in the form to require that both first and last name are entered
+			YAHOO.onbox.video.imdb.dialog.validate = function() {
+				var data = this.getData();
+				if (data.imdb_id == "") {
+					alert("You must provide an IMDB id.");
+					return false;
+				} else {
+					return true;
+				}
+			};
+
+			// Render the Dialog
+			YAHOO.onbox.video.imdb.dialog.render();
+			// Make visable
+			YAHOO.util.Dom.removeClass("changeImdbDialog", "hiddenDiv");
+
+		});	
+		
+		function changeImdbId() {
+			YAHOO.onbox.video.imdb.dialog.show()
+		}
+		
+		function reloadFromImdb() {
+			YAHOO.onbox.video.imdb.dialog.submit()
+		}
+	</script>
+	<a onclick="reloadFromImdb()">Change IMDB</a>
 </div>

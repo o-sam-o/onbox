@@ -1,0 +1,37 @@
+<ul id="episodesAccordion"> 
+	<% @video_content.tv_episodes.group_by_series.each do |series, episodes| %>
+		<li>
+            <div>Series <%=series %></div> 
+            <div>
+				<div class="accordionContent">
+					<%= render :partial => 'shared/yui_table', 
+						:object => {:columns => ['Episode', 'Title', 'Date', 'Plot'], 
+									:tableId => "#{series}episodesTable", 
+									:divId => "#{series}episodesTableWrapper" } %>
+					<div id="<%=series %>episodesTableWrapper">
+						<table id="<%=series %>episodesTable">
+							<thead>
+								<tr>
+									<th>Episode</th>
+									<th>Title</th>
+									<th>Date</th>
+									<th>Plot</th>
+								</tr>
+							</thead>
+							<tbody>
+								<% episodes.each do |episode| %>
+									<tr>
+										<td><%= episode.episode %></td>
+										<td><%= episode.title %></td>
+										<td><%= episode.date %></td>
+										<td><%= episode.plot %></td>
+									</tr>
+								<% end %>
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+		</li>	
+	<% end %>					
+</ul>
