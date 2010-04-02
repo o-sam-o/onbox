@@ -15,4 +15,7 @@ cucumber:
   default_table_size: 10
 
 production:
-  domain: example.com
+  domain: dub:3000
+  yui_path: /yui
+  poster_storage: /Volumes/Other/OnBoxPosters/
+  default_table_size: 10  
