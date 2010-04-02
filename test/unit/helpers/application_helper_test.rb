@@ -28,6 +28,12 @@ class ApplicationHelperTest < ActionView::TestCase
       yui_button_link(:link => "http://test.com", :text => "Link Text")
   end
   
+  should "make a javascript link that looks like a yui button" do
+    assert_equal "<span id=\"linkbutton2\" class=\"yui-button yui-link-button\"><span class=\"first-child\">" + 
+      "<a onclick=\"myFunction()\">Link Text</a></span></span>", 
+      yui_button_link(:onclick => "myFunction()", :text => "Link Text")
+  end
+  
   should "truncate a string but add a tooltip so you can see it completely" do
     assert_equal "no truncate", truncate_and_tooltip(:text => 'no truncate', :max_length => 50) 
     

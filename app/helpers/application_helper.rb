@@ -33,7 +33,11 @@ module ApplicationHelper
   def yui_button_link(args)
     link, text = args[:link], args[:text]
     result = "<span id=\"linkbutton2\" class=\"yui-button yui-link-button\"><span class=\"first-child\">"
-    result += "<a href=\"#{link}\">#{text}</a>"
+    unless link.nil?
+      result += "<a href=\"#{link}\">#{text}</a>"
+    else
+      result += "<a onclick=\"#{args[:onclick]}\">#{text}</a>"
+    end  
     result += "</span></span>"
     return result
   end
