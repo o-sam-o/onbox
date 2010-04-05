@@ -36,7 +36,9 @@ class FileNameCleaner
   YEAR_REGEX = /(\(|\[|\s)+\d{4}(,|\)|\]|\s|$)+/
   SESSION_ESP_REGEX_1 = /S(\d{2})\s?E(\d{2})/i
   SESSION_ESP_REGEX_2 = /\s+(\d+)x(\d+)(\s|$)+/i
+  SESSION_ESP_REGEX_3 = /Season (\d+) Episode (\d+)/i
   SESSION_ESP_REGEX_OF = /(\d+)\s?of\s?(\d+)/i
+  SESSION_REGEXS = [SESSION_ESP_REGEX_1, SESSION_ESP_REGEX_2, SESSION_ESP_REGEX_3]
   
 
   def self.get_file_name(location)
@@ -66,15 +68,18 @@ class FileNameCleaner
     end
 
     #Try to extract the session and episode
-    if name =~ SESSION_ESP_REGEX_1
-      name = $`
-      session = $1.to_i
-      episode = $2.to_i
-    elsif name =~ SESSION_ESP_REGEX_2
+    session = nil
+    episode = nil
+    SESSION_REGEXS.each do |session_regex|
+      if name =~ session_regex
         name = $`
         session = $1.to_i
-        episode = $2.to_i    
-    elsif name =~ SESSION_ESP_REGEX_OF
+        episode = $2.to_i
+        break
+      end
+    end  
+  
+    if session.nil? && name =~ SESSION_ESP_REGEX_OF
       name = $`
       session = 1
       episode = $1.to_i  

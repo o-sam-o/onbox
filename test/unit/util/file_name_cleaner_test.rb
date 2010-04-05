@@ -15,6 +15,8 @@ class FileNameCleanerTest < Test::Unit::TestCase
 		content_test_helper('/test/My-Tvshow.1x3.avi', 'My Tvshow 1x3', 'My Tvshow', nil, 1, 3)
 		content_test_helper('/test/My-Tvshow.01x03.avi', 'My Tvshow 01x03', 'My Tvshow', nil, 1, 3)
 		content_test_helper('/test/My-Tvshow.01x03.extra.avi', 'My Tvshow 01x03 extra', 'My Tvshow', nil, 1, 3)
+		content_test_helper('/test/1/The Universe - Season 1 Episode 12.avi', 'The Universe   Season 1 Episode 12', 'The Universe', nil, 1, 12)
+		
 		
     content_test_helper('/test/Fanboys (2008) LIMITED DVDRip XviD-SAPHiRE-NoRARs.avi', 
                         'Fanboys (2008) LIMITED DVDRip XviD SAPHiRE NoRARs', 
@@ -80,6 +82,7 @@ class FileNameCleanerTest < Test::Unit::TestCase
 	  content_test_helper('/test/CD2/District 9-2.avi', 'District 9 2', 'District 9', nil, nil, nil)
 	  
 	  content_test_helper('/test/CD1/dmt-intheloop1.avi', 'dmt intheloop1', 'dmt intheloop', nil, nil, nil)
+	  
 	end
 	
 	def content_test_helper(location, raw_name, name, year, series, episode)
@@ -87,9 +90,9 @@ class FileNameCleanerTest < Test::Unit::TestCase
 	  assert_not_nil(c)
 		assert_equal(location, c.location)
 		assert_equal(raw_name, c.raw_name)
-		assert_equal(name, c.name)
-		assert_equal(year, c.year)
-		assert_equal(series, c.series)
-		assert_equal(episode, c.episode)	  
+		assert_equal(name, c.name, "For #{raw_name}")
+		assert_equal(year, c.year, "For #{raw_name}")
+		assert_equal(series, c.series, "For #{raw_name}")
+		assert_equal(episode, c.episode, "For #{raw_name}")	  
 	end
 end

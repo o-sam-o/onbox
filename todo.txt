@@ -1,0 +1,13 @@
+ * Tv Series Not in order on show page
+ * Setting imdb id needs to merge video contents, content found to be duplicates are part of imdb scrap should be merged
+ * Allow view type to change, e.g. V came in as a movie
+
+ * Bulk change file reference's video content
+
+ * User auth
+ * Support for marking a video watched
+
+ * Starship troopers roughnecks failed
+ * Curb your Enthusiasm failed
+
+ * Support for marking files as ignored
