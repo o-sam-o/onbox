@@ -1,5 +1,7 @@
 <ul id="episodesAccordion"> 
-	<% @video_content.tv_episodes.group_by_series.each do |series, episodes| %>
+	<% by_series = @video_content.tv_episodes.group_by_series %>
+	<% by_series.keys.sort.each do |series| %>
+		<% episodes = by_series[series] %>
 		<li>
             <div>Series <%=series %></div> 
             <div>
