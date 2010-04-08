@@ -1,13 +1,12 @@
- * Tv Series Not in order on show page
- * Setting imdb id needs to merge video contents, content found to be duplicates are part of imdb scrap should be merged
-
  * Bulk change file reference's video content
 
  * Allow view type to change, e.g. V came in as a movie
+
  * User auth
  * Support for marking a video watched
 
-
+ * Tv file references need to be associated with tv episode
+ * Tv show files on the content show page should be sorted by tv episode
 
  * Support for marking files as ignored
  * Display contents of NFO files

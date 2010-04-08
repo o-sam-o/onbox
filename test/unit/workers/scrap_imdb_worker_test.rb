@@ -36,6 +36,7 @@ class ScrapImdbWorkerTest < Test::Unit::TestCase
     Genre.expects(:find_or_create_by_name).with('Sci-Fi').returns(Genre.new({:name => 'Sci-Fi'}))
     
     video_content = Movie.new({:name => 'Fake Name', :imdb_id => imdb_id})
+    video_content.expects(:unique_imdb_id?).returns(true)    
     video_content.expects(:save!).returns(true)
     
     worker = ScrapImdbWorker.new
@@ -64,7 +65,9 @@ class ScrapImdbWorkerTest < Test::Unit::TestCase
     Genre.expects(:find_or_create_by_name).with('Thriller').returns(Genre.new(:name => 'Thriller'))
     
     video_content = TvShow.new({:name => 'Fake Name', :imdb_id => imdb_id})
+    video_content.expects(:unique_imdb_id?).returns(true)
     video_content.expects(:save!).returns(true)
+
 
     tv_episodes_mock = mock()
     video_content.stubs(:tv_episodes).returns(tv_episodes_mock)
@@ -149,6 +152,18 @@ class ScrapImdbWorkerTest < Test::Unit::TestCase
     worker = ScrapImdbWorker.new        
     worker.scrap_all_pending
     assert_equal movie.state, VideoContentState::NO_IMDB_ID
+  end  
+  
+  should 'merge duplicate video contents if scraping returns an existing imdb id' do
+    movie = Movie.new
+    VideoContent.expects(:find_all_by_state).with('pending').returns([movie])
+    ImdbMetadataScraper.expects(:search_for_imdb_id).returns('existing')
+    movie.expects(:unique_imdb_id?).with('existing').returns(false)
+    movie.expects(:merge_with_imdb_id).with('existing')
+    
+    worker = ScrapImdbWorker.new        
+    worker.scrap_all_pending
+    assert true
   end  
   
 end

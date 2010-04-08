@@ -44,7 +44,11 @@ class ScrapImdbWorker < BackgrounDRb::MetaWorker
         logger.error("Failed to find imdb id for video: #{video_content.display_name}")
         video_content.state = VideoContentState::NO_IMDB_ID
         video_content.save! and return
-      end
+      elsif !video_content.unique_imdb_id?(imdb_id)
+        logger.info "Found duplicate video content for imdb id #{imdb_id} merging"
+        video_content.merge_with_imdb_id(imdb_id)
+        return
+      end  
       
       logger.debug "Found imdb_id #{imdb_id} for #{video_content.display_name}"
       movie_info = ImdbMetadataScraper.scrap_movie_info(imdb_id)
