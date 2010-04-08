@@ -19,6 +19,7 @@ end
 
 class VideoContent < ActiveRecord::Base
   validates_presence_of :name, :state
+  validates_uniqueness_of :imdb_id, :allow_nil => true, :allow_blank => true
   has_many :video_file_references
   has_many :video_posters, :dependent => :destroy 
   has_and_belongs_to_many :genres
@@ -52,4 +53,24 @@ class VideoContent < ActiveRecord::Base
   def tv_show?
     false
   end
+  
+  def unique_imdb_id?(check_imdb_id)
+    existing = VideoContent.find_by_imdb_id(check_imdb_id)
+    return existing.nil? || existing.id == self.id
+  end
+  
+  def merge_with_imdb_id(imdb_id)
+    existing = VideoContent.find_by_imdb_id(imdb_id)
+    
+    # Move current file references to below to duplicate
+    self.video_file_references.each do |file_ref|
+      existing.video_file_references << file_ref
+    end  
+    self.video_file_references.clear
+    
+    existing.save!
+    self.destroy
+    
+    return existing
+  end   
 end

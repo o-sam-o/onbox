@@ -17,6 +17,9 @@ module NavigationHelpers
     when /the "([^\"]*)" video_content page/
       video_content_path(VideoContent.find_by_name($1))
 
+    when /the video_contents index page/
+      video_contents_path
+
     when /the new video_file_reference page/
       new_video_file_reference_path
 

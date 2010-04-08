@@ -1,5 +1,6 @@
 Given /^the following video_file_references:$/ do |video_file_references|
   video_file_references.map_column!('media_folder') { |folder_name| MediaFolder.find_or_create_by_location(folder_name) }
+  video_file_references.map_column!('video_content', false) { |content_name| VideoContent.find_by_name(content_name) }
   VideoFileReference.create!(video_file_references.hashes)
 end
 

@@ -31,9 +31,13 @@ class VideoContentsController < ApplicationController
 
   def reload
     if params[:imdb_id].present? && params[:imdb_id] != @video_content.imdb_id
-      @video_content.imdb_id = params[:imdb_id]
-      # If the imdb id changes any existing poster are invalid
-      @video_content.video_posters.clear
+      if @video_content.unique_imdb_id?(params[:imdb_id])
+        @video_content.imdb_id = params[:imdb_id]
+        # If the imdb id changes any existing poster are invalid
+        @video_content.video_posters.clear
+      else
+        @video_content = @video_content.merge_with_imdb_id(params[:imdb_id])
+      end  
     end  
     
     @video_content.state = VideoContentState::PENDING

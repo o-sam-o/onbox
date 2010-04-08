@@ -5,6 +5,7 @@ one:
   year: 2000
   release_date: 2010-02-06
   plot: MyString
+  imdb_id: TEST_ID
 
 two:
   name: test movie 2

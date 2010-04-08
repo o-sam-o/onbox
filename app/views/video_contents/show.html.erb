@@ -105,21 +105,26 @@
 			</div>
 		</div>
 	</div>
-	
+
 	<script type="text/javascript">
 		YAHOO.util.Event.addListener(window, "load", function() {
 
 			var topMenu = new YAHOO.widget.AccordionView('topAccordion', {width: '550px', animationSpeed: '0.6', animate: true,  
 															expandable: true, collapsible: true, effect: YAHOO.util.Easing.easeNone});
+
 			<% unless @video_content.video_file_references.empty? %>
-				var fileMenu = new YAHOO.widget.AccordionView('filesAccordion', {width: '520px', animationSpeed: '0.5', animate: true, 
+				<% # This is very dodgy but cutlery make html go missing if this accordion is rendered. Turning off for cuke tests %>
+				<% if ONBOX_CONFIG[:show_file_accordion] %>
+					var fileMenu = new YAHOO.widget.AccordionView('filesAccordion', {width: '520px', animationSpeed: '0.5', animate: true, 
 														expandable: true, collapsible: true, effect: YAHOO.util.Easing.easeNone});
-			
+				<% end %>
 				<% # Id like this to be in video_files partial but it needs to be init after the AccordionViews 
 				   # as otherwise tab selection doesnt work %>	
 				<% @video_content.video_file_references.each do |file| %>
-					var fileTabView<%= file.id %> = new YAHOO.widget.TabView('filePropertyTab<%= file.id %>');
-					fileTabView<%= file.id %>.set('activeIndex', 0);
+					<% if not file.video_file_properties.empty? %>
+						var fileTabView<%= file.id %> = new YAHOO.widget.TabView('filePropertyTab<%= file.id %>');
+						fileTabView<%= file.id %>.set('activeIndex', 0);
+					<% end %>
 				<% end %>
 				
 			<% end %>

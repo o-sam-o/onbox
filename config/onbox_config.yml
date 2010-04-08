@@ -3,21 +3,25 @@ development:
   yui_path: /yui
   poster_storage: /Volumes/Other/OnBoxPosters/
   default_table_size: 10
+  show_file_accordion: true
 
 test:
   domain: test.host
   yui_path: http://yui.yahooapis.com/2.8.0r4/build
   poster_storage: /tmp/
   default_table_size: 10 
+  show_file_accordion: true
   
 cucumber:
   domain: localhost:3000
   yui_path: /yui
   poster_storage: /tmp/
   default_table_size: 10
+  show_file_accordion: false
 
 production:
   domain: dub:3000
   yui_path: /yui
   poster_storage: /media/content/Sam/OnBoxImgs/
   default_table_size: 10  
+  show_file_accordion: true

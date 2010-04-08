@@ -59,8 +59,33 @@ Feature: Manage video_contents
     Given the following TvShows:
       |name|year|imdb_id|state|
       |Lost|2004|000001|processed|	
+    Given the following video_file_references:
+      |raw_name|location|on_disk|media_folder|video_content|
+      |raw_name 1|LostS01E01.avi|true|media_folder 1|Lost|
 	And I am on the "Lost" video_content page
     When I fill in "Imdb Id" with "999999"
 	And I press "Change"
 	Then I should see "Pending"
 	And I should see "999999"
+
+  @culerity	
+  Scenario: Merge two different video contents
+    Given the following media_folders:
+      |location|scan|
+      |media_folder 1|true|
+    And the following TvShows:
+      |name|year|imdb_id|state|
+      |Lost|2004|000001|processed|	
+      |Wrong Lost|2003|000002|processed|
+    Given the following video_file_references:
+      |raw_name|location|on_disk|media_folder|video_content|
+      |raw_name 1|LostS01E01.avi|true|media_folder 1|Lost|
+	  |raw_name 2|LostS01E02.avi|true|media_folder 1|Wrong Lost|
+	And I am on the "Wrong Lost" video_content page
+    When I fill in "Imdb Id" with "000001"
+	And I press "Change"
+	Then I should see "000001"	
+	And I should see "LostS01E01.avi"
+	And I should see "LostS01E02.avi"
+	And I am on the video_contents index page
+	And I should not see "Wrong Lost"

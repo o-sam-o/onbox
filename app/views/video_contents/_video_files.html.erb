@@ -8,51 +8,51 @@
             <div>
 				<div class="accordionContent">
 					<% if not file.video_file_properties.empty? %>
-					<div id="filePropertyTab<%= file.id %>" class="yui-navset">
-							<ul class="yui-nav">
-								<% group = nil %>
-								<% file.video_file_properties.each_with_index do |prop, index| %>
-									<% if prop.group != group %>
-										<% group = prop.group %>										
-										<li><a href="#tab<%= group + file.id.to_s %>"><em><%= group %></em></a></li>
+						<div id="filePropertyTab<%= file.id %>" class="yui-navset">
+								<ul class="yui-nav">
+									<% group = nil %>
+									<% file.video_file_properties.each_with_index do |prop, index| %>
+										<% if prop.group != group %>
+											<% group = prop.group %>										
+											<li><a href="#tab<%= group + file.id.to_s %>"><em><%= group %></em></a></li>
+										<% end %>
 									<% end %>
+								</ul>
+							<% group = nil %>
+							<div class="yui-content" style="padding: 0 0 0 0;">
+							<% file.video_file_properties.each do |prop| %>
+								<% if prop.group != group %>
+									<% unless group.nil? %>
+										</tbody></table></div></div>
+									<% end %>																
+									<% group = prop.group %>
+									<div id="tab<%= group + file.id.to_s %>" style="display: none;">
+										<%= render :partial => 'shared/yui_table', 
+											:object => {:columns => ['Property', 'Value'], 
+														:tableId => "#{group + file.id.to_s }PropertyTable", 
+														:divId => "#{group + file.id.to_s }tableWrapper" } %>
+										<div id="<%= group + file.id.to_s %>tableWrapper">
+										<table id="<%= group + file.id.to_s %>PropertyTable">
+											<thead>
+												<tr>
+													<th>Property</th>
+													<th>Value</th>
+												</tr>
+											</thead>
+											<tbody>
 								<% end %>
-							</ul>
-						<% group = nil %>
-						<div class="yui-content" style="padding: 0 0 0 0;">
-						<% file.video_file_properties.each do |prop| %>
-							<% if prop.group != group %>
-								<% unless group.nil? %>
-									</tbody></table></div></div>
-								<% end %>																
-								<% group = prop.group %>
-								<div id="tab<%= group + file.id.to_s %>" style="display: none;">
-									<%= render :partial => 'shared/yui_table', 
-										:object => {:columns => ['Property', 'Value'], 
-													:tableId => "#{group + file.id.to_s }PropertyTable", 
-													:divId => "#{group + file.id.to_s }tableWrapper" } %>
-									<div id="<%= group + file.id.to_s %>tableWrapper">
-									<table id="<%= group + file.id.to_s %>PropertyTable">
-										<thead>
-											<tr>
-												<th>Property</th>
-												<th>Value</th>
-											</tr>
-										</thead>
-										<tbody>
+								<tr>
+									<td class="filePropertyName">
+										<%=h prop.name %>
+									</td>
+									<td>
+										<%=h prop.value %>
+									</td>
+								</tr>
 							<% end %>
-							<tr>
-								<td class="filePropertyName">
-									<%=h prop.name %>
-								</td>
-								<td>
-									<%=h prop.value %>
-								</td>
-							</tr>
-						<% end %>
-							</tbody></table></div></div>
+								</tbody></table></div></div>
+							</div>
 						</div>
-					</div>
 					<% elsif file.location =~ /nfo$/ %>
 						TODO - handle NFO files
 					<% else %>
