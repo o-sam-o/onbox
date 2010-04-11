@@ -23,13 +23,13 @@ class ApplicationHelperTest < ActionView::TestCase
   end
   
   should "make a link that looks like a yui button" do
-    assert_equal "<span id=\"linkbutton2\" class=\"yui-button yui-link-button\"><span class=\"first-child\">" + 
+    assert_equal "<span class=\"yui-button yui-link-button\"><span class=\"first-child\">" + 
       "<a href=\"http://test.com\">Link Text</a></span></span>", 
       yui_button_link(:link => "http://test.com", :text => "Link Text")
   end
   
   should "make a javascript link that looks like a yui button" do
-    assert_equal "<span id=\"linkbutton2\" class=\"yui-button yui-link-button\"><span class=\"first-child\">" + 
+    assert_equal "<span class=\"yui-button yui-link-button\"><span class=\"first-child\">" + 
       "<a onclick=\"myFunction()\">Link Text</a></span></span>", 
       yui_button_link(:onclick => "myFunction()", :text => "Link Text")
   end

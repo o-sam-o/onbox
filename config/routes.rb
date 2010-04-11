@@ -6,6 +6,9 @@ ActionController::Routing::Routes.draw do |map|
   
   map.admin 'admin/:action', :controller => 'admin'
 
+  map.bulk_change_search 'video_contents/bulk/search', :controller => 'bulk_change_video_contents', :action => 'search'
+  map.bulk_change 'video_contents/bulk/:action', :controller => 'bulk_change_video_contents'
+
   map.resources :video_file_references
   map.resources :video_contents, :member => {:auto_complete => :get, :reload => :post}, :has_many => :video_posters
   map.resources :movies, :controller => 'video_contents'

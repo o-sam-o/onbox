@@ -1,0 +1,19 @@
+<h2 class="viewTitle">Bulk Change <%= params['video_content_ids'].size %> Items</h2>
+
+<div class="formWrapper">
+	<% form_tag bulk_change_path(:action => 'bulk_update'), :method => :post, :class => 'defaultForm' do %>
+	  <fieldset>
+	      <legend>Bulk Change:</legend>
+		  <div class="defaultFormField">
+		    <%= label_tag "imdb_id", "Imdb Id" %>
+		    <%= text_field_tag 'imdb_id', '', :class => "defaultFormTextField" %>
+		  </div>
+	  </fieldset>
+
+	  <% params['video_content_ids'].each do |video_content_id| %>
+	  	<%= hidden_field_tag 'video_content_ids[]', video_content_id %>
+	  <% end %>
+	  
+	<%= yui_submit_button "Bulk Update" %>
+	<% end %>	
+</div>

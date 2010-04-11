@@ -1,0 +1,47 @@
+<h2 class="viewTitle">Bulk Update Videos</h2>
+
+<div class="formWrapper">
+	<% form_tag bulk_change_search_path, :method => :get, :class => 'defaultForm' do %>
+	  <fieldset>
+	      <legend>Search:</legend>
+		  <div class="defaultFormField">
+		    <%= label_tag "search" %>
+		    <%= text_field_tag 'search', params['search'], :class => "defaultFormTextField" %>
+		    <%= yui_submit_button "Search" %>
+		  </div>
+	  </fieldset>
+	<% end %>
+</div>
+
+<% form_tag bulk_change_path(:action => 'bulk_edit'), :method => :post, :class => 'defaultForm' do %>
+	<div class="bulkChangeSearchResults">
+		<% if @search_results.nil? || @search_results.empty? %>
+			<% unless params['search'].blank? %>
+				<div class="noResults">No results for '<%= params['search'] %>'</div>
+			<% end %>
+		<% else %>
+			<table id="bulkChangeTable">
+				<thead>
+					<tr>
+						<th></th>
+						<th>Name</th>
+						<th>Location</th>
+					</tr>
+				</thead>
+				<tbody>
+					<% @search_results.each do |result| %>
+						<% unless result.video_content.blank? %>
+							<tr>
+								<td><%= check_box_tag 'video_content_ids[]', result.video_content.id %></td>
+								<td><%= result.video_content_name %></td>
+								<td><%= result.location %></td>
+							</tr>	
+						<% end %>
+					<% end %>
+				</tbody>	
+			</table>
+			<%= hidden_field 'search', params['search'] %>
+			<%= yui_submit_button "Next" %>
+		<% end %>	
+	</div>
+<% end %>

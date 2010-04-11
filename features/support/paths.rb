@@ -20,6 +20,9 @@ module NavigationHelpers
     when /the video_contents index page/
       video_contents_path
 
+    when /the bulk video_content change page/
+      bulk_change_search_path
+
     when /the new video_file_reference page/
       new_video_file_reference_path
 

@@ -16,3 +16,6 @@ Lower Priority:
  * Fix file accordion rendering in cucumber.  Remove show_file_accordion config
  * Starship troopers roughnecks failed
  * Curb your Enthusiasm failed
+ * Move video content controllers into subfolder
+ * Too short tool time is getting stripped from yui table
+ * Auto detect column names for yui table

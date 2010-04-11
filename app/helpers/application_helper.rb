@@ -29,15 +29,27 @@ module ApplicationHelper
     return "..." if max_length <= 3
     return "..." + text[text.length - (max_length - 3), text.length]
   end
-
+  
+  # Allowed args:
+  # text - to be displayed in button
+  # link - to link too
+  #        or
+  # onclick - javascript function to call on click
   def yui_button_link(args)
     link, text = args[:link], args[:text]
-    result = "<span id=\"linkbutton2\" class=\"yui-button yui-link-button\"><span class=\"first-child\">"
+    result = "<span class=\"yui-button yui-link-button\"><span class=\"first-child\">"
     unless link.nil?
       result += "<a href=\"#{link}\">#{text}</a>"
     else
       result += "<a onclick=\"#{args[:onclick]}\">#{text}</a>"
     end  
+    result += "</span></span>"
+    return result
+  end
+
+  def yui_submit_button(text)
+    result = "<span class=\"yui-button yui-push-button\" style=\"vertical-align: bottom;\"><span class=\"first-child\">"
+    result += '<button type="submit">' + text + '</button>'
     result += "</span></span>"
     return result
   end

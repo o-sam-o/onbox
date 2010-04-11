@@ -206,3 +206,16 @@
     font-weight: bold;
     padding-right: 10px;
 }
+
+.bulkChangeSearchResults {
+    padding-top: 5px;    
+    clear:both;
+}
+
+.noResults {
+    font-style: italic;
+}
+
+#bulkChangeTable {
+    margin-bottom: 10px;    
+}
