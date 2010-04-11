@@ -28,7 +28,7 @@ class BulkChangeVideoContentsController < ApplicationController
     end
     
     # This is a good time to refresh
-    video_content = VideoContent.first('imdb_id = ?', params[:imdb_id])
+    video_content = VideoContent.first(:conditions => ['imdb_id = ?', params[:imdb_id]])
     video_content.state = VideoContentState::PENDING
     video_content.save!
     
