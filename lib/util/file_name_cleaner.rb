@@ -32,6 +32,8 @@ class FileNameCleaner
   CD_FOLDER_REGEX = /\/CD(\d)\//
   #Chars used in file names as a subsitude for spaces
   SPACE_SUB_REGEX = /(\.|_|\-)/
+  #TODO remove this duplication
+  CONTENT_SOURCES = /DVDRIP|1080p|720p|R5|DVDSCR|BDRip|CAM|TS|PPV|Xvid|divx/i
   CONTENT_SOURCE_REGEX = /(\(|\[|\s)+(DVDRIP|1080p|720p|R5|DVDSCR|BDRip|CAM|TS|PPV|Xvid|divx)(\)|\]|\s|$)+/i
   YEAR_REGEX = /(\(|\[|\s)+\d{4}(,|\)|\]|\s|$)+/
   SESSION_ESP_REGEX_1 = /S(\d{2})\s?E(\d{2})/i
@@ -49,8 +51,27 @@ class FileNameCleaner
     return file_name
   end
 
+  def self.parent_folder_name(location)
+    # Remove first / and break by folder name
+    folders = location.sub(/^\//, '').split('/')
+    return nil if folders.empty? || folders.size < 2
+    parent_folder = folders[folders.size - 2]
+    # If the folder is a CD folder e.g. CD1 go up 1 more
+    return folders[folders.size - 3] if folders.size > 2 && parent_folder  =~ /CD\d/i
+    return parent_folder
+  end  
+
   def self.get_name_info(location)
     raw_name = self.get_file_name(location)
+    
+    #Check to see if we are better off looking at the folder name
+    unless raw_name =~ CONTENT_SOURCE_REGEX || raw_name =~ SESSION_ESP_REGEX_1
+      parent_folder = self.parent_folder_name(location)
+      if parent_folder && parent_folder =~ CONTENT_SOURCES
+        raw_name = parent_folder
+      end  
+    end  
+    
     #Remove file extention
     raw_name = raw_name[0, raw_name.rindex(FILE_EXT_SEP_REGEX)] if raw_name =~ FILE_EXT_SEP_REGEX
     #Remove space sub chars  
@@ -59,13 +80,16 @@ class FileNameCleaner
     name = raw_name.dup
     #Chop off any info about the movie format or source
     name = $` if name =~ CONTENT_SOURCE_REGEX
-
+    
     #Extract year if it's in the filename
     if name =~ YEAR_REGEX && name.index(YEAR_REGEX) > 0
       name = $`
       #Strip any surronding brackets and convert to int
       year = $&.gsub(/\(|\)|\[|\]/, '').to_i
     end
+
+    #Strip LIMITED off the end.  Note: This is NOT case sensitive
+    name = $` if name =~ /LIMITED$/
 
     #Try to extract the session and episode
     session = nil

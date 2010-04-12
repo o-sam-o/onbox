@@ -6,6 +6,8 @@ class FileNameCleanerTest < Test::Unit::TestCase
 	should 'correctly extract movie name and other info from the file name' do
 	  content_test_helper('My Movie.avi', 'My Movie', 'My Movie', nil, nil, nil)
 		content_test_helper('/test/My Movie.avi', 'My Movie', 'My Movie', nil, nil, nil)
+		content_test_helper('/test/Ajami.avi', 'Ajami', 'Ajami', nil, nil, nil)
+
 		content_test_helper('/test/My Movie.2010.avi', 'My Movie 2010', 'My Movie', 2010, nil, nil)
 		content_test_helper('/test/My-Movie.2010.avi', 'My Movie 2010', 'My Movie', 2010, nil, nil)
 		content_test_helper('/test/My-Movie.DivX.avi', 'My Movie DivX', 'My Movie', nil, nil, nil)
@@ -84,6 +86,28 @@ class FileNameCleanerTest < Test::Unit::TestCase
 	  content_test_helper('/test/CD1/dmt-intheloop1.avi', 'dmt intheloop1', 'dmt intheloop', nil, nil, nil)
 	  
 	end
+	
+	should 'use folder name if media name is shortened' do
+	  content_test_helper('/test/Fifty.Dead.Men.Walking.2008.DVDRIP.XviD-ZEKTORM/FDMW-ZEKTORM.avi', 'Fifty Dead Men Walking 2008 DVDRIP', 'Fifty Dead Men Walking', 2008, nil, nil)
+	  content_test_helper('/test/In.The.Loop.DVDRip.XviD-DMT/CD1/dmt-intheloop1.avi', 'In The Loop DVDRip', 'In The Loop', nil, nil, nil)
+	end  
+	
+	should 'strip LIMITED from movie name' do
+	  content_test_helper('/test/Bunny.And.The.Bull.LIMITED.DVDRip.XviD-DMT/dmt-bunnybull.avi', 'Bunny And The Bull LIMITED DVDRip', 'Bunny And The Bull', nil, nil, nil)
+	  content_test_helper('/test/The.Darjeeling.Limited.2007.DVDRip.AC3.iNT-DEViSE.avi', 'The Darjeeling Limited 2007 DVDRip AC3 iNT DEViSE', 'The Darjeeling Limited', 2007, nil, nil)	  
+	end
+	
+	should 'find parent folder  of a media file' do
+	  assert_nil FileNameCleaner.parent_folder_name('test.mpg')
+	  assert_nil FileNameCleaner.parent_folder_name('/test.mpg')
+	  assert_equal 'tmp', FileNameCleaner.parent_folder_name('/tmp/test.mpg')
+	  assert_equal 'tmp', FileNameCleaner.parent_folder_name('/asdf/asdf/a/tmp/test.mpg')
+	  assert_equal 'tmp', FileNameCleaner.parent_folder_name('tmp/test.mpg')
+	  
+	  assert_equal 'CD1', FileNameCleaner.parent_folder_name('/CD1/test.mpg')
+	  assert_equal 'tmp', FileNameCleaner.parent_folder_name('/tmp/CD1/test.mpg')
+	  assert_equal 'tmp', FileNameCleaner.parent_folder_name('/tmp/cd2/test.mpg')
+	end  
 	
 	def content_test_helper(location, raw_name, name, year, series, episode)
 	  c = FileNameCleaner.get_name_info(location)

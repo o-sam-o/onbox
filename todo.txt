@@ -1,6 +1,8 @@
  * Bulk change file reference's video content
+ * add select all to bulk edit
 
  * Allow view type to change, e.g. V came in as a movie
+ * Entering an imdb id for the opposite type should also switch from movie to tv show
 
  * User auth
  * Support for marking a video watched
@@ -10,12 +12,50 @@
 
  * Support for marking files as ignored
  * Display contents of NFO files
+ * Some sample files are getting collected and stored on dub
 
 Lower Priority:
 
  * Fix file accordion rendering in cucumber.  Remove show_file_accordion config
  * Starship troopers roughnecks failed
  * Curb your Enthusiasm failed
+ * Couldnt extract name from : The.Boat.That.Rocked.2009.DVDRIP.XviD-ZEKTORM/TBTR-ZEKTORM.avi
+ * Angels & Demons failed?
  * Move video content controllers into subfolder
  * Too short tool time is getting stripped from yui table
  * Auto detect column names for yui table
+ * Strip LIMITED from file names
+ * Add better support for media not imdb
+
+Errors:
+
+New file references found, creating new mode
+Updating file properties for /media/content/Sam/torrentflux/sam/The Universe Season 1/The Universe - Season 1 Episode 09.avi
+Error scraping video content 206:
+ NoMethodError (undefined method `each' for nil:NilClass):
+    /var/rails/onbox/lib/workers/scrap_imdb_worker.rb:80:in `create_or_load_tv_episodes'
+    /var/rails/onbox/lib/workers/scrap_imdb_worker.rb:70:in `scrap_imdb'
+    /var/rails/onbox/lib/workers/scrap_imdb_worker.rb:23:in `scrap_for_video_content'
+    /var/rails/onbox/vendor/plugins/backgroundrb/server/lib/meta_worker.rb:323:in `send'
+    /var/rails/onbox/vendor/plugins/backgroundrb/server/lib/meta_worker.rb:323:in `invoke_user_method'
+    /var/rails/onbox/vendor/plugins/backgroundrb/server/lib/meta_worker.rb:252:in `process_request'
+    /var/rails/onbox/vendor/plugins/backgroundrb/server/lib/meta_worker.rb:226:in `receive_data'
+    /var/rails/onbox/vendor/plugins/backgroundrb/server/lib/meta_worker.rb:216:in `receive_internal_data'
+    /var/lib/gems/1.8/gems/packet-0.1.15/bin/../lib/packet/packet_parser.rb:44:in `extract'
+    /var/lib/gems/1.8/gems/packet-0.1.15/bin/../lib/packet/packet_parser.rb:26:in `loop'
+    /var/lib/gems/1.8/gems/packet-0.1.15/bin/../lib/packet/packet_parser.rb:26:in `extract'
+    /var/rails/onbox/vendor/plugins/backgroundrb/server/lib/meta_worker.rb:214:in `receive_internal_data'
+    /var/lib/gems/1.8/gems/packet-0.1.15/bin/../lib/packet/packet_worker.rb:55:in `handle_internal_messages'
+    /var/lib/gems/1.8/gems/packet-0.1.15/bin/../lib/packet/packet_core.rb:194:in `handle_read_event'
+    /var/lib/gems/1.8/gems/packet-0.1.15/bin/../lib/packet/packet_core.rb:192:in `each'
+    /var/lib/gems/1.8/gems/packet-0.1.15/bin/../lib/packet/packet_core.rb:192:in `handle_read_event'
+    /var/lib/gems/1.8/gems/packet-0.1.15/bin/../lib/packet/packet_core.rb:146:in `start_reactor'
+    /var/lib/gems/1.8/gems/packet-0.1.15/bin/../lib/packet/packet_core.rb:139:in `loop'
+    /var/lib/gems/1.8/gems/packet-0.1.15/bin/../lib/packet/packet_core.rb:139:in `start_reactor'
+    /var/lib/gems/1.8/gems/packet-0.1.15/bin/../lib/packet/packet_worker.rb:20:in `start_worker'
+    /var/lib/gems/1.8/gems/packet-0.1.15/bin/packet_worker_runner:33:in `load_worker'
+    /var/lib/gems/1.8/gems/packet-0.1.15/bin/packet_worker_runner:26:in `initialize'
+    /var/lib/gems/1.8/gems/packet-0.1.15/bin/packet_worker_runner:47:in `new'
+    /var/lib/gems/1.8/gems/packet-0.1.15/bin/packet_worker_runner:47
+    /var/lib/gems/1.8/bin/packet_worker_runner:19:in `load'
+    /var/lib/gems/1.8/bin/packet_worker_runner:19
