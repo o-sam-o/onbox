@@ -41,7 +41,17 @@
 				</tbody>	
 			</table>
 			<%= hidden_field 'search', params['search'] %>
+			<div id="selectHelperWrapper">
+				<a class="fakeLink" onclick="setCheckboxSelect(true);">Select All</a> |
+				<a class="fakeLink" onclick="setCheckboxSelect(false);">Deselect All</a>
+			</div>
 			<%= yui_submit_button "Next" %>
 		<% end %>	
 	</div>
 <% end %>
+
+<script>
+	function setCheckboxSelect(selected){
+		$$('input[type="checkbox"]').each(function(e){ e.checked = selected });;
+	}
+</script>

@@ -65,15 +65,17 @@ class FileNameCleaner
     raw_name = self.get_file_name(location)
     
     #Check to see if we are better off looking at the folder name
+    check_extention = true
     unless raw_name =~ CONTENT_SOURCE_REGEX || raw_name =~ SESSION_ESP_REGEX_1
       parent_folder = self.parent_folder_name(location)
       if parent_folder && parent_folder =~ CONTENT_SOURCES
         raw_name = parent_folder
+        check_extention = false
       end  
     end  
     
     #Remove file extention
-    raw_name = raw_name[0, raw_name.rindex(FILE_EXT_SEP_REGEX)] if raw_name =~ FILE_EXT_SEP_REGEX
+    raw_name = raw_name[0, raw_name.rindex(FILE_EXT_SEP_REGEX)] if check_extention && raw_name =~ FILE_EXT_SEP_REGEX
     #Remove space sub chars  
     raw_name = raw_name.gsub(SPACE_SUB_REGEX, ' ')
 

@@ -1,5 +1,5 @@
- * Bulk change file reference's video content
- * add select all to bulk edit
+
+
 
  * Allow view type to change, e.g. V came in as a movie
  * Entering an imdb id for the opposite type should also switch from movie to tv show
@@ -14,6 +14,10 @@
  * Display contents of NFO files
  * Some sample files are getting collected and stored on dub
 
+ * Style bulk change table (allow html to pass through yui table)
+
+ * Paginator history on home page
+
 Lower Priority:
 
  * Fix file accordion rendering in cucumber.  Remove show_file_accordion config
@@ -26,6 +30,7 @@ Lower Priority:
  * Auto detect column names for yui table
  * Strip LIMITED from file names
  * Add better support for media not imdb
+ * Imdb search returns the wrong result for Ajami
 
 Errors:
 

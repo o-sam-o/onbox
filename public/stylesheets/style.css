@@ -219,3 +219,13 @@
 #bulkChangeTable {
     margin-bottom: 10px;    
 }
+
+.fakeLink {
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+#selectHelperWrapper {
+    padding-top: 1px;
+    padding-bottom: 10px;
+}
