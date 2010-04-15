@@ -44,3 +44,13 @@ coverage/features-step_definitions-video_file_reference_steps_rb.html
 coverage/features-step_definitions-web_steps_rb.html
 coverage/features-support-env_rb.html
 coverage/features-support-paths_rb.html
+coverage/app-controllers-bulk_change_video_contents_controller_rb.html
+coverage/app-controllers-user_sessions_controller_rb.html
+coverage/app-controllers-users_controller_rb.html
+coverage/app-models-user_rb.html
+coverage/app-models-user_session_rb.html
+coverage/features-step_definitions-bulk_change_video_contents_steps_rb.html
+coverage/features-step_definitions-common_steps_rb.html
+coverage/features-step_definitions-home_page_steps_rb.html
+coverage/features-step_definitions-tv_episode_steps_rb.html
+coverage/features-step_definitions-user_steps_rb.html
