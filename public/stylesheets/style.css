@@ -50,6 +50,10 @@
     width: 220px;    
 }
 
+.defaultFormCheckBox {
+    margin-top: 3px;
+}
+
 .defaultFormError {
     display: inline;
     color: red;
@@ -228,4 +232,11 @@
 #selectHelperWrapper {
     padding-top: 1px;
     padding-bottom: 10px;
+}
+
+#loginHeader {
+    padding: 5px;
+    float: left;
+    width: 215px;
+    text-align: right;
 }

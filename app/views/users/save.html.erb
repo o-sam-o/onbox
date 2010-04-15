@@ -1,0 +1,33 @@
+<div style="width: 600px;">
+<% form_for @user, :html => { :class => 'defaultForm' } do |f| %>
+  <fieldset>
+      <legend>User:</legend>
+	  <div class="defaultFormField">
+	    <%= f.label :login %>
+		<% login_html_hash = {:class => "defaultFormTextField"}
+		   login_html_hash[:disabled] = 'disabled' unless @user.new_record? %>
+	    <%= f.text_field :login, login_html_hash %>
+		<%= error_message_on @user, :login, :css_class => "defaultFormError" %>
+	  </div>
+	  <div class="defaultFormField">
+	    <%= f.label :password %>
+	    <%= f.password_field :password, :class => "defaultFormTextField" %>
+		<%= error_message_on @user, :password, :css_class => "defaultFormError" %>
+	  </div>	
+	  <div class="defaultFormField">
+	    <%= f.label :password_confirmation, "Password Again" %>
+	    <%= f.password_field :password_confirmation, :class => "defaultFormTextField" %>
+		<%= error_message_on @reference, :password_confirmation, :css_class => "defaultFormError" %>
+	  </div>
+  </fieldset>
+  <% if not @user.errors.empty? %>
+		<div class="defaultFormErrorOverview">
+  		 Save failed, please see errors above.
+		</div>
+  <% end %>
+  <div class="defaultFormButtons">
+	<%= yui_submit_button "Save" %>
+  </div>
+<% end %>
+</div>
+

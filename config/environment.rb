@@ -15,13 +15,20 @@ Rails::Initializer.run do |config|
   # config.load_paths += %W( #{RAILS_ROOT}/extras )
 
   # Specify gems that this application depends on and have them installed with rake gems:install
+  # Needed for backgroundrb
   config.gem "packet"
   config.gem "chronic"
+  
+  # Used for scraping
   config.gem "hpricot"
   config.gem 'imagesize', :lib => 'image_size'
   config.gem "rio"
-  config.gem "uuidtools"
   config.gem "htmlentities"
+
+  # Used for tooltips
+  config.gem "uuidtools"
+
+  config.gem "authlogic"
   
   # config.gem "sqlite3-ruby", :lib => "sqlite3"
   # config.gem "aws-s3", :lib => "aws/s3"

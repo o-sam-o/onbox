@@ -31,6 +31,15 @@
 					<li class="current_page_item"><%= link_to "Home", :controller => 'home' %></li>
 					<li class="current_page_item"><%= link_to "Admin", :controller => 'admin' %></li>
 				</ul>
+				
+			<div id="loginHeader">	
+				<% if !current_user && !current_page?(new_user_session_path) %>
+				  <%= link_to "Log In", new_user_session_path %>
+				<% elsif current_user %>
+				  Welcome <%= current_user.login %>
+				  (<%= link_to "Logout", user_session_path, :method => :delete %>)
+				<% end %>
+			</div>	
 			</div>
 			<div id="hed"> 
 				<div class="logo"> 

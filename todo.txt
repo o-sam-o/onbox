@@ -1,36 +1,33 @@
+* User auth
+* Support for marking a video watched
 
+* Tv file references need to be associated with tv episode
+* Tv show files on the content show page should be sorted by tv episode
 
+* Paginator history on home page
+* Style bulk change table (allow html to pass through yui table)
+
+* Some sample files are getting collected and stored on dub
 
  * Allow view type to change, e.g. V came in as a movie
  * Entering an imdb id for the opposite type should also switch from movie to tv show
 
- * User auth
- * Support for marking a video watched
-
- * Tv file references need to be associated with tv episode
- * Tv show files on the content show page should be sorted by tv episode
-
  * Support for marking files as ignored
  * Display contents of NFO files
- * Some sample files are getting collected and stored on dub
 
- * Style bulk change table (allow html to pass through yui table)
-
- * Paginator history on home page
 
 Lower Priority:
 
  * Fix file accordion rendering in cucumber.  Remove show_file_accordion config
  * Starship troopers roughnecks failed
  * Curb your Enthusiasm failed
- * Couldnt extract name from : The.Boat.That.Rocked.2009.DVDRIP.XviD-ZEKTORM/TBTR-ZEKTORM.avi
  * Angels & Demons failed?
  * Move video content controllers into subfolder
- * Too short tool time is getting stripped from yui table
+ * Too short tooltip is getting stripped from yui table
  * Auto detect column names for yui table
- * Strip LIMITED from file names
  * Add better support for media not imdb
  * Imdb search returns the wrong result for Ajami
+ * If there is only 1 file it should be auto expanded on show video content page
 
 Errors:
 

@@ -3,6 +3,7 @@ ActionController::Routing::Routes.draw do |map|
   
   # Admin specific resources
   map.resources :media_folders, :path_prefix => 'admin'
+  map.resources :users, :path_prefix => 'admin'
   
   map.admin 'admin/:action', :controller => 'admin'
 
@@ -13,6 +14,8 @@ ActionController::Routing::Routes.draw do |map|
   map.resources :video_contents, :member => {:auto_complete => :get, :reload => :post}, :has_many => :video_posters
   map.resources :movies, :controller => 'video_contents'
   map.resources :tv_shows, :controller => 'video_contents', :has_many => :tv_episodes
+
+  map.resource :user_session
 
   # Install the default routes as the lowest priority.
   # Note: These default routes make all actions in every controller accessible via GET requests. You should

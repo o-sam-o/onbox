@@ -1,0 +1,25 @@
+<div style="width: 600px;">
+<% form_for @user_session, :url => user_session_path, :html => { :class => 'defaultForm' } do |f| %>
+  <fieldset>
+      <legend>Media Folder:</legend>
+	  <div class="defaultFormField">
+	    <%= f.label :login %>
+	    <%= f.text_field :login, :class => "defaultFormTextField" %>
+		<%= error_message_on @user_session, :location, :css_class => "defaultFormError" %>
+	  </div>
+	  <div class="defaultFormField">
+	    <%= f.label :password %>
+	    <%= f.password_field :password, :class => "defaultFormTextField" %>
+		<%= error_message_on @user_session, :password, :css_class => "defaultFormError" %>
+	  </div>	
+	  <div class="defaultFormField">
+	    <%= f.label :remember_me %>
+	    <%= f.check_box :remember_me, :class => 'defaultFormCheckBox' %>
+		<%= error_message_on @user_session, :remember_me, :css_class => "defaultFormError" %>
+	  </div>
+  </fieldset>
+  <div class="defaultFormButtons">
+	<%= yui_submit_button "Login" %>
+  </div>
+<% end %>
+</div>
