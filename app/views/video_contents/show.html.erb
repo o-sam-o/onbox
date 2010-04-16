@@ -149,9 +149,11 @@
 			<% end %>
 		</div>
 		<div class="viewActionsWrapper">
-			<%= yui_button_link :text => 'Edit Details', :link => edit_video_content_path(@video_content) %>
-			<%= yui_button_link :text => 'Change Imdb Id', :onclick => 'changeImdbId()' %>
-			<%= yui_button_link :text => 'Refresh', :onclick => 'reloadFromImdb()' %>
+			<% if current_user %>
+				<%= yui_button_link :text => 'Edit Details', :link => edit_video_content_path(@video_content) %>
+				<%= yui_button_link :text => 'Change Imdb Id', :onclick => 'changeImdbId()' %>
+				<%= yui_button_link :text => 'Refresh', :onclick => 'reloadFromImdb()' %>
+			<% end %>
 		</div>
 	</div>
 	

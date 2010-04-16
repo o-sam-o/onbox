@@ -1,4 +1,6 @@
 class VideoPostersController < ApplicationController
+  before_filter :require_user, :except => [:show]
+  
   before_filter :find_video_content
   before_filter :find_video_poster,
       :only => [:show, :edit, :update, :destroy]

@@ -7,6 +7,7 @@ Feature: Manage video_file_references
     Given the following media_folders:
       |location|scan|
       |media_folder 1|true|
+	And a user is logged in as "adminUser" 
     And I am on the new video_file_reference page
     When I fill in "Raw name" with "raw_name 1"
     And I fill in "Location" with "location 1"
@@ -23,6 +24,7 @@ Feature: Manage video_file_references
       |raw_name 2|location 2|true|media_folder 2|
       |raw_name 3|location 3|false|media_folder 3|
       |raw_name 4|location 4|true|media_folder 4|
+	And a user is logged in as "adminUser" 
     When I delete the 3rd video_file_reference
     Then I should not see "raw_name 3" within "#referenceTable"
 
@@ -30,6 +32,7 @@ Feature: Manage video_file_references
     Given the following video_file_references:
       |raw_name|location|on_disk|media_folder|
       |raw_name 1|location 1|false|media_folder 1|
+	And a user is logged in as "adminUser" 
     And I am on the video_file_references page
 	When I edit the 1st video_file_reference
 	And I fill in "Location" with "updated location"

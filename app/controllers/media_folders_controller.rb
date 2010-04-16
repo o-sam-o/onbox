@@ -1,5 +1,5 @@
 class MediaFoldersController < ApplicationController
-
+  before_filter :require_user
   before_filter :find_media_folder,
       :only => [:show, :edit, :update, :destroy]  
   

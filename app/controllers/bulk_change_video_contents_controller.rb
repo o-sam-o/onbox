@@ -1,4 +1,5 @@
 class BulkChangeVideoContentsController < ApplicationController
+  before_filter :require_user
       
   def search
     if params['search'].present?

@@ -26,3 +26,14 @@ Feature: Manage users
 	And I should see "login 2" within "#usersTable"
 	And I should see "login 4" within "#usersTable"
 	And I should not see "login 3" within "#usersTable"
+
+  Scenario: I should not be able to edit users unless logged in
+    Given I am on the new user page	
+	Then I should be on the home page
+	And I should see "You must be logged in to access this page"
+	Given a user is logged in as "adminUser"
+	And I am on the new user page
+	And I should be on the new user page
+	Given I logout
+	And I am on the new user page	
+	Then I should be on the home page

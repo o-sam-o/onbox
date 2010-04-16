@@ -4,7 +4,8 @@ Feature: Manage media_folders
   want to configure media folders where the content is stored
   
   Scenario: Register new media_folder
-    Given I am on the new media_folder page
+	Given a user is logged in as "adminUser" 
+    And I am on the new media_folder page
     When I fill in "Location" with "location 1"
     And I uncheck "Scan"
     And I press "Save"
@@ -12,7 +13,8 @@ Feature: Manage media_folders
     And I should see "false"
 
   Scenario: Delete media_folder
-    Given the following media_folders:
+	Given a user is logged in as "adminUser" 
+    And the following media_folders:
       |location|scan|
       |location 1|false|
       |location 2|true|
@@ -22,7 +24,8 @@ Feature: Manage media_folders
     Then I should not see "location 3" within "#foldersTable"
 
   Scenario: Edit media_folder
-    Given the following media_folders:
+	Given a user is logged in as "adminUser" 
+    And the following media_folders:
       |location|scan|
       |location 1|true|
     And I am on the media_folders page

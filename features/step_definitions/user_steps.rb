@@ -8,3 +8,7 @@ When /^I delete the (\d+)(?:st|nd|rd|th) user$/ do |pos|
     click_link "Destroy"
   end
 end
+
+Given /^I logout$/ do
+  click_link "Logout"
+end

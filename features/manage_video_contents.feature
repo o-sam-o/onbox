@@ -4,7 +4,8 @@ Feature: Manage video_contents
   wants to be able to edit and update VideoContent models
   
   Scenario: Register new Movie
-    Given I am on the new video_content page
+	Given a user is logged in as "adminUser" 
+    And I am on the new video_content page
     When I fill in "Name" with "My Movie"
     And I fill in "Year" with "2010"
     And I select "Pending" from "State"
@@ -16,7 +17,8 @@ Feature: Manage video_contents
     And I should see "000001"
 
   Scenario: Register new Tv Show
-    Given I am on the new video_content page
+	Given a user is logged in as "adminUser"     
+	And I am on the new video_content page
     When I fill in "Name" with "My Tv Show"
     And I fill in "Year" with "2010"
     And I select "Pending" from "State"
@@ -34,7 +36,8 @@ Feature: Manage video_contents
       |name 2|2002|processed|imdb_id 2|
       |name 3|2003|processed|imdb_id 3|
       |name 4|2004|processed|imdb_id 4|
-    When I delete the 3rd video_content
+	And a user is logged in as "adminUser"     
+	When I delete the 3rd video_content
     Then I should not see "name 3" within "#modelTable"
 
   Scenario: Episode info displayed
@@ -48,6 +51,7 @@ Feature: Manage video_contents
 	  |1|2|Episode 2|Lost|
 	  |2|1|S02 E01|Lost|
 	  |1|1|ForAnotherShow|AnotherShow|
+	And a user is logged in as "adminUser" 
 	And I am on the "Lost" video_content page
 	Then I should see "Pilot"
 	And I should see "Episode 2"
@@ -59,9 +63,10 @@ Feature: Manage video_contents
     Given the following TvShows:
       |name|year|imdb_id|state|
       |Lost|2004|000001|processed|	
-    Given the following video_file_references:
+    And the following video_file_references:
       |raw_name|location|on_disk|media_folder|video_content|
       |raw_name 1|LostS01E01.avi|true|media_folder 1|Lost|
+	Given a user is logged in as "adminUser" 
 	And I am on the "Lost" video_content page
     When I fill in "Imdb Id" with "999999"
 	And I press "Change"
@@ -81,6 +86,7 @@ Feature: Manage video_contents
       |raw_name|location|on_disk|media_folder|video_content|
       |raw_name 1|LostS01E01.avi|true|media_folder 1|Lost|
 	  |raw_name 2|LostS01E02.avi|true|media_folder 1|Wrong Lost|
+	And a user is logged in as "adminUser" 
 	And I am on the "Wrong Lost" video_content page
     When I fill in "Imdb Id" with "000001"
 	And I press "Change"

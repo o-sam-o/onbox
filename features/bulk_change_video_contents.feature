@@ -15,6 +15,7 @@ Feature: Bulk update a number of different video contents
       |raw_name  |location      |on_disk|media_folder  |video_content|
       |raw_name 1|LostS01E01.avi|true   |media_folder 1|Wrong Lost 1|
 	  |raw_name 2|LostS01E02.avi|true   |media_folder 1|Wrong Lost 2|
+	And a user is logged in as "adminUser" 
 	And I am on the bulk video_content change page
     When I fill in "Search" with "Lost"
 	And I press "Search"
