@@ -1,7 +1,7 @@
 class VideoContentsController < ApplicationController
   before_filter :require_user, :except => [:show, :index]
   before_filter :find_video_content,
-      :only => [:show, :edit, :update, :destroy, :reload]
+      :only => [:show, :edit, :update, :destroy, :reload, :watch]
       
   def index
     @page, offset = page_and_offset
@@ -28,6 +28,7 @@ class VideoContentsController < ApplicationController
   end
 
   def show
+    @watched = current_user ? current_user.watched?(@video_content) : false
   end
 
   def reload
@@ -78,6 +79,16 @@ class VideoContentsController < ApplicationController
       render 'video_contents/save'
     end    
   end
+
+  def watch
+    if params[:watched] == 'true'
+      current_user.has_watched(@video_content)
+    else
+      current_user.has_not_watched(@video_content)
+    end  
+    
+    render :json => true
+  end  
 
   def destroy
     flash[:notice] = "#{@video_content.name} was removed."

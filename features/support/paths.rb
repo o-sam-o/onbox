@@ -38,6 +38,9 @@ module NavigationHelpers
     when /the media_folders page/
       media_folders_path
     
+    when /the login page/
+      new_user_session_path    
+    
     # Add more mappings here.
     # Here is an example that pulls values out of the Regexp:
     #

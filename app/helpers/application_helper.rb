@@ -11,12 +11,17 @@ module ApplicationHelper
 
     uuid = UUIDTools::UUID.random_create.to_s.gsub('-', '')
     result = "<span id=\"text_#{uuid}\">#{h(truncated)}</span>\n"
-    result += "<script>"
-    result += "var var_#{uuid} = new YAHOO.widget.Tooltip(\"tt_#{uuid}\", { context:\"text_#{uuid}\", text:\"#{h(text)}\" });"
-    result += "</script>\n"
+    result += yui_tooltip("tt_#{uuid}", text)
     return result
   
   end
+  
+  def yui_tooltip(element_id, text)
+    result = "<script>"
+    result += "var var_tt_#{element_id} = new YAHOO.widget.Tooltip(\"tt_#{element_id}\", { context:\"#{element_id}\", text:\"#{h(text)}\" });"
+    result += "</script>\n"
+    return result
+  end  
   
   def truncate(text, max_length)
     return text if text.length <= max_length

@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100415090150) do
+ActiveRecord::Schema.define(:version => 20100417042758) do
 
   create_table "bdrb_job_queues", :force => true do |t|
     t.text     "args"
@@ -136,6 +136,13 @@ ActiveRecord::Schema.define(:version => 20100415090150) do
     t.string   "location"
     t.integer  "height"
     t.integer  "width"
+    t.integer  "video_content_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "watches", :force => true do |t|
+    t.integer  "user_id"
     t.integer  "video_content_id"
     t.datetime "created_at"
     t.datetime "updated_at"

@@ -10,6 +10,7 @@ CREATE TABLE "video_contents" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, 
 CREATE TABLE "video_file_properties" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "value" varchar(255), "order" integer, "video_file_reference_id" integer, "created_at" datetime, "updated_at" datetime, "group" varchar(255));
 CREATE TABLE "video_file_references" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "raw_name" varchar(255), "location" varchar(255), "on_disk" boolean, "media_folder_id" integer, "video_content_id" integer, "created_at" datetime, "updated_at" datetime, "size" integer, "format" varchar(255));
 CREATE TABLE "video_posters" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "size" varchar(255), "location" varchar(255), "height" integer, "width" integer, "video_content_id" integer, "created_at" datetime, "updated_at" datetime);
+CREATE TABLE "watches" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "video_content_id" integer, "created_at" datetime, "updated_at" datetime);
 CREATE INDEX "index_genres_video_contents_on_genre_id" ON "genres_video_contents" ("genre_id");
 CREATE INDEX "index_genres_video_contents_on_video_content_id" ON "genres_video_contents" ("video_content_id");
 CREATE INDEX "index_user_sessions_on_session_id" ON "user_sessions" ("session_id");
@@ -47,3 +48,5 @@ INSERT INTO schema_migrations (version) VALUES ('20100316092511');
 INSERT INTO schema_migrations (version) VALUES ('20100414103921');
 
 INSERT INTO schema_migrations (version) VALUES ('20100415090150');
+
+INSERT INTO schema_migrations (version) VALUES ('20100417042758');

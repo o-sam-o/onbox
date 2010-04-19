@@ -240,3 +240,20 @@
     width: 215px;
     text-align: right;
 }
+
+#watchedWrapper {
+ float: right;   
+ margin-top: 5px;
+ margin-right: 10px;
+}
+
+.notWatched {
+    opacity : 0.4;
+    filter: alpha(opacity=40); // msie
+    background-color: #000;
+}
+
+#watchedWrapper img {
+    background-color: white !important; 
+    border : none !important;
+}

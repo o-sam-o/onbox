@@ -32,6 +32,10 @@
 
 <div class="viewWrapper overclear">
 	<div class="viewCoreMetadata">
+		<div id="watchedWrapper" class="<%= 'notWatched' unless @watched %>">
+			<a id="watchedContentLink" class="fakeLink" onclick="markVideoWatched(<%= !@watched %>); return false" href="#"><%=image_tag "watched.png" %></a>
+			<%=yui_tooltip "watchedContentLink", @watched ? "Watched" : "Click to mark video as watched" %>
+		</div>
 		<h1 class="viewTitle"><%=h @video_content.display_name %></h1>
 		<div class="viewPlotSummary"><%=h @video_content.plot %></div>
 		<div class="viewCoreDetailsWrapper overclear">
@@ -218,11 +222,52 @@
 		}
 		
 		function reloadFromImdb() {
+			//We cant reload from imdb if we dont have an id, show set imdb dialog
 			if (!YAHOO.onbox.video.imdb.dialog.getData().imdb_id){
 				changeImdbId();
 				return;
 			}
 			YAHOO.onbox.video.imdb.dialog.submit()
 		}
+		
+		function markVideoWatched(watched){
+			if (!is_logged_in()){
+				window.location = "<%= new_user_session_path %>";
+				return;
+			}
+			new Ajax.Request('<%= watch_video_content_path(@video_content) %>',
+			  {
+			    method:'post',
+				parameters: {watched: watched},
+			    onSuccess: function(transport){
+			      if(transport.responseText == "true"){
+					if(watched){
+						YAHOO.util.Dom.removeClass('watchedWrapper', 'notWatched'); 
+						document.getElementById('watchedContentLink').onclick = function(){markVideoWatched(false);};
+						changeTooltip('watchedContentLink', 'Watched');
+					}else{
+						YAHOO.util.Dom.addClass('watchedWrapper', 'notWatched'); 
+						document.getElementById('watchedContentLink').onclick = function(){markVideoWatched(true);};
+						changeTooltip('watchedContentLink', 'Click to mark as watched');
+					}
+			      }else{
+					alert('Error marking video watched: ' + transport.responseText)
+				  }
+			    },
+			    onFailure: function(){ alert('Failed to mark video as watched.') }
+			  });
+		}
+		
+		function changeTooltip(element_id, new_message){
+			eval('var tt_var = var_tt_' + element_id)			
+			tt_var.destroy();
+			tt_var = new YAHOO.widget.Tooltip("tt_" + element_id, { context: element_id, text: new_message });
+			eval('var_tt_' + element_id + ' = tt_var')
+		}
+		
+		function is_logged_in(){
+		 return <%= current_user.present? %>;
+		}
+	
 	</script>
 </div>

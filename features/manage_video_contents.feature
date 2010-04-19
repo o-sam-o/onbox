@@ -58,11 +58,32 @@ Feature: Manage video_contents
 	And I should see "S02 E01"
 	And I should not see "ForAnotherShow"
 
+  @culerity
+  Scenario: If watched icon is clicked when a user is not logged in they should be redirects to the login page
+    Given the following TvShows:
+      |name  |year |imdb_id |state    |
+      |Avatar|2009 |000007  |processed|
+	Given I am on the "Avatar" video_content page
+	When I click "watchedContentLink"
+	Then I should be on the login page
+
+  @culerity
+  Scenario: Mark a video as watched
+    Given the following TvShows:
+      |name  |year |imdb_id |state    |
+      |Avatar|2009 |000008  |processed|
+	Given a user is logged in as "aUser" 
+	And I am on the "Avatar" video_content page
+	When I click "watchedContentLink"
+	Then I should see "Watched"
+	When I click "watchedContentLink"
+	Then I should see "Click to mark as watched"
+
   @culerity	
   Scenario: Change imdb id
     Given the following TvShows:
       |name|year|imdb_id|state|
-      |Lost|2004|000001|processed|	
+      |Lost|2004|000009|processed|	
     And the following video_file_references:
       |raw_name|location|on_disk|media_folder|video_content|
       |raw_name 1|LostS01E01.avi|true|media_folder 1|Lost|
@@ -72,6 +93,7 @@ Feature: Manage video_contents
 	And I press "Change"
 	Then I should see "Pending"
 	And I should see "999999"
+	And I should see "LostS01E01"
 
   @culerity	
   Scenario: Merge two different video contents

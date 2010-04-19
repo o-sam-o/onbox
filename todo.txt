@@ -14,6 +14,7 @@
  * Support for marking files as ignored
  * Display contents of NFO files
 
+ * Fix title width on home page carosel
 
 Lower Priority:
 
@@ -27,6 +28,8 @@ Lower Priority:
  * Add better support for media not imdb
  * Imdb search returns the wrong result for Ajami
  * If there is only 1 file it should be auto expanded on show video content page
+ * Remove dodgy symbol enum from video content and file reference model
+
 
 Errors:
 
