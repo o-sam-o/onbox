@@ -17,9 +17,13 @@ ActionController::Routing::Routes.draw do |map|
 
   map.resource :user_session
 
+  map.home_carousel 'home/carousel/*criteria', :controller => "home", :action => 'video_content_items'
+
+  map.home_search 'home/*criteria', :controller => "home"
+
   # Install the default routes as the lowest priority.
   # Note: These default routes make all actions in every controller accessible via GET requests. You should
   # consider removing or commenting them out if you're using named routes and resources.
-  map.connect ':controller/:action/:id'
-  map.connect ':controller/:action/:id.:format'
+  #map.connect ':controller/:action/:id'
+  #map.connect ':controller/:action/:id.:format'
 end

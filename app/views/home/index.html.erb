@@ -8,7 +8,7 @@
 <% end %>
 
 <% content_for :title do %>
-  Your Movies
+  On Box: Home
 <% end %>
 
 <style type="text/css">
@@ -35,7 +35,7 @@
 	}
 </style>
 
-<h1>Your Movies</h1>
+<h1>Your <%= 'Unwatched' if @unwatched %> <%= @genres.collect { |g| g.titleize }.join(' and ') %> Videos</h1>
 
 <% unless @video_contents.empty? %>
 	<div id="contentContainer">
@@ -74,7 +74,7 @@
 				pageSize = o.num;
 	        }
 
-			new Ajax.Request("<%= url_for :controller => 'home', :action => 'video_content_items' %>", { 
+			new Ajax.Request("<%= home_carousel_path params[:criteria] %>", { 
 				method:'get', 
 				parameters: {'offset': offset, 'page_size': pageSize},
 				evalJS:'force' 
@@ -87,6 +87,6 @@
 	</script>
 <% else %>
 	<div>
-		No movies .... Try <%= link_to "Admin", :controller => 'admin' %>
+		No videos.
 	</div>
 <% end %>

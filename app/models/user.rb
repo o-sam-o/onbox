@@ -1,4 +1,5 @@
 class User < ActiveRecord::Base
+  has_many :watches
   has_many :video_contents, :through => :watches
   acts_as_authentic
   

@@ -22,6 +22,8 @@ class VideoContent < ActiveRecord::Base
   validates_uniqueness_of :imdb_id, :allow_nil => true, :allow_blank => true
   has_many :video_file_references
   has_many :video_posters, :dependent => :destroy 
+  has_many :watches
+  has_many :users, :through => :watches
   has_and_belongs_to_many :genres
   validates_inclusion_of :state, :in => VideoContentState::VALUES
   
