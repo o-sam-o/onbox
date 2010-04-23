@@ -16,11 +16,11 @@ Feature: Manage users
   Scenario: Delete user
 	Given a user is logged in as "adminUser"    
 	And the following users:
-      |login|password|password_confirmation|
-      |login 1|password 1|password 1|
-      |login 2|password 2|password 2|
-      |login 3|password 3|password 3|
-      |login 4|password 4|password 4|
+      |login   |password   |password_confirmation |
+      |login 1 |password 1 |password 1            |
+      |login 2 |password 2 |password 2            |
+      |login 3 |password 3 |password 3            |
+      |login 4 |password 4 |password 4            |
     When I delete the 3rd user
     Then I should see "login 1" within "#usersTable"
 	And I should see "login 2" within "#usersTable"

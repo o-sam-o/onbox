@@ -9,7 +9,7 @@ module NavigationHelpers
     case page_name
     
     when /the home\s?page/
-      '/'
+      "/"
     when /the new user page/
       new_user_path
 
@@ -39,7 +39,10 @@ module NavigationHelpers
       media_folders_path
     
     when /the login page/
-      new_user_session_path    
+      new_user_session_path
+      
+    when /the "([^\"]*)" home page/
+      home_search_path $1.split(', ')   
     
     # Add more mappings here.
     # Here is an example that pulls values out of the Regexp:

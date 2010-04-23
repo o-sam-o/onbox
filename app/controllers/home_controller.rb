@@ -9,7 +9,7 @@ class HomeController < ApplicationController
   public :render_to_string
   
   def index
-    @video_content_count = VideoContent.count(:joins => [:genres], :conditions => search_conditions, :select => 'distinct video_contents.id')
+    @video_content_count = VideoContent.count(:joins => search_joins, :conditions => search_conditions, :select => 'distinct video_contents.id')
     @video_contents = search
   end
   
@@ -22,7 +22,7 @@ class HomeController < ApplicationController
       VideoContent.all(:limit => limit, :offset => offset, 
                        :conditions => search_conditions,
                        :select => 'distinct video_contents.*',
-                       :joins => [:genres], :order => "video_contents.name")
+                       :joins => search_joins, :order => "video_contents.name")
     end
   
     def extract_criteria
@@ -38,12 +38,16 @@ class HomeController < ApplicationController
         args << current_user
       end
       
-      if !@genres.empty?
+      unless @genres.empty?
         query << 'genres.id in (?)'
         args << @genres.collect { |name| Genre.find_by_name(name.titleize) }
       end 
       
       return query ? [query.join(' and '), *args] : []
+    end
+
+    def search_joins
+      return [:genres] unless @genres.empty?
     end
 
 end

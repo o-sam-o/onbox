@@ -63,7 +63,9 @@
 		<% unless @video_content.genres.empty? %>
 			<div class="viewCoreGenres">
 				<span class="viewGenreLabel">Genres:</span> 
-				<%= @video_content.genres.collect(&:name).join(', ') %>
+				<% @video_content.genres.each do |genre| %>
+					<a href="<%= home_search_path [genre.name.downcase] %>"><%= genre.name %></a><%= ', ' unless genre == @video_content.genres.last %>
+				<% end %>
 			</div>
 		<% end %>
 		
