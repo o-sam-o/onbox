@@ -15,6 +15,7 @@ ActionController::Routing::Routes.draw do |map|
   map.resources :movies, :controller => 'video_contents'
   map.resources :tv_shows, :controller => 'video_contents', :has_many => :tv_episodes
 
+  map.login 'login', :controller => 'user_sessions', :action => 'new'
   map.resource :user_session
 
   map.home_carousel 'home/carousel/*criteria', :controller => "home", :action => 'video_content_items'

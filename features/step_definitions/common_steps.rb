@@ -15,5 +15,5 @@ Given /^(?:(?:a user is)|(?:I am)) logged in as "(.*)"$/ do |login|
   click_button("Login")
   
   
-  Then "I should see \"Welcome #{login}\""
+  Then "I should see \"Welcome #{login.titleize}\""
 end

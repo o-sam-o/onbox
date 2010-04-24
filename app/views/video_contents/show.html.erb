@@ -234,7 +234,7 @@
 		
 		function markVideoWatched(watched){
 			if (!is_logged_in()){
-				window.location = "<%= new_user_session_path %>";
+				window.location = "<%= login_path %>";
 				return;
 			}
 			new Ajax.Request('<%= watch_video_content_path(@video_content) %>',

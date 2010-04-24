@@ -39,7 +39,7 @@ module NavigationHelpers
       media_folders_path
     
     when /the login page/
-      new_user_session_path
+      login_path
       
     when /the "([^\"]*)" home page/
       home_search_path $1.split(', ')   

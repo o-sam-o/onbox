@@ -1,4 +1,4 @@
-* Support for marking a video watched
+* Clicking unwatched when not logged in should redirect to login page
 
 * Tv file references need to be associated with tv episode
 * Tv show files on the content show page should be sorted by tv episode
@@ -16,6 +16,15 @@
 
  * Fix title width on home page carosel
 
+ * If imdb search is exact match goes to the movie page which causes the scraper to fail
+ * Add search option on the change imdb id dialog
+
+ * youtube trailer
+
+ * View genre sci-fi doesnt work
+
+ * Support for marking tv shows as watched
+
 Lower Priority:
 
  * Fix file accordion rendering in cucumber.  Remove show_file_accordion config
@@ -25,10 +34,11 @@ Lower Priority:
  * Move video content controllers into subfolder
  * Too short tooltip is getting stripped from yui table
  * Auto detect column names for yui table
- * Add better support for media not imdb
- * Imdb search returns the wrong result for Ajami
+ * Add better support for media not in imdb
+ * Imdb search returns the wrong result for Ajami (Exact match issue?)
  * If there is only 1 file it should be auto expanded on show video content page
  * Remove dodgy symbol enum from video content and file reference model
+ * Doesnt recognise mini series as tv shows
 
 
 Errors:

@@ -9,6 +9,11 @@ class HomeController < ApplicationController
   public :render_to_string
   
   def index
+    if @unwatched && !current_user
+      store_location
+      redirect_to login_path
+      return
+    end  
     @video_content_count = VideoContent.count(:joins => search_joins, :conditions => search_conditions, :select => 'distinct video_contents.id')
     @video_contents = search
   end
