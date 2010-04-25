@@ -1,9 +1,8 @@
-* Paginator history on home page
 * Fix title width on home page carosel
 
-* Style bulk change table (allow html to pass through yui table)
+* Add search option on the change imdb id dialog
 
- * youtube trailer
+* youtube trailer
 
 * Tv file references need to be associated with tv episode
 * Tv show files on the content show page should be sorted by tv episode
@@ -15,8 +14,6 @@
 
  * Support for marking files as ignored
  * Display contents of NFO files
-
- * Add search option on the change imdb id dialog
 
  * View genre sci-fi doesnt work
 

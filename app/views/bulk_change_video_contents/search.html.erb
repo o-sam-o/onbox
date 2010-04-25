@@ -1,3 +1,15 @@
+<% content_for :head do %>
+	<%= render :partial => 'shared/yui_table_header' %>
+	<style>
+
+	.yui-dt table
+	{
+	    width: 100%;
+	}
+
+	</style>	
+<% end %>
+
 <h2 class="viewTitle">Bulk Update Videos</h2>
 
 <div class="formWrapper">
@@ -20,26 +32,28 @@
 				<div class="noResults">No results for '<%= params['search'] %>'</div>
 			<% end %>
 		<% else %>
-			<table id="bulkChangeTable">
-				<thead>
-					<tr>
-						<th></th>
-						<th>Name</th>
-						<th>Location</th>
-					</tr>
-				</thead>
-				<tbody>
-					<% @search_results.each do |result| %>
-						<% unless result.video_content.blank? %>
-							<tr>
-								<td><%= check_box_tag 'video_content_ids[]', result.video_content.id %></td>
-								<td><%= result.video_content_name %></td>
-								<td><%= result.location %></td>
-							</tr>	
+			<div id="bulkChangeTableWrapper">
+				<table id="bulkChangeTable">
+					<thead>
+						<tr>
+							<th></th>
+							<th>Name</th>
+							<th>Location</th>
+						</tr>
+					</thead>
+					<tbody>
+						<% @search_results.each do |result| %>
+							<% unless result.video_content.blank? %>
+								<tr>
+									<td><%= check_box_tag 'video_content_ids[]', result.video_content.id %></td>
+									<td><%= result.video_content_name %></td>
+									<td><%= result.location %></td>
+								</tr>	
+							<% end %>
 						<% end %>
-					<% end %>
-				</tbody>	
-			</table>
+					</tbody>	
+				</table>
+			</div>
 			<%= hidden_field 'search', params['search'] %>
 			<div id="selectHelperWrapper">
 				<a class="fakeLink" onclick="setCheckboxSelect(true);">Select All</a> |
@@ -55,3 +69,7 @@
 		$$('input[type="checkbox"]').each(function(e){ e.checked = selected });;
 	}
 </script>
+
+<%= render :partial => 'shared/yui_table', 
+	:object => {:columns => ['', 'Name', 'Location'], 
+				:tableId => 'bulkChangeTable', :divId => 'bulkChangeTableWrapper' } %>

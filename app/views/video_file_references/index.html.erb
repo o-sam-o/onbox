@@ -27,7 +27,7 @@
 	<% @references.each do |reference| %>
 	  <tr>
 	    <td><%= truncate_and_tooltip :text => reference.raw_name, :max_length => 35 %></td>
-		<td><%= truncate_from_start reference.media_folder.location, 20 %></td>
+		<td><%= truncate_from_start_and_tooltip :text => reference.media_folder.location, :max_length => 20 %></td>
 		<td><%=h reference.format %></td>
 	    <td><%=h reference.created_at %></td>
 

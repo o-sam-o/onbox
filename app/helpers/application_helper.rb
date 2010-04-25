@@ -11,7 +11,7 @@ module ApplicationHelper
 
     uuid = UUIDTools::UUID.random_create.to_s.gsub('-', '')
     result = "<span id=\"text_#{uuid}\">#{h(truncated)}</span>\n"
-    result += yui_tooltip("tt_#{uuid}", text)
+    result += yui_tooltip("text_#{uuid}", text)
     return result
   
   end
@@ -34,6 +34,17 @@ module ApplicationHelper
     return "..." if max_length <= 3
     return "..." + text[text.length - (max_length - 3), text.length]
   end
+  
+  def truncate_from_start_and_tooltip(args)
+    text, max_length = args[:text], args[:max_length]
+    truncated = truncate_from_start(text, max_length)
+    return text if text == truncated
+
+    uuid = UUIDTools::UUID.random_create.to_s.gsub('-', '')
+    result = "<span id=\"text_#{uuid}\">#{h(truncated)}</span>\n"
+    result += yui_tooltip("text_#{uuid}", text)
+    return result
+  end  
   
   # Allowed args:
   # text - to be displayed in button
