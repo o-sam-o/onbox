@@ -27,6 +27,10 @@ class ImdbMetadataScraperTest < Test::Unit::TestCase
     
     puts "Search 7"
     assert_nil(ImdbMetadataScraper.search_for_imdb_id('High Fidelity', 3000))
+    
+    #Test search that redirects directly to the movie page
+    puts "Search 8"
+    assert_equal('1018818', ImdbMetadataScraper.search_for_imdb_id('Assassination of a High School President', 2008))
   end
 
   def test_scrap_movie_info_the_box

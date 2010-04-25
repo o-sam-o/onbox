@@ -10,6 +10,19 @@ class ImdbMetadataScraper
 
   def self.search_for_imdb_id(name, year, tv_series=false)
     doc = ImdbMetadataScraper.get_search_page(name)
+    
+    # If the search is an exact match imdb will redirect to the movie page not search results page
+    # we uses the the title meta element to determine if we got an exact match
+    movie_title, movie_year = get_title_and_year_from_meta(doc)
+    if movie_title && movie_title.casecmp(name) == 0
+      canonical_link = doc.search("//link[@rel='canonical']")
+      if canonical_link && canonical_link.first.attributes['href'] =~ /tt(\d+)\//
+        return $1
+      else
+        raise "Unable to extract imdb id from exact search result"
+      end
+    end
+    
     doc.search("//td").each do |td| 
       td.search("//a") do |link|  
         href = link.attributes['href']
@@ -35,14 +48,8 @@ class ImdbMetadataScraper
     
     doc = ImdbMetadataScraper.get_movie_page(imdb_id)
     coder = HTMLEntities.new
-    title_text = doc.search("//meta[@name='title']").first.attributes['content']
-    # Matches 'Movie Name (2010)' or 'Movie Name (2010/I)'
-    if title_text =~ /(.*) \((\d{4})\/?\w*\)/
-      info_hash['title'] = coder.decode($1)
-      info_hash['year'] = $2
-      # Remove surrounding double quotes that seems to appear on tv show name
-      info_hash['title'] = $1 if info_hash['title'] =~ /^"(.*)"$/
-    else
+    info_hash['title'], info_hash['year'] = get_title_and_year_from_meta(doc)
+    if info_hash['title'].nil?
       #If we cant get title and year something is wrong
       raise "Unable to find title or year for imdb id #{imdb_id}"
     end
@@ -144,5 +151,20 @@ class ImdbMetadataScraper
     def logger
       RAILS_DEFAULT_LOGGER
     end
+
+    def self.get_title_and_year_from_meta(doc)
+      return nil, nil unless doc.search("//meta[@name='title']")
+      
+      title_text = doc.search("//meta[@name='title']").first.attributes['content']
+      # Matches 'Movie Name (2010)' or 'Movie Name (2010/I)'
+      if title_text =~ /(.*) \((\d{4})\/?\w*\)/
+        coder = HTMLEntities.new
+        movie_title = coder.decode($1)
+        movie_year = $2
+        # Remove surrounding double quotes that seems to appear on tv show name
+        movie_title = $1 if movie_title =~ /^"(.*)"$/
+      end
+      return movie_title, movie_year
+    end  
 
 end

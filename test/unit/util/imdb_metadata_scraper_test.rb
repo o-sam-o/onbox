@@ -29,5 +29,11 @@ class ImdbMetadataScraperTest < Test::Unit::TestCase
     ImdbMetadataScraper.expects(:get_search_page).with(movie_name).returns(open(File.join(File.dirname(__FILE__), 'starkey_hutch_search.html')) { |f| Hpricot(f) })
     assert_equal '0072567', ImdbMetadataScraper.search_for_imdb_id(movie_name, nil, true)
   end  
+  
+  should 'find the imdb id when search redirects directly to the movie page' do
+    movie_name = 'Avatar'
+    ImdbMetadataScraper.expects(:get_search_page).with(movie_name).returns(open(File.join(File.dirname(__FILE__), '../workers/Avatar.2009.html')) { |f| Hpricot(f) })
+    assert_equal '0499549', ImdbMetadataScraper.search_for_imdb_id(movie_name, nil, true)  
+  end  
 
 end

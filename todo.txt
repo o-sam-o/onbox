@@ -1,10 +1,12 @@
-* Clicking unwatched when not logged in should redirect to login page
+* Paginator history on home page
+* Fix title width on home page carosel
+
+* Style bulk change table (allow html to pass through yui table)
+
+ * youtube trailer
 
 * Tv file references need to be associated with tv episode
 * Tv show files on the content show page should be sorted by tv episode
-
-* Paginator history on home page
-* Style bulk change table (allow html to pass through yui table)
 
 * Some sample files are getting collected and stored on dub
 
@@ -14,16 +16,13 @@
  * Support for marking files as ignored
  * Display contents of NFO files
 
- * Fix title width on home page carosel
-
- * If imdb search is exact match goes to the movie page which causes the scraper to fail
  * Add search option on the change imdb id dialog
-
- * youtube trailer
 
  * View genre sci-fi doesnt work
 
  * Support for marking tv shows as watched
+
+ * Add genres page, add edit genres (to mark priority)
 
 Lower Priority:
 
