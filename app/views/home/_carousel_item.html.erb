@@ -1,5 +1,5 @@
 <div class="contentCarouselItem">
-	<div class="contentCarouselName"><%= truncate_and_tooltip :text => carousel_item.name, :max_length => 21 %></div>				
+	<div class="contentCarouselName"><%= truncate_and_tooltip :text => carousel_item.name, :max_length => 15 %></div>				
 	<div class="contentCarouselImageDiv">
 		<a href="<%= url_for carousel_item %>">
 			<% if carousel_item.poster(:small) %>
