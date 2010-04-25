@@ -29,6 +29,32 @@ Feature: Manage video_contents
     And I should see "2010"
     And I should see "000002"
 
+  Scenario: Update a movie
+    Given the following Movies:
+      |name        |year |state     |imdb_id  |
+      |movie name 1|2001 |processed |0000069  |
+	And I am logged in as "adminUser" 
+    And I am on the "movie name 1" video_content page
+    And I click "Edit Details"
+    When I fill in "Name" with "New Movie Name"
+    And I press "Save"
+    Then I should see "New Movie Name"
+    And I should see "2001"
+    And I should see "0000069"
+
+  Scenario: Update a tv show
+    Given the following TvShows:
+      |name        |year |state     |imdb_id  |
+      |tv name 1   |2002 |processed |0000070  |
+	And I am logged in as "adminUser" 
+    And I am on the "tv name 1" video_content page
+    And I click "Edit Details"
+    When I fill in "Name" with "New Show Name"
+    And I press "Save"
+    Then I should see "New Show Name"
+    And I should see "2002"
+    And I should see "0000070"
+
   Scenario: Delete video_content
     Given the following Movies:
       |name|year|state|imdb_id|

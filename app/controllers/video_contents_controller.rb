@@ -72,7 +72,11 @@ class VideoContentsController < ApplicationController
   end
   
   def update
-    if @video_content.update_attributes(params[:video_content])
+    update_params = params[:video_content]
+    update_params = params[:movie] if @video_content.movie?
+    update_params = params[:tv_show] if @video_content.tv_show?
+    
+    if @video_content.update_attributes(update_params)
       flash[:notice] = "#{@video_content.name} was successfully updated."
       redirect_to(@video_content)
     else
