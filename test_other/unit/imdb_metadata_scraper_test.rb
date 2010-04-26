@@ -37,7 +37,7 @@ class ImdbMetadataScraperTest < Test::Unit::TestCase
     puts "Scraping info"
     movie_info = ImdbMetadataScraper.scrap_movie_info('0362478')
     assert_equal('The Box', movie_info['title'])
-    assert_equal('2009', movie_info['year'])
+    assert_equal(2009, movie_info['year'])
     assert_equal(Date.new(y=2009,m=10,d=29), movie_info['release date'])
     assert_equal("A small wooden box arrives on the doorstep of a married couple, who know that opening it will grant them a million dollars and kill someone they don't know.", movie_info['plot'])
     

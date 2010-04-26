@@ -9,20 +9,36 @@ class ImdbMetadataScraper
   STRIP_WHITESPACE = /(\s{2,}|\n|\||\302\240\302\273)/
 
   def self.search_for_imdb_id(name, year, tv_series=false)
-    doc = ImdbMetadataScraper.get_search_page(name)
+    search_results = self.search_imdb(name)
+    return nil if search_results.empty?
     
+    search_results.each do |result|
+      # Ensure result is the correct video type
+      next if (result[:video_type] == :tv_show) != tv_series
+      
+      # If no year provided just return first result
+      return result[:imdb_id] if !year || result[:year] == year
+    end
+    return nil  
+  end
+  
+  def self.search_imdb(search_term)
+    search_results = []
+    
+    doc = ImdbMetadataScraper.get_search_page(search_term)
     # If the search is an exact match imdb will redirect to the movie page not search results page
     # we uses the the title meta element to determine if we got an exact match
     movie_title, movie_year = get_title_and_year_from_meta(doc)
-    if movie_title && movie_title.casecmp(name) == 0
+    if movie_title && movie_title.casecmp(search_term) == 0
       canonical_link = doc.search("//link[@rel='canonical']")
       if canonical_link && canonical_link.first.attributes['href'] =~ /tt(\d+)\//
-        return $1
+        return [:name => movie_title, :year => movie_year, :imdb_id => $1, :video_type => self.video_type_from_meta(doc)]
       else
         raise "Unable to extract imdb id from exact search result"
       end
     end
     
+    coder = HTMLEntities.new
     doc.search("//td").each do |td| 
       td.search("//a") do |link|  
         href = link.attributes['href']
@@ -30,18 +46,18 @@ class ImdbMetadataScraper
         
         # Ignore links with no text (e.g. image links)
         next unless current_name.present?
-        # Ignore movies if we are looking for a tv series
-        next if tv_series and not td.inner_text =~ /\(TV series\)/
-
+        current_name = self.clean_title(coder.decode(current_name))
+        
         if href =~ /^\/title\/tt(\d+)/
           imdb_id = $1
           current_year = $1.gsub(/\(\)/, '').to_i if td.inner_text =~ /\((\d{4}\/?\w*)\)/
-          return imdb_id if not year or current_year == year
+          search_results << {:imdb_id => imdb_id, :name => current_name, :year => current_year, :video_type => self.video_type(td)}
         end
       end
     end
-    return nil
-  end
+    
+    return search_results
+  end  
   
   def self.scrap_movie_info(imdb_id)
     info_hash = {}
@@ -153,18 +169,37 @@ class ImdbMetadataScraper
     end
 
     def self.get_title_and_year_from_meta(doc)
-      return nil, nil unless doc.search("//meta[@name='title']")
+      return nil, nil unless doc.search("//meta[@name='title']").first
       
       title_text = doc.search("//meta[@name='title']").first.attributes['content']
       # Matches 'Movie Name (2010)' or 'Movie Name (2010/I)'
       if title_text =~ /(.*) \((\d{4})\/?\w*\)/
         coder = HTMLEntities.new
         movie_title = coder.decode($1)
-        movie_year = $2
-        # Remove surrounding double quotes that seems to appear on tv show name
-        movie_title = $1 if movie_title =~ /^"(.*)"$/
+        movie_year = $2.to_i
+        
+        movie_title = self.clean_title(movie_title)
       end
       return movie_title, movie_year
     end  
 
+    # Remove surrounding double quotes that seems to appear on tv show name
+    def self.clean_title(movie_title)
+      movie_title = $1 if movie_title =~ /^"(.*)"$/
+      return movie_title.strip
+    end  
+    
+    def self.video_type(td)
+      return :tv_show if td.inner_text =~ /\((TV series|TV)\)/
+      return :movie
+    end 
+    
+    def self.video_type_from_meta(doc)
+      return nil unless doc.search("//meta[@name='object_type']").first
+      type_text = doc.search("//meta[@name='object_type']").first.attributes['content']
+      case type_text
+        when 'tv_show' then return :tv_show
+        else return :movie
+      end   
+    end
 end
