@@ -1,5 +1,7 @@
 <script>
-YAHOO.util.Event.addListener(window, "load", function() {
+<% unless yui_table[:no_listener] %>
+	YAHOO.util.Event.addListener(window, "load", function() {
+<% end %>
 	var tableColumnDefs = [
 		<% for column in yui_table[:columns] %>
 			{key: '<%= column %>' }<% if column != yui_table[:columns].last %>,<% end %>
@@ -47,5 +49,7 @@ YAHOO.util.Event.addListener(window, "load", function() {
 		});
 		paginator.render();
 	<% end %>
+<% unless yui_table[:no_listener] %>
 });
+<% end %>
 </script>

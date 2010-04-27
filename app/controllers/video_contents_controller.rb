@@ -18,6 +18,11 @@ class VideoContentsController < ApplicationController
     @video_contents = VideoContent.find(:all, :conditions => ['name LIKE ?', "%#{params[:search]}%"])
   end
 
+  def search_imdb
+    @search_results = Util::ImdbMetadataScraper.search_imdb(params[:search_term])
+    render :layout => false
+  end  
+
   def new
     @video_content = VideoContent.new
     render 'video_contents/save'

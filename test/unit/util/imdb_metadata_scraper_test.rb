@@ -1,52 +1,51 @@
 require 'test/unit'
-require "lib/util/imdb_metadata_scraper"
 
-class ImdbMetadataScraperTest < Test::Unit::TestCase
+class Util::ImdbMetadataScraperTest < Test::Unit::TestCase
   
   should 'should find movie imdb id with name and year' do
     movie_name = 'Starsky & Hutch'
-    ImdbMetadataScraper.expects(:get_search_page).with(movie_name).returns(open(File.join(File.dirname(__FILE__), 'starkey_hutch_search.html')) { |f| Hpricot(f) })
-    assert_equal '0335438', ImdbMetadataScraper.search_for_imdb_id(movie_name, 2004)
+    Util::ImdbMetadataScraper.expects(:get_search_page).with(movie_name).returns(open(File.join(File.dirname(__FILE__), 'starkey_hutch_search.html')) { |f| Hpricot(f) })
+    assert_equal '0335438', Util::ImdbMetadataScraper.search_for_imdb_id(movie_name, 2004)
     
-    ImdbMetadataScraper.expects(:get_search_page).with(movie_name).returns(open(File.join(File.dirname(__FILE__), 'starkey_hutch_search.html')) { |f| Hpricot(f) })
-    assert_equal '1380813', ImdbMetadataScraper.search_for_imdb_id(movie_name, 2003)
+    Util::ImdbMetadataScraper.expects(:get_search_page).with(movie_name).returns(open(File.join(File.dirname(__FILE__), 'starkey_hutch_search.html')) { |f| Hpricot(f) })
+    assert_equal '1380813', Util::ImdbMetadataScraper.search_for_imdb_id(movie_name, 2003)
   end
 
   should 'should find movie imdb id with name only' do
     movie_name = 'Starsky & Hutch'
-    ImdbMetadataScraper.expects(:get_search_page).with(movie_name).returns(open(File.join(File.dirname(__FILE__), 'starkey_hutch_search.html')) { |f| Hpricot(f) })
-    assert_equal '0335438', ImdbMetadataScraper.search_for_imdb_id(movie_name, nil)
+    Util::ImdbMetadataScraper.expects(:get_search_page).with(movie_name).returns(open(File.join(File.dirname(__FILE__), 'starkey_hutch_search.html')) { |f| Hpricot(f) })
+    assert_equal '0335438', Util::ImdbMetadataScraper.search_for_imdb_id(movie_name, nil)
   end
   
   should 'should return nil if not matching year' do
     movie_name = 'Starsky & Hutch'
-    ImdbMetadataScraper.expects(:get_search_page).with(movie_name).returns(open(File.join(File.dirname(__FILE__), 'starkey_hutch_search.html')) { |f| Hpricot(f) })
-    assert_equal nil, ImdbMetadataScraper.search_for_imdb_id(movie_name, 2099)
+    Util::ImdbMetadataScraper.expects(:get_search_page).with(movie_name).returns(open(File.join(File.dirname(__FILE__), 'starkey_hutch_search.html')) { |f| Hpricot(f) })
+    assert_equal nil, Util::ImdbMetadataScraper.search_for_imdb_id(movie_name, 2099)
   end  
   
   should 'should find tv show imdb id with name only' do
     movie_name = 'Starsky & Hutch'
-    ImdbMetadataScraper.expects(:get_search_page).with(movie_name).returns(open(File.join(File.dirname(__FILE__), 'starkey_hutch_search.html')) { |f| Hpricot(f) })
-    assert_equal '0072567', ImdbMetadataScraper.search_for_imdb_id(movie_name, nil, true)
+    Util::ImdbMetadataScraper.expects(:get_search_page).with(movie_name).returns(open(File.join(File.dirname(__FILE__), 'starkey_hutch_search.html')) { |f| Hpricot(f) })
+    assert_equal '0072567', Util::ImdbMetadataScraper.search_for_imdb_id(movie_name, nil, true)
   end  
   
   should 'find the imdb id when search redirects directly to the movie page' do
     movie_name = 'Avatar'
-    ImdbMetadataScraper.expects(:get_search_page).with(movie_name).returns(open(File.join(File.dirname(__FILE__), '../workers/Avatar.2009.html')) { |f| Hpricot(f) })
-    assert_equal '0499549', ImdbMetadataScraper.search_for_imdb_id(movie_name, nil, false)  
+    Util::ImdbMetadataScraper.expects(:get_search_page).with(movie_name).returns(open(File.join(File.dirname(__FILE__), '../workers/Avatar.2009.html')) { |f| Hpricot(f) })
+    assert_equal '0499549', Util::ImdbMetadataScraper.search_for_imdb_id(movie_name, nil, false)  
   end  
 
   should 'not find result if incorrect video type' do
     movie_name = 'Avatar'
-    ImdbMetadataScraper.expects(:get_search_page).with(movie_name).returns(open(File.join(File.dirname(__FILE__), '../workers/Avatar.2009.html')) { |f| Hpricot(f) })
+    Util::ImdbMetadataScraper.expects(:get_search_page).with(movie_name).returns(open(File.join(File.dirname(__FILE__), '../workers/Avatar.2009.html')) { |f| Hpricot(f) })
     # We want a tv show but a movie is returned
-    assert_equal nil, ImdbMetadataScraper.search_for_imdb_id(movie_name, nil, true)  
+    assert_equal nil, Util::ImdbMetadataScraper.search_for_imdb_id(movie_name, nil, true)  
   end
 
   should 'search imdb and return name, year and id' do
     movie_name = 'Starsky & Hutch'
-    ImdbMetadataScraper.expects(:get_search_page).with(movie_name).returns(open(File.join(File.dirname(__FILE__), 'starkey_hutch_search.html')) { |f| Hpricot(f) })
-    search_results = ImdbMetadataScraper.search_imdb(movie_name)
+    Util::ImdbMetadataScraper.expects(:get_search_page).with(movie_name).returns(open(File.join(File.dirname(__FILE__), 'starkey_hutch_search.html')) { |f| Hpricot(f) })
+    search_results = Util::ImdbMetadataScraper.search_imdb(movie_name)
     assert_equal [{:name => 'Starsky & Hutch', :year => 2004, :imdb_id => '0335438', :video_type => :movie},
                   {:name => 'Starsky and Hutch', :year => 1975, :imdb_id => '0072567', :video_type => :tv_show},
                   {:name => 'Starsky & Hutch', :year => 2003, :imdb_id => '1380813', :video_type => :movie},
@@ -63,15 +62,15 @@ class ImdbMetadataScraperTest < Test::Unit::TestCase
 
   should 'search imdb and return name, year and id even for exact search result' do
     movie_name = 'Avatar'
-    ImdbMetadataScraper.expects(:get_search_page).with(movie_name).returns(open(File.join(File.dirname(__FILE__), '../workers/Avatar.2009.html')) { |f| Hpricot(f) })
-    search_results = ImdbMetadataScraper.search_imdb(movie_name)
+    Util::ImdbMetadataScraper.expects(:get_search_page).with(movie_name).returns(open(File.join(File.dirname(__FILE__), '../workers/Avatar.2009.html')) { |f| Hpricot(f) })
+    search_results = Util::ImdbMetadataScraper.search_imdb(movie_name)
     assert_equal [{:name => 'Avatar', :year => 2009, :imdb_id => '0499549', :video_type => :movie}], search_results                  
   end
 
   should 'search imdb and return name, year and id even for exact tv show search result' do
     movie_name = 'Lost'
-    ImdbMetadataScraper.expects(:get_search_page).with(movie_name).returns(open(File.join(File.dirname(__FILE__), '../workers/Lost.2004.html')) { |f| Hpricot(f) })
-    search_results = ImdbMetadataScraper.search_imdb(movie_name)
+    Util::ImdbMetadataScraper.expects(:get_search_page).with(movie_name).returns(open(File.join(File.dirname(__FILE__), '../workers/Lost.2004.html')) { |f| Hpricot(f) })
+    search_results = Util::ImdbMetadataScraper.search_imdb(movie_name)
     assert_equal [{:name => 'Lost', :year => 2004, :imdb_id => '0411008', :video_type => :tv_show}], search_results                  
   end
 

@@ -1,0 +1,32 @@
+<div id="imdbSearchResultWrapper">
+	<h4>Imdb Search Result For: <%= params[:search_term] %></h4>
+	<div id="imdbSearchResultTableWapper">
+		<table id="imdbSearchResultTable">
+			<thead>
+				<tr>
+					<th>Result</th>
+					<th>Action</th>
+				</tr>
+			</thead>
+			<tbody>
+				<% @search_results.each do |result| %>
+					<tr>
+						<td>
+							<a href="http://www.imdb.com/title/tt<%=h result[:imdb_id] %>" target="_blank">
+							<%=h result[:name] %> 
+							(<%=h result[:year] %>)
+							<%= '[Tv Show]' if result[:video_type] == :tv_show %>
+							</a>
+						</td>
+						<td>
+							<a onclick="reloadFromImdb('<%= result[:imdb_id] %>')" class="fakeLink">Use</a>
+						</td>
+					</tr>
+				<% end %>
+			</tbody>
+		</table>
+	</div>
+	<%= render :partial => 'shared/yui_table', 
+		:object => {:columns => ['Result', 'Action'], 
+					:tableId => 'imdbSearchResultTable', :divId => 'imdbSearchResultTableWapper', :no_listener => true } %>
+</div>

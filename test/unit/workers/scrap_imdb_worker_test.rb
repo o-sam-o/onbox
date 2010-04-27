@@ -30,7 +30,7 @@ class ScrapImdbWorkerTest < Test::Unit::TestCase
   
   should 'scrap movie details' do
     imdb_id = '0499549'
-    ImdbMetadataScraper.expects(:get_movie_page).with(imdb_id).returns(open(File.join(File.dirname(__FILE__), 'Avatar.2009.html')) { |f| Hpricot(f) })
+    Util::ImdbMetadataScraper.expects(:get_movie_page).with(imdb_id).returns(open(File.join(File.dirname(__FILE__), 'Avatar.2009.html')) { |f| Hpricot(f) })
     Genre.expects(:find_or_create_by_name).with('Action').returns(Genre.new({:name => 'Action'}))
     Genre.expects(:find_or_create_by_name).with('Adventure').returns(Genre.new({:name => 'Adventure'}))
     Genre.expects(:find_or_create_by_name).with('Sci-Fi').returns(Genre.new({:name => 'Sci-Fi'}))
@@ -55,8 +55,8 @@ class ScrapImdbWorkerTest < Test::Unit::TestCase
   
   should 'scrap tv show details' do
     imdb_id = '0411008'
-    ImdbMetadataScraper.expects(:get_movie_page).with(imdb_id).returns(open(File.join(File.dirname(__FILE__), 'Lost.2004.html')) { |f| Hpricot(f) })
-    ImdbMetadataScraper.expects(:get_episodes_page).with(imdb_id).returns(open(File.join(File.dirname(__FILE__), 'Lost.2004.Episodes.html')) { |f| Hpricot(f) })
+    Util::ImdbMetadataScraper.expects(:get_movie_page).with(imdb_id).returns(open(File.join(File.dirname(__FILE__), 'Lost.2004.html')) { |f| Hpricot(f) })
+    Util::ImdbMetadataScraper.expects(:get_episodes_page).with(imdb_id).returns(open(File.join(File.dirname(__FILE__), 'Lost.2004.Episodes.html')) { |f| Hpricot(f) })
 
     Genre.expects(:find_or_create_by_name).with('Adventure').returns(Genre.new(:name => 'Adventure'))
     Genre.expects(:find_or_create_by_name).with('Drama').returns(Genre.new(:name => 'Drama'))
@@ -90,7 +90,7 @@ class ScrapImdbWorkerTest < Test::Unit::TestCase
   end
   
   should 'not search imdb if imdb id already in video content' do
-    ImdbMetadataScraper.expects(:search_for_imdb_id).never
+    Util::ImdbMetadataScraper.expects(:search_for_imdb_id).never
     
     worker = ScrapImdbWorker.new
     imdb_id = worker.send(:get_imdb_id, Movie.new(:imdb_id => 'fake id'))
@@ -99,7 +99,7 @@ class ScrapImdbWorkerTest < Test::Unit::TestCase
   end
   
   should 'search imdb if no imdb id in video content' do
-    ImdbMetadataScraper.expects(:search_for_imdb_id).with('name', 2000).returns('fake id')
+    Util::ImdbMetadataScraper.expects(:search_for_imdb_id).with('name', 2000, false).returns('fake id')
     
     worker = ScrapImdbWorker.new
     imdb_id = worker.send(:get_imdb_id, Movie.new(:name => 'name', :year => 2000))
@@ -147,7 +147,7 @@ class ScrapImdbWorkerTest < Test::Unit::TestCase
   should 'set state to no imdb id if imdb seach fails' do
     movie = Movie.new
     VideoContent.expects(:find_all_by_state).with('pending').returns([movie])
-    ImdbMetadataScraper.expects(:search_for_imdb_id).returns(nil)
+    Util::ImdbMetadataScraper.expects(:search_for_imdb_id).returns(nil)
     
     worker = ScrapImdbWorker.new        
     worker.scrap_all_pending
@@ -157,7 +157,7 @@ class ScrapImdbWorkerTest < Test::Unit::TestCase
   should 'merge duplicate video contents if scraping returns an existing imdb id' do
     movie = Movie.new
     VideoContent.expects(:find_all_by_state).with('pending').returns([movie])
-    ImdbMetadataScraper.expects(:search_for_imdb_id).returns('existing')
+    Util::ImdbMetadataScraper.expects(:search_for_imdb_id).returns('existing')
     movie.expects(:unique_imdb_id?).with('existing').returns(false)
     movie.expects(:merge_with_imdb_id).with('existing')
     

@@ -1,5 +1,4 @@
 require 'test/unit'
-require "lib/util/folder_scanner"
 require 'fakefs/safe'
 
 class FolderScannerTest < Test::Unit::TestCase
@@ -108,7 +107,7 @@ class FolderScannerTest < Test::Unit::TestCase
   
   def get_media_files
     media_files = []
-    FolderScanner.find_content_in_folder('/content/dir') do |file|
+    Util::FolderScanner.find_content_in_folder('/content/dir') do |file|
       media_files << file
     end
     return media_files

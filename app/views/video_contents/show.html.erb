@@ -23,6 +23,9 @@
     width: 100%;
 }
 
+.yui-button {
+	vertical-align: bottom;
+}
 </style>
 <% end %>
 
@@ -166,15 +169,37 @@
 	<div id="changeImdbDialog" class="yui-pe-content hiddenDiv"> 
 		<div class="hd">Change Imdb Id</div> 
 		<div class="bd"> 
-			<% form_tag reload_video_content_path(@video_content), :method => :post, :class => 'defaultForm' do %>
-			  <fieldset>
-			      <legend>Details:</legend>
-				  <div class="defaultFormField">
-				    <%= label_tag "imdb_id", "Imdb Id" %>
-				    <%= text_field_tag 'imdb_id', @video_content.imdb_id, :class => "defaultFormTextField" %>
-				  </div>
-			  </fieldset>
-			<% end %>
+			<div id="changeImdbDialogTabs" class="yui-navset">
+			    <ul class="yui-nav">
+			        <li class="selected"><a href="#enterIdTab"><em>Enter Id</em></a></li>
+					<li><a href="#tab2"><em>Search</em></a></li>
+				</ul>
+				<div class="yui-content">
+				<div id="enterIdTab">
+					<% form_tag reload_video_content_path(@video_content), :method => :post, :class => 'defaultForm' do %>
+					  <fieldset>
+					      <legend>Details:</legend>
+						  <div class="defaultFormField">
+						    <%= label_tag "imdb_id", "Imdb Id" %>
+						    <%= text_field_tag 'imdb_id', @video_content.imdb_id, :class => "defaultFormTextField" %>
+						  </div>
+					  </fieldset>
+					<% end %>
+				</div>
+				<div id="searchTab">
+					  <form class="defaultForm">
+						<fieldset>
+					      <legend>Search:</legend>
+						  <div class="defaultFormField">
+						    <%= label_tag "search_term" %>
+						    <%= text_field_tag 'search_term', (@video_content.video_file_references.empty? ? @video_content.name : Util::FileNameCleaner.get_name_info(@video_content.video_file_references.first.location).name), :class => "defaultFormTextField" %>
+						    <%= yui_button_link :text => 'Search', :onclick => 'searchImdb()' %>
+						  </div>
+					  	</fieldset>
+						<div id="imdbSearchResult"/>						
+					  </form>
+				</div>
+			</div>
 		</div> 
 	</div>
 	
@@ -192,7 +217,7 @@
 
 			// Instantiate the Dialog
 			YAHOO.onbox.video.imdb.dialog = new YAHOO.widget.Dialog("changeImdbDialog", 
-									{ width : "400px",
+									{ width : "600px",
 									  fixedcenter : true,
 									  visible : false,
 									  postmethod : 'form',
@@ -211,7 +236,8 @@
 					return true;
 				}
 			};
-
+			YAHOO.onbox.video.imdb.tabs = new YAHOO.widget.TabView('changeImdbDialogTabs'); 
+			
 			// Render the Dialog
 			YAHOO.onbox.video.imdb.dialog.render();
 			// Make visable
@@ -223,14 +249,29 @@
 			YAHOO.onbox.video.imdb.dialog.show()
 		}
 		
-		function reloadFromImdb() {
-			//We cant reload from imdb if we dont have an id, show set imdb dialog
+		function reloadFromImdb(imdb_id) {
+			if (imdb_id){
+				$('imdb_id').setValue(imdb_id);
+			}
 			if (!YAHOO.onbox.video.imdb.dialog.getData().imdb_id){
+				//We cant reload from imdb if we dont have an id, show set imdb dialog
 				changeImdbId();
 				return;
 			}
 			YAHOO.onbox.video.imdb.dialog.submit()
 		}
+		
+		function searchImdb(){
+			var searchTerm = $('search_term').getValue();
+			if (searchTerm == ''){
+				alert('Please enter a search term');
+				return;
+			}
+			$('imdbSearchResult').innerHTML = '<div style="font-weight:bold;padding: 5px;" align="center">Searching for ' + searchTerm + '...</div>';
+			new Ajax.Updater('imdbSearchResult', '<%= search_imdb_video_content_path(@video_content) %>', 
+			{ method: 'get', parameters: {search_term: searchTerm}, evalScripts: true });
+		}
+		
 		
 		function markVideoWatched(watched){
 			if (!is_logged_in()){

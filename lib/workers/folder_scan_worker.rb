@@ -1,7 +1,3 @@
-require "lib/util/folder_scanner"
-require "lib/util/file_name_cleaner"
-require "lib/util/media_info_util"
-
 class FolderScanWorker < BackgrounDRb::MetaWorker
   set_worker_name :folder_scan_worker
 
@@ -10,7 +6,7 @@ class FolderScanWorker < BackgrounDRb::MetaWorker
     
     for folder in MediaFolder.find_all_by_scan(true)
       logger.info "Scanning folder #{folder.location}"
-      FolderScanner.find_content_in_folder(folder.location) do |file| 
+      Util::FolderScanner.find_content_in_folder(folder.location) do |file| 
         begin
           process_media_file(file, folder)
         rescue Exception => exception 
@@ -35,7 +31,7 @@ class FolderScanWorker < BackgrounDRb::MetaWorker
         return
       end
       
-      name_info = FileNameCleaner.get_name_info(file)
+      name_info = Util::FileNameCleaner.get_name_info(file)
       logger.debug "Cleaned name: #{name_info}"
       #Check to see if we already have a matching video content
       video_content = find_video_content(name_info.name, name_info.year)
@@ -69,7 +65,7 @@ class FolderScanWorker < BackgrounDRb::MetaWorker
       return reference if reference
       logger.debug "New file references found, creating new mode"
       reference = VideoFileReference.new(:location => location, :media_folder => folder, :on_disk => true,
-                                         :raw_name => FileNameCleaner.get_file_name(location))
+                                         :raw_name => Util::FileNameCleaner.get_file_name(location))
       reference.save!
       update_file_properties(reference)
       return reference
@@ -85,7 +81,7 @@ class FolderScanWorker < BackgrounDRb::MetaWorker
       existing_values = {}
       format = reference.format
       reference.video_file_properties.each { |i| existing_values[i.group + '-' + i.name] = i }
-      MediaInfoUtil.get_media_info(reference.location).each_with_index do |info,index|
+      Util::MediaInfoUtil.get_media_info(reference.location).each_with_index do |info,index|
         info_params = {:group => info.group, :order => index, :name => info.key, :value => info.value}
         current = existing_values[info.group + '-' + info.key]
         if not current

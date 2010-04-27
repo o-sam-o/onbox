@@ -14,17 +14,17 @@ class ImdbMetadataScraperTvSeriesTest < Test::Unit::TestCase
   def test_search_for_imdb_id
     puts ""
     puts "Search 1"
-    assert_equal('0411008', ImdbMetadataScraper.search_for_imdb_id('Lost', nil, true))
+    assert_equal('0411008', Util::ImdbMetadataScraper.search_for_imdb_id('Lost', nil, true))
     puts "Search 2"
-    assert_equal('0072567', ImdbMetadataScraper.search_for_imdb_id('starsky and hutch', 1975, true))
+    assert_equal('0072567', Util::ImdbMetadataScraper.search_for_imdb_id('starsky and hutch', 1975, true))
     puts "Search 3"
     #Search for tv show where a movie appears higher in the results
-    assert_equal('0072567', ImdbMetadataScraper.search_for_imdb_id('starsky and hutch', nil, true))
+    assert_equal('0072567', Util::ImdbMetadataScraper.search_for_imdb_id('starsky and hutch', nil, true))
   end
 
   def test_scrap_movie_info_lost
     puts "Scraping info"
-    movie_info = ImdbMetadataScraper.scrap_movie_info('0411008')
+    movie_info = Util::ImdbMetadataScraper.scrap_movie_info('0411008')
     assert_equal('Lost', movie_info['title'])
     assert_equal(2004, movie_info['year'])
     assert_equal("The survivors of a plane crash are forced to live with each other on a remote island, a dangerous new world that poses unique threats of its own.", movie_info['plot'])

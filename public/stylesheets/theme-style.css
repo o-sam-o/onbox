@@ -83,7 +83,6 @@ h4, h5, h6 {font-size: 9pt;padding: 10px 0;font-family:Arial, Helvetica, sans-se
 	width: 935px;
 	margin: auto auto;
 	text-align: left;
-	border:1px solid #999;
 	background-color:#FFFFFF;
 	margin-top:40px;
 }
@@ -354,6 +353,10 @@ h4, h5, h6 {font-size: 9pt;padding: 10px 0;font-family:Arial, Helvetica, sans-se
 	min-height: 400px;
 	float: left;
 	background-color:#ffFFFF;
+	-moz-border-radius-topleft: 7px;
+	-webkit-border-top-left-radius: 7px;
+	-moz-border-radius-topright: 7px;
+	-webkit-border-top-right-radius: 7px;	
 }
 	#content .featured {
 		padding: 20px 35px;

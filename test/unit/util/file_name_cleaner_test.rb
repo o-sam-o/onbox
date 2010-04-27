@@ -1,5 +1,4 @@
 require 'test/unit'
-require "lib/util/file_name_cleaner"
 
 class FileNameCleanerTest < Test::Unit::TestCase
   
@@ -71,9 +70,9 @@ class FileNameCleanerTest < Test::Unit::TestCase
   
   should 'correctly convert FileNameInfo to a string' do
     # get 100% coverage                                 
-    assert_equal 'Inglourious Basterds', FileNameCleaner.get_name_info('/test/Inglourious Basterds PPV XViD-IMAGiNE.nfo').to_s
-    assert_equal 'raw name', FileNameInfo.new(:raw_name => 'raw name').to_s
-    assert_equal 'location', FileNameInfo.new(:location => 'location').to_s
+    assert_equal 'Inglourious Basterds', Util::FileNameCleaner.get_name_info('/test/Inglourious Basterds PPV XViD-IMAGiNE.nfo').to_s
+    assert_equal 'raw name', Util::FileNameInfo.new(:raw_name => 'raw name').to_s
+    assert_equal 'location', Util::FileNameInfo.new(:location => 'location').to_s
 	end 
 	
 	should 'remove number from movie name if there is more than one file for the same movie' do
@@ -109,19 +108,19 @@ class FileNameCleanerTest < Test::Unit::TestCase
 	end
 	
 	should 'find parent folder  of a media file' do
-	  assert_nil FileNameCleaner.parent_folder_name('test.mpg')
-	  assert_nil FileNameCleaner.parent_folder_name('/test.mpg')
-	  assert_equal 'tmp', FileNameCleaner.parent_folder_name('/tmp/test.mpg')
-	  assert_equal 'tmp', FileNameCleaner.parent_folder_name('/asdf/asdf/a/tmp/test.mpg')
-	  assert_equal 'tmp', FileNameCleaner.parent_folder_name('tmp/test.mpg')
+	  assert_nil Util::FileNameCleaner.parent_folder_name('test.mpg')
+	  assert_nil Util::FileNameCleaner.parent_folder_name('/test.mpg')
+	  assert_equal 'tmp', Util::FileNameCleaner.parent_folder_name('/tmp/test.mpg')
+	  assert_equal 'tmp', Util::FileNameCleaner.parent_folder_name('/asdf/asdf/a/tmp/test.mpg')
+	  assert_equal 'tmp', Util::FileNameCleaner.parent_folder_name('tmp/test.mpg')
 	  
-	  assert_equal 'CD1', FileNameCleaner.parent_folder_name('/CD1/test.mpg')
-	  assert_equal 'tmp', FileNameCleaner.parent_folder_name('/tmp/CD1/test.mpg')
-	  assert_equal 'tmp', FileNameCleaner.parent_folder_name('/tmp/cd2/test.mpg')
+	  assert_equal 'CD1', Util::FileNameCleaner.parent_folder_name('/CD1/test.mpg')
+	  assert_equal 'tmp', Util::FileNameCleaner.parent_folder_name('/tmp/CD1/test.mpg')
+	  assert_equal 'tmp', Util::FileNameCleaner.parent_folder_name('/tmp/cd2/test.mpg')
 	end  
 	
 	def content_test_helper(location, raw_name, name, year=nil, series=nil, episode=nil)
-	  c = FileNameCleaner.get_name_info(location)
+	  c = Util::FileNameCleaner.get_name_info(location)
 	  assert_not_nil(c)
 		assert_equal(location, c.location)
 		assert_equal(raw_name, c.raw_name)

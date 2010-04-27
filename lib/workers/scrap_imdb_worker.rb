@@ -1,5 +1,3 @@
-require 'lib/util/imdb_metadata_scraper'
-
 class ScrapImdbWorker < BackgrounDRb::MetaWorker
   set_worker_name :scrap_imdb_worker
 
@@ -32,7 +30,7 @@ class ScrapImdbWorker < BackgrounDRb::MetaWorker
     def get_imdb_id(video_content)
       imdb_id = video_content.imdb_id
       if imdb_id.blank?
-        imdb_id = ImdbMetadataScraper.search_for_imdb_id(video_content.name, video_content.year)
+        imdb_id = Util::ImdbMetadataScraper.search_for_imdb_id(video_content.name, video_content.year, video_content.tv_show?)
       end
       return imdb_id
     end
@@ -51,7 +49,7 @@ class ScrapImdbWorker < BackgrounDRb::MetaWorker
       end  
       
       logger.debug "Found imdb_id #{imdb_id} for #{video_content.display_name}"
-      movie_info = ImdbMetadataScraper.scrap_movie_info(imdb_id)
+      movie_info = Util::ImdbMetadataScraper.scrap_movie_info(imdb_id)
       genres = movie_info['genre'] ? movie_info['genre'].strip.split.collect { |name| Genre.find_or_create_by_name(name) } : []
       
       if video_content.movie?
@@ -88,7 +86,7 @@ class ScrapImdbWorker < BackgrounDRb::MetaWorker
                                                          :date => episode_info['date'])
         end
         tv_episodes << tv_episode
-      end
+      end if movie_info['episodes']
       return tv_episodes
     end
     

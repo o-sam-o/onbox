@@ -11,7 +11,7 @@ ActionController::Routing::Routes.draw do |map|
   map.bulk_change 'video_contents/bulk/:action', :controller => 'bulk_change_video_contents'
 
   map.resources :video_file_references
-  map.resources :video_contents, :member => {:auto_complete => :get, :reload => :post, :watch => :post}, :has_many => :video_posters
+  map.resources :video_contents, :member => {:auto_complete => :get, :reload => :post, :watch => :post, :search_imdb => :get}, :has_many => :video_posters
   map.resources :movies, :controller => 'video_contents'
   map.resources :tv_shows, :controller => 'video_contents', :has_many => :tv_episodes
 

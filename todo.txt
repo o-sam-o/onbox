@@ -1,25 +1,30 @@
-* Add search to update imdb id dialog
-
 * Allow view type to change, e.g. V came in as a movie
 * Entering an imdb id for the opposite type should also switch from movie to tv show
-
-* youtube trailer
 
 * Tv file references need to be associated with tv episode
 * Tv show files on the content show page should be sorted by tv episode
 
  * Support for marking tv shows as watched
 
+ * View genre sci-fi doesnt work
+
  * Better prod deployment
+
+ * Clean up for github
+
+-- Post 0.1
+
+ * youtube trailer
+
+ * Add watched icon on home page
 
  * Support for marking files as ignored
  * Display contents of NFO files
 
- * View genre sci-fi doesnt work
-
  * Add genres page, add edit genres (to mark priority)
 
- * Add watched icon on home page
+
+ * Allow user to set order on home page by name, date added, etc
 
 Lower Priority:
 

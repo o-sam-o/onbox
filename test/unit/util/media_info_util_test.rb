@@ -1,9 +1,7 @@
-require 'lib/util/media_info_util'
-
 class WalkerTest < Test::Unit::TestCase
   
   should 'extract media file info' do
-    info = MediaInfoUtil.get_media_info(File.join(File.dirname(__FILE__), 'test.mov'))
+    info = Util::MediaInfoUtil.get_media_info(File.join(File.dirname(__FILE__), 'test.mov'))
     info_map = {}
     info.each { |i| info_map[i.group + '-' + i.key] = i.value }
     assert_equal('MPEG-4', info_map['General-Format'])
@@ -21,13 +19,13 @@ class WalkerTest < Test::Unit::TestCase
   end
   
   should 'not get media info from nfo files' do
-    info = MediaInfoUtil.get_media_info(File.join(File.dirname(__FILE__), 'test.nfo'))
+    info = Util::MediaInfoUtil.get_media_info(File.join(File.dirname(__FILE__), 'test.nfo'))
     assert_equal([], info)
   end
   
   should 'handle missing file gracefully' do
     RAILS_DEFAULT_LOGGER.expects(:error)
-    info = MediaInfoUtil.get_media_info('doesnt.exist.mpg')
+    info = Util::MediaInfoUtil.get_media_info('doesnt.exist.mpg')
     assert_equal([], info)
   end
 end

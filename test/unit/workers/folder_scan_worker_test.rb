@@ -7,8 +7,8 @@ class FolderScanWorkerTest < Test::Unit::TestCase
     folder1 = MediaFolder.new(:location => 'one')
     folder2 = MediaFolder.new(:location => 'two')
     MediaFolder.expects(:find_all_by_scan).returns([folder1, folder2])
-    FolderScanner.expects(:find_content_in_folder).with('one').multiple_yields('f1', 'f2')
-    FolderScanner.expects(:find_content_in_folder).with('two').yields('f3')
+    Util::FolderScanner.expects(:find_content_in_folder).with('one').multiple_yields('f1', 'f2')
+    Util::FolderScanner.expects(:find_content_in_folder).with('two').yields('f3')
     
     worker = FolderScanWorker.new
     worker.expects(:process_media_file).with('f1', folder1)
@@ -22,8 +22,8 @@ class FolderScanWorkerTest < Test::Unit::TestCase
     folder1 = MediaFolder.new(:location => 'one')
     folder2 = MediaFolder.new(:location => 'two')
     MediaFolder.expects(:find_all_by_scan).returns([folder1, folder2])
-    FolderScanner.expects(:find_content_in_folder).with('one').multiple_yields('f1', 'f2')
-    FolderScanner.expects(:find_content_in_folder).with('two').yields('f3')
+    Util::FolderScanner.expects(:find_content_in_folder).with('one').multiple_yields('f1', 'f2')
+    Util::FolderScanner.expects(:find_content_in_folder).with('two').yields('f3')
     
     worker = FolderScanWorker.new
     worker.expects(:process_media_file).with('f1', folder1).raises
@@ -151,9 +151,9 @@ class FolderScanWorkerTest < Test::Unit::TestCase
     worker.expects(:get_file_reference).returns(file)
     File.expects(:mtime).returns(DateTime::now())
     
-    MediaInfoUtil.expects(:get_media_info).with(file.location).returns([MediaInfoValue.new(:key => 'n1', :group => 'g1', :value => 'xxx'),
-      MediaInfoValue.new(:key => 'Format', :group => 'General', :value => 'mpg'),
-      MediaInfoValue.new(:key => 'prop-name', :group => 'group', :value => 'ppp')])
+    Util::MediaInfoUtil.expects(:get_media_info).with(file.location).returns([Util::MediaInfoValue.new(:key => 'n1', :group => 'g1', :value => 'xxx'),
+      Util::MediaInfoValue.new(:key => 'Format', :group => 'General', :value => 'mpg'),
+      Util::MediaInfoValue.new(:key => 'prop-name', :group => 'group', :value => 'ppp')])
     
     prop_mock = mock()
     properties_mock.expects(:build).times(2).returns(prop_mock)

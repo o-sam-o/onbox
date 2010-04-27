@@ -264,3 +264,9 @@
   width:1px; height:1px; /* avoid scrollbars */
   visibility:hidden;
 }
+
+#imdbSearchResultWrapper {
+  padding: 5px 5px 5px 0px;
+  max-height: 350px;
+  overflow: auto;
+}
