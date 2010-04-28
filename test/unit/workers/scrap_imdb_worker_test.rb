@@ -67,7 +67,8 @@ class ScrapImdbWorkerTest < Test::Unit::TestCase
     video_content = TvShow.new({:name => 'Fake Name', :imdb_id => imdb_id})
     video_content.expects(:unique_imdb_id?).returns(true)
     video_content.expects(:save!).returns(true)
-
+    video_file_ref = VideoFileReference.new(:location => '/test/LostS01E02.avi')
+    video_content.expects(:video_file_references).twice.returns([video_file_ref])
 
     tv_episodes_mock = mock()
     video_content.stubs(:tv_episodes).returns(tv_episodes_mock)

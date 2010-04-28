@@ -122,10 +122,11 @@
 															expandable: true, collapsible: true, effect: YAHOO.util.Easing.easeNone});
 
 			<% unless @video_content.video_file_references.empty? %>
-				<% # This is very dodgy but cutlery make html go missing if this accordion is rendered. Turning off for cuke tests %>
+				<% # This is very dodgy but cutlery makes html go missing if this accordion is rendered. Turning off for cuke tests %>
 				<% if ONBOX_CONFIG[:show_file_accordion] %>
 					var fileMenu = new YAHOO.widget.AccordionView('filesAccordion', {width: '520px', animationSpeed: '0.5', animate: true, 
-														expandable: true, collapsible: true, effect: YAHOO.util.Easing.easeNone});
+					 		 								expandable: true, collapsible: true, effect: YAHOO.util.Easing.easeNone
+														    <%= ', expandItem: 0' if @video_content.video_file_references.size == 1 %>});
 				<% end %>
 				<% # Id like this to be in video_files partial but it needs to be init after the AccordionViews 
 				   # as otherwise tab selection doesnt work %>	
@@ -139,7 +140,8 @@
 			<% end %>
 			<% if @video_content.tv_show? && @video_content.tv_episodes.present? %>
 				var episodeMenu = new YAHOO.widget.AccordionView('episodesAccordion', {width: '520px', animationSpeed: '0.5', animate: true, 
-													expandable: true, collapsible: true, effect: YAHOO.util.Easing.easeNone});
+													expandable: true, collapsible: true, effect: YAHOO.util.Easing.easeNone
+													<%= ', expandItem: 0' if @video_content.tv_episodes.group_by_series.size == 1 %>});
 			<% end %>
 			YAHOO.util.Dom.removeClass('viewAccordionWrapper', 'hiddenDiv'); 												
 		});

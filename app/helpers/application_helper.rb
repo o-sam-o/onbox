@@ -24,12 +24,14 @@ module ApplicationHelper
   end  
   
   def truncate(text, max_length)
+    return '' if text.nil? || max_length.nil?
     return text if text.length <= max_length
     return "..." if max_length <= 3
     return text[0, (max_length - 3)] + '...'
   end  
   
   def truncate_from_start(text, max_length)
+    return '' if text.nil? || max_length.nil?
     return text if text.length <= max_length
     return "..." if max_length <= 3
     return "..." + text[text.length - (max_length - 3), text.length]

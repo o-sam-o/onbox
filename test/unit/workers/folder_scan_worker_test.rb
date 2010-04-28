@@ -137,6 +137,28 @@ class FolderScanWorkerTest < Test::Unit::TestCase
     assert_equal movie, file.video_content
   end    
 
+  should 'associate a new references with a matching tv show' do
+    file = VideoFileReference.new(:updated_at => DateTime::now())
+    folder = MediaFolder.new(:location => 'folder')
+    tv_show = TvShow.new
+    episode1 = TvEpisode.new(:series => 1, :episode => 1)
+    episode2 = TvEpisode.new(:series => 1, :episode => 2)
+    episode2.expects(:video_file_reference=).with(file)
+    episode2.expects(:save!)
+    tv_show.expects(:tv_episodes).twice.returns([episode1, episode2])
+    worker = FolderScanWorker.new
+    
+    worker.expects(:get_file_reference).returns(file)
+    File.expects(:mtime).returns(5.minutes.ago)
+    VideoContent.expects(:find_by_name).with('lost').returns(tv_show)
+    
+    file.expects(:save!)
+
+    worker.send(:process_media_file, '/test/lostS01E02.mpg', folder)
+
+    assert_equal tv_show, file.video_content
+  end
+
   should 'update video file properties if references newer than file' do
     file = VideoFileReference.new(:updated_at => 5.minutes.ago, :location => '/test/avatar.mpg')
     folder = MediaFolder.new(:location => 'folder')

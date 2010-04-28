@@ -7,7 +7,7 @@
             <div>
 				<div class="accordionContent">
 					<%= render :partial => 'shared/yui_table', 
-						:object => {:columns => ['Episode', 'Title', 'Date', 'Plot'], 
+						:object => {:columns => ['Episode', 'Title', 'Date', 'Plot', 'Have?'], 
 									:tableId => "#{series}episodesTable", 
 									:divId => "#{series}episodesTableWrapper" } %>
 					<div id="<%=series %>episodesTableWrapper">
@@ -18,6 +18,7 @@
 									<th>Title</th>
 									<th>Date</th>
 									<th>Plot</th>
+									<th>Have?</th>
 								</tr>
 							</thead>
 							<tbody>
@@ -26,7 +27,8 @@
 										<td><%= episode.episode %></td>
 										<td><%= episode.title %></td>
 										<td><%= episode.date %></td>
-										<td><%= episode.plot %></td>
+										<td><%= truncate_and_tooltip :text => episode.plot, :max_length => 200 %></td>
+										<td><%= episode.video_file_reference.nil? ? 'No' : 'Yes' %></td>
 									</tr>
 								<% end %>
 							</tbody>

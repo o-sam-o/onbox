@@ -38,7 +38,9 @@ class FolderScanWorker < BackgrounDRb::MetaWorker
       if video_content
         logger.debug "Found match on existing video content #{video_content.display_name}"
         reference.video_content = video_content
-        # TODO if tv show may have to associated this file with an episode
+        if video_content.tv_show?
+          associate_file_with_episode(reference, name_info)
+        end  
         reference.save!
         return
       end
@@ -95,6 +97,17 @@ class FolderScanWorker < BackgrounDRb::MetaWorker
       end
       reference.update_attribute(:format, format)
     end
+    
+    def associate_file_with_episode(reference, name_info)
+      series = name_info.series || 1
+      reference.video_content.tv_episodes.each do |episode|
+        if episode.series == series && name_info.episode == episode.episode
+          episode.video_file_reference = reference
+          episode.save!
+          return
+        end
+      end unless reference.video_content.tv_episodes.nil?  
+    end  
 
 end
 

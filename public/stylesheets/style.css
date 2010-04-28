@@ -270,3 +270,9 @@
   max-height: 350px;
   overflow: auto;
 }
+
+#nfoWrapper {
+    overflow: auto;
+    max-width: 495px;
+    max-height: 495px;
+}

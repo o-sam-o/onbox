@@ -24,6 +24,21 @@ module Util
       end
       s
     end
+    
+    def <=>(other)
+      if series && other.series && series != other.series
+        return (series <=> other.series) 
+      elsif episode && other.episode && episode != other.episode
+        return (episode <=> other.episode)
+      elsif name != other.name
+        return (name <=> other.name)
+      elsif year && other.year
+        #Note: with year we want newest first
+        return (other.year <=> year)
+      else
+        return 0
+      end
+    end
   end
 
   class FileNameCleaner

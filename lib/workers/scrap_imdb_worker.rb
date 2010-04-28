@@ -75,20 +75,39 @@ class ScrapImdbWorker < BackgrounDRb::MetaWorker
     
     def create_or_load_tv_episodes(movie_info, video_content)
       tv_episodes = []
+      files = get_files_by_series_and_episode(video_content)
+        
       movie_info['episodes'].each do |episode_info|
         tv_episode = video_content.tv_episodes.find(:first, 
           :conditions => {:series => episode_info['series'], :episode => episode_info['episode']}) 
+        file_reference = files[episode_info['series']][episode_info['episode']] rescue nil
         if tv_episode
-          tv_episode.update_attributes!(:title => episode_info['title'], :plot => episode_info['plot'], :date => episode_info['date'])
+          tv_episode.update_attributes!(:title => episode_info['title'], 
+                                        :plot => episode_info['plot'], 
+                                        :date => episode_info['date'],
+                                        :video_file_reference => file_reference)
         else
           tv_episode = video_content.tv_episodes.create!(:series => episode_info['series'], :episode => episode_info['episode'],
                                                          :title => episode_info['title'], :plot => episode_info['plot'], 
-                                                         :date => episode_info['date'])
+                                                         :date => episode_info['date'], :video_file_reference => file_reference)
         end
         tv_episodes << tv_episode
       end if movie_info['episodes']
       return tv_episodes
     end
+    
+    def get_files_by_series_and_episode(video_content)
+      files = {}
+      
+      video_content.video_file_references.each do |file|
+        file_info = Util::FileNameCleaner.get_name_info(file.location)
+        series = (file_info.series ? file_info.series : 1)
+        files[series] = [] unless files[series]
+        files[series][file_info.episode] = file if file_info.episode
+      end if video_content.video_file_references
+      
+      return files
+    end  
     
     def get_movie_posters(movie_info, video_content)
       get_movie_poster(movie_info['small_image'], 'small', video_content) if movie_info['small_image']

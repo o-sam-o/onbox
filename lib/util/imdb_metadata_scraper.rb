@@ -29,7 +29,7 @@ module Util
       # If the search is an exact match imdb will redirect to the movie page not search results page
       # we uses the the title meta element to determine if we got an exact match
       movie_title, movie_year = get_title_and_year_from_meta(doc)
-      if movie_title && movie_title.casecmp(search_term) == 0
+      if movie_title
         canonical_link = doc.search("//link[@rel='canonical']")
         if canonical_link && canonical_link.first.attributes['href'] =~ /tt(\d+)\//
           return [:name => movie_title, :year => movie_year, :imdb_id => $1, :video_type => self.video_type_from_meta(doc)]
@@ -110,7 +110,7 @@ module Util
       end
     
       if not found_info_divs
-            #If we don't find any info divs assume parsing failed
+        #If we don't find any info divs assume parsing failed
         raise "No info divs found for imdb id #{imdb_id}"
       end
     

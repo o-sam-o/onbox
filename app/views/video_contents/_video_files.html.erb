@@ -2,7 +2,7 @@
 	No files for this video.
 <% else %>
 	<ul id="filesAccordion"> 
-	<% video_files.each do |file| %>
+	<% video_files.sort.each do |file| %>
 		<li>
             <div><%= truncate_from_start file.location, 64 %></div> 
             <div>
@@ -54,7 +54,11 @@
 							</div>
 						</div>
 					<% elsif file.location =~ /nfo$/ %>
-						TODO - handle NFO files
+						<div id="nfoWrapper">
+							<pre>
+								<%= IO.read(file.location) rescue "ERROR READING FILE '#{file.location}'" %>
+							</pre>
+						</div>
 					<% else %>
 						No properties for file.  <span style="font-style:italic;">Is MediaInfo CLI installed?</span>
 					<% end %>

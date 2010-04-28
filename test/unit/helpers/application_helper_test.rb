@@ -10,6 +10,8 @@ class ApplicationHelperTest < ActionView::TestCase
     
     assert_equal "...", truncate_from_start("do truncate", 3)
     assert_equal "...", truncate_from_start("do truncate", 1)
+    
+    assert_equal "", truncate_from_start(nil, 1)
   end
   
   should "truncate from the end of a string" do
@@ -20,6 +22,8 @@ class ApplicationHelperTest < ActionView::TestCase
     
     assert_equal "...", truncate("do truncate", 3)
     assert_equal "...", truncate("do truncate", 1)
+    
+    assert_equal "", truncate_from_start(nil, 1)    
   end
   
   should "make a link that looks like a yui button" do
