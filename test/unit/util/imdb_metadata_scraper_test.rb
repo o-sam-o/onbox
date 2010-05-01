@@ -73,5 +73,22 @@ class Util::ImdbMetadataScraperTest < Test::Unit::TestCase
     search_results = Util::ImdbMetadataScraper.search_imdb(movie_name)
     assert_equal [{:name => 'Lost', :year => 2004, :imdb_id => '0411008', :video_type => :tv_show}], search_results                  
   end
+  
+  should 'detect tv show type' do
+    imdb_id = '0411008'
+    Util::ImdbMetadataScraper.expects(:get_movie_page).with(imdb_id).returns(open(File.join(File.dirname(__FILE__), '../workers/Lost.2004.html')) { |f| Hpricot(f) })
+    Util::ImdbMetadataScraper.expects(:get_episodes_page).with(imdb_id).returns(open(File.join(File.dirname(__FILE__), '../workers/Lost.2004.Episodes.html')) { |f| Hpricot(f) })
+    
+    show_info = Util::ImdbMetadataScraper.scrap_movie_info(imdb_id)
+    assert_equal :tv_show, show_info['video_type']
+  end  
+  
+  should 'detect movie type' do
+    imdb_id = '0499549'
+    Util::ImdbMetadataScraper.expects(:get_movie_page).with(imdb_id).returns(open(File.join(File.dirname(__FILE__), '../workers/Avatar.2009.html')) { |f| Hpricot(f) })
+    
+    movie_info = Util::ImdbMetadataScraper.scrap_movie_info(imdb_id)
+    assert_equal :movie, movie_info['video_type']
+  end  
 
 end

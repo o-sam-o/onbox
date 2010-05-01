@@ -1,6 +1,3 @@
-* Allow view type to change, e.g. V came in as a movie
-* Entering an imdb id for the opposite type should also switch from movie to tv show
-
 * View genre sci-fi doesnt work
 
 * Add totals to home page, videos and files
@@ -11,6 +8,8 @@
 * Auto-scan for new files
 
 * Clean up for github
+
+* Links at bottom of the page?
 
 -- Post 0.1
 
@@ -39,6 +38,7 @@ Lower Priority:
  * Add better support for media not in imdb
  * Poster image sizes
  * Some sample files are getting collected and stored on dub
+ * Scrap movie ratings
 
 Errors:
 

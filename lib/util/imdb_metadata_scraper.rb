@@ -69,7 +69,8 @@ module Util
         #If we cant get title and year something is wrong
         raise "Unable to find title or year for imdb id #{imdb_id}"
       end
-    
+      info_hash['video_type'] = self.video_type_from_meta(doc)
+      
       found_info_divs = false
       doc.search("//div[@class='info']") do |div|
         next if div.search("//h5").empty?
@@ -125,7 +126,7 @@ module Util
           #Try to scrap a larger version of the image url
           large_img_page = doc.search("//div[@class = 'photo']/a").first.attributes['href']
           large_img_doc = Hpricot(open('http://www.imdb.com' + large_img_page))
-          large_img_url = large_img_doc.search("//table[@id = 'principal']").search('//img').first.attributes['src']
+          large_img_url = large_img_doc.search("//img[@id = 'primary-img']").first.attributes['src'] unless large_img_doc.search("//img[@id = 'primary-img']").empty?
           info_hash['large_image'] = large_img_url
         end
       end

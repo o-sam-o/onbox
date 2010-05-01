@@ -44,6 +44,7 @@ class ScrapImdbWorkerTest < Test::Unit::TestCase
     
     assert_equal('Avatar', video_content.name)
     assert_equal(imdb_id, video_content.imdb_id)
+    assert(video_content.movie?)
     assert_equal(2009, video_content.year)
     assert_equal(Date.new(y=2009,m=12,d=17), video_content.release_date)  
     assert_equal('A paraplegic marine dispatched to the moon Pandora on a unique mission becomes torn between following his orders and protecting the world he feels is his home.', video_content.plot)  
@@ -81,6 +82,7 @@ class ScrapImdbWorkerTest < Test::Unit::TestCase
     
     assert_equal('Lost', video_content.name)
     assert_equal(imdb_id, video_content.imdb_id)
+    assert(video_content.tv_show?)    
     assert_equal(2004, video_content.year)
     assert_equal(nil, video_content.release_date)  
     assert_equal("The survivors of a plane crash are forced to live with each other on a remote island, a dangerous new world that poses unique threats of its own.", video_content.plot)  
@@ -89,6 +91,39 @@ class ScrapImdbWorkerTest < Test::Unit::TestCase
     assert_equal('English', video_content.language)
     assert_equal(42, video_content.runtime)
   end
+  
+  should 'should support changing video type if imdb id if for other type' do
+    imdb_id = '0411008'
+    Util::ImdbMetadataScraper.expects(:get_movie_page).with(imdb_id).returns(open(File.join(File.dirname(__FILE__), 'Lost.2004.html')) { |f| Hpricot(f) })
+    Util::ImdbMetadataScraper.expects(:get_episodes_page).with(imdb_id).returns(open(File.join(File.dirname(__FILE__), 'Lost.2004.Episodes.html')) { |f| Hpricot(f) })
+
+    Genre.expects(:find_or_create_by_name).with('Adventure').returns(Genre.new(:name => 'Adventure'))
+    Genre.expects(:find_or_create_by_name).with('Drama').returns(Genre.new(:name => 'Drama'))
+    Genre.expects(:find_or_create_by_name).with('Mystery').returns(Genre.new(:name => 'Mystery'))
+    Genre.expects(:find_or_create_by_name).with('Sci-Fi').returns(Genre.new(:name => 'Sci-Fi'))
+    Genre.expects(:find_or_create_by_name).with('Thriller').returns(Genre.new(:name => 'Thriller'))
+    
+    video_content = Movie.new(:name => 'Fake Name', :imdb_id => imdb_id)
+    video_content.expects(:unique_imdb_id?).returns(true)
+    video_content.expects(:change_type).with('TvShow')
+    video_content.expects(:save!).returns(true)
+    VideoContent.expects(:find).returns(video_content)
+    video_file_ref = VideoFileReference.new(:location => '/test/LostS01E02.avi')
+    video_content.expects(:video_file_references).twice.returns([video_file_ref])
+
+    tv_episodes_mock = mock()
+    video_content.stubs(:tv_episodes).returns(tv_episodes_mock)
+    tv_episodes_mock.stubs(:find).returns(nil)
+    tv_episodes_mock.expects(:create!).times(116).returns(TvEpisode.new(:title => 'Mocked'))
+    tv_episodes_mock.expects(:replace)
+    
+    worker = ScrapImdbWorker.new
+    worker.send(:scrap_imdb, video_content)
+    
+    assert_equal('Lost', video_content.name)
+    assert_equal(imdb_id, video_content.imdb_id)
+    assert_equal(2004, video_content.year)
+  end  
   
   should 'not search imdb if imdb id already in video content' do
     Util::ImdbMetadataScraper.expects(:search_for_imdb_id).never

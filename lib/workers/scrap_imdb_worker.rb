@@ -51,23 +51,30 @@ class ScrapImdbWorker < BackgrounDRb::MetaWorker
       logger.debug "Found imdb_id #{imdb_id} for #{video_content.display_name}"
       movie_info = Util::ImdbMetadataScraper.scrap_movie_info(imdb_id)
       genres = movie_info['genre'] ? movie_info['genre'].strip.split.collect { |name| Genre.find_or_create_by_name(name) } : []
+      if video_content.type != movie_info['video_type']
+        logger.debug "Changing video type to #{movie_info['video_type']}"
+        video_content.change_type(movie_info['video_type'] == :movie ? 'Movie' : 'TvShow')
+      end
       
-      if video_content.movie?
+      case movie_info['video_type']
+      when :movie
         video_content.update_attributes!(:name => movie_info['title'], :year => movie_info['year'],
                                          :imdb_id => imdb_id, :plot => movie_info['plot'], 
                                          :release_date => movie_info['release date'], :genre_ids => genres.collect { |g| g.id },
                                          :director => movie_info['director'], :tag_line => movie_info['tagline'],
                                          :language => movie_info['language'], :runtime => movie_info['runtime'],
                                          :state => VideoContentState::PROCESSED)
-      elsif video_content.tv_show?
+      when :tv_show
         video_content.update_attributes!(:name => movie_info['title'], :year => movie_info['year'],
                                          :imdb_id => imdb_id, :plot => movie_info['plot'], 
                                          :genre_ids => genres.collect { |g| g.id }, :tag_line => movie_info['tagline'],
                                          :language => movie_info['language'], :runtime => movie_info['runtime'],
                                          :state => VideoContentState::PROCESSED)
+        # Reload if conten type changed so we can set the episodes
+        video_content = VideoContent.find(video_content.id) unless video_content.tv_show?
         video_content.tv_episodes.replace(create_or_load_tv_episodes(movie_info, video_content)) 
       else
-        raise "Unknown video content #{video_content.class} (#{video_content.id})"
+        raise "Unknown video content #{movie_info['video_type']} (#{video_content.id})"
       end
       logger.debug "About to download posters"
       get_movie_posters(movie_info, video_content)
