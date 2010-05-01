@@ -10,7 +10,7 @@ class User < ActiveRecord::Base
   end
   
   def has_not_watched(video_content)
-    watches = Watch.all(['user_id = ? and video_content_id = ?', self, video_content])
+    watches = Watch.all(:conditions => ['user_id = ? and video_content_id = ?', self, video_content])
     watches.each {|w| w.destroy}
   end    
   
