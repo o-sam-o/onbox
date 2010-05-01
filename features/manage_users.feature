@@ -29,11 +29,11 @@ Feature: Manage users
 
   Scenario: I should not be able to edit users unless logged in
     Given I am on the new user page	
-	Then I should be on the home page
+	Then I should be on the login page
 	And I should see "You must be logged in to access this page"
 	Given a user is logged in as "adminUser"
 	And I am on the new user page
 	And I should be on the new user page
 	Given I logout
 	And I am on the new user page	
-	Then I should be on the home page
+	Then I should be on the login page

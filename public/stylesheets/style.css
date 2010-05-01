@@ -287,3 +287,17 @@
     max-width: 495px;
     max-height: 495px;
 }
+
+#movieSearchDiv {
+  margin-top: 18px;
+  margin-right: 5px;
+  float: right;
+}
+
+#movieSearchDiv label {
+  display: none;
+}
+
+#movieSearchDiv input {
+  height: 18px;
+}

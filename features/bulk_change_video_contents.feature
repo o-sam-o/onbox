@@ -18,7 +18,7 @@ Feature: Bulk update a number of different video contents
 	And a user is logged in as "adminUser" 
 	And I am on the bulk video_content change page
     When I fill in "Search" with "Lost"
-	And I press "Search"
+	And I press "Search" within ".formWrapper"
 	And I should see "Wrong Lost 1"
 	And I should see "Wrong Lost 2"
 	And I select the bulk change checkbox for "Wrong Lost 1"

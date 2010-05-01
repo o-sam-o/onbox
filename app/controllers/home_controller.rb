@@ -45,8 +45,13 @@ class HomeController < ApplicationController
       
       unless @genres.empty?
         query << 'genres.id in (?)'
-        args << @genres.collect { |name| Genre.find_by_name(name.titleize) }
+        args << @genres.collect { |name| Genre.find(:first, :conditions=>['LOWER(name) = ?', name.downcase])  }
       end 
+      
+      if params[:q]
+        query << 'video_contents.name like ?'
+        args << "%#{params[:q]}%"
+      end  
       
       return query ? [query.join(' and '), *args] : []
     end
