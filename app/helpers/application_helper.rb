@@ -72,4 +72,23 @@ module ApplicationHelper
     return result
   end
   
+  def poster_width_and_height(video_poster, max_width, max_height)
+    width = video_poster.width    
+    height = video_poster.height
+    
+    if width > max_width
+      ratio = Float(max_width) / Float(width)
+      width = max_width
+      height = Integer(height * ratio)
+    end
+    
+    if height > max_height
+      ratio = Float(max_height) / Float(height)
+      height = max_height
+      width = Integer(width * ratio)
+    end  
+    
+    return %(width="#{width}" height="#{height}")
+  end  
+  
 end

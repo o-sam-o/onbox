@@ -4,7 +4,7 @@
 		<a href="<%= url_for carousel_item %>">
 			<% if carousel_item.poster(:small) %>
 				<img src="<%= url_for video_content_video_poster_path(carousel_item, carousel_item.poster(:small)) %>"
-				 	class="contentCarouselImage" width="100" height="140"/>
+				 	class="contentCarouselImage" <%= poster_width_and_height carousel_item.poster(:small), 100, 140 %> />
 			<% else %>
 				<img src="/images/no_preview.jpg" class="contentCarouselImage" width="100" height="140"/>
 			<% end %>

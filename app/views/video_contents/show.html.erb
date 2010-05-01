@@ -154,10 +154,10 @@
 		<div class="overclear">
 			<% if @video_content.poster(:large) %>
 				<img src="<%= url_for video_content_video_poster_path(@video_content, @video_content.poster(:large)) %>"
-				 	class="viewPosterLargeImg"/>
+				 	class="viewPosterLargeImg" <%= poster_width_and_height @video_content.poster(:large), 270, 500 %> />
 			<% elsif @video_content.poster(:small) %>
 				<img src="<%= url_for video_content_video_poster_path(@video_content, @video_content.poster(:small)) %>"
-				 	class="viewPosterSmallImg" width="100" height="140"/>
+				 	class="viewPosterSmallImg" <%= poster_width_and_height @video_content.poster(:small), 270, 500 %>/>
 			<% else %>
 				<img src="/images/no_preview.jpg" class="viewPosterSmallImg" width="100" height="140"/>
 			<% end %>

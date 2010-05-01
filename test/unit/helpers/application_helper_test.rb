@@ -47,4 +47,18 @@ class ApplicationHelperTest < ActionView::TestCase
     assert_match /.*(do truncate).*/, html
   end
   
+  should "correctly size images" do
+    assert_equal 'width="100" height="140"', poster_width_and_height(VideoPoster.new(:width => 100, :height => 140), 100, 140)
+    
+    assert_equal 'width="90" height="130"', poster_width_and_height(VideoPoster.new(:width => 90, :height => 130), 100, 140)
+    
+    # Resizes
+    assert_equal 'width="100" height="70"', poster_width_and_height(VideoPoster.new(:width => 200, :height => 140), 100, 140)
+    assert_equal 'width="50" height="140"', poster_width_and_height(VideoPoster.new(:width => 100, :height => 280), 100, 140)
+    
+    # More than one resize
+    assert_equal 'width="93" height="140"', poster_width_and_height(VideoPoster.new(:width => 200, :height => 300), 100, 140)
+    assert_equal 'width="100" height="70"', poster_width_and_height(VideoPoster.new(:width => 400, :height => 280), 100, 140)
+  end  
+  
 end
