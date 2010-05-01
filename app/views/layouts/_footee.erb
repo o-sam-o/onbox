@@ -1,0 +1,11 @@
+<% unless footee[:genres].nil? || footee[:genres].empty? %>
+    <div id="footee<%= footee[:index] %>">
+        <ul><li class="widget widget_links" id="linkcat-2"><h2 class="widgettitle">Genres (<%= footee[:genres].first.name[0,1] %> - <%= footee[:index] == 3 ? 'Z' : footee[:genres].last.name[0,1] %>)</h2>
+        	<ul class="xoxo">
+        	    <% footee[:genres].each do |genre| %>
+        	    <li><%=link_to genre.name, home_search_path([genre.name.downcase])%> [<%=link_to 'NW', home_search_path([genre.name.downcase, 'unwatched'])%>]</li>
+                <% end %>                
+        	</ul>
+        </li></ul>
+    </div>
+<% end %>

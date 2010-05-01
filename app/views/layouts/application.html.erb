@@ -51,13 +51,26 @@
 					<li><a href="<%= url_for :controller => 'home' %>">View All<br/><span>Show videos</span></a></li>
 					<li><a href="<%= home_search_path 'unwatched' %>">Unwatched<br/><span>Show videos</span></a></li>
 					<li>
-						<a href="#">Genres<br/><span>By genre</span></a>
+						<a href="#">Genres<br/><span>Most popular</span></a>
 						<ul>
-							<% Genre.all(:order => 'name').each do |genre| %>
-								<li><a href="<%= home_search_path [genre.name.downcase] %>"><%= genre.name %></a></li>
-							<% end %>
+							<li><a href="<%= home_search_path ['action'] %>">Action</a></li>
+                            <li><a href="<%= home_search_path ['comedy'] %>">Comedy</a></li>
+                            <li><a href="<%= home_search_path ['documentary'] %>">Documentary</a></li>
+                            <li><a href="<%= home_search_path ['drama'] %>">Drama</a></li>
+                            <li><a href="<%= home_search_path ['horror'] %>">Horror</a></li>
+                            <li><a href="<%= home_search_path ['romance'] %>">Romance</a></li>
+                            <li><a href="<%= home_search_path ['sci-fi'] %>">Sci-Fi</a></li>
+                            <li><a href="<%= home_search_path ['thriller'] %>">Thriller</a></li>
+                            <li><a href="<%= home_search_path ['war'] %>">War</a></li>
 						</ul>
 					</li>
+					<li>
+						<a href="#">Video Type<br/><span>movie or tv show</span></a>
+						<ul>
+						    <li><a href="<%= home_search_path :type => 'Movie' %>">Movie</li>
+						    <li><a href="<%= home_search_path :type => 'TvShow' %>">Tv Show</a></li>
+						</ul>
+					</li>					
 				</ul>
 			</div>
 			<div id="movieSearchDiv">
@@ -110,8 +123,14 @@
 		<a href="#">Jump To Top</a> 
 		</div> 
 		
+        <%= render :partial => 'layouts/footee', :object => {:index => 1, :genres => @genres_column_1 } %>
+        <%= render :partial => 'layouts/footee', :object => {:index => 2, :genres => @genres_column_2 } %>
+        <%= render :partial => 'layouts/footee', :object => {:index => 3, :genres => @genres_column_3 } %>              
+		
 		<div class="wrapper"> 
-		    What's on the box? [<%= ONBOX_CONFIG[:onbox_version] %>] | Developed by <a href="mailto:cavenaghweb@hotmail.com">Sam Cavenagh</a> | Theme Design by <a href="http://goodtheme.org" title="Really Good Theme">GoodTheme.org</a>	
+		    What's on the box? [<%= ONBOX_CONFIG[:onbox_version] %>] | 
+		    Developed by <a href="mailto:cavenaghweb@hotmail.com">Sam Cavenagh</a> | 
+		    Theme Design by <a href="http://goodtheme.org" title="Really Good Theme">GoodTheme.org</a>	
 		</div> 
 		</div> 
 		<!-- END footer -->		

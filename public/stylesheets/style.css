@@ -301,3 +301,10 @@
 #movieSearchDiv input {
   height: 18px;
 }
+
+#videoCountWrapper {
+  padding: 5px;
+  float: right;
+  font-style: italic;
+  font-weight: bold;
+}

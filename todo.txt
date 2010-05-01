@@ -1,7 +1,3 @@
-* Add totals to home page, videos and files
-
-* Links at bottom of the page? fix genre drop down
-
 * Better prod deployment
 
 * Auto-scan for new files

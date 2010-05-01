@@ -1,6 +1,6 @@
 class HomeController < ApplicationController
   CAROUSEL_WIDTH = 5
-  CAROUSEL_HEIGHT = 2
+  CAROUSEL_HEIGHT = 3
   
   before_filter :extract_criteria
   
@@ -52,6 +52,11 @@ class HomeController < ApplicationController
         query << 'video_contents.name like ?'
         args << "%#{params[:q]}%"
       end  
+      
+      if params[:type]
+        query << 'video_contents.type = ?'
+        args << "#{params[:type]}"
+      end      
       
       return query ? [query.join(' and '), *args] : []
     end
