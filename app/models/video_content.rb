@@ -75,4 +75,8 @@ class VideoContent < ActiveRecord::Base
     
     return existing
   end   
+  
+  def change_type(new_type)
+    self.type = new_type
+  end  
 end

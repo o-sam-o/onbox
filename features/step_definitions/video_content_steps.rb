@@ -14,3 +14,9 @@ When /^I delete the (\d+)(?:st|nd|rd|th) video_content$/ do |pos|
     click_link "Destroy"
   end
 end
+
+
+Then /^the video type should be "([^\"]*)"$/ do |type|
+  img_name = type.gsub(/\s/, '_').downcase + '.png'
+  page.should have_css("img[src*='#{img_name}']")
+end

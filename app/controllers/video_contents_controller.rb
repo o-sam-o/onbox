@@ -80,8 +80,15 @@ class VideoContentsController < ApplicationController
     update_params = params[:video_content]
     update_params = params[:movie] if @video_content.movie?
     update_params = params[:tv_show] if @video_content.tv_show?
+    if update_params[:type] != @video_content.type
+      logger.info "Changing item type from #{@video_content.type} to #{update_params[:type]}"
+      @video_content.change_type(update_params[:type])
+    end  
     
     if @video_content.update_attributes(update_params)
+      # Reload if type changed to ensure class type is changed
+      @video_content = VideoContent.find(params[:id]) if update_params[:type] != @video_content.type
+      
       flash[:notice] = "#{@video_content.name} was successfully updated."
       redirect_to(@video_content)
     else

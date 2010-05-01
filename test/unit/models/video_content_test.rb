@@ -74,4 +74,18 @@ class VideoContentTest < ActiveSupport::TestCase
     assert_equal 2, movie1.video_file_references(true).size
     assert_nil VideoContent.find_by_name('dup test 2')
   end  
+  
+  should 'support changing type' do
+    existing = VideoContent.find_by_name('type_change')
+    existing.destroy if existing
+    
+    movie = Movie.create!(:name => 'type_change', :state => 'pending')
+    movie.change_type('TvShow')
+    movie.save!
+    
+    tv_show = VideoContent.find(movie.id)
+    assert tv_show.tv_show?
+    
+    tv_show.destroy
+  end  
 end

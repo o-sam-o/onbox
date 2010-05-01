@@ -204,3 +204,13 @@ Then /^(?:|I )should have the following query string:$/ do |expected_pairs|
     assert_equal expected_params, actual_params
   end
 end
+
+Then /^I should see an? html (.+) element with (.+)$/ do |what, attributes|
+  attr_hash = attributes.split(",").inject({}) do |h, it|
+    parts = it.split(":")
+    h[parts.first.strip] = parts.last.strip; h
+  end.symbolize_keys
+
+  tag = what.split(" ").last
+  response.should have_selector(tag, attr_hash)
+end

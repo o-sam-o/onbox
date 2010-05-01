@@ -87,6 +87,9 @@ class FileNameCleanerTest < Test::Unit::TestCase
 	  content_test_helper('/test/CD1/District 9-1.avi', 'District 9 1', 'District 9')
 	  content_test_helper('/test/CD2/District 9-2.avi', 'District 9 2', 'District 9')
 	  
+	  content_test_helper('/test/Crazy.Heart.DVDSCREENER.XviD-MENTiON/CD1/m-crheart-a.avi', 'Crazy Heart DVDSCREENER XviD MENTiON', 'Crazy Heart')
+	  
+	  
 	  content_test_helper('/test/CD1/dmt-intheloop1.avi', 'dmt intheloop1', 'dmt intheloop')
 	  
 	end

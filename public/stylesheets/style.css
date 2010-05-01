@@ -244,7 +244,7 @@
 #watchedWrapper {
  float: right;   
  margin-top: 5px;
- margin-right: 10px;
+ margin-right: 0px;
 }
 
 .notWatched {
@@ -254,6 +254,17 @@
 }
 
 #watchedWrapper img {
+    background-color: white !important; 
+    border : none !important;
+}
+
+#showTypeIconWrapper {
+ float: right;   
+ margin-top: 5px;
+ margin-right: 5px;
+}
+
+#showTypeIconWrapper img {
     background-color: white !important; 
     border : none !important;
 }

@@ -2,32 +2,34 @@ Feature: Manage video_contents
   In order to manage content
   users
   wants to be able to edit and update VideoContent models
-  
+
   Scenario: Register new Movie
 	Given a user is logged in as "adminUser" 
     And I am on the new video_content page
-    When I fill in "Name" with "My Movie"
+    When I fill in "Name" with "My Title"
     And I fill in "Year" with "2010"
     And I select "Pending" from "State"
     And I select "Movie" from "Type"
     And I fill in "Imdb" with "000001"
     And I press "Save"
-    Then I should see "My Movie"
+    Then I should see "My Title"
     And I should see "2010"
     And I should see "000001"
+	And the video type should be "Movie"
 
   Scenario: Register new Tv Show
 	Given a user is logged in as "adminUser"     
 	And I am on the new video_content page
-    When I fill in "Name" with "My Tv Show"
+    When I fill in "Name" with "My Other Title"
     And I fill in "Year" with "2010"
     And I select "Pending" from "State"
     And I select "Tv Show" from "Type"
     And I fill in "Imdb" with "000002"
     And I press "Save"
-    Then I should see "My Tv Show"
+    Then I should see "My Other Title"
     And I should see "2010"
     And I should see "000002"
+	And the video type should be "Tv Show"
 
   Scenario: Update a movie
     Given the following Movies:
@@ -54,6 +56,20 @@ Feature: Manage video_contents
     Then I should see "New Show Name"
     And I should see "2002"
     And I should see "0000070"
+    
+    Scenario: Change a movie to a tv show
+      Given the following Movies:
+        |name        |year |state     |imdb_id  |
+        |movie name 1|2001 |processed |0000069  |
+  	  And I am logged in as "adminUser" 
+      And I am on the "movie name 1" video_content page
+      And I click "Edit Details"
+      And I select "Tv Show" from "Type"
+      And I press "Save"
+      Then I should see "movie name 1"
+      And I should see "2001"
+      And I should see "0000069"
+      And the video type should be "Tv Show"
 
   Scenario: Delete video_content
     Given the following Movies:

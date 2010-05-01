@@ -14,8 +14,7 @@
 	  </div>
 	  <div class="defaultFormField">
 	    <%= video_form.label :type %>
-		<% type_html_hash = @video_content.new_record? ? {} : {:disabled => 'disabled'} %>
-		<%= video_form.select :type, [["Movie", "Movie"], ["Tv Show", "TvShow"]], {}, type_html_hash %>
+		<%= video_form.select :type, [["Movie", "Movie"], ["Tv Show", "TvShow"]] %>
 		<%= error_message_on @video_content, :type, :css_class => "defaultFormError" %>
 	  </div>	
 	  <div class="defaultFormField">

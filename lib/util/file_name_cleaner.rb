@@ -49,8 +49,8 @@ module Util
     #Chars used in file names as a subsitude for spaces
     SPACE_SUB_REGEX = /(\.|_|\-)/
     #TODO remove this duplication
-    CONTENT_SOURCES = /DVDRIP|1080p|720p|R5|DVDSCR|BDRip|CAM|TS|PPV|Xvid|divx/i
-    CONTENT_SOURCE_REGEX = /(\(|\[|\s)+(DVDRIP|1080p|720p|R5|DVDSCR|BDRip|CAM|TS|PPV|Xvid|divx)(\)|\]|\s|$)+/i
+    CONTENT_SOURCES = /DVDRIP|1080p|720p|R5|DVDSCR|BDRip|CAM|TS|PPV|Xvid|divx|DVDSCREENER/i
+    CONTENT_SOURCE_REGEX = /(\(|\[|\s)+(DVDRIP|1080p|720p|R5|DVDSCR|BDRip|CAM|TS|PPV|Xvid|divx|DVDSCREENER)(\)|\]|\s|$)+/i
     YEAR_REGEX = /(\(|\[|\s)+\d{4}(,|\)|\]|\s|$)+/
     SESSION_ESP_REGEX_1 = /S(\d{2})\s?E(\d{2})/i
     SESSION_ESP_REGEX_2 = /\s+(\d+)x(\d+)(\s|$)+/i

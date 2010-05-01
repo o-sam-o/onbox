@@ -3,6 +3,9 @@
 
 * View genre sci-fi doesnt work
 
+* Add totals to home page, videos and files
+* Add search
+
 * Better prod deployment
 
 * Auto-scan for new files
@@ -34,7 +37,6 @@ Lower Priority:
  * Angels & Demons failed?
  * Auto detect column names for yui table
  * Add better support for media not in imdb
- * Add search
  * Poster image sizes
  * Some sample files are getting collected and stored on dub
 

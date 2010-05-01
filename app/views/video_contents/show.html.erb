@@ -35,6 +35,9 @@
 
 <div class="viewWrapper overclear">
 	<div class="viewCoreMetadata">
+		<div id="showTypeIconWrapper">
+			<%=image_tag @video_content.movie? ? 'movie.png' : 'tv_show.png', :alt => @video_content.movie? ? 'Movie' : 'Tv Show', :title => @video_content.movie? ? 'Movie' : 'Tv Show'%>
+		</div>		
 		<div id="watchedWrapper" class="<%= 'notWatched' unless @watched %>">
 			<a id="watchedContentLink" class="fakeLink" onclick="markVideoWatched(<%= !@watched %>); return false" href="#"><%=image_tag "watched.png" %></a>
 			<%=yui_tooltip "watchedContentLink", @watched ? "Watched" : "Click to mark video as watched" %>
