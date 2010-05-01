@@ -37,7 +37,20 @@
 	}
 </style>
 
-<h1>Your <%= 'Unwatched' if @unwatched %> <%= @genres.collect { |g| g.titleize }.join(' and ') %> Videos</h1>
+<h1>
+    <% if params[:q] %>
+        Search for: <%=h params[:q] %>
+    <% else %>
+        Your <%= 'Unwatched' if @unwatched %> <%= @genres.collect { |g| g.titleize }.join(' and ') %> 
+        <% if params[:type] == 'TvShow' %>
+            Tv Shows
+        <% elsif params[:type] == 'Movie' %>
+            Movies
+        <% else %>
+            Videos
+        <% end %>
+    <% end %>
+</h1>
 
 <% unless @video_contents.empty? %>
 	<div id="contentContainer">

@@ -3,4 +3,8 @@
   :ip: 0.0.0.0
   :port: 11006
   :log: foreground # foreground mode,print log messages on console
-  :persistent_disabled: true # turn this off if your application doesn't use backgroundrb's persistent/enqueued tasks system  
+  :persistent_disabled: false # turn this off if your application doesn't use backgroundrb's persistent/enqueued tasks system  
+:schedules:
+  :folder_scan_worker:
+    :scan_all_folders:
+      :trigger_args: 0 * */4 * * *

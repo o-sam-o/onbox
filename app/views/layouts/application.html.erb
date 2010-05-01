@@ -76,7 +76,7 @@
 			<div id="movieSearchDiv">
 			    <% form_tag root_path, :method => :get do %>
 			        <%= label_tag "q", "Search All" %>
-				    <%= text_field_tag 'q', params[:q] %>
+				    <%= text_field_tag 'q', params[:q], :placeholder => 'Search Term' %>
 				    <%= yui_submit_button "Search" %>
 			    <% end %>
 			</div>

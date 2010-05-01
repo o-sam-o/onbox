@@ -1,10 +1,7 @@
-* Better prod deployment
-
-* Auto-scan for new files
-
 * Clean up for github
 
 -- Post 0.1
+ * Make backgroundrb ubuntu service
 
  * Support for marking tv shows as watched
 
