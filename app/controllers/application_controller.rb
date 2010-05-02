@@ -55,8 +55,8 @@ class ApplicationController < ActionController::Base
         @genres_column_1 = all_genres
       else
         @genres_column_1 = all_genres[0..col_length]
-        @genres_column_2 = all_genres[col_length..(col_length*2)]
-        @genres_column_3 = all_genres[(col_length*2)..all_genres.length]
+        @genres_column_2 = all_genres[(col_length + 1)..(col_length*2)]
+        @genres_column_3 = all_genres[((col_length*2) + 1)..all_genres.length]
       end  
     end  
 end
