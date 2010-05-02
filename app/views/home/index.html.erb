@@ -7,6 +7,7 @@
 
   <script type="text/javascript" src="<%= ONBOX_CONFIG[:yui_path] %>/history/history-min.js"></script> 
 
+  <%= javascript_include_tag 'home' %>
 <% end %>
 
 <% content_for :title do %>
@@ -18,7 +19,6 @@
 		text-indent: 0px;
 	}
 
-	/* Always be sure to give your carousel items a width and a height */
 	.yui-carousel-element li {
 	    width: 160px;
 	    height: 205px;
@@ -65,94 +65,18 @@
     <div id="videoCountWrapper">
         <%= @video_content_count %> videos
     </div>
-
 	<script>
-		var carWidth = <%= HomeController::CAROUSEL_WIDTH %>;
-		var carHeight = <%= HomeController::CAROUSEL_HEIGHT %>;
-		var carousel = null;
-	
-		YAHOO.util.Event.onDOMReady(function (ev) {
-		    var carouselState = YAHOO.util.History.getBookmarkedState("carouselState");
-		    var initialCarouselState = carouselState || "0";
-			
-			YAHOO.util.History.register("carouselState", initialCarouselState, function (state) {
-				setCarouselFirstVisible(parseInt(state));
-		    });
-			
-			YAHOO.util.History.onReady(function () {
-		        var currentState = YAHOO.util.History.getCurrentState("carouselState");
-				YAHOO.log("Init carousel with state: " + currentState);				
-		        initCarousel(parseInt(currentState));
-		    });
-			
-		    // Initialize the browser history management library.
-		    try {
-		        YAHOO.util.History.initialize("yui-history-field", "yui-history-iframe");
-		    } catch (e) {
-		        YAHOO.log("Unable to init carousel history: " + e);
-		        initCarousel(0);
-		    }
-		});
-		
-		function initCarousel(firstVisible) {
-		    carousel = new YAHOO.widget.Carousel("contentContainer", {
-		        animation: { speed: 0.5, effect: YAHOO.util.Easing.easeOut },
-		        numVisible: [carWidth,carHeight],
-				numItems: <%= @video_content_count %>
-		    });
-		
-			carousel.on("loadItems", loadCarouselItems);
-			carousel.on("pageChange", recordCarouselHistory);
-		    carousel.render();
-			carousel.show();
-			setCarouselFirstVisible(firstVisible);   			
-		}
-		
-		function loadCarouselItems(o) {
-			var offset = 0;
-			var pageSize = carWidth*carHeight;
-	        if(o){
-	            YAHOO.log('Num: ' + o.num + " First: " + o.first + " Last: " + o.last);   
-	            offset = o.first;
-				pageSize = o.num;
-	        }
-
-			new Ajax.Request("<%= home_carousel_path params[:criteria] %>", { 
-				method:'get', 
-				parameters: {'offset': offset, 'page_size': pageSize},
-				evalJS:'force' 
-			});		
-		}
-	
-		function addCarouselItem(item){
-			carousel.addItem(item);
-		}
-		
-		function recordCarouselHistory(e){
-	        var newState = carousel.get('firstVisible');
-	        try {
-	            var currentState = YAHOO.util.History.getCurrentState("carouselState");
-				//YAHOO.log("Carousel new: " + newState + " current: " + currentState);
-	            if (newState != currentState) {
-	                YAHOO.util.History.navigate("carouselState", "" + newState);
-	            }
-	        } catch (e) {
-	            YAHOO.log("Error recording carousel history: " + e);
-	        }			
-		}
-		
-		//Sets the first visible without any animiation
-		function setCarouselFirstVisible(state){
-			var animation = carousel.get('animation');
-			carousel.set('animation', {speed: 0, effect: null});
-			carousel.set("firstVisible", state);
-			carousel.set('animation', animation);
-		}
+	    var videoCarousel = new VideoCarousel('contentContainer', <%= @video_content_count %>, 
+	                                          <%= HomeController::CAROUSEL_WIDTH %>,
+	                                          <%= HomeController::CAROUSEL_HEIGHT %>,
+	                                          '<%= home_carousel_path params[:criteria] %>');
 	</script>
 <% else %>
 	<div>
 		No videos.
 	</div>
 <% end %>
+
+<!-- Needed by YUI history which is used to record the carousel page -->
 <iframe id="yui-history-iframe" src="/history"></iframe> 
 <input id="yui-history-field" type="hidden">

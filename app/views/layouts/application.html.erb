@@ -139,6 +139,10 @@
 	<script>
        //Enable debug to console
        YAHOO.widget.Logger.enableBrowserConsole();
+       
+		function isUserLoggedIn(){
+		 return <%= current_user.present? %>;
+		}       
 	</script>
 </body>
 </html>

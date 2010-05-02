@@ -1,6 +1,9 @@
 * Clean up for github
 
 -- Post 0.1
+ * Allow user to set order on home page by name, date added, etc
+ * View video
+
  * Make backgroundrb ubuntu service
 
  * Support for marking tv shows as watched
@@ -13,11 +16,10 @@
 
  * Add genres page, add edit genres (to mark priority)
 
- * Allow user to set order on home page by name, date added, etc
-
  * Remove dodgy symbol enum from video content and file reference model
  * Doesnt recognise mini series as tv shows
 
+ * No error message if login fails
 Lower Priority:
  * Improve coverage
  * Fix file accordion rendering in cucumber.  Remove show_file_accordion config

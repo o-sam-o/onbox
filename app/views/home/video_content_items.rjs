@@ -1,5 +1,5 @@
 page.call 'YAHOO.log', 'Carousel update callback'
 for video_content in @video_contents
   item_html = render_to_string(:partial => "carousel_item", :object => video_content)
-	page.call 'addCarouselItem', item_html
+	page.call 'videoCarousel.addCarouselItem', item_html
 end
