@@ -16,6 +16,8 @@
 <script src="<%= ONBOX_CONFIG[:yui_path] %>/container/container-min.js"></script>
 <script type="text/javascript" src="<%= ONBOX_CONFIG[:yui_path] %>/button/button-min.js"></script> 
 
+<%= javascript_include_tag 'video_content_show' %>
+
 <style>
 
 .yui-dt table
@@ -119,7 +121,7 @@
 	</div>
 
 	<script type="text/javascript">
-		YAHOO.util.Event.addListener(window, "load", function() {
+		YAHOO.util.Event.onDOMReady(function() {
 
 			var topMenu = new YAHOO.widget.AccordionView('topAccordion', {width: '550px', animationSpeed: '0.6', animate: true,  
 															expandable: true, collapsible: true, effect: YAHOO.util.Easing.easeNone});
@@ -165,117 +167,18 @@
 		<div class="viewActionsWrapper">
 			<% if current_user %>
 				<%= yui_button_link :text => 'Edit Details', :link => edit_video_content_path(@video_content) %>
-				<%= yui_button_link :text => 'Change Imdb Id', :onclick => 'changeImdbId()' %>
-				<%= yui_button_link :text => 'Refresh', :onclick => 'reloadFromImdb()' %>
+				<%= yui_button_link :text => 'Change Imdb Id', :onclick => 'imdbDialog.changeImdbId()' %>
+				<%= yui_button_link :text => 'Refresh', :onclick => 'imdbDialog.reloadFromImdb()' %>
 			<% end %>
 		</div>
 	</div>
 	
-	<div id="changeImdbDialog" class="yui-pe-content hiddenDiv"> 
-		<div class="hd">Change Imdb Id</div> 
-		<div class="bd"> 
-			<div id="changeImdbDialogTabs" class="yui-navset">
-			    <ul class="yui-nav">
-			        <li class="selected"><a href="#enterIdTab"><em>Enter Id</em></a></li>
-					<li><a href="#tab2"><em>Search</em></a></li>
-				</ul>
-				<div class="yui-content">
-				<div id="enterIdTab">
-					<% form_tag reload_video_content_path(@video_content), :method => :post, :class => 'defaultForm' do %>
-					  <fieldset>
-					      <legend>Details:</legend>
-						  <div class="defaultFormField">
-						    <%= label_tag "imdb_id", "Imdb Id" %>
-						    <%= text_field_tag 'imdb_id', @video_content.imdb_id, :class => "defaultFormTextField" %>
-						  </div>
-					  </fieldset>
-					<% end %>
-				</div>
-				<div id="searchTab">
-					  <form class="defaultForm">
-						<fieldset>
-					      <legend>Search:</legend>
-						  <div class="defaultFormField">
-						    <%= label_tag "search_term" %>
-						    <%= text_field_tag 'search_term', (@video_content.video_file_references.empty? ? @video_content.name : Util::FileNameCleaner.get_name_info(@video_content.video_file_references.first.location).name), :class => "defaultFormTextField" %>
-						    <%= yui_button_link :text => 'Search', :onclick => 'searchImdb()' %>
-						  </div>
-					  	</fieldset>
-						<div id="imdbSearchResult"/>						
-					  </form>
-				</div>
-			</div>
-		</div> 
-	</div>
+
+	<%= render :partial => 'change_imdb_dialog' %>
 	
 	<script>
-		YAHOO.namespace("onbox.video.imdb");
-		YAHOO.util.Event.addListener(window, "load", function() {
-
-			// Define various event handlers for Dialog
-			var handleSubmit = function() {
-				this.submit();
-			};
-			var handleCancel = function() {
-				this.cancel();
-			};
-
-			// Instantiate the Dialog
-			YAHOO.onbox.video.imdb.dialog = new YAHOO.widget.Dialog("changeImdbDialog", 
-									{ width : "600px",
-									  fixedcenter : true,
-									  visible : false,
-									  postmethod : 'form',
-									  constraintoviewport : true,
-									  buttons : [ { text:"Change", handler:handleSubmit, isDefault:true },
-										      { text:"Cancel", handler:handleCancel } ]
-									});
-
-			// Validate the entries in the form to require that both first and last name are entered
-			YAHOO.onbox.video.imdb.dialog.validate = function() {
-				var data = this.getData();
-				if (data.imdb_id == "") {
-					alert("You must provide an IMDB id.");
-					return false;
-				} else {
-					return true;
-				}
-			};
-			YAHOO.onbox.video.imdb.tabs = new YAHOO.widget.TabView('changeImdbDialogTabs'); 
-			
-			// Render the Dialog
-			YAHOO.onbox.video.imdb.dialog.render();
-			// Make visable
-			YAHOO.util.Dom.removeClass("changeImdbDialog", "hiddenDiv");
-
-		});	
-		
-		function changeImdbId() {
-			YAHOO.onbox.video.imdb.dialog.show()
-		}
-		
-		function reloadFromImdb(imdb_id) {
-			if (imdb_id){
-				$('imdb_id').setValue(imdb_id);
-			}
-			if (!YAHOO.onbox.video.imdb.dialog.getData().imdb_id){
-				//We cant reload from imdb if we dont have an id, show set imdb dialog
-				changeImdbId();
-				return;
-			}
-			YAHOO.onbox.video.imdb.dialog.submit()
-		}
-		
-		function searchImdb(){
-			var searchTerm = $('search_term').getValue();
-			if (searchTerm == ''){
-				alert('Please enter a search term');
-				return;
-			}
-			$('imdbSearchResult').innerHTML = '<div style="font-weight:bold;padding: 5px;" align="center">Searching for ' + searchTerm + '...</div>';
-			new Ajax.Updater('imdbSearchResult', '<%= search_imdb_video_content_path(@video_content) %>', 
-			{ method: 'get', parameters: {search_term: searchTerm}, evalScripts: true });
-		}
+        var imdbDialog = new ChangeImdbDialog('changeImdbDialog', 'changeImdbDialogTabs', 
+                                          '<%= search_imdb_video_content_path(@video_content) %>');
 		
 		
 		function markVideoWatched(watched){

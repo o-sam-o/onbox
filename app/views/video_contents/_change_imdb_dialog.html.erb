@@ -1,0 +1,36 @@
+<div id="changeImdbDialog" class="yui-pe-content hiddenDiv"> 
+	<div class="hd">Change Imdb Id</div> 
+	<div class="bd"> 
+		<div id="changeImdbDialogTabs" class="yui-navset">
+		    <ul class="yui-nav">
+		        <li class="selected"><a href="#enterIdTab"><em>Enter Id</em></a></li>
+				<li><a href="#tab2"><em>Search</em></a></li>
+			</ul>
+			<div class="yui-content">
+			<div id="enterIdTab">
+				<% form_tag reload_video_content_path(@video_content), :method => :post, :class => 'defaultForm' do %>
+				  <fieldset>
+				      <legend>Details:</legend>
+					  <div class="defaultFormField">
+					    <%= label_tag "imdb_id", "Imdb Id" %>
+					    <%= text_field_tag 'imdb_id', @video_content.imdb_id, :class => "defaultFormTextField" %>
+					  </div>
+				  </fieldset>
+				<% end %>
+			</div>
+			<div id="searchTab">
+				  <form class="defaultForm">
+					<fieldset>
+				      <legend>Search:</legend>
+					  <div class="defaultFormField">
+					    <%= label_tag "search_term" %>
+					    <%= text_field_tag 'search_term', (@video_content.video_file_references.empty? ? @video_content.name : Util::FileNameCleaner.get_name_info(@video_content.video_file_references.first.location).name), :class => "defaultFormTextField" %>
+					    <%= yui_button_link :text => 'Search', :onclick => 'imdbDialog.searchImdb()' %>
+					  </div>
+				  	</fieldset>
+					<div id="imdbSearchResult"/>						
+				  </form>
+			</div>
+		</div>
+	</div> 
+</div>

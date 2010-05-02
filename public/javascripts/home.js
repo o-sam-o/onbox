@@ -23,7 +23,7 @@ function VideoCarousel (container, videoCount, carWidth, carHeight, loadUrl) {
 		        initCarousel(0);
 		    }  
     }
-    YAHOO.util.Event.onDOMReady(init);
+    YAHOO.util.Event.addListener(window, "load", init);
     
 		function initCarousel(firstVisible) {
 		    carousel = new YAHOO.widget.Carousel(container, {
@@ -36,7 +36,8 @@ function VideoCarousel (container, videoCount, carWidth, carHeight, loadUrl) {
 			carousel.on("pageChange", recordCarouselHistory);
 		  carousel.render();
 			carousel.show();
-			setCarouselFirstVisible(firstVisible);   			
+			setCarouselFirstVisible(firstVisible);   
+			YAHOO.util.Dom.removeClass(container, "hiddenDiv");			
 		}
 		
 		function loadCarouselItems(o) {
