@@ -33,6 +33,8 @@ class HomeController < ApplicationController
     def extract_criteria
       @genres = params[:criteria].dup rescue []
       @unwatched = @genres.delete('unwatched').present?
+      @video_type = 'Movie' if @genres.delete('movie').present?
+      @video_type = 'TvShow' if @genres.delete('tvshow').present?
     end  
   
     def search_conditions
@@ -48,14 +50,14 @@ class HomeController < ApplicationController
         args << @genres.collect { |name| Genre.find(:first, :conditions=>['LOWER(name) = ?', name.downcase])  }
       end 
       
-      if params[:q]
+      unless params[:q].blank?
         query << 'video_contents.name like ?'
         args << "%#{params[:q]}%"
       end  
       
-      if params[:type]
+      if @video_type
         query << 'video_contents.type = ?'
-        args << "#{params[:type]}"
+        args << @video_type
       end      
       
       return query ? [query.join(' and '), *args] : []

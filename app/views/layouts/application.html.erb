@@ -49,7 +49,7 @@
 			<div id="cat_navi" class="wrap"> 
 				<ul id="secnav"> 
 					<li><a href="<%= url_for :controller => 'home' %>">View All<br/><span>Show videos</span></a></li>
-					<li><a href="<%= home_search_path 'unwatched' %>">Unwatched<br/><span>Show videos</span></a></li>
+					<li><a href="<%= home_search_path 'unwatched' %>">Unwatched<br/><span>Unseen videos</span></a></li>
 					<li>
 						<a href="#">Genres<br/><span>Most popular</span></a>
 						<ul>
@@ -65,10 +65,10 @@
 						</ul>
 					</li>
 					<li>
-						<a href="#">Video Type<br/><span>movie or tv show</span></a>
+						<a href="#">Video Type<br/><span>Movie or tv show</span></a>
 						<ul>
-						    <li><a href="<%= home_search_path :type => 'Movie' %>">Movie</li>
-						    <li><a href="<%= home_search_path :type => 'TvShow' %>">Tv Show</a></li>
+						    <li><a href="<%= home_search_path ['movie'] %>">Movies</li>
+						    <li><a href="<%= home_search_path ['tvshow'] %>">Tv Shows</a></li>
 						</ul>
 					</li>					
 				</ul>
