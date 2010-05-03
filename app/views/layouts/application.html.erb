@@ -75,7 +75,7 @@
 			</div>
 			<div id="movieSearchDiv">
 			    <% form_tag root_path, :method => :get do %>
-			        <%= label_tag "q", "Search All" %>
+			        <%= label_tag "_q", "Search All" %>
 			        <%= text_field_with_auto_complete nil, 'q',
             			{ :value => params[:q], :placeholder => 'Search Term' }, 
             			{ :url => auto_complete_video_contents_path, :param_name => 'search' } %>

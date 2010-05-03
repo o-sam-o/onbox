@@ -43,7 +43,7 @@
 		</div>		
 		
 		<div id="watchedWrapper" class="<%= 'notWatched' unless @watched %>">
-			<a id="watchedContentLink" class="fakeLink" onclick="markVideoWatched(<%= !@watched %>); return false" href="#"><%=image_tag "watched.png" %></a>
+			<a id="watchedContentLink" class="fakeLink" href="#" onclick="return false;"><%=image_tag "watched.png" %></a>
 			<%=yui_tooltip "watchedContentLink", @watched ? "Watched" : "Click to mark video as watched" %>
 		</div>
 		
@@ -184,34 +184,8 @@
         var imdbDialog = new ChangeImdbDialog('changeImdbDialog', 'changeImdbDialogTabs', 
                                           '<%= search_imdb_video_contents_path(@video_content) %>');
 		
-		
-		function markVideoWatched(watched){
-			if (!isUserLoggedIn()){
-				window.location = "<%= login_path %>";
-				return;
-			}
-			new Ajax.Request('<%= watch_video_content_path(@video_content) %>',
-			  {
-			    method:'post',
-				parameters: {watched: watched},
-			    onSuccess: function(transport){
-			      if(transport.responseText == "true"){
-					if(watched){
-						YAHOO.util.Dom.removeClass('watchedWrapper', 'notWatched'); 
-						document.getElementById('watchedContentLink').onclick = function(){markVideoWatched(false);};
-						changeTooltip('watchedContentLink', 'Watched');
-					}else{
-						YAHOO.util.Dom.addClass('watchedWrapper', 'notWatched'); 
-						document.getElementById('watchedContentLink').onclick = function(){markVideoWatched(true);};
-						changeTooltip('watchedContentLink', 'Click to mark as watched');
-					}
-			      }else{
-					alert('Error marking video watched: ' + transport.responseText)
-				  }
-			    },
-			    onFailure: function(){ alert('Failed to mark video as watched.') }
-			  });
-		}
-	
+		YAHOO.util.Event.addListener(window, "load", function(){
+		   	addWatchClickListener('watchedContentLink', <%= @video_content.id %>, <%= !@watched %>); 
+		});
 	</script>
 </div>
