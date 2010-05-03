@@ -20,6 +20,11 @@ function ChangeImdbDialog (container, tabsContainer, searchUrl) {
 		
 		// Render the Dialog
 		dialog.render();
+		
+		//Handle enter being pressed in imdb search field
+		var enterListener = new YAHOO.util.KeyListener("search_term", {keys:13}, function(){searchImdb(); return false;});
+    enterListener.enable();
+		
 		// Make visable
 		YAHOO.util.Dom.removeClass(container, "hiddenDiv");
 	}	
