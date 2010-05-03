@@ -37,15 +37,19 @@
 
 <div class="viewWrapper overclear">
 	<div class="viewCoreMetadata">
+		
 		<div id="showTypeIconWrapper">
 			<%=image_tag @video_content.movie? ? 'movie.png' : 'tv_show.png', :alt => @video_content.movie? ? 'Movie' : 'Tv Show', :title => @video_content.movie? ? 'Movie' : 'Tv Show'%>
 		</div>		
+		
 		<div id="watchedWrapper" class="<%= 'notWatched' unless @watched %>">
 			<a id="watchedContentLink" class="fakeLink" onclick="markVideoWatched(<%= !@watched %>); return false" href="#"><%=image_tag "watched.png" %></a>
 			<%=yui_tooltip "watchedContentLink", @watched ? "Watched" : "Click to mark video as watched" %>
 		</div>
+		
 		<h1 class="viewTitle"><%=h @video_content.display_name %></h1>
 		<div class="viewPlotSummary"><%=h @video_content.plot %></div>
+		
 		<div class="viewCoreDetailsWrapper overclear">
 			<div class="viewCoreDetailsLeft">
 				<div>
@@ -178,7 +182,7 @@
 	
 	<script>
         var imdbDialog = new ChangeImdbDialog('changeImdbDialog', 'changeImdbDialogTabs', 
-                                          '<%= search_imdb_video_content_path(@video_content) %>');
+                                          '<%= search_imdb_video_contents_path(@video_content) %>');
 		
 		
 		function markVideoWatched(watched){

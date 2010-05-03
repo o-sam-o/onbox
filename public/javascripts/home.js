@@ -23,7 +23,7 @@ function VideoCarousel (container, videoCount, carWidth, carHeight, loadUrl) {
 		        initCarousel(0);
 		    }  
     }
-    YAHOO.util.Event.addListener(window, "load", init);
+    YAHOO.util.Event.onDOMReady(init);
     
 		function initCarousel(firstVisible) {
 		    carousel = new YAHOO.widget.Carousel(container, {

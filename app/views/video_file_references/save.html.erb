@@ -36,7 +36,7 @@
 	    <%= f.label :video_content_name, "Video" %>
 	    <%= text_field_with_auto_complete :video_content, :name, 
 			{ :class => "defaultFormTextField", :value => @reference.video_content_name }, 
-			{ :url => url_for(:controller => 'video_contents', :action => 'auto_complete'), :method => :get, :param_name => 'search' } %>
+			{ :url => auto_complete_video_contents_path, :param_name => 'search' } %>
 		<%= error_message_on @reference, :video_content_name, :css_class => "defaultFormError" %>
 	  </div>	
   </fieldset>

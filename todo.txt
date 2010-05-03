@@ -1,3 +1,5 @@
+* Multi page search / type bug
+
 * Clean up for github
 
 -- Post 0.1

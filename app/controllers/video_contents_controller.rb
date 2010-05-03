@@ -20,7 +20,7 @@ class VideoContentsController < ApplicationController
 
   def search_imdb
     @search_results = Util::ImdbMetadataScraper.search_imdb(params[:search_term])
-    render :layout => false
+    render 'video_contents/search_imdb.html', :layout => false
   end  
 
   def new
