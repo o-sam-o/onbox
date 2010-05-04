@@ -59,6 +59,8 @@ class ApplicationHelperTest < ActionView::TestCase
     # More than one resize
     assert_equal 'width="93" height="140"', poster_width_and_height(VideoPoster.new(:width => 200, :height => 300), 100, 140)
     assert_equal 'width="100" height="70"', poster_width_and_height(VideoPoster.new(:width => 400, :height => 280), 100, 140)
+    
+    assert_equal '', poster_width_and_height(VideoPoster.new(:width => nil, :height => nil), 100, 140)
   end  
   
 end

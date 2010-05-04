@@ -1,5 +1,6 @@
 <div style="width: 600px;">
-<% form_for [@video_content, @video_poster], :html => { :class => 'defaultForm' } do |f| %>
+<% method = @video_poster.new_record? ? :post : :put  %>
+<% form_for [@video_content, @video_poster], :url => (@video_poster.new_record? ? video_content_video_posters_path(@video_content) : video_content_video_poster_path(@video_content, @video_poster)), :html => {:method => method, :class => 'defaultForm' } do |f| %>
   <fieldset>
       <legend>Video Poster:</legend>
 	  <div class="defaultFormField">
@@ -9,7 +10,7 @@
 	  </div>
 	  <div class="defaultFormField">
 	    <%= f.label :size %>
-	    <%= f.select :size, VideoPosterSize.select_values %>
+	    <%= f.select :size, VideoPoster.poster_sizes %>
 		<%= error_message_on @video_poster, :size, :css_class => "defaultFormError" %>
 	  </div>
 	  </fieldset>

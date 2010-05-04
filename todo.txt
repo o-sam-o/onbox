@@ -2,7 +2,7 @@
 
 -- Post 0.1
  * Allow user to set order on home page by name, date added, etc
- * View video
+ * View video (html5 ?)
 
  * Make backgroundrb ubuntu service
 

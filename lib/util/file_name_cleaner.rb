@@ -1,46 +1,4 @@
 module Util
-  class FileNameInfo
-    attr_accessor :raw_name, :location, :name, :year, :series, :episode
-  
-    def initialize(params = {})
-      @name = params[:name]
-      @year = params[:year]
-      @raw_name = params[:raw_name]
-      @location = params[:location]
-      @series = params[:series]
-      @episode = params[:episode]
-    end
-
-    def to_s
-      s = ''
-      if @name
-        s += @name
-        s += " [#{@year}]" if @year
-        s += " S: #{@series} E: #{@episode}" if @series || @episode
-      elsif @raw_name
-        s += @raw_name
-      else
-        s += @location
-      end
-      s
-    end
-    
-    def <=>(other)
-      if series && other.series && series != other.series
-        return (series <=> other.series) 
-      elsif episode && other.episode && episode != other.episode
-        return (episode <=> other.episode)
-      elsif name != other.name
-        return (name <=> other.name)
-      elsif year && other.year
-        #Note: with year we want newest first
-        return (other.year <=> year)
-      else
-        return 0
-      end
-    end
-  end
-
   class FileNameCleaner
 
     FILE_SEP_REGEX = /\//
@@ -48,9 +6,9 @@ module Util
     CD_FOLDER_REGEX = /\/CD(\d)\//
     #Chars used in file names as a subsitude for spaces
     SPACE_SUB_REGEX = /(\.|_|\-)/
-    #TODO remove this duplication
-    CONTENT_SOURCES = /DVDRIP|1080p|720p|R5|DVDSCR|BDRip|CAM|TS|PPV|Xvid|divx|DVDSCREENER/i
-    CONTENT_SOURCE_REGEX = /(\(|\[|\s)+(DVDRIP|1080p|720p|R5|DVDSCR|BDRip|CAM|TS|PPV|Xvid|divx|DVDSCREENER)(\)|\]|\s|$)+/i
+    VIDEO_TYPE_NAMES = ['DVDRIP', '1080p', '720p','R5', 'DVDSCR', 'BDRip', 'CAM', 'TS', 'PPV', 'Xvid', 'divx', 'DVDSCREENER']
+    CONTENT_SOURCE_FOLDER_TEST_REGEX = /#{VIDEO_TYPE_NAMES.join('|')}/i
+    CONTENT_SOURCE_REGEX = /(\(|\[|\s)+(#{VIDEO_TYPE_NAMES.join('|')})(\)|\]|\s|$)+/i
     YEAR_REGEX = /(\(|\[|\s)+\d{4}(,|\)|\]|\s|$)+/
     SESSION_ESP_REGEX_1 = /S(\d{2})\s?E(\d{2})/i
     SESSION_ESP_REGEX_2 = /\s+(\d+)x(\d+)(\s|$)+/i
@@ -82,9 +40,9 @@ module Util
     
       #Check to see if we are better off looking at the folder name
       check_extention = true
-      unless raw_name =~ CONTENT_SOURCE_REGEX || raw_name =~ SESSION_ESP_REGEX_1
+      unless raw_name =~ CONTENT_SOURCE_FOLDER_TEST_REGEX || raw_name =~ SESSION_ESP_REGEX_1
         parent_folder = self.parent_folder_name(location)
-        if parent_folder && parent_folder =~ CONTENT_SOURCES
+        if parent_folder && parent_folder =~ CONTENT_SOURCE_FOLDER_TEST_REGEX
           raw_name = parent_folder
           check_extention = false
         end  

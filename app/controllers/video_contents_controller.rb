@@ -36,6 +36,7 @@ class VideoContentsController < ApplicationController
     @watched = current_user ? current_user.watched?(@video_content) : false
   end
 
+  # Refresh metadata from imdb, also allows the changing of the imdb id 
   def reload
     if params[:imdb_id].present? && params[:imdb_id] != @video_content.imdb_id
       if @video_content.unique_imdb_id?(params[:imdb_id])

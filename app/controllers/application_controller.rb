@@ -47,7 +47,7 @@ class ApplicationController < ActionController::Base
       return page, offset
     end
     
-    
+    # Load content needed by application layout
     def base_layout_load 
       all_genres = Genre.all(:order => 'name')
       col_length = all_genres.length / 3

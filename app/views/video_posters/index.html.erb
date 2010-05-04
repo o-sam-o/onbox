@@ -26,7 +26,7 @@
 <tbody>
 <% @video_posters.each do |poster| %>
   <tr>
-    <td><%=h VideoPosterSize.display_name(poster.size) %></td>
+    <td><%=h poster.size.titleize %></td>
     <td><%=h poster.location %></td>
     <td><%=h poster.created_at %></td>
 	<td>
