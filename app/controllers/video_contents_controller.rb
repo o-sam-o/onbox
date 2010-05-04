@@ -48,7 +48,7 @@ class VideoContentsController < ApplicationController
       end  
     end  
     
-    @video_content.state = VideoContentState::PENDING
+    @video_content.state = 'pending'
     @video_content.save!
     
     MiddleMan.worker(:scrap_imdb_worker).async_scrap_for_video_content(:arg => @video_content.id)

@@ -40,7 +40,7 @@ class ScrapImdbWorker < BackgrounDRb::MetaWorker
       imdb_id = get_imdb_id(video_content)
       if imdb_id.blank?
         logger.error("Failed to find imdb id for video: #{video_content.display_name}")
-        video_content.state = VideoContentState::NO_IMDB_ID
+        video_content.state = 'no_imdb_id'
         video_content.save! and return
       elsif !video_content.unique_imdb_id?(imdb_id)
         logger.info "Found duplicate video content for imdb id #{imdb_id} merging"
@@ -63,13 +63,13 @@ class ScrapImdbWorker < BackgrounDRb::MetaWorker
                                          :release_date => movie_info['release date'], :genre_ids => genres.collect { |g| g.id },
                                          :director => movie_info['director'], :tag_line => movie_info['tagline'],
                                          :language => movie_info['language'], :runtime => movie_info['runtime'],
-                                         :state => VideoContentState::PROCESSED)
+                                         :state => 'processed')
       when :tv_show
         video_content.update_attributes!(:name => movie_info['title'], :year => movie_info['year'],
                                          :imdb_id => imdb_id, :plot => movie_info['plot'], 
                                          :genre_ids => genres.collect { |g| g.id }, :tag_line => movie_info['tagline'],
                                          :language => movie_info['language'], :runtime => movie_info['runtime'],
-                                         :state => VideoContentState::PROCESSED)
+                                         :state => 'processed')
         # Reload if conten type changed so we can set the episodes
         video_content = VideoContent.find(video_content.id) unless video_content.tv_show?
         video_content.tv_episodes.replace(create_or_load_tv_episodes(movie_info, video_content)) 

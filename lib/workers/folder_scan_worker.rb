@@ -49,10 +49,10 @@ class FolderScanWorker < BackgrounDRb::MetaWorker
       if name_info.series || name_info.episode
         # If file name contains series and episode (e.g. E02S04) assume tv show 
         video_content = TvShow.new(:name => name_info.name, :year => name_info.year, 
-                                   :state => VideoContentState::PENDING)
+                                   :state => 'pending')
       else  
         video_content = Movie.new(:name => name_info.name, :year => name_info.year, 
-                                  :state => VideoContentState::PENDING)
+                                  :state => 'pending')
       end
       video_content.save!
       reference.video_content = video_content and reference.save!

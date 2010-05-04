@@ -187,7 +187,7 @@ class ScrapImdbWorkerTest < Test::Unit::TestCase
     
     worker = ScrapImdbWorker.new        
     worker.scrap_all_pending
-    assert_equal movie.state, VideoContentState::NO_IMDB_ID
+    assert_equal movie.state, 'no_imdb_id'
   end  
   
   should 'merge duplicate video contents if scraping returns an existing imdb id' do

@@ -30,7 +30,7 @@
 	    <td><%=h video_content.name %></td>
 	    <td><%=h video_content.year %></td>
 		<td><%=h video_content.type %></td>
-	    <td><%=h VideoContentState.display_name(video_content.state) %></td>
+	    <td><%=h video_content.state_display_name %></td>
 	    <td>
 			<%= link_to 'Show', video_content %> |
 	        <%= link_to 'Edit', edit_video_content_path(video_content) %> |

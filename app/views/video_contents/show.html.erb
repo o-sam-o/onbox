@@ -66,7 +66,7 @@
 				<%= view_content_details "Runtime", @video_content.runtime_formatted %>				
 			</div>
 			<div class="viewCoreDetailsRight">
-				<%= view_content_details "Status", VideoContentState.display_name(@video_content.state) %>	
+				<%= view_content_details "Status", @video_content.state_display_name %>	
 				<%= view_content_details "Release Date", @video_content.release_date %>	
 				<%= view_content_details "Language", @video_content.language %>		
 				<%= view_content_details "Tagline", @video_content.tag_line %>				

@@ -29,11 +29,18 @@ class VideoContentTest < ActiveSupport::TestCase
   end
 
   should 'return state display name' do
-    assert_equal 'Pending', VideoContentState.display_name(:pending)
+    assert_equal 'Pending', VideoContent.state_display_name('pending')
+    assert_equal 'Processed', VideoContent.state_display_name('processed')
+    assert_equal 'Unknown Imdb Id', VideoContent.state_display_name('no_imdb_id')
   end 
   
+  should 'return state display name from instances' do
+      movie = Movie.new(:state => 'processed')
+      assert_equal 'Processed', movie.state_display_name
+  end
+  
   should 'return state select values' do
-    assert_not_nil VideoContentState.select_values
+    assert_not_nil VideoContent.possible_states
   end  
   
   should 'validate uniqueness of an imdb id' do

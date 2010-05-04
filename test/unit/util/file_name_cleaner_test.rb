@@ -98,6 +98,9 @@ class FileNameCleanerTest < Test::Unit::TestCase
 	  content_test_helper('/test/Fifty.Dead.Men.Walking.2008.DVDRIP.XviD-ZEKTORM/FDMW-ZEKTORM.avi', 
 	                      'Fifty Dead Men Walking 2008 DVDRIP XviD ZEKTORM', 'Fifty Dead Men Walking', 2008)
 	  content_test_helper('/test/In.The.Loop.DVDRip.XviD-DMT/CD1/dmt-intheloop1.avi', 'In The Loop DVDRip XviD DMT', 'In The Loop')
+	  
+	  content_test_helper('/test/Assassination.Of.A.High.School.President.2008.DVDRip.XviD-ViSiON/aoahsp-xvid-vision.avi', 
+	                      'Assassination Of A High School President 2008 DVDRip XviD ViSiON', 'Assassination Of A High School President', 2008)
 	end  
 	
 	should 'strip LIMITED from movie name' do

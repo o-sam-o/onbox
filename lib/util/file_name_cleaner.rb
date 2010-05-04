@@ -40,7 +40,7 @@ module Util
     
       #Check to see if we are better off looking at the folder name
       check_extention = true
-      unless raw_name =~ CONTENT_SOURCE_FOLDER_TEST_REGEX || raw_name =~ SESSION_ESP_REGEX_1
+      unless raw_name =~ CONTENT_SOURCE_REGEX || raw_name =~ SESSION_ESP_REGEX_1
         parent_folder = self.parent_folder_name(location)
         if parent_folder && parent_folder =~ CONTENT_SOURCE_FOLDER_TEST_REGEX
           raw_name = parent_folder

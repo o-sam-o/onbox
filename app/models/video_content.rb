@@ -1,22 +1,3 @@
-class VideoContentState
-  PENDING = 'pending'
-  PROCESSED = 'processed'
-  NO_IMDB_ID = 'no_imdb_id'
-  
-  DISPLAY_NAMES = {:pending => "Pending", :processed => "Processed", :no_imdb_id => "Unknown Imdb Id"}
-  
-  def VideoContentState.display_name(value)
-    value = value.intern unless value.kind_of? Symbol
-    DISPLAY_NAMES[value]
-  end
-  
-  def VideoContentState.select_values
-    VALUES.map { |value| [VideoContentState.display_name(value), value.to_s]}
-  end
-  
-  VALUES = [PENDING, PROCESSED, NO_IMDB_ID]
-end
-
 class VideoContent < ActiveRecord::Base
   validates_presence_of :name, :state
   validates_uniqueness_of :imdb_id, :allow_nil => true, :allow_blank => true
@@ -25,7 +6,7 @@ class VideoContent < ActiveRecord::Base
   has_many :watches
   has_many :users, :through => :watches
   has_and_belongs_to_many :genres
-  validates_inclusion_of :state, :in => VideoContentState::VALUES
+  validates_inclusion_of :state, :in => ['pending', 'processed', 'no_imdb_id']
   
   def poster(size)
     return nil if not video_posters
@@ -78,5 +59,17 @@ class VideoContent < ActiveRecord::Base
   
   def change_type(new_type)
     self.type = new_type
+  end  
+  
+  def self.possible_states
+    return [["Pending", 'pending'], ["Processed", "processed"], ["Unknown Imdb Id", 'no_imdb_id']]
+  end  
+  
+  def state_display_name
+    VideoContent.state_display_name(self.state)
+  end
+  
+  def self.state_display_name(state)
+    self.possible_states.each{|s| return s.first if s.last == state}
   end  
 end

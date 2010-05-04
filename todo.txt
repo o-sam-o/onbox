@@ -20,6 +20,7 @@
  * Doesnt recognise mini series as tv shows
 
  * No error message if login fails
+ 
 Lower Priority:
  * Improve coverage
  * Fix file accordion rendering in cucumber.  Remove show_file_accordion config

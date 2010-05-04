@@ -49,7 +49,7 @@
 	  </div>
 	  <div class="defaultFormField">
 	    <%= video_form.label :state %>
-	    <%= video_form.select :state, VideoContentState.select_values %>
+	    <%= video_form.select :state, VideoContent.possible_states %>
 		<%= error_message_on @video_content, :state, :css_class => "defaultFormError" %>
 	  </div>
 	  <div class="defaultFormField">
