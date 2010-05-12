@@ -20,7 +20,7 @@ production:
   database: onbox
   encoding: utf8
   username: onbox
-  password: zoel
+  password: password_here
   host: localhost    
   pool: 5
   timeout: 5000
