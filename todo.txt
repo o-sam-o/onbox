@@ -1,6 +1,3 @@
-* Clean up for github
-
--- Post 0.1
  * Allow user to set order on home page by name, date added, etc
  * View video (html5 ?)
 
