@@ -35,11 +35,12 @@ __Step 1: Install dependencies__
 
     sudo apt-get install ruby irb rake libopenssl-ruby rubygems1.8 ruby1.8-dev git-core mysql-server libmysql-ruby libmysqlclient-dev
     
-Note: It should work with other databases but you will need to modify the adapter in the database.yml file    
+_Note: Onbox should work with other databases but you will need to modify the adapter in the database.yml file_ 
 
 __Step 2: Download app__
 
     sudo mkdir /var/www
+    cd /var/www
     git clone git://github.com/o-sam-o/onbox.git
 
 __Step 3: Install required gems__
@@ -82,8 +83,8 @@ and set the production poster_storage to:
 
 __Step 8: Start the app and background processor__
 
-Web Server:
-The correct way to to install Passenger. Instructions: [http://www.modrails.com/install.html](http://www.modrails.com/install.html)
+_Web Server:_
+The correct way is to install Passenger. Instructions: [http://www.modrails.com/install.html](http://www.modrails.com/install.html)
 
 The easy way is to use mongrel
     
@@ -91,10 +92,9 @@ The easy way is to use mongrel
     cd var/www/onbox/
     sudo ./script/server -d -e production
     
-BackgroundRb:
+_BackgroundRb:_
 Onbox has a background process that scans for new media and scraps IMDB for video info.  
     
-    sudo chmod +x prod_startup.sh
     cd var/www/onbox/
     sudo chmod 777 log/
     export PATH=$PATH:/var/lib/gems/1.8/bin
@@ -103,12 +103,12 @@ Onbox has a background process that scans for new media and scraps IMDB for vide
 _TODO: Add instructions to make backgroundrb a service_
 
 __Step 9: Basic app setup__
-You should now be able to hit the web app, it will be http://your.server:3000 if you used mongrel or whatever you setup as part of the mongrel process
+You should now be able to hit the web app, it will be at http://your.server:3000 if you used mongrel or whatever you setup as part of the passenger install.
 
- 1. Click "Admin" at the top right of the page
+ 1. Click "Admin" at the top left of the page
  2. Click the "Media Folders" link    
  3. Click "Add Media Folder"
- 4. Enter the location of your movie files and check scan, then save
+ 4. Enter the location of your movie files, check scan and press save
  5. Finally under Admin select "Scan All Folders Now"
  
 After a while you should see movies/tv shows appear on the home page.
