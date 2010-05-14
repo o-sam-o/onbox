@@ -1,5 +1,4 @@
-What's on the box?
-==================
+===What's on the box?===
 
 Overview
 --------
@@ -20,30 +19,34 @@ Features
 
 Screenshots
 -----------
-TODO
+![Home](http://farm2.static.flickr.com/1334/4606207320_9fe2dee45f.jpg) 
+Home Page
+
+![View Video](http://farm4.static.flickr.com/3372/4605593249_ed5216fa88.jpg)
+View Video
 
 Installation
 ------------
 Installation is not the easiest, hopefully this will become better overtime.  (This guide has been developed against Ubuntu 10.04)
 
-Step 1: Install dependencies
+_Step 1: Install dependencies_
 
     sudo apt-get install ruby irb rake libopenssl-ruby rubygems1.8 ruby1.8-dev git-core mysql-server libmysql-ruby libmysqlclient-dev
     
 Note: It should work with other databases but you will need to modify the adapter in the database.yml file    
 
-Step 2: Download app
+_Step 2: Download app_
 
     sudo mkdir /var/www
-    git clone gitosis@dub:onbox.git ---------  TODO UPDATE WITH CORRECT GITHUB COMMAND ----------------
+    git clone git://github.com/o-sam-o/onbox.git
 
-Step 3: Install required gems
+_Step 3: Install required gems_
     
     sudo gem install -v=2.3.5 rails
     sudo gem install rake chronic packet mysql
     rake gems:install
 
-Step 4: Setup database
+_Step 4: Setup database_
 
      mysqladmin -u root -p create onbox
      
@@ -54,17 +57,17 @@ Step 4: Setup database
 
 Now update the password in /var/www/onbox/config/database.yml to your password
 
-Step 5: Migrate database
+_Step 5: Migrate database_
 
     rake db:migrate RAILS_ENV=production
 
-Step 6: Create first user
+_Step 6: Create first user_
 
     /var/www/onbox/script/console production
     user = User.create!(:login => 'admin', :password => 'password_here', :password_confirmation => 'password_here')
     exit
 
-Step 7: Setup a directory for movie posters
+_Step 7: Setup a directory for movie posters_
 
 e.g.
 
@@ -75,10 +78,10 @@ Then update /var/www/onbox/config/onbox_config.xml
 and set the production poster_storage to:
 /var/movie_posters
 
-Step 7: Start the app and background processor
+_Step 7: Start the app and background processor_
 
 Web Server:
-The correct way to to install Passenger. Instructions: http://www.modrails.com/install.html
+The correct way to to install Passenger. Instructions: [http://www.modrails.com/install.html](http://www.modrails.com/install.html)
 
 The easy way is to use mongrel
     
@@ -97,7 +100,7 @@ Onbox has a background process that scans for new media and scraps IMDB for vide
     
 TODO: Add instructions to make backgroundrb a service
 
-Step 8: Basic app setup
+_Step 8: Basic app setup_
 You should now be able to hit the web app, it will be http://your.server:3000 if you used mongrel or whatever you setup as part of the mongrel process
 
  1. Click "Admin" at the top right of the page
@@ -108,8 +111,8 @@ You should now be able to hit the web app, it will be http://your.server:3000 if
  
 After a while you should see movies/tv shows appear on the home page.
 
-Step 9: Install MediaInfo CLI (Optional)
-In order to see details of media file formats you need to install MediaInfo CLI : [http://mediainfo.sourceforge.net/en/Download/Ubuntu]
+_Step 9: Install MediaInfo CLI (Optional)_
+In order to see details of media file formats you need to install MediaInfo CLI : [http://mediainfo.sourceforge.net/en/Download/Ubuntu](http://mediainfo.sourceforge.net/en/Download/Ubuntu)
 
 Contact
 -------
