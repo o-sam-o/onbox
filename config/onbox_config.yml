@@ -5,7 +5,7 @@ yui_path: /yui
   
 development:
   domain: localhost:3000
-  poster_storage: /Volumes/Other/OnBoxPosters/
+  poster_storage: /tmp/OnBoxPosters/
 
 test:
   domain: test.host

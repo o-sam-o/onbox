@@ -196,8 +196,8 @@ module Util
       end 
     
       def self.video_type_from_meta(doc)
-        return nil unless doc.search("//meta[@name='object_type']").first
-        type_text = doc.search("//meta[@name='object_type']").first.attributes['content']
+        return :movie unless doc.search("//meta[@property*='type']").first
+        type_text = doc.search("//meta[@property*='type']").first.attributes['content']
         case type_text
           when 'tv_show' then return :tv_show
           else return :movie

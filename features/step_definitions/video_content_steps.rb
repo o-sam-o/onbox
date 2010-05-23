@@ -18,5 +18,5 @@ end
 
 Then /^the video type should be "([^\"]*)"$/ do |type|
   img_name = type.gsub(/\s/, '_').downcase + '.png'
-  page.should have_css("img[src*='#{img_name}']")
+  page.has_css?("img[src*='#{img_name}']")
 end
