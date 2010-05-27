@@ -16,6 +16,11 @@ class HomeController < ApplicationController
     end  
     @video_content_count = VideoContent.count(:joins => search_joins, :conditions => search_conditions, :select => 'distinct video_contents.id')
     @video_contents = search
+    
+    # Assume only one search result and redirect to video page
+    if @video_content_count == 1 && params[:q].present?
+      redirect_to video_content_url(@video_contents.first)
+    end  
   end
   
   def video_content_items

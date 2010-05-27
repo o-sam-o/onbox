@@ -1,4 +1,5 @@
 mkdir -p /tmp/OnBoxDev
+mkdir -p /tmp/OnBoxPosters
 cd /tmp/OnBoxDev
 touch "2012.(cam).avi"
 touch AWAYDAYS.2009.DVDRip.XviD-DiNGiE.Kingdom.Release.avi

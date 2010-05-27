@@ -108,9 +108,29 @@ Feature: On Box Home Page
 
   Scenario: Video search
   	Given the following Movies:
-      |name   |year |state     | genres   |
-      |Avatar |2009 |processed | Action   |
-      |Batman |2002 |processed | Aventure |
+      |name    |year |state     | genres   |
+      |Avatar  |2009 |processed | Action   |
+      |Aviator |2004 |processed | Action   |
+      |Batman  |2002 |processed | Aventure |
+    And the following TvShows:
+      |name       |year |state     | genres  |
+      |Lost       |2004 |processed | Drama   |
+      |Underbelly |2010 |processed | Action  |
+  	And I am on the home page
+  	When I fill in "Search All" with "Av"
+  	And I press "Search"
+  	And I should see "Avatar"
+	And I should see "Aviator"
+  	And I should not see "Batman"
+  	And I should not see "Underbelly"
+  	And I should not see "Lost"	
+
+  Scenario: Video search exact match
+  	Given the following Movies:
+      |name    |year |state     | genres   |
+      |Avatar  |2009 |processed | Action   |
+      |Aviator |2004 |processed | Action   |
+      |Batman  |2002 |processed | Aventure |
     And the following TvShows:
       |name       |year |state     | genres  |
       |Lost       |2004 |processed | Drama   |
@@ -119,6 +139,4 @@ Feature: On Box Home Page
   	When I fill in "Search All" with "Avatar"
   	And I press "Search"
   	And I should see "Avatar"
-  	And I should not see "Batman"
-  	And I should not see "Underbelly"
-  	And I should not see "Lost"	
+	And I should be on the "Avatar" video_content page
