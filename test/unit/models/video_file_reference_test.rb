@@ -52,4 +52,13 @@ class VideoFileReferenceTest < ActiveSupport::TestCase
     assert (one <=> two) < 0
     assert (two <=> one) > 0
   end  
+  
+  should 'find unique property groups' do
+    ref = VideoFileReference.new 
+    ref.video_file_properties << VideoFileProperty.new(:group => 'one')
+    ref.video_file_properties << VideoFileProperty.new(:group => 'two')
+    ref.video_file_properties << VideoFileProperty.new(:group => 'one')
+    
+    assert ref.video_file_properties.unique_groups == ['one', 'two']
+  end  
 end

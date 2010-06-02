@@ -27,10 +27,6 @@
 									<% end %>																
 									<% group = prop.group %>
 									<div id="tab<%= group + file.id.to_s %>" style="display: none;">
-										<%= render :partial => 'shared/yui_table', 
-											:object => {:columns => ['Property', 'Value'], 
-														:tableId => "#{group + file.id.to_s }PropertyTable", 
-														:divId => "#{group + file.id.to_s }tableWrapper" } %>
 										<div id="<%= group + file.id.to_s %>tableWrapper">
 										<table id="<%= group + file.id.to_s %>PropertyTable">
 											<thead>
