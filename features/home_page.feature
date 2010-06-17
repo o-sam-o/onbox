@@ -140,3 +140,23 @@ Feature: On Box Home Page
   	And I press "Search"
   	And I should see "Avatar"
 	And I should be on the "Avatar" video_content page
+  
+  Scenario: Video order
+  	Given the following Movies:
+      |name    |year |state     | genres   | created_at 		  |
+      |Aviator |2004 |processed | Action   | 2010-03-04T21:39:32Z |
+      |Batman  |2002 |processed | Aventure | 2010-03-05T21:39:32Z |
+      |Avatar  |2009 |processed | Action   | 2009-03-06T21:39:32Z |
+    And the following TvShows:
+      |name       |year |state     | genres  | created_at |
+      |Lost       |2004 |processed | Drama   | 2010-03-01T21:39:32Z |
+      |Underbelly |2010 |processed | Action  | 2010-10-01T21:39:32Z |
+  	And I am on the home page
+  	And I order by "Name"
+  	And I should see "Avatar" as the 1st video
+	And I should see "Aviator" as the 2nd video
+  	And I should see "Underbelly" as the 5th video
+	And I order by "Added"
+  	And I should see "Avatar" as the 5th video
+	And I should see "Aviator" as the 3nd video
+  	And I should see "Underbelly" as the 1st video	

@@ -38,7 +38,7 @@
 </style>
 
 <h1>
-    <% if params[:q] %>
+    <% if params[:q].present? %>
         Search for: <%=h params[:q] %>
     <% else %>
         Your <%= 'Unwatched' if @unwatched %> <%= @genres.collect { |g| g.titleize }.join(' and ') %> 
@@ -62,14 +62,21 @@
 			<% end %>
 		</ol>
 	</div>
-    <div id="videoCountWrapper">
+    <div id="videoOrderWrapper">
+		Order by: 
+		<%= link_to "Name", home_search_path(params[:criteria], :q => params[:q], :order => 'name'), 
+		:class => (params[:order].blank? || params[:order] == 'name' ? 'bold' : '') %> |  
+		<%= link_to "Added", home_search_path(params[:criteria], :q => params[:q], :order => 'added'),
+		:class => (params[:order] == 'added' ? 'bold' : '') %> 
+	</div>
+	<div id="videoCountWrapper">
         <%= @video_content_count %> videos
     </div>
 	<script>
 	    var videoCarousel = new VideoCarousel('contentContainer', <%= @video_content_count %>, 
 	                                          <%= HomeController::CAROUSEL_WIDTH %>,
 	                                          <%= HomeController::CAROUSEL_HEIGHT %>,
-	                                          '<%= home_carousel_path params[:criteria], :q => params[:q] %>');
+	                                          '<%= home_carousel_path params[:criteria], :q => params[:q], :q => params[:order] %>');
 	</script>
 <% else %>
 	<div>

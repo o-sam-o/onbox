@@ -1,6 +1,7 @@
 Given /^the following Movies:$/ do |video_contents|
   video_contents.map_column!('genres', false) { |name| [Genre.find_or_create_by_name(name)] }
-  Movie.create!(video_contents.hashes)
+  
+  Movie.create!(video_contents.hashes) 
 end
 
 Given /^the following TvShows:$/ do |video_contents|

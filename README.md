@@ -116,6 +116,10 @@ After a while you should see movies/tv shows appear on the home page.
 __Step 10: Install MediaInfo CLI (Optional)__
 In order to see details of media file formats you need to install MediaInfo CLI : [http://mediainfo.sourceforge.net/en/Download/Ubuntu](http://mediainfo.sourceforge.net/en/Download/Ubuntu)
 
+Licence
+-------
+MIT
+
 Contact
 -------
-Sam Cavenagh (cavenaghweb@hotmail.com)
+Sam Cavenagh [cavenaghweb@hotmail.com](mailto:cavenaghweb@hotmail.com)

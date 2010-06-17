@@ -32,9 +32,17 @@ class HomeController < ApplicationController
       VideoContent.all(:limit => limit, :offset => offset, 
                        :conditions => search_conditions,
                        :select => 'distinct video_contents.*',
-                       :joins => search_joins, :order => "video_contents.name")
+                       :joins => search_joins, :order => order_by)
     end
-  
+    
+    def order_by
+      case params['order'] 
+      when "name" then return "video_contents.name"
+      when "added" then return "video_contents.created_at desc"
+      else return "video_contents.name"
+      end
+    end
+    
     def extract_criteria
       @genres = params[:criteria].dup rescue []
       @unwatched = @genres.delete('unwatched').present?

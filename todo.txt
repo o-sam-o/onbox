@@ -30,3 +30,16 @@ Lower Priority:
  * Scrap movie ratings
 
 Errors:
+3446477 Found media file: /media/content/Sam/torrentflux/sam/《母亲》Mother.2009.720p.BluRay.x264-aBD-人人影视高清发布组/《母亲》Mother.2009.720p.BluRay.x264-aBD-人人影视高清发布组.mkv
+3446478 Error processing file /media/content/Sam/torrentflux/sam/《母亲》Mother.2009.720p.BluRay.x264-aBD-人人影视高清发布组/《母亲》Mother.2009.720p.BluRay.x264-aBD-人人影视高清发布组.mkv:
+3446479  ActiveRecord::StatementInvalid (Mysql::Error: Illegal mix of collations (latin1_swedish_ci,IMPLICIT) and (utf8_general_ci,COERCIBLE) for operation '=': SELECT * FROM `video_file_references` WHERE (`video_file_references`.`location` = '/media/content/Sam/torrentflux/sam/《母亲》Mother.2009.720p.BluRay.x264-aBD-人人影视高清发布组/《母亲》Mother.2009.720p.BluRay.x264-aBD-人人影视高清发布组.mkv')  LIMIT 1):
+3446480     /var/lib/gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract_adapter.rb:219:in `log'
+3446481     /var/lib/gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/mysql_adapter.rb:323:in `execute'
+3446482     /var/lib/gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/mysql_adapter.rb:608:in `select'
+3446483     /var/lib/gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/database_statements.rb:7:in `select_all_without_query_cache'
+3446484     /var/lib/gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/query_cache.rb:62:in `select_all'
+3446485     /var/lib/gems/1.8/gems/activerecord-2.3.5/lib/active_record/base.rb:661:in `find_by_sql'
+3446486     /var/lib/gems/1.8/gems/activerecord-2.3.5/lib/active_record/base.rb:1548:in `find_every'
+3446487     /var/lib/gems/1.8/gems/activerecord-2.3.5/lib/active_record/base.rb:1505:in `find_initial'
+3446488     /var/lib/gems/1.8/gems/activerecord-2.3.5/lib/active_record/base.rb:613:in `find'
+3446489     /var/lib/gems/1.8/gems/activerecord-2.3.5/lib/active_record/base.rb:1900:in `find_by_location'
