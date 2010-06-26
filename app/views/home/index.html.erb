@@ -76,7 +76,8 @@
 	    var videoCarousel = new VideoCarousel('contentContainer', <%= @video_content_count %>, 
 	                                          <%= HomeController::CAROUSEL_WIDTH %>,
 	                                          <%= HomeController::CAROUSEL_HEIGHT %>,
-	                                          '<%= home_carousel_path params[:criteria], :q => params[:q], :order => params[:order] %>');
+	                                          '<%= home_carousel_path params[:criteria], :q => params[:q], 
+												:order => params[:order] %>');
 	</script>
 <% else %>
 	<div>

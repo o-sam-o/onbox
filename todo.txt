@@ -26,7 +26,6 @@ Lower Priority:
  * Angels & Demons failed. (& doesnt seem to get pass as part of the search)
  * Auto detect column names for yui table
  * Add better support for media not in imdb
- * Some sample files are getting collected and stored on dub
  * Scrap movie ratings
 
 Errors:

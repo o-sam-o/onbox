@@ -22,7 +22,7 @@ module Util
             subfile_path = "#{file}/#{subfile}"
             if subfile =~ /.*\.nfo$/
               nfo = subfile_path
-            elsif subfile =~ MEDIA_REGEX && subfile !~ /.*sample.*/
+            elsif subfile =~ MEDIA_REGEX && subfile !~ /.*sample.*/i
               yield subfile_path
               found_media = true
             elsif !%w[ . .. ].include?(subfile) && File.directory?(subfile_path)

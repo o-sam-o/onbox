@@ -30,6 +30,18 @@ class FolderScannerTest < Test::Unit::TestCase
       end  
     end  
   
+    should 'should ignore sample files' do
+      FakeFS do
+        FileUtils.mkdir_p("/content/dir")
+        FileUtils.mkdir_p("/content/dir/sub")
+        FileUtils.touch "/content/dir/sub/sample.avi"
+        FileUtils.touch "/content/dir/sub/sample.mpg"
+        FileUtils.touch "/content/dir/sub/Sample.avi"
+        
+        assert get_media_files.empty?
+      end  
+    end  
+  
     should 'should yeild media file' do
       FakeFS do
         FileUtils.mkdir_p("/content/dir")
