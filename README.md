@@ -16,6 +16,7 @@ Features
  * Detailed description of a video's file format
  * In-built IMDB search for when auto translation fails
  * Support for bulk editing video IMDB references.
+ * Embedded HTML5 Video & Quicktime playback
 
 Screenshots
 -----------
@@ -118,7 +119,7 @@ In order to see details of media file formats you need to install MediaInfo CLI 
 
 Licence
 -------
-MIT
+MIT (excluding all the stuff copied from others, e.g. theme)
 
 Contact
 -------

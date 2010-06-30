@@ -173,7 +173,12 @@
 		</div>
 	</div>
 
-	<div id="videoPlayer"></div>
+	<div id="videoPlayerDialog" class=" hidden"> 
+		<div class="hd">Video Preview</div> 
+		<div class="bd">
+			<div id="videoPlayer"></div>
+		</div>
+	</div>
 
 	<%= render :partial => 'change_imdb_dialog' %>
 	
@@ -183,21 +188,42 @@
 		
 		YAHOO.util.Event.addListener(window, "load", function(){
 		   	addWatchClickListener('watchedContentLink', <%= @video_content.id %>, <%= !@watched %>); 
+		
+			videoDialog = new YAHOO.widget.Dialog("videoPlayerDialog", 
+										{ fixedcenter : true,
+										  visible : false, 
+										  constraintoviewport : true
+										});
+			videoDialog.render();
+			YAHOO.util.Dom.removeClass("videoPlayerDialog", "hidden");
+			YAHOO.util.Event.addListener("hide", "click", videoDialog.hide, videoDialog, true);
+			videoDialog.hideEvent.subscribe(function() {
+				htmlVideoPlayer = document.getElementById("videoPlayerVideo")
+				if (htmlVideoPlayer){
+					htmlVideoPlayer.pause();
+				}else{
+					document.getElementById("videoPlayerObject").Stop();
+				}
+				document.getElementById("videoPlayer").innerHTML = "";
+			});
 		});
 		
 		function playWithVideoTag(video_url, width, height){
 			document.getElementById("videoPlayer").innerHTML = "<video id='videoPlayerVideo' autoplay controls src='" + video_url + ".mp4' type='video/mp4' width='" + width + "' height='" + height + "'/>";
-			$("videoPlayerVideo").scrollTo();
+			
+			videoDialog.show();
 		}
 		
 		function playWithObjectTag(video_url, ext, width, height){
-			object_tag = "<object id='videoPlayerVideo' type='video/quicktime' width='" + width + "' height='" + height + "'>";
+			object_tag = "<object id='videoPlayerObject' type='video/quicktime' width='" + width + "' height='" + height + "' autoplay='true'>";
 			object_tag = object_tag + '<param name="controller" value="true">';
 			object_tag = object_tag + '<param name="autostart" value="true">';
 			object_tag = object_tag + '<param name="src" value="' + video_url + '.' + ext + '">';
+			object_tag = object_tag + '<param name="cache" value="true">';
 			object_tag = object_tag + "</object>";
 			document.getElementById("videoPlayer").innerHTML = object_tag;
-			$("videoPlayerVideo").scrollTo();
+			
+			videoDialog.show();
 		}
 	</script>
 </div>

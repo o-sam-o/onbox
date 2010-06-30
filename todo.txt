@@ -1,6 +1,3 @@
- * Allow user to set order on home page by name, date added, etc
- * View video (html5 ?)
-
  * Make backgroundrb ubuntu service
 
  * Support for marking tv shows as watched
@@ -11,12 +8,7 @@
 
  * Support for marking files as ignored
 
- * Add genres page, add edit genres (to mark priority)
-
- * Remove dodgy symbol enum from video content and file reference model
  * Doesnt recognise mini series as tv shows
-
- * No error message if login fails
  
 Lower Priority:
  * Improve coverage
