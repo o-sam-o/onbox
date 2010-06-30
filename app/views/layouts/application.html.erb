@@ -67,7 +67,7 @@
 					<li>
 						<a href="#">Video Type<br/><span>Movie or tv show</span></a>
 						<ul>
-						    <li><a href="<%= home_search_path ['movie'] %>">Movies</li>
+						    <li><a href="<%= home_search_path ['movie'] %>">Movies</a></li>
 						    <li><a href="<%= home_search_path ['tvshow'] %>">Tv Shows</a></li>
 						</ul>
 					</li>					
@@ -145,6 +145,11 @@
 		function isUserLoggedIn(){
 		 return <%= current_user.present? %>;
 		}       
+		
+		//HTML5 hack
+		YAHOO.util.Event.addListener(window, "load", function() {
+			document.getElementById('_q').setAttribute('type', 'search');
+		});
 	</script>
 </body>
 </html>

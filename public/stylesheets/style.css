@@ -254,8 +254,10 @@
 }
 
 #watchedWrapper img {
-    background-color: white !important; 
+    background-color: transparent !important; 
     border : none !important;
+	padding-bottom: 0px !important;
+	-webkit-box-reflect:below -13px -webkit-gradient(linear, left top, left bottom, from(transparent), color-stop(0.65, transparent), to(white));
 }
 
 #showTypeIconWrapper {
