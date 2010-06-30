@@ -323,3 +323,11 @@
 .bold {
   font-weight: bold;
 }
+
+#videoPlayer {
+  text-align: center;
+}
+
+#videoPlayer video{
+	  padding-top: 15px;
+}

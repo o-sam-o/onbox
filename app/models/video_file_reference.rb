@@ -22,4 +22,16 @@ class VideoFileReference < ActiveRecord::Base
     return this_info <=> other_info
   end
 
+
+  def height
+    file_property('Video', 'Height').gsub(/\D/, '')
+  end
+  
+  def width
+    file_property('Video', 'Width').gsub(/\D/, '')
+  end  
+  
+  def file_property(group, name)
+    video_file_properties.find(:first, :conditions => {'group' => group, 'name' => name}).value rescue ''
+  end
 end

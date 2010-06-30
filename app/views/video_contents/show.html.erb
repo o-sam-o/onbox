@@ -185,11 +185,19 @@
 			<% if current_user %>
 				<%= yui_button_link :text => 'Edit Details', :link => edit_video_content_path(@video_content) %>
 				<%= yui_button_link :text => 'Change Imdb Id', :onclick => 'imdbDialog.changeImdbId()' %>
-				<%= yui_button_link :text => 'Refresh', :onclick => 'imdbDialog.reloadFromImdb()' %>
+				<%= yui_button_link :text => 'Refresh', :onclick => 'imdbDialog.reloadFromImdb()' %>				
+			<div style="padding-top: 5px;">
+				<% @video_content.video_file_references.each do |file| %>
+					<% if file.format == 'MPEG-4' %>
+						<%= yui_button_link :text => 'Play Video', :onclick => "playWithVideoTag('" + video_file_reference_path(file) + "', " + file.width + ", " + file.height + ")" %>
+					<% end %>
+				<% end %>
+				</div>			
 			<% end %>
 		</div>
 	</div>
-	
+
+	<div id="videoPlayer"></div>
 
 	<%= render :partial => 'change_imdb_dialog' %>
 	
@@ -200,5 +208,10 @@
 		YAHOO.util.Event.addListener(window, "load", function(){
 		   	addWatchClickListener('watchedContentLink', <%= @video_content.id %>, <%= !@watched %>); 
 		});
+		
+		function playWithVideoTag(video_url, width, height){
+			document.getElementById("videoPlayer").innerHTML = "<video id='videoPlayerVideo' autoplay controls src='" + video_url + ".mp4' type='video/mp4' width='" + width + "' height='" + height + "'/>";
+			$("videoPlayerVideo").scrollTo();
+		}
 	</script>
 </div>
