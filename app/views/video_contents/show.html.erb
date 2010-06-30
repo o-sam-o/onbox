@@ -92,23 +92,6 @@
 							</div>
 						</div>
 					</li>
-					<!--  Doesnt seem to work in dev, server hangs
-					    <li> 
-				            <div>Video</div> 
-				            <div> 
-								<div class="accordionContent">
-									<% unless @video_content.video_file_references.empty? %>
-										<object classid="clsid:02BF25D5-8C17-4B23-BC80-D3488ABDDC6B" 
-											codebase="http://www.apple.com/qtactivex/qtplugin.cab">
-										 	<param name="src" 
-												value="<%= video_file_reference_path(@video_content.video_file_references.first) %>" />
-										 	<param name="controller" value="true" />
-										</object>
-									<% end %>
-								</div>
-							</div>
-						</li>				
-					-->
 					<% if @video_content.tv_show? && @video_content.tv_episodes.present? %>
 						<li> 
 				            <div>Episodes</div> 
@@ -185,14 +168,7 @@
 			<% if current_user %>
 				<%= yui_button_link :text => 'Edit Details', :link => edit_video_content_path(@video_content) %>
 				<%= yui_button_link :text => 'Change Imdb Id', :onclick => 'imdbDialog.changeImdbId()' %>
-				<%= yui_button_link :text => 'Refresh', :onclick => 'imdbDialog.reloadFromImdb()' %>				
-			<div style="padding-top: 5px;">
-				<% @video_content.video_file_references.each do |file| %>
-					<% if file.format == 'MPEG-4' %>
-						<%= yui_button_link :text => 'Play Video', :onclick => "playWithVideoTag('" + video_file_reference_path(file) + "', " + file.width + ", " + file.height + ")" %>
-					<% end %>
-				<% end %>
-				</div>			
+				<%= yui_button_link :text => 'Refresh', :onclick => 'imdbDialog.reloadFromImdb()' %>						
 			<% end %>
 		</div>
 	</div>
@@ -211,6 +187,16 @@
 		
 		function playWithVideoTag(video_url, width, height){
 			document.getElementById("videoPlayer").innerHTML = "<video id='videoPlayerVideo' autoplay controls src='" + video_url + ".mp4' type='video/mp4' width='" + width + "' height='" + height + "'/>";
+			$("videoPlayerVideo").scrollTo();
+		}
+		
+		function playWithObjectTag(video_url, ext, width, height){
+			object_tag = "<object id='videoPlayerVideo' type='video/quicktime' width='" + width + "' height='" + height + "'>";
+			object_tag = object_tag + '<param name="controller" value="true">';
+			object_tag = object_tag + '<param name="autostart" value="true">';
+			object_tag = object_tag + '<param name="src" value="' + video_url + '.' + ext + '">';
+			object_tag = object_tag + "</object>";
+			document.getElementById("videoPlayer").innerHTML = object_tag;
 			$("videoPlayerVideo").scrollTo();
 		}
 	</script>

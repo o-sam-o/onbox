@@ -304,7 +304,6 @@
   height: 18px;
 
   -moz-border-radius: 3px; 
-  -webkit-border-radius: 3px;
 }
 
 #videoCountWrapper {
@@ -329,5 +328,16 @@
 }
 
 #videoPlayer video{
-	  padding-top: 15px;
+  padding-top: 15px;
+}
+
+#videoPlayer object{
+	margin-top: 15px;
+	border: 1px solid black;  	
+}
+
+.playMediaButtonWrapper {
+	text-align: right;
+	padding-right: 10px;
+	padding-bottom: 5px;
 }

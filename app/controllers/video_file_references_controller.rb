@@ -25,7 +25,7 @@ class VideoFileReferencesController < ApplicationController
       logger.error "Unable to find file: #{@reference.location} for reference #{@reference.id}"
       render :status => 404 and return
     end
-    send_file @reference.location, :type => 'video'     
+    send_file @reference.location, :type => 'video/' + @reference.format.downcase     
   end
 
   def create

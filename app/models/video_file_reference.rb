@@ -34,4 +34,8 @@ class VideoFileReference < ActiveRecord::Base
   def file_property(group, name)
     video_file_properties.find(:first, :conditions => {'group' => group, 'name' => name}).value rescue ''
   end
+  
+  def file_extention
+    location.split('.').last
+  end  
 end
