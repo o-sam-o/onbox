@@ -117,6 +117,10 @@ After a while you should see movies/tv shows appear on the home page.
 __Step 10: Install MediaInfo CLI (Optional)__
 In order to see details of media file formats you need to install MediaInfo CLI : [http://mediainfo.sourceforge.net/en/Download/Ubuntu](http://mediainfo.sourceforge.net/en/Download/Ubuntu)
 
+Client-side Video Playback
+--------------------------
+The video playback support is a little spotty. If the video is mp4 onbox will use the html video tag, however, this won't work in firefox.  For other formats (e.g. avi) quicktime is used, if you have [perian](http://perian.org/) installed codecs such as divx should work.  That said, firefox and chrome seem to want to download the whole video before playing it back.  It plays back immediately in safari for me.
+
 Licence
 -------
 MIT (excluding all the stuff copied from others, e.g. theme)
