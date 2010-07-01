@@ -4,7 +4,8 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
   <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
- 
+  <!-- We don't want our private movie collection showing up on google --> 
+  <meta name="robots" content="noindex, nofollow" />
  <title><%= yield :title or 'What\'s on the box?' %></title>
 
  <%= stylesheet_link_tag 'style' %>  
