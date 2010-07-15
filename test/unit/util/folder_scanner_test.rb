@@ -99,9 +99,10 @@ class FolderScannerTest < Test::Unit::TestCase
         FileUtils.touch "/content/dir/sub/media.mkv"
         FileUtils.touch "/content/dir/sub/media.mov"
         FileUtils.touch "/content/dir/sub/media.m4v"
+        FileUtils.touch "/content/dir/sub/media.wmv"
 
         assert_equal ['/content/dir/sub/media.avi', '/content/dir/sub/media.mpg', '/content/dir/sub/media.mp4', 
-            '/content/dir/sub/media.mkv', '/content/dir/sub/media.mov', '/content/dir/sub/media.m4v'].sort, get_media_files.sort
+            '/content/dir/sub/media.mkv', '/content/dir/sub/media.mov', '/content/dir/sub/media.m4v', '/content/dir/sub/media.wmv'].sort, get_media_files.sort
       end  
     end
   

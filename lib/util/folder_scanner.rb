@@ -1,6 +1,6 @@
 module Util
   class FolderScanner
-    MEDIA_REGEX = /.*\.(avi|mp4|mkv|m4v|mpg|mov)$/ 
+    MEDIA_REGEX = /.*\.(avi|mp4|mkv|m4v|mpg|mov|wmv)$/ 
 
     def self.find_content_in_folder(root_folder)
       Dir.foreach(root_folder) do |file|

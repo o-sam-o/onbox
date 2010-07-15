@@ -127,4 +127,4 @@ MIT (excluding all the stuff copied from others, e.g. theme)
 
 Contact
 -------
-Sam Cavenagh [cavenaghweb@hotmail.com](mailto:cavenaghweb@hotmail.com)
+Sam Cavenagh [(cavenaghweb@hotmail.com)](mailto:cavenaghweb@hotmail.com)

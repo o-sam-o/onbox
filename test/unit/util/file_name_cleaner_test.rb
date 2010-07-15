@@ -66,6 +66,8 @@ class FileNameCleanerTest < Test::Unit::TestCase
     content_test_helper('/test/Angels & Demons (2009) DVDRip XviD-MAXSPEED/Angels & Demons (2009) DVDRip XviD-MAXSPEED www.torentz.3xforum.ro.avi',                                           
                         'Angels & Demons (2009) DVDRip XviD MAXSPEED www torentz 3xforum ro',
                         'Angels & Demons', 2009)
+                        
+    content_test_helper('/test/My-Movie.2010.wmv', 'My Movie 2010', 'My Movie', 2010)                        
   end
   
   should 'correctly convert FileNameInfo to a string' do
