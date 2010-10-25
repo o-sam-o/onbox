@@ -30,7 +30,7 @@ class ScrapImdbWorker < BackgrounDRb::MetaWorker
     def get_imdb_id(video_content)
       imdb_id = video_content.imdb_id
       if imdb_id.blank?
-        imdb_id = Util::ImdbMetadataScraper.search_for_imdb_id(video_content.name, video_content.year, video_content.tv_show?)
+        imdb_id = YayImdbs.search_for_imdb_id(video_content.name, video_content.year, video_content.tv_show?)
       end
       return imdb_id
     end
@@ -49,8 +49,8 @@ class ScrapImdbWorker < BackgrounDRb::MetaWorker
       end  
       
       logger.debug "Found imdb_id #{imdb_id} for #{video_content.display_name}"
-      movie_info = Util::ImdbMetadataScraper.scrap_movie_info(imdb_id)
-      genres = movie_info['genre'] ? movie_info['genre'].strip.split.collect { |name| Genre.find_or_create_by_name(name) } : []
+      movie_info = YayImdbs.scrap_movie_info(imdb_id)
+      genres = movie_info['genre'] ? movie_info['genre'].collect { |name| Genre.find_or_create_by_name(name) } : []
       if video_content.type != movie_info['video_type']
         logger.debug "Changing video type to #{movie_info['video_type']}"
         video_content.change_type(movie_info['video_type'] == :movie ? 'Movie' : 'TvShow')
@@ -60,15 +60,15 @@ class ScrapImdbWorker < BackgrounDRb::MetaWorker
       when :movie
         video_content.update_attributes!(:name => movie_info['title'], :year => movie_info['year'],
                                          :imdb_id => imdb_id, :plot => movie_info['plot'], 
-                                         :release_date => movie_info['release date'], :genre_ids => genres.collect { |g| g.id },
+                                         :release_date => movie_info['release_date'], :genre_ids => genres.collect { |g| g.id },
                                          :director => movie_info['director'], :tag_line => movie_info['tagline'],
-                                         :language => movie_info['language'], :runtime => movie_info['runtime'],
+                                         :language => movie_info['language'].first, :runtime => movie_info['runtime'],
                                          :state => 'processed')
       when :tv_show
         video_content.update_attributes!(:name => movie_info['title'], :year => movie_info['year'],
                                          :imdb_id => imdb_id, :plot => movie_info['plot'], 
                                          :genre_ids => genres.collect { |g| g.id }, :tag_line => movie_info['tagline'],
-                                         :language => movie_info['language'], :runtime => movie_info['runtime'],
+                                         :language => movie_info['language'].first, :runtime => movie_info['runtime'],
                                          :state => 'processed')
         # Reload if conten type changed so we can set the episodes
         video_content = VideoContent.find(video_content.id) unless video_content.tv_show?

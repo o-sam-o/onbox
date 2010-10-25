@@ -19,7 +19,7 @@ class VideoContentsController < ApplicationController
   end
 
   def search_imdb
-    @search_results = Util::ImdbMetadataScraper.search_imdb(params[:search_term])
+    @search_results = YayImdbs.search_imdb(params[:search_term])
     render 'video_contents/search_imdb.html', :layout => false
   end  
 

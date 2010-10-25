@@ -20,13 +20,15 @@ Rails::Initializer.run do |config|
   config.gem "chronic"
   
   # Used for scraping
-  config.gem "hpricot"
+  #config.gem "hpricot"
   config.gem 'imagesize', :lib => 'image_size'
   config.gem "rio"
-  config.gem "htmlentities"
+  #config.gem "htmlentities"
 
   # Used for tooltips
   config.gem "uuidtools"
+
+  config.gem "yayimdbs", :lib => 'yay_imdbs'
 
   config.gem "authlogic"
   

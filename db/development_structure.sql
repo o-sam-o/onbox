@@ -1,4 +1,4 @@
-CREATE TABLE "bdrb_job_queues" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "args" text, "worker_name" varchar(255), "worker_method" varchar(255), "job_key" varchar(255), "taken" int, "finished" int, "timeout" int, "priority" int, "submitted_at" datetime, "started_at" datetime, "finished_at" datetime, "archived_at" datetime, "tag" varchar(255), "submitter_info" varchar(255), "runner_info" varchar(255), "worker_key" varchar(255), "scheduled_at" datetime);
+CREATE TABLE "bdrb_job_queues" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "args" text, "worker_name" varchar(255), "worker_method" varchar(255), "job_key" varchar(255), "taken" integer, "finished" integer, "timeout" integer, "priority" integer, "submitted_at" datetime, "started_at" datetime, "finished_at" datetime, "archived_at" datetime, "tag" varchar(255), "submitter_info" varchar(255), "runner_info" varchar(255), "worker_key" varchar(255), "scheduled_at" datetime);
 CREATE TABLE "genres" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "created_at" datetime, "updated_at" datetime);
 CREATE TABLE "genres_video_contents" ("video_content_id" integer, "genre_id" integer);
 CREATE TABLE "media_folders" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "location" varchar(255), "scan" boolean, "created_at" datetime, "updated_at" datetime);
@@ -19,6 +19,8 @@ CREATE INDEX "index_users_on_last_request_at" ON "users" ("last_request_at");
 CREATE INDEX "index_users_on_login" ON "users" ("login");
 CREATE INDEX "index_users_on_persistence_token" ON "users" ("persistence_token");
 CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version");
+INSERT INTO schema_migrations (version) VALUES ('20100417042758');
+
 INSERT INTO schema_migrations (version) VALUES ('20100205232136');
 
 INSERT INTO schema_migrations (version) VALUES ('20100205232427');
@@ -48,5 +50,3 @@ INSERT INTO schema_migrations (version) VALUES ('20100322053618');
 INSERT INTO schema_migrations (version) VALUES ('20100414103921');
 
 INSERT INTO schema_migrations (version) VALUES ('20100415090150');
-
-INSERT INTO schema_migrations (version) VALUES ('20100417042758');
