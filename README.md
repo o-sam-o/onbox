@@ -38,6 +38,8 @@ __Step 1: Install dependencies__
     
 _Note: Onbox should work with other databases but you will need to modify the adapter in the database.yml file_ 
 
+    install rvm: http://rvm.beginrescueend.com/rvm/install/
+
 __Step 2: Download app__
 
     sudo mkdir /var/www
@@ -46,9 +48,15 @@ __Step 2: Download app__
 
 __Step 3: Install required gems__
     
-    sudo gem install -v=2.3.5 rails
-    sudo gem install rake chronic packet mysql
-    rake gems:install
+    rvm install 1.8.7
+    rvm 1.8.7
+    rvm gemset create ob
+    rvm 1.8.7@ob
+    gem update --system
+    gem install bundler
+    sudo mkdir .bundle
+    sudo chmod 777 .bundle
+    bundle install --without development test
 
 __Step 4: Setup database__
 
@@ -98,7 +106,7 @@ Onbox has a background process that scans for new media and scraps IMDB for vide
     
     cd var/www/onbox/
     sudo chmod 777 log/
-    export PATH=$PATH:/var/lib/gems/1.8/bin
+    sudo chmod 777 pid/
     ./script/backgroundrb -e production &
     
 _TODO: Add instructions to make backgroundrb a service_
