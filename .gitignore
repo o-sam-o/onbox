@@ -9,3 +9,4 @@ coverage.data
 rerun.txt
 coverage/**/*
 .*.swp
+.bundle/config
