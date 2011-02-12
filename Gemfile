@@ -24,6 +24,8 @@ end
 group :cucumber do
   gem "cucumber-rails", "~> 0.3.1"
   gem "cucumber", "~> 0.7.3"
+  gem "cucumber-rails", "~> 0.3.2"
+  gem "cucumber", "~> 0.10.0"
   gem "database_cleaner", "~> 0.5.2"
   gem "capybara", "~> 0.3.8"
   gem "culerity", "~> 0.2.10"
