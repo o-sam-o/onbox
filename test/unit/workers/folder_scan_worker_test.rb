@@ -1,5 +1,4 @@
 require File.join(File.dirname(__FILE__), "/../../bdrb_test_helper")
-require "lib/workers/folder_scan_worker" 
 
 class FolderScanWorkerTest < Test::Unit::TestCase
 

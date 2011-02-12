@@ -1,5 +1,4 @@
 require 'test/unit'
-require 'fakefs/safe'
 
 class FolderScannerTest < Test::Unit::TestCase
   

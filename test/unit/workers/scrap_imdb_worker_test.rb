@@ -1,8 +1,4 @@
 require File.join(File.dirname(__FILE__), "/../../bdrb_test_helper")
-require "lib/workers/scrap_imdb_worker" 
-require "hpricot"
-require 'mocha'
-require 'fakefs/safe'
 
 class ScrapImdbWorkerTest < Test::Unit::TestCase
 
@@ -76,7 +72,7 @@ class ScrapImdbWorkerTest < Test::Unit::TestCase
     video_file_ref = VideoFileReference.new(:location => '/test/LostS01E02.avi')
     video_content.expects(:video_file_references).twice.returns([video_file_ref])
 
-    tv_episodes_mock = mock()
+    tv_episodes_mock = mock('tv_episode')
     video_content.stubs(:tv_episodes).returns(tv_episodes_mock)
     tv_episodes_mock.stubs(:find).returns(nil)
     tv_episodes_mock.expects(:create!).times(114).returns(TvEpisode.new(:title => 'Mocked'))

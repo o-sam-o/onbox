@@ -1,4 +1,4 @@
-require 'test_helper'
+require File.dirname(__FILE__) + '/../../test_helper'
 
 class VideoFileReferenceTest < ActiveSupport::TestCase
   should_validate_presence_of :location

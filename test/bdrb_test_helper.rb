@@ -1,6 +1,7 @@
-require File.join(File.dirname(__FILE__) + "/../config/environment")
+require File.dirname(__FILE__) + '/test_helper'
+
 WORKER_ROOT = RAILS_ROOT + "/lib/workers"
-$LOAD_PATH.unshift(WORKER_ROOT)
+ActiveSupport::Dependencies.autoload_paths << WORKER_ROOT
 
 class Object
   def self.metaclass; class << self; self; end; end

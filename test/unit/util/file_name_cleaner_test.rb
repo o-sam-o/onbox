@@ -1,5 +1,3 @@
-require 'test/unit'
-
 class FileNameCleanerTest < Test::Unit::TestCase
   
 	should 'correctly extract movie name and other info from the file name' do
