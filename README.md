@@ -13,6 +13,7 @@ Features
  * Search by name
  * Browse by genre
  * Mark movies and tv shows as watched
+ * Watch a movies trailer
  * Detailed description of a video's file format
  * In-built IMDB search for when auto translation fails
  * Support for bulk editing video IMDB references.

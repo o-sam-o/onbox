@@ -18,6 +18,9 @@
 
 <%= javascript_include_tag 'video_content_show' %>
 
+<!-- Youtube trailer -->
+<%= javascript_include_tag 'swfobject' %>
+
 <style>
 
 .yui-dt table
@@ -171,6 +174,9 @@
 				<%= yui_button_link :text => 'Refresh', :onclick => 'imdbDialog.reloadFromImdb()' %>						
 			<% end %>
 		</div>
+		<div class="viewActionsWrapper">
+			<%= yui_button_link :text => 'Watch Trailer', :onclick => 'playTrailer()' %>
+		</div>
 	</div>
 
 	<div id="videoPlayerDialog" class=" hidden"> 
@@ -201,6 +207,8 @@
 				htmlVideoPlayer = document.getElementById("videoPlayerVideo")
 				if (htmlVideoPlayer){
 					htmlVideoPlayer.pause();
+				}else if (ytplayer) {
+					ytplayer.stopVideo();
 				}else{
 					document.getElementById("videoPlayerObject").Stop();
 				}
@@ -225,5 +233,29 @@
 			
 			videoDialog.show();
 		}
+		
+		var ytplayer = null;
+		function playTrailer(){
+			if (ytplayer){
+				videoDialog.show();
+				ytplayer.playVideo();
+			}else{
+				var objTransaction = YAHOO.util.Get.script("http://gdata.youtube.com/feeds/api/videos?q=<%= @video_content.display_name + ' trailer' %>&v=2&alt=json-in-script&format=5&callback=handleYoutubeSearchResult");
+			}
+		}
+		
+		function handleYoutubeSearchResult(data){
+			var videoID = data.feed.entry[0].media$group.yt$videoid.$t;
+			var params = { allowScriptAccess: "always" };
+			var atts = { id: "ytPlayer" };
+			swfobject.embedSWF("http://www.youtube.com/v/" + videoID + "&enablejsapi=1&playerapiid=player1", 
+			                   "videoPlayer", "853", "505", "8", null, null, params, atts);
+			videoDialog.show();
+		}
+		
+		function onYouTubePlayerReady(playerId) {
+	   	 ytplayer = document.getElementById("ytPlayer");
+			 ytplayer.playVideo();
+	   }
 	</script>
 </div>

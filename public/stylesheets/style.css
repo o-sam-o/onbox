@@ -278,6 +278,10 @@
   visibility:hidden;
 }
 
+.yui-link-button {
+  cursor: pointer;
+}
+
 #imdbSearchResultWrapper {
   padding: 5px 5px 5px 0px;
   max-height: 350px;
