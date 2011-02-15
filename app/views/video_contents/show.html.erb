@@ -18,9 +18,6 @@
 
 <%= javascript_include_tag 'video_content_show' %>
 
-<!-- Youtube trailer -->
-<%= javascript_include_tag 'swfobject' %>
-
 <style>
 
 .yui-dt table
@@ -203,17 +200,14 @@
 			videoDialog.render();
 			YAHOO.util.Dom.removeClass("videoPlayerDialog", "hidden");
 			YAHOO.util.Event.addListener("hide", "click", videoDialog.hide, videoDialog, true);
-			videoDialog.hideEvent.subscribe(function() {
-				htmlVideoPlayer = document.getElementById("videoPlayerVideo")
+      videoDialog.hideEvent.subscribe(function() {
+				htmlVideoPlayer = document.getElementById("videoPlayerVideo");
 				if (htmlVideoPlayer){
           htmlVideoPlayer.pause();
-				}else{
+				}else if(document.getElementById("videoPlayerObject")){
 					document.getElementById("videoPlayerObject").Stop();
         }
-
-        //TODO stop youtube trailers
-
-				document.getElementById("videoPlayer").innerHTML = "";
+        document.getElementById("videoPlayer").innerHTML = "";
 			});
 		});
 		
@@ -250,8 +244,15 @@
 		}
 		
 		function playYoutubeVideo(youtubeVideoId) {
-			iframe_tag = '<iframe class="youtube-player" type="text/html" width="853" height="510" src="http://www.youtube.com/embed/' + youtubeVideoId + '?autoplay=1" frameborder="0"></iframe>';
-			document.getElementById("videoPlayer").innerHTML = iframe_tag;
+      object_tag =              '<object width="853" height="510">';
+      object_tag = object_tag + '  <param name="movie" value="http://www.youtube.com/v/' + youtubeVideoId + '?autoplay=1"></param>';
+      object_tag = object_tag + '  <param name="allowFullScreen" value="true"></param>';
+      object_tag = object_tag + '  <param name="allowScriptAccess" value="always"></param>';
+      object_tag = object_tag + '  <embed src="http://www.youtube.com/v/' + youtubeVideoId + '?autoplay=1" type="application/x-shockwave-flash" allowfullscreen="true" allowScriptAccess="always" width="853" height="510"></embed>';
+      object_tag = object_tag + '</object>';
+
+
+			document.getElementById("videoPlayer").innerHTML = object_tag;
 			 videoDialog.show();
 	   }
 	</script>
