@@ -206,12 +206,13 @@
 			videoDialog.hideEvent.subscribe(function() {
 				htmlVideoPlayer = document.getElementById("videoPlayerVideo")
 				if (htmlVideoPlayer){
-					htmlVideoPlayer.pause();
-				}else if (ytplayer) {
-					ytplayer.stopVideo();
+          htmlVideoPlayer.pause();
 				}else{
 					document.getElementById("videoPlayerObject").Stop();
-				}
+        }
+
+        //TODO stop youtube trailers
+
 				document.getElementById("videoPlayer").innerHTML = "";
 			});
 		});
@@ -234,28 +235,24 @@
 			videoDialog.show();
 		}
 		
-		var ytplayer = null;
+		var youtubeVideoId = null;
 		function playTrailer(){
-			if (ytplayer){
-				videoDialog.show();
-				ytplayer.playVideo();
+			if (youtubeVideoId){
+				playYoutubeVideo(youtubeVideoId);
 			}else{
 				var objTransaction = YAHOO.util.Get.script("http://gdata.youtube.com/feeds/api/videos?q=<%= @video_content.display_name + ' trailer' %>&v=2&alt=json-in-script&format=5&callback=handleYoutubeSearchResult");
 			}
 		}
 		
 		function handleYoutubeSearchResult(data){
-			var videoID = data.feed.entry[0].media$group.yt$videoid.$t;
-			var params = { allowScriptAccess: "always" };
-			var atts = { id: "ytPlayer" };
-			swfobject.embedSWF("http://www.youtube.com/v/" + videoID + "&enablejsapi=1&playerapiid=player1", 
-			                   "videoPlayer", "853", "505", "8", null, null, params, atts);
-			videoDialog.show();
+			youtubeVideoId = data.feed.entry[0].media$group.yt$videoid.$t;
+			playYoutubeVideo(youtubeVideoId);			
 		}
 		
-		function onYouTubePlayerReady(playerId) {
-	   	 ytplayer = document.getElementById("ytPlayer");
-			 ytplayer.playVideo();
+		function playYoutubeVideo(youtubeVideoId) {
+			iframe_tag = '<iframe class="youtube-player" type="text/html" width="853" height="510" src="http://www.youtube.com/embed/' + youtubeVideoId + '?hd=1&autoplay=1" frameborder="0"></iframe>';
+			document.getElementById("videoPlayer").innerHTML = iframe_tag;
+			 videoDialog.show();
 	   }
 	</script>
 </div>
