@@ -8,6 +8,7 @@ gem "imagesize", "0.1.1", :require => 'image_size'
 gem "rio", "0.4.2"
 gem "uuidtools", "2.1.1"
 gem "yayimdbs", "~> 0.1.10", :require => 'yay_imdbs'
+gem "toname", :require => 'to_name'
 
 group :development do
   gem "sqlite3"

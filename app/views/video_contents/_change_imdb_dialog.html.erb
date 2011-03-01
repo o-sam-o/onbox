@@ -24,7 +24,7 @@
 				      <legend>Search:</legend>
 					  <div class="defaultFormField">
 					    <%= label_tag "search_term" %>
-					    <%= text_field_tag 'search_term', (@video_content.video_file_references.empty? ? @video_content.name : Util::FileNameCleaner.get_name_info(@video_content.video_file_references.first.location).name), :class => "defaultFormTextField" %>
+					    <%= text_field_tag 'search_term', (@video_content.video_file_references.empty? ? @video_content.name : ToName.to_name(@video_content.video_file_references.first.location).name), :class => "defaultFormTextField" %>
 					    <%= yui_button_link :text => 'Search', :onclick => 'imdbDialog.searchImdb()' %>
 					  </div>
 				  	</fieldset>

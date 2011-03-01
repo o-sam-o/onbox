@@ -107,7 +107,7 @@ class ScrapImdbWorker < BackgrounDRb::MetaWorker
       files = {}
       
       video_content.video_file_references.each do |file|
-        file_info = Util::FileNameCleaner.get_name_info(file.location)
+        file_info = ToName.to_name(file.location)
         series = (file_info.series ? file_info.series : 1)
         files[series] = [] unless files[series]
         files[series][file_info.episode] = file if file_info.episode

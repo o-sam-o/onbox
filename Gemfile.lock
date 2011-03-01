@@ -83,6 +83,7 @@ GEM
     shoulda (2.11.3)
     sqlite3 (1.3.3)
     term-ansicolor (1.0.5)
+    toname (0.1.1)
     uuidtools (2.1.1)
     yayimdbs (0.1.10)
       activesupport
@@ -110,5 +111,6 @@ DEPENDENCIES
   rio (= 0.4.2)
   shoulda
   sqlite3
+  toname
   uuidtools (= 2.1.1)
   yayimdbs (~> 0.1.10)

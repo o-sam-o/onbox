@@ -31,7 +31,7 @@ class FolderScanWorker < BackgrounDRb::MetaWorker
         return
       end
       
-      name_info = Util::FileNameCleaner.get_name_info(file)
+      name_info = ToName.to_name(file)
       logger.debug "Cleaned name: #{name_info}"
       #Check to see if we already have a matching video content
       video_content = find_video_content(name_info.name, name_info.year)
@@ -67,7 +67,7 @@ class FolderScanWorker < BackgrounDRb::MetaWorker
       return reference if reference
       logger.debug "New file references found, creating new mode"
       reference = VideoFileReference.new(:location => location, :media_folder => folder, :on_disk => true,
-                                         :raw_name => Util::FileNameCleaner.get_file_name(location))
+                                         :raw_name => ToName.to_name(location))
       reference.save!
       update_file_properties(reference)
       return reference

@@ -17,8 +17,8 @@ class VideoFileReference < ActiveRecord::Base
     return 1 if other.nil? || other.location.nil?
     return -1 if location.nil?
       
-    this_info = Util::FileNameCleaner.get_name_info(location)
-    other_info = Util::FileNameCleaner.get_name_info(other.location)
+    this_info = ToName.to_name(location)
+    other_info = ToName.to_name(other.location)
     return this_info <=> other_info
   end
 
