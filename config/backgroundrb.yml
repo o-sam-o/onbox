@@ -7,4 +7,4 @@
 :schedules:
   :folder_scan_worker:
     :scan_all_folders:
-      :trigger_args: 0 * */4 * * *
+      :trigger_args: 10 5 * * *
