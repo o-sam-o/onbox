@@ -7,7 +7,7 @@ gem "packet", "0.1.15"
 gem "imagesize", "0.1.1", :require => 'image_size'
 gem "rio", "0.4.2"
 gem "uuidtools", "2.1.1"
-gem "yayimdbs", "~> 0.2.0", :require => 'yay_imdbs'
+gem "yayimdbs", "~> 0.2.1"
 gem "toname", :require => 'to_name'
 
 group :development do

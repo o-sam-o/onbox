@@ -85,7 +85,7 @@ GEM
     term-ansicolor (1.0.5)
     toname (0.1.2)
     uuidtools (2.1.1)
-    yayimdbs (0.2.0)
+    yayimdbs (0.2.1)
       activesupport
       nokogiri (>= 1.4.2)
 
@@ -113,4 +113,4 @@ DEPENDENCIES
   sqlite3
   toname
   uuidtools (= 2.1.1)
-  yayimdbs (~> 0.2.0)
+  yayimdbs (~> 0.2.1)

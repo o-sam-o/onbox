@@ -39,6 +39,7 @@ class HomeController < ApplicationController
       case params['order'] 
       when "name" then return "video_contents.name"
       when "added" then return "video_contents.created_at desc"
+      when "rating" then return "video_contents.rating desc"
       else return "video_contents.name"
       end
     end

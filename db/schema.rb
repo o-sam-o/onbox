@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100417042758) do
+ActiveRecord::Schema.define(:version => 20110306055152) do
 
   create_table "bdrb_job_queues", :force => true do |t|
     t.text     "args"
@@ -107,6 +107,7 @@ ActiveRecord::Schema.define(:version => 20100417042758) do
     t.string   "type"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "rating"
   end
 
   create_table "video_file_properties", :force => true do |t|

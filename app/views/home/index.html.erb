@@ -67,7 +67,9 @@
 		<%= link_to "Name", home_search_path(params[:criteria], :q => params[:q], :order => 'name'), 
 		:class => (params[:order].blank? || params[:order] == 'name' ? 'bold' : '') %> |  
 		<%= link_to "Added", home_search_path(params[:criteria], :q => params[:q], :order => 'added'),
-		:class => (params[:order] == 'added' ? 'bold' : '') %> 
+		:class => (params[:order] == 'added' ? 'bold' : '') %> | 
+		<%= link_to "Rating", home_search_path(params[:criteria], :q => params[:q], :order => 'rating'),
+		:class => (params[:order] == 'rating' ? 'bold' : '') %>
 	</div>
 	<div id="videoCountWrapper">
         <%= @video_content_count %> videos
