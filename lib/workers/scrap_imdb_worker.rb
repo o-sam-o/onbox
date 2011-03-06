@@ -30,7 +30,7 @@ class ScrapImdbWorker < BackgrounDRb::MetaWorker
     def get_imdb_id(video_content)
       imdb_id = video_content.imdb_id
       if imdb_id.blank?
-        imdb_id = YayImdbs.search_for_imdb_id(video_content.name, video_content.year, video_content.tv_show?)
+        imdb_id = YayImdbs.search_for_imdb_id(video_content.name, video_content.year, video_content.tv_show? ? :tv_show : :movie)
       end
       return imdb_id
     end

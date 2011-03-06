@@ -136,7 +136,7 @@ class ScrapImdbWorkerTest < Test::Unit::TestCase
   end
   
   should 'search imdb if no imdb id in video content' do
-    YayImdbs.expects(:search_for_imdb_id).with('name', 2000, false).returns('fake id')
+    YayImdbs.expects(:search_for_imdb_id).with('name', 2000, :movie).returns('fake id')
     
     worker = ScrapImdbWorker.new
     imdb_id = worker.send(:get_imdb_id, Movie.new(:name => 'name', :year => 2000))
