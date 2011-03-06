@@ -29,3 +29,11 @@ def page_into_file(request_url, file_name)
 
   p "Refreshed #{file_name}"
 end
+
+desc "Setup a test folder of fake media files and create test admin user"
+task :setup_dev_env => [:environment, 'db:reset'] do
+  `create_dev_test.sh`
+  MediaFolder.create!(:location => '/tmp/OnBoxDev', :scan => true)
+  User.create!(:login => 'admin', :password => 'password', :password_confirmation => 'password')
+  p "Created user 'admin' with password 'password'"
+end
