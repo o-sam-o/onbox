@@ -213,13 +213,13 @@
 		});
 		
 		function playWithVideoTag(video_url, width, height){
-			document.getElementById("videoPlayer").innerHTML = "<video id='videoPlayerVideo' autoplay controls src='" + video_url + ".mp4' type='video/mp4' width='" + width + "' height='" + height + "'/>";
+			document.getElementById("videoPlayer").innerHTML = "<video id='videoPlayerVideo' autoplay controls src='" + video_url + ".mp4' type='video/mp4' width='" + width + "' height='" + height + "' x-webkit-airplay='allow'/>";
 			
 			videoDialog.show();
 		}
 		
 		function playWithObjectTag(video_url, ext, width, height){
-			object_tag = "<object id='videoPlayerObject' type='video/quicktime' width='" + width + "' height='" + height + "' autoplay='true'>";
+			object_tag = "<object id='videoPlayerObject' type='video/quicktime' width='" + width + "' height='" + height + "' autoplay='true' airplay='allow'>";
 			object_tag = object_tag + '<param name="controller" value="true">';
 			object_tag = object_tag + '<param name="autostart" value="true">';
 			object_tag = object_tag + '<param name="src" value="' + video_url + '.' + ext + '">';
